@@ -1,9 +1,9 @@
 import { Injectable, NotFoundException, BadRequestException } from '@nestjs/common';
 import { PrismaService } from '../../prisma/prisma.service';
-import { CreateTextbookDto, UpdateTextbookDto, QueryTextbooksDto, CreateUnitDto, UpdateUnitDto, TextbookStatus } from './textbook.dto';
+import { CreateTextbookDto, UpdateTextbookDto, QueryTextbooksDto, CreateUnitDto, UpdateUnitDto, TextbookStatus } from './textbooks.dto';
 
 @Injectable()
-export class TextbookService {
+export class TextbooksService {
   constructor(private prisma: PrismaService) {}
 
   /**
