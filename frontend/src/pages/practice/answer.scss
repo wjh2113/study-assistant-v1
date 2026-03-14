@@ -1,0 +1,99 @@
+.answer-page {
+  padding: 20px;
+  min-height: 100vh;
+  background: #f5f5f5;
+}
+
+.progress-bar {
+  height: 8px;
+  background: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 10px;
+
+  .progress {
+    height: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    transition: width 0.3s;
+  }
+}
+
+.progress-text {
+  text-align: right;
+  font-size: 24px;
+  color: #999;
+  margin-bottom: 20px;
+}
+
+.question-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 30px;
+  margin-bottom: 20px;
+
+  .question-type {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #f0f0f0;
+  border-radius: 8px;
+    font-size: 24px;
+    color: #666;
+    margin-bottom: 16px;
+  }
+
+  .question-text {
+    display: block;
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30px;
+    line-height: 1.6;
+  }
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.option-item {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background: #f5f5f5;
+  border-radius: 12px;
+  transition: all 0.3s;
+
+  &.selected {
+    background: #e8eaff;
+    border: 2px solid #667eea;
+  }
+
+  .option-text {
+    margin-left: 12px;
+    font-size: 28px;
+    color: #333;
+  }
+}
+
+.answer-input {
+  width: 100%;
+  height: 100px;
+  background: #f5f5f5;
+  border-radius: 12px;
+  padding: 0 20px;
+  font-size: 28px;
+  box-sizing: border-box;
+}
+
+.submit-btn {
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  border: none;
+  border-radius: 40px;
+  font-size: 32px;
+  font-weight: bold;
+}

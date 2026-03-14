@@ -1,0 +1,74 @@
+.learning-page {
+  padding: 20px;
+  min-height: 100vh;
+  background: #f5f5f5;
+}
+
+.header {
+  margin-bottom: 20px;
+
+  .title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+  }
+}
+
+.records-list {
+  height: calc(100vh - 120px);
+}
+
+.empty {
+  text-align: center;
+  padding: 100px 0;
+  color: #999;
+  font-size: 28px;
+}
+
+.record-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 16px;
+
+  .record-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+
+    .record-type {
+      font-size: 28px;
+      font-weight: bold;
+      color: #667eea;
+    }
+
+    .record-date {
+      font-size: 24px;
+      color: #999;
+    }
+  }
+
+  .record-details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .record-textbook,
+    .record-unit {
+      font-size: 26px;
+      color: #333;
+    }
+
+    .record-score {
+      font-size: 26px;
+      font-weight: bold;
+      color: #10b981;
+    }
+
+    .record-duration {
+      font-size: 26px;
+      color: #666;
+    }
+  }
+}

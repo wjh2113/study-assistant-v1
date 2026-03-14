@@ -1,0 +1,22 @@
+{
+  "miniprogramRoot": "./dist/",
+  "projectname": "study-assistant",
+  "description": "小学生全科智能复习助手",
+  "appid": "wx0000000000000000",
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": true,
+    "compileHotReLoad": false,
+    "postcss": true,
+    "minified": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    }
+  },
+  "condition": {},
+  "libVersion": "3.3.0",
+  "srcPath": "src"
+}
