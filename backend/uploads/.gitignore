@@ -1,0 +1,5 @@
+# 忽略所有上传的文件
+*
+
+# 但保留 .gitignore 本身
+!.gitignore

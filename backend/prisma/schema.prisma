@@ -1,0 +1,313 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+// 角色枚举（UPPER_CASE）
+enum Role {
+  STUDENT
+  PARENT
+  ADMIN
+}
+
+// 验证码用途（UPPER_CASE）
+enum VerificationPurpose {
+  LOGIN
+  REGISTER
+  RESET
+}
+
+// 家长验证状态（UPPER_CASE）
+enum VerifiedStatus {
+  PENDING
+  VERIFIED
+  REJECTED
+}
+
+// 知识点状态（UPPER_CASE）
+enum KnowledgeStatus {
+  ACTIVE
+  ARCHIVED
+  DRAFT
+}
+
+// 教材解析状态（UPPER_CASE）
+enum ParseStatus {
+  PENDING
+  PROCESSING
+  COMPLETED
+  FAILED
+}
+
+// 用户表
+model User {
+  id            String    @id @default(uuid())
+  role          Role      @default(student)
+  phone         String    @unique
+  nickname      String?
+  avatar_url    String?
+  created_at    DateTime  @default(now())
+  updated_at    DateTime  @updatedAt
+  
+  student_profile StudentProfile?
+  parent_profile  ParentProfile?
+  knowledge_points  KnowledgePoint[]
+  learning_progress LearningProgress[]
+  ai_qa_records     AIQARecord[]
+  knowledge_mastery KnowledgeMastery[]
+  posts             Post[]
+  post_comments     PostComment[]
+  leaderboard_snapshots LeaderboardSnapshot[]
+  
+  @@index([phone])
+}
+
+// 学生资料表
+model StudentProfile {
+  user_id       String  @id
+  grade         Int?
+  school_name   String?
+  total_points  Int     @default(0)
+  streak_days   Int     @default(0)
+  created_at    DateTime @default(now())
+  updated_at    DateTime @updatedAt
+  
+  user User @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  
+  @@index([user_id])
+}
+
+// 家长资料表
+model ParentProfile {
+  user_id         String        @id
+  real_name       String?
+  verified_status VerifiedStatus @default(pending)
+  created_at      DateTime       @default(now())
+  updated_at      DateTime       @updatedAt
+  
+  user User @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  
+  @@index([user_id])
+}
+
+// 验证码表
+model VerificationCode {
+  id         Int                 @id @default(autoincrement())
+  phone      String
+  code       String
+  purpose    VerificationPurpose @default(login)
+  expires_at DateTime
+  used       Boolean             @default(false)
+  created_at DateTime            @default(now())
+  
+  @@index([phone, purpose])
+  @@index([expires_at])
+}
+
+// 知识点表
+model KnowledgePoint {
+  id          String           @id @default(uuid())
+  user_id     String
+  title       String
+  content     String?
+  category    String?
+  tags        String?
+  status      KnowledgeStatus  @default(active)
+  created_at  DateTime         @default(now())
+  updated_at  DateTime         @updatedAt
+  
+  user User @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  learning_progress LearningProgress[]
+  ai_qa_records     AIQARecord[]
+  
+  @@index([user_id])
+  @@index([status])
+}
+
+// 学习进度表
+model LearningProgress {
+  id               String   @id @default(uuid())
+  user_id          String
+  knowledge_point_id String?
+  study_duration   Int      @default(0)
+  completion_rate  Float    @default(0)
+  last_studied_at  DateTime?
+  created_at       DateTime @default(now())
+  updated_at       DateTime @updatedAt
+  
+  user User @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  knowledge_point KnowledgePoint? @relation(fields: [knowledge_point_id], references: [id], onDelete: SetNull)
+  
+  @@index([user_id])
+  @@index([knowledge_point_id])
+}
+
+// AI 问答记录表
+model AIQARecord {
+  id               String   @id @default(uuid())
+  user_id          String
+  question         String
+  answer           String?
+  knowledge_point_id String?
+  created_at       DateTime @default(now())
+  
+  user User @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  knowledge_point KnowledgePoint? @relation(fields: [knowledge_point_id], references: [id], onDelete: SetNull)
+  
+  @@index([user_id])
+  @@index([knowledge_point_id])
+}
+
+// 知识掌握度表（新增）
+model KnowledgeMastery {
+  id              String   @id @default(uuid())
+  user_id         String
+  knowledge_point_id String
+  mastery_level   Float    @default(0) // 0-100
+  last_reviewed_at DateTime?
+  review_count    Int      @default(0)
+  created_at      DateTime @default(now())
+  updated_at      DateTime @updatedAt
+  
+  user User @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  
+  @@index([user_id])
+  @@index([knowledge_point_id])
+  @@unique([user_id, knowledge_point_id])
+}
+
+// 教材表（新增）
+model Textbook {
+  id          String      @id @default(uuid())
+  title       String
+  subject     String?
+  grade       Int?
+  version     String?
+  parse_status ParseStatus @default(pending)
+  parse_result Json?
+  created_at  DateTime    @default(now())
+  updated_at  DateTime    @updatedAt
+  
+  @@index([subject, grade])
+}
+
+// 排行榜快照表（新增）
+model LeaderboardSnapshot {
+  id         String   @id @default(uuid())
+  user_id    String
+  rank       Int
+  total_points Int
+  snapshot_date DateTime @default(now())
+  created_at DateTime @default(now())
+  
+  user User @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  
+  @@index([user_id])
+  @@index([snapshot_date])
+  @@index([rank])
+}
+
+// 帖子表（新增）
+model Post {
+  id        String   @id @default(uuid())
+  user_id   String
+  title     String
+  content   String
+  tags      String?
+  view_count Int     @default(0)
+  like_count Int     @default(0)
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+  
+  user User @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  comments PostComment[]
+  
+  @@index([user_id])
+  @@index([created_at])
+}
+
+// 帖子评论表（新增）
+model PostComment {
+  id        String   @id @default(uuid())
+  post_id   String
+  user_id   String
+  content   String
+  parent_comment_id String?
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+  
+  post Post @relation(fields: [post_id], references: [id], onDelete: Cascade)
+  user User @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  
+  @@index([post_id])
+  @@index([user_id])
+}
+
+// 练习会话表（新增）
+model PracticeSession {
+  id          String   @id @default(uuid())
+  user_id     String
+  textbook_id String?
+  unit_id     String?
+  status      String   @default("active")
+  score       Int?
+  created_at  DateTime @default(now())
+  updated_at  DateTime @updatedAt
+  
+  questions   Question[]
+  
+  @@index([user_id])
+  @@index([status])
+}
+
+// 题目表（新增）
+model Question {
+  id          String   @id @default(uuid())
+  session_id  String
+  type        String
+  question    String
+  options     Json?
+  answer      String
+  explanation String?
+  order       Int
+  created_at  DateTime @default(now())
+  
+  session     PracticeSession @relation(fields: [session_id], references: [id], onDelete: Cascade)
+  
+  @@index([session_id])
+}
+
+// 答题记录表（新增）
+model AnswerRecord {
+  id          String   @id @default(uuid())
+  user_id     String
+  question_id String
+  session_id  String
+  answer      String
+  is_correct  Boolean
+  created_at  DateTime @default(now())
+  
+  @@index([user_id])
+  @@index([session_id])
+  @@index([question_id])
+}
+
+// 积分明细表（新增）
+model PointsLedger {
+  id          String   @id @default(uuid())
+  user_id     String
+  amount      Int      // 正数为增加，负数为减少
+  reason      String   // 答题奖励、签到奖励等
+  balance     Int      // 当前余额
+  created_at  DateTime @default(now())
+  
+  @@index([user_id])
+  @@index([created_at])
+}

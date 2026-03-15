@@ -1,0 +1,71 @@
+version: '3.8'
+
+services:
+  # PostgreSQL 数据库
+  postgres:
+    image: postgres:15-alpine
+    container_name: studyass-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: studyass
+      POSTGRES_PASSWORD: studyass_password
+      POSTGRES_DB: studyass_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U studyass -d studyass_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Redis 缓存（用于验证码存储、排行榜缓存、队列）
+  redis:
+    image: redis:7-alpine
+    container_name: studyass-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # 后端服务
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: studyass-backend
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - DATABASE_URL=postgresql://studyass:studyass_password@postgres:5432/studyass_db?schema=public
+      - JWT_SECRET=D8EnCR3xkPoSfUFyNArLOpi7K5VbQ4WmadvgjZ02HTX6uqlYczh1w9tGBIsJeM
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - AI_API_KEY=${AI_API_KEY}
+      - AI_API_URL=${AI_API_URL}
+      # 本地文件存储配置（替代 OSS/FTP）
+      - UPLOAD_DIR=/app/uploads
+      - MAX_FILE_SIZE=52428800
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - ./backend:/app
+      - ./backend/uploads:/app/uploads
+      - /app/node_modules
+
+volumes:
+  postgres_data:
+  redis_data:

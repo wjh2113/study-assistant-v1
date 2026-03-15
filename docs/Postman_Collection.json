@@ -1,0 +1,256 @@
+{
+  "info": {
+    "name": "学习助手 - 用户认证模块",
+    "description": "Sprint 1 - 迭代 1 用户认证模块 API 测试集合",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. 发送验证码",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"phone\": \"13800138000\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/auth/send-code",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "auth", "send-code"]
+        },
+        "description": "发送验证码到指定手机号\n\n内测期间使用固定验证码：123456"
+      },
+      "response": []
+    },
+    {
+      "name": "2. 手机号验证码登录",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "if (pm.response.code === 200) {",
+              "    var jsonData = pm.response.json();",
+              "    pm.collectionVariables.set('token', jsonData.token);",
+              "    pm.collectionVariables.set('userId', jsonData.user.id);",
+              "    console.log('✅ 登录成功，Token 已保存');",
+              "}"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"phone\": \"13800138000\",\n  \"code\": \"123456\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/auth/login",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "auth", "login"]
+        },
+        "description": "使用手机号和验证码登录\n\n内测期间验证码固定为：123456"
+      },
+      "response": []
+    },
+    {
+      "name": "3. 刷新 Token",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3000/api/auth/refresh",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "auth", "refresh"]
+        },
+        "description": "刷新访问令牌"
+      },
+      "response": []
+    },
+    {
+      "name": "4. 获取当前用户信息",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3000/api/auth/me",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "auth", "me"]
+        },
+        "description": "获取当前登录用户的详细信息"
+      },
+      "response": []
+    },
+    {
+      "name": "5. 注册 - 学生",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "if (pm.response.code === 201) {",
+              "    var jsonData = pm.response.json();",
+              "    pm.collectionVariables.set('token', jsonData.token);",
+              "    pm.collectionVariables.set('userId', jsonData.user.id);",
+              "    console.log('✅ 注册成功，Token 已保存');",
+              "}"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"phone\": \"13800138002\",\n  \"code\": \"123456\",\n  \"role\": \"student\",\n  \"nickname\": \"小明\",\n  \"grade\": 7,\n  \"school_name\": \"XX 中学\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/auth/register",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "auth", "register"]
+        },
+        "description": "学生用户注册\n\n必填字段:\n- phone: 手机号\n- code: 验证码\n- role: student\n- grade: 年级\n\n可选字段:\n- nickname: 昵称\n- school_name: 学校名称"
+      },
+      "response": []
+    },
+    {
+      "name": "6. 注册 - 家长",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "if (pm.response.code === 201) {",
+              "    var jsonData = pm.response.json();",
+              "    pm.collectionVariables.set('token', jsonData.token);",
+              "    pm.collectionVariables.set('userId', jsonData.user.id);",
+              "    console.log('✅ 注册成功，Token 已保存');",
+              "}"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"phone\": \"13800138003\",\n  \"code\": \"123456\",\n  \"role\": \"parent\",\n  \"nickname\": \"小明妈妈\",\n  \"real_name\": \"张三\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/auth/register",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "auth", "register"]
+        },
+        "description": "家长用户注册\n\n必填字段:\n- phone: 手机号\n- code: 验证码\n- role: parent\n- real_name: 真实姓名\n\n可选字段:\n- nickname: 昵称"
+      },
+      "response": []
+    },
+    {
+      "name": "7. 更新用户信息",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nickname\": \"测试用户\",\n  \"avatar_url\": \"https://example.com/avatar.jpg\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/auth/me",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "auth", "me"]
+        },
+        "description": "更新当前用户信息"
+      },
+      "response": []
+    },
+    {
+      "name": "健康检查",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/health",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["health"]
+        },
+        "description": "检查后端服务是否正常运行"
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "token",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "userId",
+      "value": "",
+      "type": "string"
+    }
+  ]
+}

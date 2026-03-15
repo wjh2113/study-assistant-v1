@@ -1,0 +1,2842 @@
+﻿
+> studyass-frontend@1.0.0 test
+> vitest run --coverage
+
+node.exe : [2m07:42:55[22m [33m[1m[vite][22m[39m [33mwarning: `esbuild` option was specified by "vite:react-babe
+l" plugin. This option is deprecated, please use `oxc` instead.[39m
+所在位置 行:1 字符: 1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ([2m07:42:55[2...` instead.[39m:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+[2m07:42:55[22m [33m[1m[vite][22m[39m [33mwarning: `optimizeDeps.esbuildOptions` option was specified by "vite:r
+eact-babel" plugin. This option is deprecated, please use `optimizeDeps.rolldownOptions` instead.[39m
+[33mBoth esbuild and oxc options were set. oxc options will be used and esbuild options will be ignored.[39m The foll
+owing esbuild options were set: `{ jsx: 'automatic', jsxImportSource: undefined }`
+
+[1m[46m RUN [49m[22m [36mv4.1.0 [39m[90mE:/openclaw/workspace-studyass-mgr/frontend[39m
+      [2mCoverage enabled with [22m[33mv8[39m
+
+ [31m鉂?[39m tests/Login.test.jsx [2m([22m[2m3 tests[22m[2m | [22m[31m3 failed[39m[2m)[22m[32m 35[2mms[22m[39m
+[31m     [31m脳[31m 搴旇娓叉煋鐧诲綍椤甸潰[39m[32m 19[2mms[22m[39m
+[31m     [31m脳[31m 搴旇楠岃瘉鎵嬫満鍙锋牸寮?[39m[32m 2[2mms[22m[39m
+[31m     [31m脳[31m 搴旇鍙互璺宠浆鍒版敞鍐岄〉闈?[39m[32m 2[2mms[22m[39m
+Error: useAuth must be used within AuthProvider
+    at useAuth (E:/openclaw/workspace-studyass-mgr/frontend/src/context/AuthContext.jsx:105:11)
+    at RegisterPage (E:/openclaw/workspace-studyass-mgr/frontend/src/pages/Register.jsx:22:24)
+    at renderWithHooks (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.development.js
+:15486:18)
+    at mountIndeterminateComponent (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.de
+velopment.js:20103:13)
+    at beginWork (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.development.js:21626
+:16)
+    at HTMLUnknownElement.callCallback (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-do
+m.development.js:4164:14)
+    at HTMLUnknownElement.callTheUserObjectsOperation (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\l
+ib\generated\idl\EventListener.js:26:30)
+    at innerInvokeEventListeners (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\living\event
+s\EventTarget-impl.js:360:16)
+    at invokeEventListeners (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\living\events\Eve
+ntTarget-impl.js:296:3)
+    at HTMLUnknownElementImpl._dispatch (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\livin
+g\events\EventTarget-impl.js:243:9)
+Error: useAuth must be used within AuthProvider
+    at useAuth (E:/openclaw/workspace-studyass-mgr/frontend/src/context/AuthContext.jsx:105:11)
+    at RegisterPage (E:/openclaw/workspace-studyass-mgr/frontend/src/pages/Register.jsx:22:24)
+    at renderWithHooks (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.development.js
+:15486:18)
+    at mountIndeterminateComponent (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.de
+velopment.js:20103:13)
+    at beginWork (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.development.js:21626
+:16)
+    at HTMLUnknownElement.callCallback (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-do
+m.development.js:4164:14)
+    at HTMLUnknownElement.callTheUserObjectsOperation (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\l
+ib\generated\idl\EventListener.js:26:30)
+    at innerInvokeEventListeners (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\living\event
+s\EventTarget-impl.js:360:16)
+    at invokeEventListeners (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\living\events\Eve
+ntTarget-impl.js:296:3)
+    at HTMLUnknownElementImpl._dispatch (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\livin
+g\events\EventTarget-impl.js:243:9)
+[90mstderr[2m | tests/Register.test.jsx[2m > [22m[2mRegister Page Tests[2m > [22m[2m搴旇娓叉煋娉ㄥ唽椤甸潰
+[22m[39mThe above error occurred in the <RegisterPage> component:
+
+    at RegisterPage (E:/openclaw/workspace-studyass-mgr/frontend/src/pages/Register.jsx:12:62)
+    at Router (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-router\dist\umd\react-router.development.
+js:1207:17)
+    at BrowserRouter (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-router-dom\dist\umd\react-router-d
+om.development.js:695:7)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+Error: useAuth must be used within AuthProvider
+    at useAuth (E:/openclaw/workspace-studyass-mgr/frontend/src/context/AuthContext.jsx:105:11)
+    at RegisterPage (E:/openclaw/workspace-studyass-mgr/frontend/src/pages/Register.jsx:22:24)
+    at renderWithHooks (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.development.js
+:15486:18)
+    at mountIndeterminateComponent (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.de
+velopment.js:20103:13)
+    at beginWork (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.development.js:21626
+:16)
+    at HTMLUnknownElement.callCallback (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-do
+m.development.js:4164:14)
+    at HTMLUnknownElement.callTheUserObjectsOperation (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\l
+ib\generated\idl\EventListener.js:26:30)
+    at innerInvokeEventListeners (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\living\event
+s\EventTarget-impl.js:360:16)
+    at invokeEventListeners (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\living\events\Eve
+ntTarget-impl.js:296:3)
+    at HTMLUnknownElementImpl._dispatch (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\livin
+g\events\EventTarget-impl.js:243:9)
+Error: useAuth must be used within AuthProvider
+    at useAuth (E:/openclaw/workspace-studyass-mgr/frontend/src/context/AuthContext.jsx:105:11)
+    at RegisterPage (E:/openclaw/workspace-studyass-mgr/frontend/src/pages/Register.jsx:22:24)
+    at renderWithHooks (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.development.js
+:15486:18)
+    at mountIndeterminateComponent (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.de
+velopment.js:20103:13)
+    at beginWork (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.development.js:21626
+:16)
+    at HTMLUnknownElement.callCallback (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-do
+m.development.js:4164:14)
+    at HTMLUnknownElement.callTheUserObjectsOperation (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\l
+ib\generated\idl\EventListener.js:26:30)
+    at innerInvokeEventListeners (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\living\event
+s\EventTarget-impl.js:360:16)
+    at invokeEventListeners (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\living\events\Eve
+ntTarget-impl.js:296:3)
+    at HTMLUnknownElementImpl._dispatch (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\livin
+g\events\EventTarget-impl.js:243:9)
+[90mstderr[2m | tests/Register.test.jsx[2m > [22m[2mRegister Page Tests[2m > [22m[2m搴旇鍙互閫夋嫨瑙掕壊
+[22m[39mThe above error occurred in the <RegisterPage> component:
+
+    at RegisterPage (E:/openclaw/workspace-studyass-mgr/frontend/src/pages/Register.jsx:12:62)
+    at Router (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-router\dist\umd\react-router.development.
+js:1207:17)
+    at BrowserRouter (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-router-dom\dist\umd\react-router-d
+om.development.js:695:7)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+Error: useAuth must be used within AuthProvider
+    at useAuth (E:/openclaw/workspace-studyass-mgr/frontend/src/context/AuthContext.jsx:105:11)
+    at RegisterPage (E:/openclaw/workspace-studyass-mgr/frontend/src/pages/Register.jsx:22:24)
+    at renderWithHooks (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.development.js
+:15486:18)
+    at mountIndeterminateComponent (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.de
+velopment.js:20103:13)
+    at beginWork (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.development.js:21626
+:16)
+    at HTMLUnknownElement.callCallback (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-do
+m.development.js:4164:14)
+    at HTMLUnknownElement.callTheUserObjectsOperation (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\l
+ib\generated\idl\EventListener.js:26:30)
+    at innerInvokeEventListeners (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\living\event
+s\EventTarget-impl.js:360:16)
+    at invokeEventListeners (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\living\events\Eve
+ntTarget-impl.js:296:3)
+    at HTMLUnknownElementImpl._dispatch (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\livin
+g\events\EventTarget-impl.js:243:9)
+Error: useAuth must be used within AuthProvider
+    at useAuth (E:/openclaw/workspace-studyass-mgr/frontend/src/context/AuthContext.jsx:105:11)
+    at RegisterPage (E:/openclaw/workspace-studyass-mgr/frontend/src/pages/Register.jsx:22:24)
+    at renderWithHooks (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.development.js
+:15486:18)
+    at mountIndeterminateComponent (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.de
+velopment.js:20103:13)
+    at beginWork (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.development.js:21626
+:16)
+    at HTMLUnknownElement.callCallback (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-do
+m.development.js:4164:14)
+    at HTMLUnknownElement.callTheUserObjectsOperation (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\l
+ib\generated\idl\EventListener.js:26:30)
+    at innerInvokeEventListeners (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\living\event
+s\EventTarget-impl.js:360:16)
+    at invokeEventListeners (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\living\events\Eve
+ntTarget-impl.js:296:3)
+    at HTMLUnknownElementImpl._dispatch (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\livin
+g\events\EventTarget-impl.js:243:9)
+Error: useAuth must be used within AuthProvider
+    at useAuth (E:/openclaw/workspace-studyass-mgr/frontend/src/context/AuthContext.jsx:105:11)
+    at RegisterPage (E:/openclaw/workspace-studyass-mgr/frontend/src/pages/Register.jsx:22:24)
+    at renderWithHooks (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.development.js
+:15486:18)
+    at mountIndeterminateComponent (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.de
+velopment.js:20103:13)
+    at beginWork (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.development.js:21626
+:16)
+    at HTMLUnknownElement.callCallback (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-do
+m.development.js:4164:14)
+    at HTMLUnknownElement.callTheUserObjectsOperation (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\l
+ib\generated\idl\EventListener.js:26:30)
+    at innerInvokeEventListeners (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\living\event
+s\EventTarget-impl.js:360:16)
+    at invokeEventListeners (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\living\events\Eve
+ntTarget-impl.js:296:3)
+    at HTMLUnknownElementImpl._dispatch (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\livin
+g\events\EventTarget-impl.js:243:9)
+Error: useAuth must be used within AuthProvider
+    at useAuth (E:/openclaw/workspace-studyass-mgr/frontend/src/context/AuthContext.jsx:105:11)
+    at RegisterPage (E:/openclaw/workspace-studyass-mgr/frontend/src/pages/Register.jsx:22:24)
+    at renderWithHooks (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.development.js
+:15486:18)
+    at mountIndeterminateComponent (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.de
+velopment.js:20103:13)
+    at beginWork (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.development.js:21626
+:16)
+    at HTMLUnknownElement.callCallback (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-do
+m.development.js:4164:14)
+    at HTMLUnknownElement.callTheUserObjectsOperation (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\l
+ib\generated\idl\EventListener.js:26:30)
+    at innerInvokeEventListeners (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\living\event
+s\EventTarget-impl.js:360:16)
+    at invokeEventListeners (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\living\events\Eve
+ntTarget-impl.js:296:3)
+    at HTMLUnknownElementImpl._dispatch (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\livin
+g\events\EventTarget-impl.js:243:9)
+Error: useAuth must be used within AuthProvider
+    at useAuth (E:/openclaw/workspace-studyass-mgr/frontend/src/context/AuthContext.jsx:105:11)
+    at RegisterPage (E:/openclaw/workspace-studyass-mgr/frontend/src/pages/Register.jsx:22:24)
+    at renderWithHooks (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.development.js
+:15486:18)
+    at mountIndeterminateComponent (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.de
+velopment.js:20103:13)
+    at beginWork (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.development.js:21626
+:16)
+    at HTMLUnknownElement.callCallback (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-do
+m.development.js:4164:14)
+    at HTMLUnknownElement.callTheUserObjectsOperation (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\l
+ib\generated\idl\EventListener.js:26:30)
+    at innerInvokeEventListeners (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\living\event
+s\EventTarget-impl.js:360:16)
+    at invokeEventListeners (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\living\events\Eve
+ntTarget-impl.js:296:3)
+    at HTMLUnknownElementImpl._dispatch (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\livin
+g\events\EventTarget-impl.js:243:9)
+Error: useAuth must be used within AuthProvider
+    at useAuth (E:/openclaw/workspace-studyass-mgr/frontend/src/context/AuthContext.jsx:105:11)
+    at RegisterPage (E:/openclaw/workspace-studyass-mgr/frontend/src/pages/Register.jsx:22:24)
+    at renderWithHooks (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.development.js
+:15486:18)
+    at mountIndeterminateComponent (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.de
+velopment.js:20103:13)
+    at beginWork (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.development.js:21626
+:16)
+    at HTMLUnknownElement.callCallback (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-do
+m.development.js:4164:14)
+    at HTMLUnknownElement.callTheUserObjectsOperation (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\l
+ib\generated\idl\EventListener.js:26:30)
+    at innerInvokeEventListeners (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\living\event
+s\EventTarget-impl.js:360:16)
+    at invokeEventListeners (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\living\events\Eve
+ntTarget-impl.js:296:3)
+    at HTMLUnknownElementImpl._dispatch (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\livin
+g\events\EventTarget-impl.js:243:9)
+Error: useAuth must be used within AuthProvider
+    at useAuth (E:/openclaw/workspace-studyass-mgr/frontend/src/context/AuthContext.jsx:105:11)
+    at RegisterPage (E:/openclaw/workspace-studyass-mgr/frontend/src/pages/Register.jsx:22:24)
+    at renderWithHooks (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.development.js
+:15486:18)
+    at mountIndeterminateComponent (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.de
+velopment.js:20103:13)
+    at beginWork (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.development.js:21626
+:16)
+    at HTMLUnknownElement.callCallback (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-do
+m.development.js:4164:14)
+    at HTMLUnknownElement.callTheUserObjectsOperation (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\l
+ib\generated\idl\EventListener.js:26:30)
+    at innerInvokeEventListeners (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\living\event
+s\EventTarget-impl.js:360:16)
+    at invokeEventListeners (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\living\events\Eve
+ntTarget-impl.js:296:3)
+    at HTMLUnknownElementImpl._dispatch (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\livin
+g\events\EventTarget-impl.js:243:9)
+Error: useAuth must be used within AuthProvider
+    at useAuth (E:/openclaw/workspace-studyass-mgr/frontend/src/context/AuthContext.jsx:105:11)
+    at RegisterPage (E:/openclaw/workspace-studyass-mgr/frontend/src/pages/Register.jsx:22:24)
+    at renderWithHooks (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.development.js
+:15486:18)
+    at mountIndeterminateComponent (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.de
+velopment.js:20103:13)
+    at beginWork (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.development.js:21626
+:16)
+    at HTMLUnknownElement.callCallback (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-do
+m.development.js:4164:14)
+    at HTMLUnknownElement.callTheUserObjectsOperation (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\l
+ib\generated\idl\EventListener.js:26:30)
+    at innerInvokeEventListeners (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\living\event
+s\EventTarget-impl.js:360:16)
+    at invokeEventListeners (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\living\events\Eve
+ntTarget-impl.js:296:3)
+    at HTMLUnknownElementImpl._dispatch (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\livin
+g\events\EventTarget-impl.js:243:9)
+Error: useAuth must be used within AuthProvider
+    at useAuth (E:/openclaw/workspace-studyass-mgr/frontend/src/context/AuthContext.jsx:105:11)
+    at Dashboard (E:/openclaw/workspace-studyass-mgr/frontend/src/pages/Dashboard.jsx:6:28)
+    at renderWithHooks (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.development.js
+:15486:18)
+    at mountIndeterminateComponent (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.de
+velopment.js:20103:13)
+    at beginWork (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.development.js:21626
+:16)
+    at HTMLUnknownElement.callCallback (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-do
+m.development.js:4164:14)
+    at HTMLUnknownElement.callTheUserObjectsOperation (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\l
+ib\generated\idl\EventListener.js:26:30)
+    at innerInvokeEventListeners (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\living\event
+s\EventTarget-impl.js:360:16)
+    at invokeEventListeners (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\living\events\Eve
+ntTarget-impl.js:296:3)
+    at HTMLUnknownElementImpl._dispatch (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\livin
+g\events\EventTarget-impl.js:243:9)
+Error: useAuth must be used within AuthProvider
+    at useAuth (E:/openclaw/workspace-studyass-mgr/frontend/src/context/AuthContext.jsx:105:11)
+    at Dashboard (E:/openclaw/workspace-studyass-mgr/frontend/src/pages/Dashboard.jsx:6:28)
+    at renderWithHooks (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.development.js
+:15486:18)
+    at mountIndeterminateComponent (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.de
+velopment.js:20103:13)
+    at beginWork (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.development.js:21626
+:16)
+    at HTMLUnknownElement.callCallback (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-do
+m.development.js:4164:14)
+    at HTMLUnknownElement.callTheUserObjectsOperation (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\l
+ib\generated\idl\EventListener.js:26:30)
+    at innerInvokeEventListeners (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\living\event
+s\EventTarget-impl.js:360:16)
+    at invokeEventListeners (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\living\events\Eve
+ntTarget-impl.js:296:3)
+    at HTMLUnknownElementImpl._dispatch (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\livin
+g\events\EventTarget-impl.js:243:9)
+[90mstderr[2m | tests/Register.test.jsx[2m > [22m[2mRegister Page Tests[2m > [22m[2m搴旇楠岃瘉蹇呭～瀛楁
+[22m[39mThe above error occurred in the <RegisterPage> component:
+
+    at RegisterPage (E:/openclaw/workspace-studyass-mgr/frontend/src/pages/Register.jsx:12:62)
+    at Router (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-router\dist\umd\react-router.development.
+js:1207:17)
+    at BrowserRouter (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-router-dom\dist\umd\react-router-d
+om.development.js:695:7)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+[90mstderr[2m | tests/AIChat.test.jsx[2m > [22m[2mAIChat Page Tests[2m > [22m[2m搴旇鏄剧ず闂瓟鍘嗗彶
+[22m[39m鍔犺浇鍘嗗彶澶辫触: Error: [vitest] No "default" export is defined on the "../src/services/api" mock. Did you forget t
+o return it from "vi.mock"?
+If you need to partially mock a module, you can use "importOriginal" helper inside:
+
+    at VitestMocker.createError [90m(file:///E:/openclaw/workspace-studyass-mgr/frontend/[39mnode_modules/[4mvitest
+[24m/dist/chunks/startVitestModuleRunner.C3ZR-4J3.js:62:17[90m)[39m
+    at Object.get [90m(file:///E:/openclaw/workspace-studyass-mgr/frontend/[39mnode_modules/[4mvitest[24m/dist/chun
+ks/startVitestModuleRunner.C3ZR-4J3.js:310:16[90m)[39m
+    at Object.getHistory (E:/openclaw/workspace-studyass-mgr/frontend/src/services/index.js:45:27)
+    at loadHistory (E:/openclaw/workspace-studyass-mgr/frontend/src/pages/AIChat.jsx:17:31)
+    at E:/openclaw/workspace-studyass-mgr/frontend/src/pages/AIChat.jsx:12:5
+    at commitHookEffectListMount [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact-dom[24m
+\cjs\react-dom.development.js:23189:26[90m)[39m
+    at commitPassiveMountOnFiber [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact-dom[24m
+\cjs\react-dom.development.js:24970:11[90m)[39m
+    at commitPassiveMountEffects_complete [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact
+-dom[24m\cjs\react-dom.development.js:24930:9[90m)[39m
+    at commitPassiveMountEffects_begin [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact-do
+m[24m\cjs\react-dom.development.js:24917:7[90m)[39m
+    at commitPassiveMountEffects [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact-dom[24m
+\cjs\react-dom.development.js:24905:3[90m)[39m {
+  codeFrame: [32m'vi.mock(import("../src/services/api"), async (importOriginal) => {\n'[39m +
+    [32m'  const actual = await importOriginal()\n'[39m +
+    [32m'  return {\n'[39m +
+    [32m'    ...actual,\n'[39m +
+    [32m'    // your mocked methods\n'[39m +
+    [32m'  }\n'[39m +
+    [32m'})'[39m
+}
+鈿狅笍 React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. 
+You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/
+upgrading/future#v7_starttransition.
+鈿狅笍 React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the 
+`v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/futu
+re#v7_relativesplatpath.
+
+[90mstderr[2m | tests/Register.test.jsx[2m > [22m[2mRegister Page Tests[2m > [22m[2m搴旇鎴愬姛娉ㄥ唽瀛︾敓璐﹀彿
+[22m[39mThe above error occurred in the <RegisterPage> component:
+
+    at RegisterPage (E:/openclaw/workspace-studyass-mgr/frontend/src/pages/Register.jsx:12:62)
+    at Router (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-router\dist\umd\react-router.development.
+js:1207:17)
+    at BrowserRouter (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-router-dom\dist\umd\react-router-d
+om.development.js:695:7)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+[90mstderr[2m | tests/Register.test.jsx[2m > [22m[2mRegister Page Tests[2m > [22m[2m搴旇鏄剧ず娉ㄥ唽閿欒
+[22m[39mThe above error occurred in the <RegisterPage> component:
+
+    at RegisterPage (E:/openclaw/workspace-studyass-mgr/frontend/src/pages/Register.jsx:12:62)
+    at Router (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-router\dist\umd\react-router.development.
+js:1207:17)
+    at BrowserRouter (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-router-dom\dist\umd\react-router-d
+om.development.js:695:7)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+[90mstderr[2m | tests/Dashboard.test.jsx[2m > [22m[2mDashboard Page Tests[2m > [22m[2m搴旇鏄剧ず瀛︿範缁熻鏁版嵁
+[22m[39mThe above error occurred in the <Dashboard> component:
+
+    at Dashboard (E:/openclaw/workspace-studyass-mgr/frontend/src/pages/Dashboard.jsx:12:60)
+    at Router (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-router\dist\umd\react-router.development.
+js:1207:17)
+    at BrowserRouter (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-router-dom\dist\umd\react-router-d
+om.development.js:695:7)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+[90mstderr[2m | tests/Register.test.jsx[2m > [22m[2mRegister Page Tests[2m > [22m[2m搴旇鍙互璺宠浆鍒扮櫥褰曢〉闈?[22m[39m
+The above error occurred in the <RegisterPage> component:
+
+    at RegisterPage (E:/openclaw/workspace-studyass-mgr/frontend/src/pages/Register.jsx:12:62)
+    at Router (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-router\dist\umd\react-router.development.
+js:1207:17)
+    at BrowserRouter (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-router-dom\dist\umd\react-router-d
+om.development.js:695:7)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+Error: useAuth must be used within AuthProvider
+    at useAuth (E:/openclaw/workspace-studyass-mgr/frontend/src/context/AuthContext.jsx:105:11)
+    at Dashboard (E:/openclaw/workspace-studyass-mgr/frontend/src/pages/Dashboard.jsx:6:28)
+    at renderWithHooks (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.development.js
+:15486:18)
+    at mountIndeterminateComponent (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.de
+velopment.js:20103:13)
+    at beginWork (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.development.js:21626
+:16)
+    at HTMLUnknownElement.callCallback (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-do
+m.development.js:4164:14)
+    at HTMLUnknownElement.callTheUserObjectsOperation (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\l
+ib\generated\idl\EventListener.js:26:30)
+    at innerInvokeEventListeners (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\living\event
+s\EventTarget-impl.js:360:16)
+    at invokeEventListeners (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\living\events\Eve
+ntTarget-impl.js:296:3)
+    at HTMLUnknownElementImpl._dispatch (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\livin
+g\events\EventTarget-impl.js:243:9)
+Error: useAuth must be used within AuthProvider
+    at useAuth (E:/openclaw/workspace-studyass-mgr/frontend/src/context/AuthContext.jsx:105:11)
+    at Dashboard (E:/openclaw/workspace-studyass-mgr/frontend/src/pages/Dashboard.jsx:6:28)
+    at renderWithHooks (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.development.js
+:15486:18)
+    at mountIndeterminateComponent (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.de
+velopment.js:20103:13)
+    at beginWork (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.development.js:21626
+:16)
+    at HTMLUnknownElement.callCallback (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-do
+m.development.js:4164:14)
+    at HTMLUnknownElement.callTheUserObjectsOperation (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\l
+ib\generated\idl\EventListener.js:26:30)
+    at innerInvokeEventListeners (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\living\event
+s\EventTarget-impl.js:360:16)
+    at invokeEventListeners (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\living\events\Eve
+ntTarget-impl.js:296:3)
+    at HTMLUnknownElementImpl._dispatch (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\livin
+g\events\EventTarget-impl.js:243:9)
+Error: useAuth must be used within AuthProvider
+    at useAuth (E:/openclaw/workspace-studyass-mgr/frontend/src/context/AuthContext.jsx:105:11)
+    at Dashboard (E:/openclaw/workspace-studyass-mgr/frontend/src/pages/Dashboard.jsx:6:28)
+    at renderWithHooks (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.development.js
+:15486:18)
+    at mountIndeterminateComponent (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.de
+velopment.js:20103:13)
+    at beginWork (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.development.js:21626
+:16)
+    at HTMLUnknownElement.callCallback (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-do
+m.development.js:4164:14)
+    at HTMLUnknownElement.callTheUserObjectsOperation (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\l
+ib\generated\idl\EventListener.js:26:30)
+    at innerInvokeEventListeners (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\living\event
+s\EventTarget-impl.js:360:16)
+    at invokeEventListeners (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\living\events\Eve
+ntTarget-impl.js:296:3)
+    at HTMLUnknownElementImpl._dispatch (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\livin
+g\events\EventTarget-impl.js:243:9)
+Error: useAuth must be used within AuthProvider
+    at useAuth (E:/openclaw/workspace-studyass-mgr/frontend/src/context/AuthContext.jsx:105:11)
+    at Dashboard (E:/openclaw/workspace-studyass-mgr/frontend/src/pages/Dashboard.jsx:6:28)
+    at renderWithHooks (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.development.js
+:15486:18)
+    at mountIndeterminateComponent (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.de
+velopment.js:20103:13)
+    at beginWork (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.development.js:21626
+:16)
+    at HTMLUnknownElement.callCallback (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-do
+m.development.js:4164:14)
+    at HTMLUnknownElement.callTheUserObjectsOperation (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\l
+ib\generated\idl\EventListener.js:26:30)
+    at innerInvokeEventListeners (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\living\event
+s\EventTarget-impl.js:360:16)
+    at invokeEventListeners (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\living\events\Eve
+ntTarget-impl.js:296:3)
+    at HTMLUnknownElementImpl._dispatch (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\livin
+g\events\EventTarget-impl.js:243:9)
+Error: useAuth must be used within AuthProvider
+    at useAuth (E:/openclaw/workspace-studyass-mgr/frontend/src/context/AuthContext.jsx:105:11)
+    at Dashboard (E:/openclaw/workspace-studyass-mgr/frontend/src/pages/Dashboard.jsx:6:28)
+    at renderWithHooks (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.development.js
+:15486:18)
+    at mountIndeterminateComponent (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.de
+velopment.js:20103:13)
+    at beginWork (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.development.js:21626
+:16)
+    at HTMLUnknownElement.callCallback (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-do
+m.development.js:4164:14)
+    at HTMLUnknownElement.callTheUserObjectsOperation (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\l
+ib\generated\idl\EventListener.js:26:30)
+    at innerInvokeEventListeners (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\living\event
+s\EventTarget-impl.js:360:16)
+    at invokeEventListeners (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\living\events\Eve
+ntTarget-impl.js:296:3)
+    at HTMLUnknownElementImpl._dispatch (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\livin
+g\events\EventTarget-impl.js:243:9)
+Error: useAuth must be used within AuthProvider
+    at useAuth (E:/openclaw/workspace-studyass-mgr/frontend/src/context/AuthContext.jsx:105:11)
+    at Dashboard (E:/openclaw/workspace-studyass-mgr/frontend/src/pages/Dashboard.jsx:6:28)
+    at renderWithHooks (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.development.js
+:15486:18)
+    at mountIndeterminateComponent (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.de
+velopment.js:20103:13)
+    at beginWork (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-dom.development.js:21626
+:16)
+    at HTMLUnknownElement.callCallback (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-dom\cjs\react-do
+m.development.js:4164:14)
+    at HTMLUnknownElement.callTheUserObjectsOperation (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\l
+ib\generated\idl\EventListener.js:26:30)
+    at innerInvokeEventListeners (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\living\event
+s\EventTarget-impl.js:360:16)
+    at invokeEventListeners (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\living\events\Eve
+ntTarget-impl.js:296:3)
+    at HTMLUnknownElementImpl._dispatch (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\jsdom\lib\jsdom\livin
+g\events\EventTarget-impl.js:243:9)
+[90mstderr[2m | tests/Dashboard.test.jsx[2m > [22m[2mDashboard Page Tests[2m > [22m[2m搴旇鏄剧ず鍚勭鐩涔犳儏鍐?[22m[3
+9mThe above error occurred in the <Dashboard> component:
+
+    at Dashboard (E:/openclaw/workspace-studyass-mgr/frontend/src/pages/Dashboard.jsx:12:60)
+    at Router (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-router\dist\umd\react-router.development.
+js:1207:17)
+    at BrowserRouter (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-router-dom\dist\umd\react-router-d
+om.development.js:695:7)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+[90mstderr[2m | tests/Knowledge.test.jsx[2m > [22m[2mKnowledge Page Tests[2m > [22m[2m搴旇鏄剧ず鐭ヨ瘑鐐瑰垪琛?[22m[39m鍔
+犺浇澶辫触: Error: [vitest] No "default" export is defined on the "../src/services/api" mock. Did you forget to return it fr
+om "vi.mock"?
+If you need to partially mock a module, you can use "importOriginal" helper inside:
+
+    at VitestMocker.createError [90m(file:///E:/openclaw/workspace-studyass-mgr/frontend/[39mnode_modules/[4mvitest
+[24m/dist/chunks/startVitestModuleRunner.C3ZR-4J3.js:62:17[90m)[39m
+    at Object.get [90m(file:///E:/openclaw/workspace-studyass-mgr/frontend/[39mnode_modules/[4mvitest[24m/dist/chun
+ks/startVitestModuleRunner.C3ZR-4J3.js:310:16[90m)[39m
+    at Object.getList (E:/openclaw/workspace-studyass-mgr/frontend/src/services/index.js:6:24)
+    at loadPoints (E:/openclaw/workspace-studyass-mgr/frontend/src/pages/Knowledge.jsx:23:38)
+    at E:/openclaw/workspace-studyass-mgr/frontend/src/pages/Knowledge.jsx:18:5
+    at commitHookEffectListMount [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact-dom[24m
+\cjs\react-dom.development.js:23189:26[90m)[39m
+    at commitPassiveMountOnFiber [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact-dom[24m
+\cjs\react-dom.development.js:24970:11[90m)[39m
+    at commitPassiveMountEffects_complete [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact
+-dom[24m\cjs\react-dom.development.js:24930:9[90m)[39m
+    at commitPassiveMountEffects_begin [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact-do
+m[24m\cjs\react-dom.development.js:24917:7[90m)[39m
+    at commitPassiveMountEffects [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact-dom[24m
+\cjs\react-dom.development.js:24905:3[90m)[39m {
+  codeFrame: [32m'vi.mock(import("../src/services/api"), async (importOriginal) => {\n'[39m +
+    [32m'  const actual = await importOriginal()\n'[39m +
+    [32m'  return {\n'[39m +
+    [32m'    ...actual,\n'[39m +
+    [32m'    // your mocked methods\n'[39m +
+    [32m'  }\n'[39m +
+    [32m'})'[39m
+}
+鈿狅笍 React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. 
+You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/
+upgrading/future#v7_starttransition.
+鈿狅笍 React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the 
+`v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/futu
+re#v7_relativesplatpath.
+
+ [31m鉂?[39m tests/Register.test.jsx [2m([22m[2m6 tests[22m[2m | [22m[31m6 failed[39m[2m)[22m[32m 150[2mms[22m[39m
+[31m     [31m脳[31m 搴旇娓叉煋娉ㄥ唽椤甸潰[39m[32m 81[2mms[22m[39m
+[31m     [31m脳[31m 搴旇鍙互閫夋嫨瑙掕壊[39m[32m 11[2mms[22m[39m
+[31m     [31m脳[31m 搴旇楠岃瘉蹇呭～瀛楁[39m[32m 15[2mms[22m[39m
+[31m     [31m脳[31m 搴旇鎴愬姛娉ㄥ唽瀛︾敓璐﹀彿[39m[32m 9[2mms[22m[39m
+[31m     [31m脳[31m 搴旇鏄剧ず娉ㄥ唽閿欒[39m[32m 15[2mms[22m[39m
+[31m     [31m脳[31m 搴旇鍙互璺宠浆鍒扮櫥褰曢〉闈?[39m[32m 7[2mms[22m[39m
+[90mstdout[2m | tests/e2e-comprehensive.test.jsx[2m > [22m[2m馃寪 鍓嶇 E2E 娴嬭瘯
+[22m[39m
+馃И 寮€濮嬪墠绔?E2E 娴嬭瘯...
+
+
+[90mstderr[2m | tests/Dashboard.test.jsx[2m > [22m[2mDashboard Page Tests[2m > [22m[2m搴旇澶勭悊绌烘暟鎹儏鍐?[22m[39mT
+he above error occurred in the <Dashboard> component:
+
+    at Dashboard (E:/openclaw/workspace-studyass-mgr/frontend/src/pages/Dashboard.jsx:12:60)
+    at Router (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-router\dist\umd\react-router.development.
+js:1207:17)
+    at BrowserRouter (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-router-dom\dist\umd\react-router-d
+om.development.js:695:7)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+[90mstderr[2m | tests/Dashboard.test.jsx[2m > [22m[2mDashboard Page Tests[2m > [22m[2m搴旇澶勭悊鍔犺浇閿欒
+[22m[39mThe above error occurred in the <Dashboard> component:
+
+    at Dashboard (E:/openclaw/workspace-studyass-mgr/frontend/src/pages/Dashboard.jsx:12:60)
+    at Router (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-router\dist\umd\react-router.development.
+js:1207:17)
+    at BrowserRouter (E:\openclaw\workspace-studyass-mgr\frontend\node_modules\react-router-dom\dist\umd\react-router-d
+om.development.js:695:7)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+ [31m鉂?[39m tests/Dashboard.test.jsx [2m([22m[2m5 tests[22m[2m | [22m[31m5 failed[39m[2m)[22m[33m 471[2mms[22m[39m
+[31m     [31m脳[31m 搴旇娓叉煋 Dashboard 椤甸潰[39m[33m 345[2mms[22m[39m
+[31m     [31m脳[31m 搴旇鏄剧ず瀛︿範缁熻鏁版嵁[39m[32m 81[2mms[22m[39m
+[31m     [31m脳[31m 搴旇鏄剧ず鍚勭鐩涔犳儏鍐?[39m[32m 21[2mms[22m[39m
+[31m     [31m脳[31m 搴旇澶勭悊绌烘暟鎹儏鍐?[39m[32m 7[2mms[22m[39m
+[31m     [31m脳[31m 搴旇澶勭悊鍔犺浇閿欒[39m[32m 7[2mms[22m[39m
+[90mstdout[2m | tests/e2e-comprehensive.test.jsx[2m > [22m[2m馃寪 鍓嶇 E2E 娴嬭瘯
+[22m[39m
+===========================================
+馃搳 娴嬭瘯缁撴灉姹囨€?
+   鎬昏锛?
+   閫氳繃锛?
+   澶辫触锛?
+   閫氳繃鐜囷細NaN%
+===========================================
+
+
+ [31m鉂?[39m tests/e2e-comprehensive.test.jsx [2m([22m[2m13 tests[22m[2m | [22m[31m13 failed[39m[2m)[22m[33m 759[2mms[22m[39m
+[31m       [31m脳[31m 搴旇娓叉煋鐧诲綍琛ㄥ崟[39m[33m 716[2mms[22m[39m
+[31m       [31m脳[31m 搴旇楠岃瘉鎵嬫満鍙锋牸寮?[39m[32m 1[2mms[22m[39m
+[31m       [31m脳[31m 搴旇鎴愬姛鎻愪氦鐧诲綍琛ㄥ崟[39m[32m 1[2mms[22m[39m
+[31m       [31m脳[31m 搴旇娓叉煋娉ㄥ唽琛ㄥ崟[39m[32m 3[2mms[22m[39m
+[31m       [31m脳[31m 搴旇楠岃瘉蹇呭～瀛楁[39m[32m 0[2mms[22m[39m
+[31m       [31m脳[31m 搴旇鏄剧ず鐢ㄦ埛淇℃伅[39m[32m 2[2mms[22m[39m
+[31m       [31m脳[31m 搴旇鏄剧ず蹇嵎鍔熻兘鍏ュ彛[39m[32m 0[2mms[22m[39m
+[31m       [31m脳[31m 搴旇娓叉煋鑱婂ぉ鐣岄潰[39m[32m 4[2mms[22m[39m
+[31m       [31m脳[31m 搴旇鍙戦€佹秷鎭苟鏄剧ず鍥炲[39m[32m 1[2mms[22m[39m
+[31m       [31m脳[31m 搴旇娓叉煋鐭ヨ瘑搴撳垪琛?[39m[32m 2[2mms[22m[39m
+[31m       [31m脳[31m 搴旇鏀寔涓婁紶璇炬湰[39m[32m 0[2mms[22m[39m
+[31m       [31m脳[31m 搴旇鏀寔 /aichat 璺敱[39m[32m 15[2mms[22m[39m
+[31m       [31m脳[31m 搴旇鏀寔 /ai-chat 璺敱 (鍏煎)[39m[32m 0[2mms[22m[39m
+[90mstderr[2m | tests/AIChat.test.jsx[2m > [22m[2mAIChat Page Tests[2m > [22m[2m搴旇鍙互鍙戦€侀棶棰?[22m[39m鍔犺浇鍘嗗彶澶辫
+触: Error: [vitest] No "default" export is defined on the "../src/services/api" mock. Did you forget to return it from "
+vi.mock"?
+If you need to partially mock a module, you can use "importOriginal" helper inside:
+
+    at VitestMocker.createError [90m(file:///E:/openclaw/workspace-studyass-mgr/frontend/[39mnode_modules/[4mvitest
+[24m/dist/chunks/startVitestModuleRunner.C3ZR-4J3.js:62:17[90m)[39m
+    at Object.get [90m(file:///E:/openclaw/workspace-studyass-mgr/frontend/[39mnode_modules/[4mvitest[24m/dist/chun
+ks/startVitestModuleRunner.C3ZR-4J3.js:310:16[90m)[39m
+    at Object.getHistory (E:/openclaw/workspace-studyass-mgr/frontend/src/services/index.js:45:27)
+    at loadHistory (E:/openclaw/workspace-studyass-mgr/frontend/src/pages/AIChat.jsx:17:31)
+    at E:/openclaw/workspace-studyass-mgr/frontend/src/pages/AIChat.jsx:12:5
+    at commitHookEffectListMount [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact-dom[24m
+\cjs\react-dom.development.js:23189:26[90m)[39m
+    at commitPassiveMountOnFiber [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact-dom[24m
+\cjs\react-dom.development.js:24970:11[90m)[39m
+    at commitPassiveMountEffects_complete [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact
+-dom[24m\cjs\react-dom.development.js:24930:9[90m)[39m
+    at commitPassiveMountEffects_begin [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact-do
+m[24m\cjs\react-dom.development.js:24917:7[90m)[39m
+    at commitPassiveMountEffects [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact-dom[24m
+\cjs\react-dom.development.js:24905:3[90m)[39m {
+  codeFrame: [32m'vi.mock(import("../src/services/api"), async (importOriginal) => {\n'[39m +
+    [32m'  const actual = await importOriginal()\n'[39m +
+    [32m'  return {\n'[39m +
+    [32m'    ...actual,\n'[39m +
+    [32m'    // your mocked methods\n'[39m +
+    [32m'  }\n'[39m +
+    [32m'})'[39m
+}
+
+[90mstderr[2m | tests/AIChat.test.jsx[2m > [22m[2mAIChat Page Tests[2m > [22m[2m搴旇鍙互鎸?Enter 鍙戦€?[22m[39m鍔犺浇
+鍘嗗彶澶辫触: Error: [vitest] No "default" export is defined on the "../src/services/api" mock. Did you forget to return it f
+rom "vi.mock"?
+If you need to partially mock a module, you can use "importOriginal" helper inside:
+
+    at VitestMocker.createError [90m(file:///E:/openclaw/workspace-studyass-mgr/frontend/[39mnode_modules/[4mvitest
+[24m/dist/chunks/startVitestModuleRunner.C3ZR-4J3.js:62:17[90m)[39m
+    at Object.get [90m(file:///E:/openclaw/workspace-studyass-mgr/frontend/[39mnode_modules/[4mvitest[24m/dist/chun
+ks/startVitestModuleRunner.C3ZR-4J3.js:310:16[90m)[39m
+    at Object.getHistory (E:/openclaw/workspace-studyass-mgr/frontend/src/services/index.js:45:27)
+    at loadHistory (E:/openclaw/workspace-studyass-mgr/frontend/src/pages/AIChat.jsx:17:31)
+    at E:/openclaw/workspace-studyass-mgr/frontend/src/pages/AIChat.jsx:12:5
+    at commitHookEffectListMount [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact-dom[24m
+\cjs\react-dom.development.js:23189:26[90m)[39m
+    at commitPassiveMountOnFiber [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact-dom[24m
+\cjs\react-dom.development.js:24970:11[90m)[39m
+    at commitPassiveMountEffects_complete [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact
+-dom[24m\cjs\react-dom.development.js:24930:9[90m)[39m
+    at commitPassiveMountEffects_begin [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact-do
+m[24m\cjs\react-dom.development.js:24917:7[90m)[39m
+    at commitPassiveMountEffects [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact-dom[24m
+\cjs\react-dom.development.js:24905:3[90m)[39m {
+  codeFrame: [32m'vi.mock(import("../src/services/api"), async (importOriginal) => {\n'[39m +
+    [32m'  const actual = await importOriginal()\n'[39m +
+    [32m'  return {\n'[39m +
+    [32m'    ...actual,\n'[39m +
+    [32m'    // your mocked methods\n'[39m +
+    [32m'  }\n'[39m +
+    [32m'})'[39m
+}
+
+[90mstderr[2m | tests/AIChat.test.jsx[2m > [22m[2mAIChat Page Tests[2m > [22m[2m搴旇鏄剧ず鍔犺浇鐘舵€?[22m[39m鍔犺浇鍘嗗彶澶辫
+触: Error: [vitest] No "default" export is defined on the "../src/services/api" mock. Did you forget to return it from "
+vi.mock"?
+If you need to partially mock a module, you can use "importOriginal" helper inside:
+
+    at VitestMocker.createError [90m(file:///E:/openclaw/workspace-studyass-mgr/frontend/[39mnode_modules/[4mvitest
+[24m/dist/chunks/startVitestModuleRunner.C3ZR-4J3.js:62:17[90m)[39m
+    at Object.get [90m(file:///E:/openclaw/workspace-studyass-mgr/frontend/[39mnode_modules/[4mvitest[24m/dist/chun
+ks/startVitestModuleRunner.C3ZR-4J3.js:310:16[90m)[39m
+    at Object.getHistory (E:/openclaw/workspace-studyass-mgr/frontend/src/services/index.js:45:27)
+    at loadHistory (E:/openclaw/workspace-studyass-mgr/frontend/src/pages/AIChat.jsx:17:31)
+    at E:/openclaw/workspace-studyass-mgr/frontend/src/pages/AIChat.jsx:12:5
+    at commitHookEffectListMount [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact-dom[24m
+\cjs\react-dom.development.js:23189:26[90m)[39m
+    at commitPassiveMountOnFiber [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact-dom[24m
+\cjs\react-dom.development.js:24970:11[90m)[39m
+    at commitPassiveMountEffects_complete [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact
+-dom[24m\cjs\react-dom.development.js:24930:9[90m)[39m
+    at commitPassiveMountEffects_begin [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact-do
+m[24m\cjs\react-dom.development.js:24917:7[90m)[39m
+    at commitPassiveMountEffects [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact-dom[24m
+\cjs\react-dom.development.js:24905:3[90m)[39m {
+  codeFrame: [32m'vi.mock(import("../src/services/api"), async (importOriginal) => {\n'[39m +
+    [32m'  const actual = await importOriginal()\n'[39m +
+    [32m'  return {\n'[39m +
+    [32m'    ...actual,\n'[39m +
+    [32m'    // your mocked methods\n'[39m +
+    [32m'  }\n'[39m +
+    [32m'})'[39m
+}
+
+[90mstderr[2m | tests/AIChat.test.jsx[2m > [22m[2mAIChat Page Tests[2m > [22m[2m搴旇鍙互娓呯┖瀵硅瘽
+[22m[39m鍔犺浇鍘嗗彶澶辫触: Error: [vitest] No "default" export is defined on the "../src/services/api" mock. Did you forget t
+o return it from "vi.mock"?
+If you need to partially mock a module, you can use "importOriginal" helper inside:
+
+    at VitestMocker.createError [90m(file:///E:/openclaw/workspace-studyass-mgr/frontend/[39mnode_modules/[4mvitest
+[24m/dist/chunks/startVitestModuleRunner.C3ZR-4J3.js:62:17[90m)[39m
+    at Object.get [90m(file:///E:/openclaw/workspace-studyass-mgr/frontend/[39mnode_modules/[4mvitest[24m/dist/chun
+ks/startVitestModuleRunner.C3ZR-4J3.js:310:16[90m)[39m
+    at Object.getHistory (E:/openclaw/workspace-studyass-mgr/frontend/src/services/index.js:45:27)
+    at loadHistory (E:/openclaw/workspace-studyass-mgr/frontend/src/pages/AIChat.jsx:17:31)
+    at E:/openclaw/workspace-studyass-mgr/frontend/src/pages/AIChat.jsx:12:5
+    at commitHookEffectListMount [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact-dom[24m
+\cjs\react-dom.development.js:23189:26[90m)[39m
+    at commitPassiveMountOnFiber [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact-dom[24m
+\cjs\react-dom.development.js:24970:11[90m)[39m
+    at commitPassiveMountEffects_complete [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact
+-dom[24m\cjs\react-dom.development.js:24930:9[90m)[39m
+    at commitPassiveMountEffects_begin [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact-do
+m[24m\cjs\react-dom.development.js:24917:7[90m)[39m
+    at commitPassiveMountEffects [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact-dom[24m
+\cjs\react-dom.development.js:24905:3[90m)[39m {
+  codeFrame: [32m'vi.mock(import("../src/services/api"), async (importOriginal) => {\n'[39m +
+    [32m'  const actual = await importOriginal()\n'[39m +
+    [32m'  return {\n'[39m +
+    [32m'    ...actual,\n'[39m +
+    [32m'    // your mocked methods\n'[39m +
+    [32m'  }\n'[39m +
+    [32m'})'[39m
+}
+
+[90mstderr[2m | tests/AIChat.test.jsx[2m > [22m[2mAIChat Page Tests[2m > [22m[2m搴旇鍙互閫夋嫨绉戠洰
+[22m[39m鍔犺浇鍘嗗彶澶辫触: Error: [vitest] No "default" export is defined on the "../src/services/api" mock. Did you forget t
+o return it from "vi.mock"?
+If you need to partially mock a module, you can use "importOriginal" helper inside:
+
+    at VitestMocker.createError [90m(file:///E:/openclaw/workspace-studyass-mgr/frontend/[39mnode_modules/[4mvitest
+[24m/dist/chunks/startVitestModuleRunner.C3ZR-4J3.js:62:17[90m)[39m
+    at Object.get [90m(file:///E:/openclaw/workspace-studyass-mgr/frontend/[39mnode_modules/[4mvitest[24m/dist/chun
+ks/startVitestModuleRunner.C3ZR-4J3.js:310:16[90m)[39m
+    at Object.getHistory (E:/openclaw/workspace-studyass-mgr/frontend/src/services/index.js:45:27)
+    at loadHistory (E:/openclaw/workspace-studyass-mgr/frontend/src/pages/AIChat.jsx:17:31)
+    at E:/openclaw/workspace-studyass-mgr/frontend/src/pages/AIChat.jsx:12:5
+    at commitHookEffectListMount [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact-dom[24m
+\cjs\react-dom.development.js:23189:26[90m)[39m
+    at commitPassiveMountOnFiber [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact-dom[24m
+\cjs\react-dom.development.js:24970:11[90m)[39m
+    at commitPassiveMountEffects_complete [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact
+-dom[24m\cjs\react-dom.development.js:24930:9[90m)[39m
+    at commitPassiveMountEffects_begin [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact-do
+m[24m\cjs\react-dom.development.js:24917:7[90m)[39m
+    at commitPassiveMountEffects [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact-dom[24m
+\cjs\react-dom.development.js:24905:3[90m)[39m {
+  codeFrame: [32m'vi.mock(import("../src/services/api"), async (importOriginal) => {\n'[39m +
+    [32m'  const actual = await importOriginal()\n'[39m +
+    [32m'  return {\n'[39m +
+    [32m'    ...actual,\n'[39m +
+    [32m'    // your mocked methods\n'[39m +
+    [32m'  }\n'[39m +
+    [32m'})'[39m
+}
+
+[90mstderr[2m | tests/AIChat.test.jsx[2m > [22m[2mAIChat Page Tests[2m > [22m[2m搴旇澶勭悊绌洪棶棰?[22m[39m鍔犺浇鍘嗗彶澶辫触:
+ Error: [vitest] No "default" export is defined on the "../src/services/api" mock. Did you forget to return it from "vi
+.mock"?
+If you need to partially mock a module, you can use "importOriginal" helper inside:
+
+    at VitestMocker.createError [90m(file:///E:/openclaw/workspace-studyass-mgr/frontend/[39mnode_modules/[4mvitest
+[24m/dist/chunks/startVitestModuleRunner.C3ZR-4J3.js:62:17[90m)[39m
+    at Object.get [90m(file:///E:/openclaw/workspace-studyass-mgr/frontend/[39mnode_modules/[4mvitest[24m/dist/chun
+ks/startVitestModuleRunner.C3ZR-4J3.js:310:16[90m)[39m
+    at Object.getHistory (E:/openclaw/workspace-studyass-mgr/frontend/src/services/index.js:45:27)
+    at loadHistory (E:/openclaw/workspace-studyass-mgr/frontend/src/pages/AIChat.jsx:17:31)
+    at E:/openclaw/workspace-studyass-mgr/frontend/src/pages/AIChat.jsx:12:5
+    at commitHookEffectListMount [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact-dom[24m
+\cjs\react-dom.development.js:23189:26[90m)[39m
+    at commitPassiveMountOnFiber [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact-dom[24m
+\cjs\react-dom.development.js:24970:11[90m)[39m
+    at commitPassiveMountEffects_complete [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact
+-dom[24m\cjs\react-dom.development.js:24930:9[90m)[39m
+    at commitPassiveMountEffects_begin [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact-do
+m[24m\cjs\react-dom.development.js:24917:7[90m)[39m
+    at commitPassiveMountEffects [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact-dom[24m
+\cjs\react-dom.development.js:24905:3[90m)[39m {
+  codeFrame: [32m'vi.mock(import("../src/services/api"), async (importOriginal) => {\n'[39m +
+    [32m'  const actual = await importOriginal()\n'[39m +
+    [32m'  return {\n'[39m +
+    [32m'    ...actual,\n'[39m +
+    [32m'    // your mocked methods\n'[39m +
+    [32m'  }\n'[39m +
+    [32m'})'[39m
+}
+
+[90mstderr[2m | tests/AIChat.test.jsx[2m > [22m[2mAIChat Page Tests[2m > [22m[2m搴旇澶勭悊闂瓟閿欒
+[22m[39m鍔犺浇鍘嗗彶澶辫触: Error: [vitest] No "default" export is defined on the "../src/services/api" mock. Did you forget t
+o return it from "vi.mock"?
+If you need to partially mock a module, you can use "importOriginal" helper inside:
+
+    at VitestMocker.createError [90m(file:///E:/openclaw/workspace-studyass-mgr/frontend/[39mnode_modules/[4mvitest
+[24m/dist/chunks/startVitestModuleRunner.C3ZR-4J3.js:62:17[90m)[39m
+    at Object.get [90m(file:///E:/openclaw/workspace-studyass-mgr/frontend/[39mnode_modules/[4mvitest[24m/dist/chun
+ks/startVitestModuleRunner.C3ZR-4J3.js:310:16[90m)[39m
+    at Object.getHistory (E:/openclaw/workspace-studyass-mgr/frontend/src/services/index.js:45:27)
+    at loadHistory (E:/openclaw/workspace-studyass-mgr/frontend/src/pages/AIChat.jsx:17:31)
+    at E:/openclaw/workspace-studyass-mgr/frontend/src/pages/AIChat.jsx:12:5
+    at commitHookEffectListMount [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact-dom[24m
+\cjs\react-dom.development.js:23189:26[90m)[39m
+    at commitPassiveMountOnFiber [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact-dom[24m
+\cjs\react-dom.development.js:24970:11[90m)[39m
+    at commitPassiveMountEffects_complete [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact
+-dom[24m\cjs\react-dom.development.js:24930:9[90m)[39m
+    at commitPassiveMountEffects_begin [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact-do
+m[24m\cjs\react-dom.development.js:24917:7[90m)[39m
+    at commitPassiveMountEffects [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact-dom[24m
+\cjs\react-dom.development.js:24905:3[90m)[39m {
+  codeFrame: [32m'vi.mock(import("../src/services/api"), async (importOriginal) => {\n'[39m +
+    [32m'  const actual = await importOriginal()\n'[39m +
+    [32m'  return {\n'[39m +
+    [32m'    ...actual,\n'[39m +
+    [32m'    // your mocked methods\n'[39m +
+    [32m'  }\n'[39m +
+    [32m'})'[39m
+}
+
+ [31m鉂?[39m tests/AIChat.test.jsx [2m([22m[2m9 tests[22m[2m | [22m[31m9 failed[39m[2m)[22m[33m 1537[2mms[22m[39m
+[31m     [31m脳[31m 搴旇娓叉煋 AI 闂瓟椤甸潰[39m[33m 374[2mms[22m[39m
+[31m     [31m脳[31m 搴旇鏄剧ず闂瓟鍘嗗彶[39m[33m 1105[2mms[22m[39m
+[31m     [31m脳[31m 搴旇鍙互鍙戦€侀棶棰?[39m[32m 7[2mms[22m[39m
+[31m     [31m脳[31m 搴旇鍙互鎸?Enter 鍙戦€?[39m[32m 7[2mms[22m[39m
+[31m     [31m脳[31m 搴旇鏄剧ず鍔犺浇鐘舵€?[39m[32m 6[2mms[22m[39m
+[31m     [31m脳[31m 搴旇鍙互娓呯┖瀵硅瘽[39m[32m 7[2mms[22m[39m
+[31m     [31m脳[31m 搴旇鍙互閫夋嫨绉戠洰[39m[32m 8[2mms[22m[39m
+[31m     [31m脳[31m 搴旇澶勭悊绌洪棶棰?[39m[32m 6[2mms[22m[39m
+[31m     [31m脳[31m 搴旇澶勭悊闂瓟閿欒[39m[32m 6[2mms[22m[39m
+[90mstderr[2m | tests/Knowledge.test.jsx[2m > [22m[2mKnowledge Page Tests[2m > [22m[2m搴旇鍙互鎼滅储鐭ヨ瘑鐐?[22m[39m鍔
+犺浇澶辫触: Error: [vitest] No "default" export is defined on the "../src/services/api" mock. Did you forget to return it fr
+om "vi.mock"?
+If you need to partially mock a module, you can use "importOriginal" helper inside:
+
+    at VitestMocker.createError [90m(file:///E:/openclaw/workspace-studyass-mgr/frontend/[39mnode_modules/[4mvitest
+[24m/dist/chunks/startVitestModuleRunner.C3ZR-4J3.js:62:17[90m)[39m
+    at Object.get [90m(file:///E:/openclaw/workspace-studyass-mgr/frontend/[39mnode_modules/[4mvitest[24m/dist/chun
+ks/startVitestModuleRunner.C3ZR-4J3.js:310:16[90m)[39m
+    at Object.getList (E:/openclaw/workspace-studyass-mgr/frontend/src/services/index.js:6:24)
+    at loadPoints (E:/openclaw/workspace-studyass-mgr/frontend/src/pages/Knowledge.jsx:23:38)
+    at E:/openclaw/workspace-studyass-mgr/frontend/src/pages/Knowledge.jsx:18:5
+    at commitHookEffectListMount [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact-dom[24m
+\cjs\react-dom.development.js:23189:26[90m)[39m
+    at commitPassiveMountOnFiber [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact-dom[24m
+\cjs\react-dom.development.js:24970:11[90m)[39m
+    at commitPassiveMountEffects_complete [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact
+-dom[24m\cjs\react-dom.development.js:24930:9[90m)[39m
+    at commitPassiveMountEffects_begin [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact-do
+m[24m\cjs\react-dom.development.js:24917:7[90m)[39m
+    at commitPassiveMountEffects [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact-dom[24m
+\cjs\react-dom.development.js:24905:3[90m)[39m {
+  codeFrame: [32m'vi.mock(import("../src/services/api"), async (importOriginal) => {\n'[39m +
+    [32m'  const actual = await importOriginal()\n'[39m +
+    [32m'  return {\n'[39m +
+    [32m'    ...actual,\n'[39m +
+    [32m'    // your mocked methods\n'[39m +
+    [32m'  }\n'[39m +
+    [32m'})'[39m
+}
+
+[90mstderr[2m | tests/Knowledge.test.jsx[2m > [22m[2mKnowledge Page Tests[2m > [22m[2m搴旇鍙互鍒涘缓鏂扮煡璇嗙偣
+[22m[39m鍔犺浇澶辫触: Error: [vitest] No "default" export is defined on the "../src/services/api" mock. Did you forget to r
+eturn it from "vi.mock"?
+If you need to partially mock a module, you can use "importOriginal" helper inside:
+
+    at VitestMocker.createError [90m(file:///E:/openclaw/workspace-studyass-mgr/frontend/[39mnode_modules/[4mvitest
+[24m/dist/chunks/startVitestModuleRunner.C3ZR-4J3.js:62:17[90m)[39m
+    at Object.get [90m(file:///E:/openclaw/workspace-studyass-mgr/frontend/[39mnode_modules/[4mvitest[24m/dist/chun
+ks/startVitestModuleRunner.C3ZR-4J3.js:310:16[90m)[39m
+    at Object.getList (E:/openclaw/workspace-studyass-mgr/frontend/src/services/index.js:6:24)
+    at loadPoints (E:/openclaw/workspace-studyass-mgr/frontend/src/pages/Knowledge.jsx:23:38)
+    at E:/openclaw/workspace-studyass-mgr/frontend/src/pages/Knowledge.jsx:18:5
+    at commitHookEffectListMount [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact-dom[24m
+\cjs\react-dom.development.js:23189:26[90m)[39m
+    at commitPassiveMountOnFiber [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact-dom[24m
+\cjs\react-dom.development.js:24970:11[90m)[39m
+    at commitPassiveMountEffects_complete [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact
+-dom[24m\cjs\react-dom.development.js:24930:9[90m)[39m
+    at commitPassiveMountEffects_begin [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact-do
+m[24m\cjs\react-dom.development.js:24917:7[90m)[39m
+    at commitPassiveMountEffects [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact-dom[24m
+\cjs\react-dom.development.js:24905:3[90m)[39m {
+  codeFrame: [32m'vi.mock(import("../src/services/api"), async (importOriginal) => {\n'[39m +
+    [32m'  const actual = await importOriginal()\n'[39m +
+    [32m'  return {\n'[39m +
+    [32m'    ...actual,\n'[39m +
+    [32m'    // your mocked methods\n'[39m +
+    [32m'  }\n'[39m +
+    [32m'})'[39m
+}
+
+[90mstderr[2m | tests/Knowledge.test.jsx[2m > [22m[2mKnowledge Page Tests[2m > [22m[2m搴旇鍙互缂栬緫鐭ヨ瘑鐐?[22m[39m鍔
+犺浇澶辫触: Error: [vitest] No "default" export is defined on the "../src/services/api" mock. Did you forget to return it fr
+om "vi.mock"?
+If you need to partially mock a module, you can use "importOriginal" helper inside:
+
+    at VitestMocker.createError [90m(file:///E:/openclaw/workspace-studyass-mgr/frontend/[39mnode_modules/[4mvitest
+[24m/dist/chunks/startVitestModuleRunner.C3ZR-4J3.js:62:17[90m)[39m
+    at Object.get [90m(file:///E:/openclaw/workspace-studyass-mgr/frontend/[39mnode_modules/[4mvitest[24m/dist/chun
+ks/startVitestModuleRunner.C3ZR-4J3.js:310:16[90m)[39m
+    at Object.getList (E:/openclaw/workspace-studyass-mgr/frontend/src/services/index.js:6:24)
+    at loadPoints (E:/openclaw/workspace-studyass-mgr/frontend/src/pages/Knowledge.jsx:23:38)
+    at E:/openclaw/workspace-studyass-mgr/frontend/src/pages/Knowledge.jsx:18:5
+    at commitHookEffectListMount [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact-dom[24m
+\cjs\react-dom.development.js:23189:26[90m)[39m
+    at commitPassiveMountOnFiber [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact-dom[24m
+\cjs\react-dom.development.js:24970:11[90m)[39m
+    at commitPassiveMountEffects_complete [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact
+-dom[24m\cjs\react-dom.development.js:24930:9[90m)[39m
+    at commitPassiveMountEffects_begin [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact-do
+m[24m\cjs\react-dom.development.js:24917:7[90m)[39m
+    at commitPassiveMountEffects [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact-dom[24m
+\cjs\react-dom.development.js:24905:3[90m)[39m {
+  codeFrame: [32m'vi.mock(import("../src/services/api"), async (importOriginal) => {\n'[39m +
+    [32m'  const actual = await importOriginal()\n'[39m +
+    [32m'  return {\n'[39m +
+    [32m'    ...actual,\n'[39m +
+    [32m'    // your mocked methods\n'[39m +
+    [32m'  }\n'[39m +
+    [32m'})'[39m
+}
+
+[90mstderr[2m | tests/Knowledge.test.jsx[2m > [22m[2mKnowledge Page Tests[2m > [22m[2m搴旇鍙互鍒犻櫎鐭ヨ瘑鐐?[22m[39m鍔
+犺浇澶辫触: Error: [vitest] No "default" export is defined on the "../src/services/api" mock. Did you forget to return it fr
+om "vi.mock"?
+If you need to partially mock a module, you can use "importOriginal" helper inside:
+
+    at VitestMocker.createError [90m(file:///E:/openclaw/workspace-studyass-mgr/frontend/[39mnode_modules/[4mvitest
+[24m/dist/chunks/startVitestModuleRunner.C3ZR-4J3.js:62:17[90m)[39m
+    at Object.get [90m(file:///E:/openclaw/workspace-studyass-mgr/frontend/[39mnode_modules/[4mvitest[24m/dist/chun
+ks/startVitestModuleRunner.C3ZR-4J3.js:310:16[90m)[39m
+    at Object.getList (E:/openclaw/workspace-studyass-mgr/frontend/src/services/index.js:6:24)
+    at loadPoints (E:/openclaw/workspace-studyass-mgr/frontend/src/pages/Knowledge.jsx:23:38)
+    at E:/openclaw/workspace-studyass-mgr/frontend/src/pages/Knowledge.jsx:18:5
+    at commitHookEffectListMount [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact-dom[24m
+\cjs\react-dom.development.js:23189:26[90m)[39m
+    at commitPassiveMountOnFiber [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact-dom[24m
+\cjs\react-dom.development.js:24970:11[90m)[39m
+    at commitPassiveMountEffects_complete [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact
+-dom[24m\cjs\react-dom.development.js:24930:9[90m)[39m
+    at commitPassiveMountEffects_begin [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact-do
+m[24m\cjs\react-dom.development.js:24917:7[90m)[39m
+    at commitPassiveMountEffects [90m(E:\openclaw\workspace-studyass-mgr\frontend\[39mnode_modules\[4mreact-dom[24m
+\cjs\react-dom.development.js:24905:3[90m)[39m {
+  codeFrame: [32m'vi.mock(import("../src/services/api"), async (importOriginal) => {\n'[39m +
+    [32m'  const actual = await importOriginal()\n'[39m +
+    [32m'  return {\n'[39m +
+    [32m'    ...actual,\n'[39m +
+    [32m'    // your mocked methods\n'[39m +
+    [32m'  }\n'[39m +
+    [32m'})'[39m
+}
+
+ [31m鉂?[39m tests/Knowledge.test.jsx [2m([22m[2m6 tests[22m[2m | [22m[31m6 failed[39m[2m)[22m[33m 4569[2mms[22m[39m
+[31m     [31m脳[31m 搴旇娓叉煋鐭ヨ瘑鐐归〉闈?[39m[33m 362[2mms[22m[39m
+[31m     [31m脳[31m 搴旇鏄剧ず鐭ヨ瘑鐐瑰垪琛?[39m[33m 1127[2mms[22m[39m
+[31m     [31m脳[31m 搴旇鍙互鎼滅储鐭ヨ瘑鐐?[39m[32m 9[2mms[22m[39m
+[31m     [31m脳[31m 搴旇鍙互鍒涘缓鏂扮煡璇嗙偣[39m[33m 1035[2mms[22m[39m
+[31m     [31m脳[31m 搴旇鍙互缂栬緫鐭ヨ瘑鐐?[39m[33m 1012[2mms[22m[39m
+[31m     [31m脳[31m 搴旇鍙互鍒犻櫎鐭ヨ瘑鐐?[39m[33m 1014[2mms[22m[39m
+
+[31m鈳幆鈳幆鈳幆[39m[1m[41m Failed Tests 42 [49m[22m[31m鈳幆鈳幆鈳幆鈳?[39m
+
+[41m[1m FAIL [22m[49m tests/AIChat.test.jsx[2m > [22mAIChat Page Tests[2m > [22m搴旇娓叉煋 AI 闂瓟椤甸潰
+[31m[1mTypeError[22m: Cannot read properties of undefined (reading 'getHistory')[39m
+[36m [2m鉂?[22m tests/AIChat.test.jsx:[2m28:11[22m[39m
+    [90m 26|[39m   [34mit[39m([32m'搴旇娓叉煋 AI 闂瓟椤甸潰'[39m[33m,[39m () [33m=>[39m {
+    [90m 27|[39m     [35mconst[39m { aiAPI } [33m=[39m [34mrequire[39m([32m'../src/services/api'[39m)[33m;[
+39m
+    [90m 28|[39m     aiAPI[33m.[39mgetHistory[33m.[39m[34mmockResolvedValue[39m({ records[33m:[39m [] })[33m
+;[39m
+    [90m   |[39m           [31m^[39m
+    [90m 29|[39m
+    [90m 30|[39m     [34mrenderWithRouter[39m([33m<[39m[33mAIChat[39m [33m/[39m[33m>[39m)[33m;[39m
+
+[31m[2m鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳痆1/42]鈳?[22m[39m
+
+[41m[1m FAIL [22m[49m tests/AIChat.test.jsx[2m > [22mAIChat Page Tests[2m > [22m搴旇鏄剧ず闂瓟鍘嗗彶
+[31m[1mTestingLibraryElementError[22m[39m: Unable to find an element with the text: /浠€涔堟槸鍕捐偂瀹氱悊锛?i. This could be 
+because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to m
+ake your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"min-h-screen bg-gray-100"[39m
+    [36m>[39m
+      [36m<nav[39m
+        [33mclass[39m=[32m"bg-white shadow-sm"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex justify-between h-16"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex items-center"[39m
+            [36m>[39m
+              [36m<a[39m
+                [33mclass[39m=[32m"text-primary-600 hover:text-primary-700"[39m
+                [33mhref[39m=[32m"/"[39m
+              [36m>[39m
+                [0m鈫?杩斿洖[0m
+              [36m</a>[39m
+              [36m<h1[39m
+                [33mclass[39m=[32m"ml-4 text-xl font-bold text-gray-900"[39m
+              [36m>[39m
+                [0m馃 AI 绛旂枒[0m
+              [36m</h1>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</nav>[39m
+      [36m<main[39m
+        [33mclass[39m=[32m"max-w-4xl mx-auto py-6 px-4"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"bg-white shadow rounded-lg p-6 mb-6"[39m
+        [36m>[39m
+          [36m<form>[39m
+            [36m<div>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"block text-sm font-medium text-gray-700 mb-2"[39m
+              [36m>[39m
+                [0m璇疯緭鍏ヤ綘鐨勯棶棰?[0m
+              [36m</label>[39m
+              [36m<textarea[39m
+                [33mclass[39m=[32m"w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-p
+rimary-500 border p-3"[39m
+                [33mplaceholder[39m=[32m"渚嬪锛氫粈涔堟槸鍕捐偂瀹氱悊锛熷浣曠悊瑙ｇ墰椤跨涓€瀹氬緥锛?[39m
+                [33mrows[39m=[32m"3"[39m
+              [36m/>[39m
+            [36m</div>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"mt-4 w-full bg-primary-600 text-white py-2 px-4 rounded-md hover:bg-primary-700 dis
+abled:opacity-50"[39m
+              [33mdisabled[39m=[32m""[39m
+              [33mtype[39m=[32m"submit"[39m
+            [36m>[39m
+              [0m鎻愰棶[0m
+            [36m</button>[39m
+          [36m</form>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"bg-white shadow rounded-lg p-6"[39m
+        [36m>[39m
+          [36m<h3[39m
+            [33mclass[39m=[32m"text-lg font-medium text-gray-900 mb-4"[39m
+          [36m>[39m
+            [0m闂瓟鍘嗗彶[0m
+          [36m</h3>[39m
+          [36m<p[39m
+            [33mclass[39m=[32m"text-gray-500 text-center py-8"[39m
+          [36m>[39m
+            [0m鏆傛棤闂瓟璁板綍[0m
+          [36m</p>[39m
+        [36m</div>[39m
+      [36m</main>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<html>[39m
+  [36m<head />[39m
+  [36m<body>[39m
+    [36m<div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"min-h-screen bg-gray-100"[39m
+      [36m>[39m
+        [36m<nav[39m
+          [33mclass[39m=[32m"bg-white shadow-sm"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex justify-between h-16"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"flex items-center"[39m
+              [36m>[39m
+                [36m<a[39m
+                  [33mclass[39m=[32m"text-primary-600 hover:text-primary-700"[39m
+                  [33mhref[39m=[32m"/"[39m
+                [36m>[39m
+                  [0m鈫?杩斿洖[0m
+                [36m</a>[39m
+                [36m<h1[39m
+                  [33mclass[39m=[32m"ml-4 text-xl font-bold text-gray-900"[39m
+                [36m>[39m
+                  [0m馃 AI 绛旂枒[0m
+                [36m</h1>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</nav>[39m
+        [36m<main[39m
+          [33mclass[39m=[32m"max-w-4xl mx-auto py-6 px-4"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"bg-white shadow rounded-lg p-6 mb-6"[39m
+          [36m>[39m
+            [36m<form>[39m
+              [36m<div>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"block text-sm font-medium text-gray-700 mb-2"[39m
+                [36m>[39m
+                  [0m璇疯緭鍏ヤ綘鐨勯棶棰?[0m
+                [36m</label>[39m
+                [36m<textarea[39m
+                  [33mclass[39m=[32m"w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring
+-primary-500 border p-3"[39m
+                  [33mplaceholder[39m=[32m"渚嬪锛氫粈涔堟槸鍕捐偂瀹氱悊锛熷浣曠悊瑙ｇ墰椤跨涓€瀹氬緥锛?[39m
+                  [33mrows[39m=[32m"3"[39m
+                [36m/>[39m
+              [36m</div>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"mt-4 w-full bg-primary-600 text-white py-2 px-4 rounded-md hover:bg-primary-700 d
+isabled:opacity-50"[39m
+                [33mdisabled[39m=[32m""[39m
+                [33mtype[39m=[32m"submit"[39m
+              [36m>[39m
+                [0m鎻愰棶[0m
+              [36m</button>[39m
+            [36m</form>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"bg-white shadow rounded-lg p-6"[39m
+          [36m>[39m
+            [36m<h3[39m
+              [33mclass[39m=[32m"text-lg font-medium text-gray-900 mb-4"[39m
+            [36m>[39m
+              [0m闂瓟鍘嗗彶[0m
+            [36m</h3>[39m
+            [36m<p[39m
+              [33mclass[39m=[32m"text-gray-500 text-center py-8"[39m
+            [36m>[39m
+              [0m鏆傛棤闂瓟璁板綍[0m
+            [36m</p>[39m
+          [36m</div>[39m
+        [36m</main>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</body>[39m
+[36m</html>[39m
+[90m [2m鉂?[22m Proxy.waitForWrapper node_modules/@testing-library/dom/dist/wait-for.js:[2m163:27[22m[39m
+[36m [2m鉂?[22m tests/AIChat.test.jsx:[2m46:11[22m[39m
+    [90m 44|[39m     [34mrenderWithRouter[39m([33m<[39m[33mAIChat[39m [33m/[39m[33m>[39m)[33m;[39m
+    [90m 45|[39m
+    [90m 46|[39m     [35mawait[39m [34mwaitFor[39m(() [33m=>[39m {
+    [90m   |[39m           [31m^[39m
+    [90m 47|[39m       [34mexpect[39m(screen[33m.[39m[34mgetByText[39m([36m/浠€涔堟槸鍕捐偂瀹氱悊锛?i[39m))[33m.[39m[
+34mtoBeInTheDocument[39m()[33m;[39m
+    [90m 48|[39m     })[33m;[39m
+
+[31m[2m鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳痆2/42]鈳?[22m[39m
+
+[41m[1m FAIL [22m[49m tests/AIChat.test.jsx[2m > [22mAIChat Page Tests[2m > [22m搴旇鍙互鍙戦€侀棶棰?[31m[1mTestingLi
+braryElementError[22m: Unable to find an element with the placeholder text of: /璇疯緭鍏ヤ綘鐨勯棶棰?i
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<div[31m
+      [33mclass[31m=[32m"min-h-screen bg-gray-100"[31m
+    [36m>[31m
+      [36m<nav[31m
+        [33mclass[31m=[32m"bg-white shadow-sm"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"[31m
+        [36m>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"flex justify-between h-16"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"flex items-center"[31m
+            [36m>[31m
+              [36m<a[31m
+                [33mclass[31m=[32m"text-primary-600 hover:text-primary-700"[31m
+                [33mhref[31m=[32m"/"[31m
+              [36m>[31m
+                [0m鈫?杩斿洖[0m
+              [36m</a>[31m
+              [36m<h1[31m
+                [33mclass[31m=[32m"ml-4 text-xl font-bold text-gray-900"[31m
+              [36m>[31m
+                [0m馃 AI 绛旂枒[0m
+              [36m</h1>[31m
+            [36m</div>[31m
+          [36m</div>[31m
+        [36m</div>[31m
+      [36m</nav>[31m
+      [36m<main[31m
+        [33mclass[31m=[32m"max-w-4xl mx-auto py-6 px-4"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"bg-white shadow rounded-lg p-6 mb-6"[31m
+        [36m>[31m
+          [36m<form>[31m
+            [36m<div>[31m
+              [36m<label[31m
+                [33mclass[31m=[32m"block text-sm font-medium text-gray-700 mb-2"[31m
+              [36m>[31m
+                [0m璇疯緭鍏ヤ綘鐨勯棶棰?[0m
+              [36m</label>[31m
+              [36m<textarea[31m
+                [33mclass[31m=[32m"w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-p
+rimary-500 border p-3"[31m
+                [33mplaceholder[31m=[32m"渚嬪锛氫粈涔堟槸鍕捐偂瀹氱悊锛熷浣曠悊瑙ｇ墰椤跨涓€瀹氬緥锛?[31m
+                [33mrows[31m=[32m"3"[31m
+              [36m/>[31m
+            [36m</div>[31m
+            [36m<button[31m
+              [33mclass[31m=[32m"mt-4 w-full bg-primary-600 text-white py-2 px-4 rounded-md hover:bg-primary-700 dis
+abled:opacity-50"[31m
+              [33mdisabled[31m=[32m""[31m
+              [33mtype[31m=[32m"submit"[31m
+            [36m>[31m
+              [0m鎻愰棶[0m
+            [36m</button>[31m
+          [36m</form>[31m
+        [36m</div>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"bg-white shadow rounded-lg p-6"[31m
+        [36m>[31m
+          [36m<h3[31m
+            [33mclass[31m=[32m"text-lg font-medium text-gray-900 mb-4"[31m
+          [36m>[31m
+            [0m闂瓟鍘嗗彶[0m
+          [36m</h3>[31m
+          [36m<p[31m
+            [33mclass[31m=[32m"text-gray-500 text-center py-8"[31m
+          [36m>[31m
+            [0m鏆傛棤闂瓟璁板綍[0m
+          [36m</p>[31m
+        [36m</div>[31m
+      [36m</main>[31m
+    [36m</div>[31m
+  [36m</div>[31m
+[36m</body>[31m[39m
+[90m [2m鉂?[22m Object.getElementError node_modules/@testing-library/dom/dist/config.js:[2m37:19[22m[39m
+[90m [2m鉂?[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m76:38[22m[39m
+[90m [2m鉂?[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m52:17[22m[39m
+[90m [2m鉂?[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m95:19[22m[39m
+[36m [2m鉂?[22m tests/AIChat.test.jsx:[2m63:26[22m[39m
+    [90m 61|[39m     [34mrenderWithRouter[39m([33m<[39m[33mAIChat[39m [33m/[39m[33m>[39m)[33m;[39m
+    [90m 62|[39m
+    [90m 63|[39m     [35mconst[39m input [33m=[39m screen[33m.[39m[34mgetByPlaceholderText[39m([36m/璇疯緭鍏ヤ綘鐨勯
+棶棰?i[39m)[33m;[39m
+    [90m   |[39m                          [31m^[39m
+    [90m 64|[39m     [35mconst[39m sendBtn [33m=[39m screen[33m.[39m[34mgetByText[39m([36m/鍙戦€?i[39m)[33m;
+[39m
+    [90m 65|[39m
+
+[31m[2m鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳痆3/42]鈳?[22m[39m
+
+[41m[1m FAIL [22m[49m tests/AIChat.test.jsx[2m > [22mAIChat Page Tests[2m > [22m搴旇鍙互鎸?Enter 鍙戦€?[31m[1mTest
+ingLibraryElementError[22m: Unable to find an element with the placeholder text of: /璇疯緭鍏ヤ綘鐨勯棶棰?i
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<div[31m
+      [33mclass[31m=[32m"min-h-screen bg-gray-100"[31m
+    [36m>[31m
+      [36m<nav[31m
+        [33mclass[31m=[32m"bg-white shadow-sm"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"[31m
+        [36m>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"flex justify-between h-16"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"flex items-center"[31m
+            [36m>[31m
+              [36m<a[31m
+                [33mclass[31m=[32m"text-primary-600 hover:text-primary-700"[31m
+                [33mhref[31m=[32m"/"[31m
+              [36m>[31m
+                [0m鈫?杩斿洖[0m
+              [36m</a>[31m
+              [36m<h1[31m
+                [33mclass[31m=[32m"ml-4 text-xl font-bold text-gray-900"[31m
+              [36m>[31m
+                [0m馃 AI 绛旂枒[0m
+              [36m</h1>[31m
+            [36m</div>[31m
+          [36m</div>[31m
+        [36m</div>[31m
+      [36m</nav>[31m
+      [36m<main[31m
+        [33mclass[31m=[32m"max-w-4xl mx-auto py-6 px-4"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"bg-white shadow rounded-lg p-6 mb-6"[31m
+        [36m>[31m
+          [36m<form>[31m
+            [36m<div>[31m
+              [36m<label[31m
+                [33mclass[31m=[32m"block text-sm font-medium text-gray-700 mb-2"[31m
+              [36m>[31m
+                [0m璇疯緭鍏ヤ綘鐨勯棶棰?[0m
+              [36m</label>[31m
+              [36m<textarea[31m
+                [33mclass[31m=[32m"w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-p
+rimary-500 border p-3"[31m
+                [33mplaceholder[31m=[32m"渚嬪锛氫粈涔堟槸鍕捐偂瀹氱悊锛熷浣曠悊瑙ｇ墰椤跨涓€瀹氬緥锛?[31m
+                [33mrows[31m=[32m"3"[31m
+              [36m/>[31m
+            [36m</div>[31m
+            [36m<button[31m
+              [33mclass[31m=[32m"mt-4 w-full bg-primary-600 text-white py-2 px-4 rounded-md hover:bg-primary-700 dis
+abled:opacity-50"[31m
+              [33mdisabled[31m=[32m""[31m
+              [33mtype[31m=[32m"submit"[31m
+            [36m>[31m
+              [0m鎻愰棶[0m
+            [36m</button>[31m
+          [36m</form>[31m
+        [36m</div>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"bg-white shadow rounded-lg p-6"[31m
+        [36m>[31m
+          [36m<h3[31m
+            [33mclass[31m=[32m"text-lg font-medium text-gray-900 mb-4"[31m
+          [36m>[31m
+            [0m闂瓟鍘嗗彶[0m
+          [36m</h3>[31m
+          [36m<p[31m
+            [33mclass[31m=[32m"text-gray-500 text-center py-8"[31m
+          [36m>[31m
+            [0m鏆傛棤闂瓟璁板綍[0m
+          [36m</p>[31m
+        [36m</div>[31m
+      [36m</main>[31m
+    [36m</div>[31m
+  [36m</div>[31m
+[36m</body>[31m[39m
+[90m [2m鉂?[22m Object.getElementError node_modules/@testing-library/dom/dist/config.js:[2m37:19[22m[39m
+[90m [2m鉂?[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m76:38[22m[39m
+[90m [2m鉂?[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m52:17[22m[39m
+[90m [2m鉂?[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m95:19[22m[39m
+[36m [2m鉂?[22m tests/AIChat.test.jsx:[2m81:26[22m[39m
+    [90m 79|[39m     [34mrenderWithRouter[39m([33m<[39m[33mAIChat[39m [33m/[39m[33m>[39m)[33m;[39m
+    [90m 80|[39m
+    [90m 81|[39m     [35mconst[39m input [33m=[39m screen[33m.[39m[34mgetByPlaceholderText[39m([36m/璇疯緭鍏ヤ綘鐨勯
+棶棰?i[39m)[33m;[39m
+    [90m   |[39m                          [31m^[39m
+    [90m 82|[39m
+    [90m 83|[39m     fireEvent[33m.[39m[34mchange[39m(input[33m,[39m { target[33m:[39m { value[33m:[39m [3
+2m'娴嬭瘯闂'[39m } })[33m;[39m
+
+[31m[2m鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳痆4/42]鈳?[22m[39m
+
+[41m[1m FAIL [22m[49m tests/AIChat.test.jsx[2m > [22mAIChat Page Tests[2m > [22m搴旇鏄剧ず鍔犺浇鐘舵€?[31m[1mTestingLi
+braryElementError[22m: Unable to find an element with the placeholder text of: /璇疯緭鍏ヤ綘鐨勯棶棰?i
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<div[31m
+      [33mclass[31m=[32m"min-h-screen bg-gray-100"[31m
+    [36m>[31m
+      [36m<nav[31m
+        [33mclass[31m=[32m"bg-white shadow-sm"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"[31m
+        [36m>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"flex justify-between h-16"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"flex items-center"[31m
+            [36m>[31m
+              [36m<a[31m
+                [33mclass[31m=[32m"text-primary-600 hover:text-primary-700"[31m
+                [33mhref[31m=[32m"/"[31m
+              [36m>[31m
+                [0m鈫?杩斿洖[0m
+              [36m</a>[31m
+              [36m<h1[31m
+                [33mclass[31m=[32m"ml-4 text-xl font-bold text-gray-900"[31m
+              [36m>[31m
+                [0m馃 AI 绛旂枒[0m
+              [36m</h1>[31m
+            [36m</div>[31m
+          [36m</div>[31m
+        [36m</div>[31m
+      [36m</nav>[31m
+      [36m<main[31m
+        [33mclass[31m=[32m"max-w-4xl mx-auto py-6 px-4"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"bg-white shadow rounded-lg p-6 mb-6"[31m
+        [36m>[31m
+          [36m<form>[31m
+            [36m<div>[31m
+              [36m<label[31m
+                [33mclass[31m=[32m"block text-sm font-medium text-gray-700 mb-2"[31m
+              [36m>[31m
+                [0m璇疯緭鍏ヤ綘鐨勯棶棰?[0m
+              [36m</label>[31m
+              [36m<textarea[31m
+                [33mclass[31m=[32m"w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-p
+rimary-500 border p-3"[31m
+                [33mplaceholder[31m=[32m"渚嬪锛氫粈涔堟槸鍕捐偂瀹氱悊锛熷浣曠悊瑙ｇ墰椤跨涓€瀹氬緥锛?[31m
+                [33mrows[31m=[32m"3"[31m
+              [36m/>[31m
+            [36m</div>[31m
+            [36m<button[31m
+              [33mclass[31m=[32m"mt-4 w-full bg-primary-600 text-white py-2 px-4 rounded-md hover:bg-primary-700 dis
+abled:opacity-50"[31m
+              [33mdisabled[31m=[32m""[31m
+              [33mtype[31m=[32m"submit"[31m
+            [36m>[31m
+              [0m鎻愰棶[0m
+            [36m</button>[31m
+          [36m</form>[31m
+        [36m</div>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"bg-white shadow rounded-lg p-6"[31m
+        [36m>[31m
+          [36m<h3[31m
+            [33mclass[31m=[32m"text-lg font-medium text-gray-900 mb-4"[31m
+          [36m>[31m
+            [0m闂瓟鍘嗗彶[0m
+          [36m</h3>[31m
+          [36m<p[31m
+            [33mclass[31m=[32m"text-gray-500 text-center py-8"[31m
+          [36m>[31m
+            [0m鏆傛棤闂瓟璁板綍[0m
+          [36m</p>[31m
+        [36m</div>[31m
+      [36m</main>[31m
+    [36m</div>[31m
+  [36m</div>[31m
+[36m</body>[31m[39m
+[90m [2m鉂?[22m Object.getElementError node_modules/@testing-library/dom/dist/config.js:[2m37:19[22m[39m
+[90m [2m鉂?[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m76:38[22m[39m
+[90m [2m鉂?[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m52:17[22m[39m
+[90m [2m鉂?[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m95:19[22m[39m
+[36m [2m鉂?[22m tests/AIChat.test.jsx:[2m100:26[22m[39m
+    [90m 98|[39m     [34mrenderWithRouter[39m([33m<[39m[33mAIChat[39m [33m/[39m[33m>[39m)[33m;[39m
+    [90m 99|[39m
+    [90m100|[39m     [35mconst[39m input [33m=[39m screen[33m.[39m[34mgetByPlaceholderText[39m([36m/璇疯緭鍏ヤ綘鐨勯
+棶棰?i[39m)[33m;[39m
+    [90m   |[39m                          [31m^[39m
+    [90m101|[39m     [35mconst[39m sendBtn [33m=[39m screen[33m.[39m[34mgetByText[39m([36m/鍙戦€?i[39m)[33m;
+[39m
+    [90m102|[39m
+
+[31m[2m鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳痆5/42]鈳?[22m[39m
+
+[41m[1m FAIL [22m[49m tests/AIChat.test.jsx[2m > [22mAIChat Page Tests[2m > [22m搴旇鍙互娓呯┖瀵硅瘽
+[31m[1mTestingLibraryElementError[22m: Unable to find an element with the text: /娓呯┖/i. This could be because the te
+xt is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your match
+er more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<div[31m
+      [33mclass[31m=[32m"min-h-screen bg-gray-100"[31m
+    [36m>[31m
+      [36m<nav[31m
+        [33mclass[31m=[32m"bg-white shadow-sm"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"[31m
+        [36m>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"flex justify-between h-16"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"flex items-center"[31m
+            [36m>[31m
+              [36m<a[31m
+                [33mclass[31m=[32m"text-primary-600 hover:text-primary-700"[31m
+                [33mhref[31m=[32m"/"[31m
+              [36m>[31m
+                [0m鈫?杩斿洖[0m
+              [36m</a>[31m
+              [36m<h1[31m
+                [33mclass[31m=[32m"ml-4 text-xl font-bold text-gray-900"[31m
+              [36m>[31m
+                [0m馃 AI 绛旂枒[0m
+              [36m</h1>[31m
+            [36m</div>[31m
+          [36m</div>[31m
+        [36m</div>[31m
+      [36m</nav>[31m
+      [36m<main[31m
+        [33mclass[31m=[32m"max-w-4xl mx-auto py-6 px-4"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"bg-white shadow rounded-lg p-6 mb-6"[31m
+        [36m>[31m
+          [36m<form>[31m
+            [36m<div>[31m
+              [36m<label[31m
+                [33mclass[31m=[32m"block text-sm font-medium text-gray-700 mb-2"[31m
+              [36m>[31m
+                [0m璇疯緭鍏ヤ綘鐨勯棶棰?[0m
+              [36m</label>[31m
+              [36m<textarea[31m
+                [33mclass[31m=[32m"w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-p
+rimary-500 border p-3"[31m
+                [33mplaceholder[31m=[32m"渚嬪锛氫粈涔堟槸鍕捐偂瀹氱悊锛熷浣曠悊瑙ｇ墰椤跨涓€瀹氬緥锛?[31m
+                [33mrows[31m=[32m"3"[31m
+              [36m/>[31m
+            [36m</div>[31m
+            [36m<button[31m
+              [33mclass[31m=[32m"mt-4 w-full bg-primary-600 text-white py-2 px-4 rounded-md hover:bg-primary-700 dis
+abled:opacity-50"[31m
+              [33mdisabled[31m=[32m""[31m
+              [33mtype[31m=[32m"submit"[31m
+            [36m>[31m
+              [0m鎻愰棶[0m
+            [36m</button>[31m
+          [36m</form>[31m
+        [36m</div>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"bg-white shadow rounded-lg p-6"[31m
+        [36m>[31m
+          [36m<h3[31m
+            [33mclass[31m=[32m"text-lg font-medium text-gray-900 mb-4"[31m
+          [36m>[31m
+            [0m闂瓟鍘嗗彶[0m
+          [36m</h3>[31m
+          [36m<p[31m
+            [33mclass[31m=[32m"text-gray-500 text-center py-8"[31m
+          [36m>[31m
+            [0m鏆傛棤闂瓟璁板綍[0m
+          [36m</p>[31m
+        [36m</div>[31m
+      [36m</main>[31m
+    [36m</div>[31m
+  [36m</div>[31m
+[36m</body>[31m[39m
+[90m [2m鉂?[22m Object.getElementError node_modules/@testing-library/dom/dist/config.js:[2m37:19[22m[39m
+[90m [2m鉂?[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m76:38[22m[39m
+[90m [2m鉂?[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m52:17[22m[39m
+[90m [2m鉂?[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m95:19[22m[39m
+[36m [2m鉂?[22m tests/AIChat.test.jsx:[2m118:29[22m[39m
+    [90m116|[39m     [34mrenderWithRouter[39m([33m<[39m[33mAIChat[39m [33m/[39m[33m>[39m)[33m;[39m
+    [90m117|[39m
+    [90m118|[39m     [35mconst[39m clearBtn [33m=[39m screen[33m.[39m[34mgetByText[39m([36m/娓呯┖/i[39m)[33m
+;[39m
+    [90m   |[39m                             [31m^[39m
+    [90m119|[39m     [34mexpect[39m(clearBtn)[33m.[39m[34mtoBeInTheDocument[39m()[33m;[39m
+    [90m120|[39m
+
+[31m[2m鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳痆6/42]鈳?[22m[39m
+
+[41m[1m FAIL [22m[49m tests/AIChat.test.jsx[2m > [22mAIChat Page Tests[2m > [22m搴旇鍙互閫夋嫨绉戠洰
+[31m[1mTestingLibraryElementError[22m: Unable to find a label with the text of: /閫夋嫨绉戠洰/i
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<div[31m
+      [33mclass[31m=[32m"min-h-screen bg-gray-100"[31m
+    [36m>[31m
+      [36m<nav[31m
+        [33mclass[31m=[32m"bg-white shadow-sm"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"[31m
+        [36m>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"flex justify-between h-16"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"flex items-center"[31m
+            [36m>[31m
+              [36m<a[31m
+                [33mclass[31m=[32m"text-primary-600 hover:text-primary-700"[31m
+                [33mhref[31m=[32m"/"[31m
+              [36m>[31m
+                [0m鈫?杩斿洖[0m
+              [36m</a>[31m
+              [36m<h1[31m
+                [33mclass[31m=[32m"ml-4 text-xl font-bold text-gray-900"[31m
+              [36m>[31m
+                [0m馃 AI 绛旂枒[0m
+              [36m</h1>[31m
+            [36m</div>[31m
+          [36m</div>[31m
+        [36m</div>[31m
+      [36m</nav>[31m
+      [36m<main[31m
+        [33mclass[31m=[32m"max-w-4xl mx-auto py-6 px-4"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"bg-white shadow rounded-lg p-6 mb-6"[31m
+        [36m>[31m
+          [36m<form>[31m
+            [36m<div>[31m
+              [36m<label[31m
+                [33mclass[31m=[32m"block text-sm font-medium text-gray-700 mb-2"[31m
+              [36m>[31m
+                [0m璇疯緭鍏ヤ綘鐨勯棶棰?[0m
+              [36m</label>[31m
+              [36m<textarea[31m
+                [33mclass[31m=[32m"w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-p
+rimary-500 border p-3"[31m
+                [33mplaceholder[31m=[32m"渚嬪锛氫粈涔堟槸鍕捐偂瀹氱悊锛熷浣曠悊瑙ｇ墰椤跨涓€瀹氬緥锛?[31m
+                [33mrows[31m=[32m"3"[31m
+              [36m/>[31m
+            [36m</div>[31m
+            [36m<button[31m
+              [33mclass[31m=[32m"mt-4 w-full bg-primary-600 text-white py-2 px-4 rounded-md hover:bg-primary-700 dis
+abled:opacity-50"[31m
+              [33mdisabled[31m=[32m""[31m
+              [33mtype[31m=[32m"submit"[31m
+            [36m>[31m
+              [0m鎻愰棶[0m
+            [36m</button>[31m
+          [36m</form>[31m
+        [36m</div>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"bg-white shadow rounded-lg p-6"[31m
+        [36m>[31m
+          [36m<h3[31m
+            [33mclass[31m=[32m"text-lg font-medium text-gray-900 mb-4"[31m
+          [36m>[31m
+            [0m闂瓟鍘嗗彶[0m
+          [36m</h3>[31m
+          [36m<p[31m
+            [33mclass[31m=[32m"text-gray-500 text-center py-8"[31m
+          [36m>[31m
+            [0m鏆傛棤闂瓟璁板綍[0m
+          [36m</p>[31m
+        [36m</div>[31m
+      [36m</main>[31m
+    [36m</div>[31m
+  [36m</div>[31m
+[36m</body>[31m[39m
+[90m [2m鉂?[22m Object.getElementError node_modules/@testing-library/dom/dist/config.js:[2m37:19[22m[39m
+[90m [2m鉂?[22m getAllByLabelText node_modules/@testing-library/dom/dist/queries/label-text.js:[2m111:38[22m[39m
+[90m [2m鉂?[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m52:17[22m[39m
+[90m [2m鉂?[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m95:19[22m[39m
+[36m [2m鉂?[22m tests/AIChat.test.jsx:[2m132:34[22m[39m
+    [90m130|[39m     [34mrenderWithRouter[39m([33m<[39m[33mAIChat[39m [33m/[39m[33m>[39m)[33m;[39m
+    [90m131|[39m
+    [90m132|[39m     [35mconst[39m subjectSelect [33m=[39m screen[33m.[39m[34mgetByLabelText[39m([36m/閫夋嫨绉戠洰
+/i[39m)[33m;[39m
+    [90m   |[39m                                  [31m^[39m
+    [90m133|[39m     fireEvent[33m.[39m[34mchange[39m(subjectSelect[33m,[39m { target[33m:[39m { value[33m:
+[39m [32m'鐗╃悊'[39m } })[33m;[39m
+    [90m134|[39m
+
+[31m[2m鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳痆7/42]鈳?[22m[39m
+
+[41m[1m FAIL [22m[49m tests/AIChat.test.jsx[2m > [22mAIChat Page Tests[2m > [22m搴旇澶勭悊绌洪棶棰?[31m[1mTestingLibr
+aryElementError[22m: Unable to find an element with the text: /鍙戦€?i. This could be because the text is broken up by m
+ultiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<div[31m
+      [33mclass[31m=[32m"min-h-screen bg-gray-100"[31m
+    [36m>[31m
+      [36m<nav[31m
+        [33mclass[31m=[32m"bg-white shadow-sm"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"[31m
+        [36m>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"flex justify-between h-16"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"flex items-center"[31m
+            [36m>[31m
+              [36m<a[31m
+                [33mclass[31m=[32m"text-primary-600 hover:text-primary-700"[31m
+                [33mhref[31m=[32m"/"[31m
+              [36m>[31m
+                [0m鈫?杩斿洖[0m
+              [36m</a>[31m
+              [36m<h1[31m
+                [33mclass[31m=[32m"ml-4 text-xl font-bold text-gray-900"[31m
+              [36m>[31m
+                [0m馃 AI 绛旂枒[0m
+              [36m</h1>[31m
+            [36m</div>[31m
+          [36m</div>[31m
+        [36m</div>[31m
+      [36m</nav>[31m
+      [36m<main[31m
+        [33mclass[31m=[32m"max-w-4xl mx-auto py-6 px-4"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"bg-white shadow rounded-lg p-6 mb-6"[31m
+        [36m>[31m
+          [36m<form>[31m
+            [36m<div>[31m
+              [36m<label[31m
+                [33mclass[31m=[32m"block text-sm font-medium text-gray-700 mb-2"[31m
+              [36m>[31m
+                [0m璇疯緭鍏ヤ綘鐨勯棶棰?[0m
+              [36m</label>[31m
+              [36m<textarea[31m
+                [33mclass[31m=[32m"w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-p
+rimary-500 border p-3"[31m
+                [33mplaceholder[31m=[32m"渚嬪锛氫粈涔堟槸鍕捐偂瀹氱悊锛熷浣曠悊瑙ｇ墰椤跨涓€瀹氬緥锛?[31m
+                [33mrows[31m=[32m"3"[31m
+              [36m/>[31m
+            [36m</div>[31m
+            [36m<button[31m
+              [33mclass[31m=[32m"mt-4 w-full bg-primary-600 text-white py-2 px-4 rounded-md hover:bg-primary-700 dis
+abled:opacity-50"[31m
+              [33mdisabled[31m=[32m""[31m
+              [33mtype[31m=[32m"submit"[31m
+            [36m>[31m
+              [0m鎻愰棶[0m
+            [36m</button>[31m
+          [36m</form>[31m
+        [36m</div>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"bg-white shadow rounded-lg p-6"[31m
+        [36m>[31m
+          [36m<h3[31m
+            [33mclass[31m=[32m"text-lg font-medium text-gray-900 mb-4"[31m
+          [36m>[31m
+            [0m闂瓟鍘嗗彶[0m
+          [36m</h3>[31m
+          [36m<p[31m
+            [33mclass[31m=[32m"text-gray-500 text-center py-8"[31m
+          [36m>[31m
+            [0m鏆傛棤闂瓟璁板綍[0m
+          [36m</p>[31m
+        [36m</div>[31m
+      [36m</main>[31m
+    [36m</div>[31m
+  [36m</div>[31m
+[36m</body>[31m[39m
+[90m [2m鉂?[22m Object.getElementError node_modules/@testing-library/dom/dist/config.js:[2m37:19[22m[39m
+[90m [2m鉂?[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m76:38[22m[39m
+[90m [2m鉂?[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m52:17[22m[39m
+[90m [2m鉂?[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m95:19[22m[39m
+[36m [2m鉂?[22m tests/AIChat.test.jsx:[2m152:28[22m[39m
+    [90m150|[39m     [34mrenderWithRouter[39m([33m<[39m[33mAIChat[39m [33m/[39m[33m>[39m)[33m;[39m
+    [90m151|[39m
+    [90m152|[39m     [35mconst[39m sendBtn [33m=[39m screen[33m.[39m[34mgetByText[39m([36m/鍙戦€?i[39m)[33m;
+[39m
+    [90m   |[39m                            [31m^[39m
+    [90m153|[39m     fireEvent[33m.[39m[34mclick[39m(sendBtn)[33m;[39m
+    [90m154|[39m
+
+[31m[2m鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳痆8/42]鈳?[22m[39m
+
+[41m[1m FAIL [22m[49m tests/AIChat.test.jsx[2m > [22mAIChat Page Tests[2m > [22m搴旇澶勭悊闂瓟閿欒
+[31m[1mTestingLibraryElementError[22m: Unable to find an element with the placeholder text of: /璇疯緭鍏ヤ綘鐨勯棶棰?i
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<div[31m
+      [33mclass[31m=[32m"min-h-screen bg-gray-100"[31m
+    [36m>[31m
+      [36m<nav[31m
+        [33mclass[31m=[32m"bg-white shadow-sm"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"[31m
+        [36m>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"flex justify-between h-16"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"flex items-center"[31m
+            [36m>[31m
+              [36m<a[31m
+                [33mclass[31m=[32m"text-primary-600 hover:text-primary-700"[31m
+                [33mhref[31m=[32m"/"[31m
+              [36m>[31m
+                [0m鈫?杩斿洖[0m
+              [36m</a>[31m
+              [36m<h1[31m
+                [33mclass[31m=[32m"ml-4 text-xl font-bold text-gray-900"[31m
+              [36m>[31m
+                [0m馃 AI 绛旂枒[0m
+              [36m</h1>[31m
+            [36m</div>[31m
+          [36m</div>[31m
+        [36m</div>[31m
+      [36m</nav>[31m
+      [36m<main[31m
+        [33mclass[31m=[32m"max-w-4xl mx-auto py-6 px-4"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"bg-white shadow rounded-lg p-6 mb-6"[31m
+        [36m>[31m
+          [36m<form>[31m
+            [36m<div>[31m
+              [36m<label[31m
+                [33mclass[31m=[32m"block text-sm font-medium text-gray-700 mb-2"[31m
+              [36m>[31m
+                [0m璇疯緭鍏ヤ綘鐨勯棶棰?[0m
+              [36m</label>[31m
+              [36m<textarea[31m
+                [33mclass[31m=[32m"w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-p
+rimary-500 border p-3"[31m
+                [33mplaceholder[31m=[32m"渚嬪锛氫粈涔堟槸鍕捐偂瀹氱悊锛熷浣曠悊瑙ｇ墰椤跨涓€瀹氬緥锛?[31m
+                [33mrows[31m=[32m"3"[31m
+              [36m/>[31m
+            [36m</div>[31m
+            [36m<button[31m
+              [33mclass[31m=[32m"mt-4 w-full bg-primary-600 text-white py-2 px-4 rounded-md hover:bg-primary-700 dis
+abled:opacity-50"[31m
+              [33mdisabled[31m=[32m""[31m
+              [33mtype[31m=[32m"submit"[31m
+            [36m>[31m
+              [0m鎻愰棶[0m
+            [36m</button>[31m
+          [36m</form>[31m
+        [36m</div>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"bg-white shadow rounded-lg p-6"[31m
+        [36m>[31m
+          [36m<h3[31m
+            [33mclass[31m=[32m"text-lg font-medium text-gray-900 mb-4"[31m
+          [36m>[31m
+            [0m闂瓟鍘嗗彶[0m
+          [36m</h3>[31m
+          [36m<p[31m
+            [33mclass[31m=[32m"text-gray-500 text-center py-8"[31m
+          [36m>[31m
+            [0m鏆傛棤闂瓟璁板綍[0m
+          [36m</p>[31m
+        [36m</div>[31m
+      [36m</main>[31m
+    [36m</div>[31m
+  [36m</div>[31m
+[36m</body>[31m[39m
+[90m [2m鉂?[22m Object.getElementError node_modules/@testing-library/dom/dist/config.js:[2m37:19[22m[39m
+[90m [2m鉂?[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m76:38[22m[39m
+[90m [2m鉂?[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m52:17[22m[39m
+[90m [2m鉂?[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m95:19[22m[39m
+[36m [2m鉂?[22m tests/AIChat.test.jsx:[2m168:26[22m[39m
+    [90m166|[39m     [34mrenderWithRouter[39m([33m<[39m[33mAIChat[39m [33m/[39m[33m>[39m)[33m;[39m
+    [90m167|[39m
+    [90m168|[39m     [35mconst[39m input [33m=[39m screen[33m.[39m[34mgetByPlaceholderText[39m([36m/璇疯緭鍏ヤ綘鐨勯
+棶棰?i[39m)[33m;[39m
+    [90m   |[39m                          [31m^[39m
+    [90m169|[39m     [35mconst[39m sendBtn [33m=[39m screen[33m.[39m[34mgetByText[39m([36m/鍙戦€?i[39m)[33m;
+[39m
+    [90m170|[39m
+
+[31m[2m鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳痆9/42]鈳?[22m[39m
+
+[41m[1m FAIL [22m[49m tests/Dashboard.test.jsx[2m > [22mDashboard Page Tests[2m > [22m搴旇娓叉煋 Dashboard 椤甸潰
+[31m[1mTypeError[22m: Cannot read properties of undefined (reading 'getStats')[39m
+[36m [2m鉂?[22m tests/Dashboard.test.jsx:[2m30:17[22m[39m
+    [90m 28|[39m   [34mit[39m([32m'搴旇娓叉煋 Dashboard 椤甸潰'[39m[33m,[39m () [33m=>[39m {
+    [90m 29|[39m     [35mconst[39m { progressAPI } [33m=[39m [34mrequire[39m([32m'../src/services/api'[39m)[
+33m;[39m
+    [90m 30|[39m     progressAPI[33m.[39mgetStats[33m.[39m[34mmockResolvedValue[39m({
+    [90m   |[39m                 [31m^[39m
+    [90m 31|[39m       totalLearned[33m:[39m [34m10[39m[33m,[39m
+    [90m 32|[39m       totalTimeMinutes[33m:[39m [34m300[39m[33m,[39m
+
+[31m[2m鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆[10/42]鈳?[22m[39m
+
+[41m[1m FAIL [22m[49m tests/Dashboard.test.jsx[2m > [22mDashboard Page Tests[2m > [22m搴旇鏄剧ず瀛︿範缁熻鏁版嵁
+[41m[1m FAIL [22m[49m tests/Dashboard.test.jsx[2m > [22mDashboard Page Tests[2m > [22m搴旇鏄剧ず鍚勭鐩涔犳儏鍐?[41m[1
+m FAIL [22m[49m tests/Dashboard.test.jsx[2m > [22mDashboard Page Tests[2m > [22m搴旇澶勭悊绌烘暟鎹儏鍐?[41m[1m FAIL [22
+m[49m tests/Dashboard.test.jsx[2m > [22mDashboard Page Tests[2m > [22m搴旇澶勭悊鍔犺浇閿欒
+[31m[1mError[22m: useAuth must be used within AuthProvider[39m
+[36m [2m鉂?[22m useAuth src/context/AuthContext.jsx:[2m105:11[22m[39m
+    [90m103|[39m   [35mconst[39m context [33m=[39m [34museContext[39m([33mAuthContext[39m)
+    [90m104|[39m   [35mif[39m ([33m![39mcontext) {
+    [90m105|[39m     [35mthrow[39m [35mnew[39m [33mError[39m([32m'useAuth must be used within AuthProvider'[3
+9m)
+    [90m   |[39m           [31m^[39m
+    [90m106|[39m   }
+    [90m107|[39m   [35mreturn[39m context
+[90m [2m鉂?[22m Dashboard src/pages/Dashboard.jsx:[2m6:28[22m[39m
+[90m [2m鉂?[22m renderWithHooks node_modules/react-dom/cjs/react-dom.development.js:[2m15486:18[22m[39m
+[90m [2m鉂?[22m mountIndeterminateComponent node_modules/react-dom/cjs/react-dom.development.js:[2m20103:13[22m[39m
+[90m [2m鉂?[22m beginWork node_modules/react-dom/cjs/react-dom.development.js:[2m21626:16[22m[39m
+[90m [2m鉂?[22m beginWork$1 node_modules/react-dom/cjs/react-dom.development.js:[2m27465:14[22m[39m
+[90m [2m鉂?[22m performUnitOfWork node_modules/react-dom/cjs/react-dom.development.js:[2m26599:12[22m[39m
+[90m [2m鉂?[22m workLoopSync node_modules/react-dom/cjs/react-dom.development.js:[2m26505:5[22m[39m
+[90m [2m鉂?[22m renderRootSync node_modules/react-dom/cjs/react-dom.development.js:[2m26473:7[22m[39m
+[90m [2m鉂?[22m recoverFromConcurrentError node_modules/react-dom/cjs/react-dom.development.js:[2m25889:20[22m[39m
+
+[31m[2m鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆[11/42]鈳?[22m[39m
+
+[41m[1m FAIL [22m[49m tests/e2e-comprehensive.test.jsx[2m > [22m馃寪 鍓嶇 E2E 娴嬭瘯[2m > [22m馃搫 鐧诲綍椤甸潰 (Login)[2m >
+ [22m搴旇娓叉煋鐧诲綍琛ㄥ崟
+[41m[1m FAIL [22m[49m tests/e2e-comprehensive.test.jsx[2m > [22m馃寪 鍓嶇 E2E 娴嬭瘯[2m > [22m馃搫 鐧诲綍椤甸潰 (Login)[2m >
+ [22m搴旇楠岃瘉鎵嬫満鍙锋牸寮?[41m[1m FAIL [22m[49m tests/e2e-comprehensive.test.jsx[2m > [22m馃寪 鍓嶇 E2E 娴嬭瘯[2m > [22m馃搫 
+鐧诲綍椤甸潰 (Login)[2m > [22m搴旇鎴愬姛鎻愪氦鐧诲綍琛ㄥ崟
+[41m[1m FAIL [22m[49m tests/e2e-comprehensive.test.jsx[2m > [22m馃寪 鍓嶇 E2E 娴嬭瘯[2m > [22m馃搫 娉ㄥ唽椤甸潰 (Register)[2
+m > [22m搴旇娓叉煋娉ㄥ唽琛ㄥ崟
+[41m[1m FAIL [22m[49m tests/e2e-comprehensive.test.jsx[2m > [22m馃寪 鍓嶇 E2E 娴嬭瘯[2m > [22m馃搫 娉ㄥ唽椤甸潰 (Register)[2
+m > [22m搴旇楠岃瘉蹇呭～瀛楁
+[41m[1m FAIL [22m[49m tests/e2e-comprehensive.test.jsx[2m > [22m馃寪 鍓嶇 E2E 娴嬭瘯[2m > [22m馃搫 浠〃鐩橀〉闈?(Dashboard)
+[2m > [22m搴旇鏄剧ず鐢ㄦ埛淇℃伅
+[41m[1m FAIL [22m[49m tests/e2e-comprehensive.test.jsx[2m > [22m馃寪 鍓嶇 E2E 娴嬭瘯[2m > [22m馃搫 浠〃鐩橀〉闈?(Dashboard)
+[2m > [22m搴旇鏄剧ず蹇嵎鍔熻兘鍏ュ彛
+[41m[1m FAIL [22m[49m tests/e2e-comprehensive.test.jsx[2m > [22m馃寪 鍓嶇 E2E 娴嬭瘯[2m > [22m馃搫 AI 绛旂枒椤甸潰 (AIChat)[
+2m > [22m搴旇娓叉煋鑱婂ぉ鐣岄潰
+[41m[1m FAIL [22m[49m tests/e2e-comprehensive.test.jsx[2m > [22m馃寪 鍓嶇 E2E 娴嬭瘯[2m > [22m馃搫 AI 绛旂枒椤甸潰 (AIChat)[
+2m > [22m搴旇鍙戦€佹秷鎭苟鏄剧ず鍥炲
+[41m[1m FAIL [22m[49m tests/e2e-comprehensive.test.jsx[2m > [22m馃寪 鍓嶇 E2E 娴嬭瘯[2m > [22m馃搫 鐭ヨ瘑搴撻〉闈?(Knowledge)
+[2m > [22m搴旇娓叉煋鐭ヨ瘑搴撳垪琛?[41m[1m FAIL [22m[49m tests/e2e-comprehensive.test.jsx[2m > [22m馃寪 鍓嶇 E2E 娴嬭瘯[2m > [2
+2m馃搫 鐭ヨ瘑搴撻〉闈?(Knowledge)[2m > [22m搴旇鏀寔涓婁紶璇炬湰
+[41m[1m FAIL [22m[49m tests/e2e-comprehensive.test.jsx[2m > [22m馃寪 鍓嶇 E2E 娴嬭瘯[2m > [22m馃攢 璺敱娴嬭瘯[2m > [22m搴旇
+鏀寔 /aichat 璺敱
+[41m[1m FAIL [22m[49m tests/e2e-comprehensive.test.jsx[2m > [22m馃寪 鍓嶇 E2E 娴嬭瘯[2m > [22m馃攢 璺敱娴嬭瘯[2m > [22m搴旇
+鏀寔 /ai-chat 璺敱 (鍏煎)
+[31m[1mTypeError[22m: Cannot read properties of undefined (reading 'interceptors')[39m
+[36m [2m鉂?[22m src/services/api.js:[2m11:5[22m[39m
+    [90m  9|[39m
+    [90m 10|[39m [90m// 璇锋眰鎷︽埅鍣?[39m
+    [90m 11|[39m api[33m.[39minterceptors[33m.[39mrequest[33m.[39m[34muse[39m(
+    [90m   |[39m     [31m^[39m
+    [90m 12|[39m   config [33m=>[39m {
+    [90m 13|[39m     [35mconst[39m token [33m=[39m localStorage[33m.[39m[34mgetItem[39m([32m'token'[39m)
+[90m [2m鉂?[22m src/context/AuthContext.jsx:[2m2:1[22m[39m
+[90m [2m鉂?[22m src/pages/Login.jsx:[2m3:1[22m[39m
+
+[31m[2m鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆[12/42]鈳?[22m[39m
+
+[41m[1m FAIL [22m[49m tests/Knowledge.test.jsx[2m > [22mKnowledge Page Tests[2m > [22m搴旇娓叉煋鐭ヨ瘑鐐归〉闈?[31m[1mTy
+peError[22m: Cannot read properties of undefined (reading 'getList')[39m
+[36m [2m鉂?[22m tests/Knowledge.test.jsx:[2m31:18[22m[39m
+    [90m 29|[39m   [34mit[39m([32m'搴旇娓叉煋鐭ヨ瘑鐐归〉闈?[39m[33m,[39m () [33m=>[39m {
+    [90m 30|[39m     [35mconst[39m { knowledgeAPI } [33m=[39m [34mrequire[39m([32m'../src/services/api'[39m)
+[33m;[39m
+    [90m 31|[39m     knowledgeAPI[33m.[39mgetList[33m.[39m[34mmockResolvedValue[39m({ knowledgePoints[33m:[39
+m [] })[33m;[39m
+    [90m   |[39m                  [31m^[39m
+    [90m 32|[39m
+    [90m 33|[39m     [34mrenderWithRouter[39m([33m<[39m[33mKnowledge[39m [33m/[39m[33m>[39m)[33m;[39m
+
+[31m[2m鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆[13/42]鈳?[22m[39m
+
+[41m[1m FAIL [22m[49m tests/Knowledge.test.jsx[2m > [22mKnowledge Page Tests[2m > [22m搴旇鏄剧ず鐭ヨ瘑鐐瑰垪琛?[31m[1mTe
+stingLibraryElementError[22m: Unable to find an element with the text: /鍕捐偂瀹氱悊/i. This could be because the text is br
+oken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more 
+flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<div[31m
+      [33mclass[31m=[32m"min-h-screen bg-gray-100"[31m
+    [36m>[31m
+      [36m<nav[31m
+        [33mclass[31m=[32m"bg-white shadow-sm"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"[31m
+        [36m>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"flex justify-between h-16"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"flex items-center"[31m
+            [36m>[31m
+              [36m<a[31m
+                [33mclass[31m=[32m"text-primary-600 hover:text-primary-700"[31m
+                [33mhref[31m=[32m"/"[31m
+              [36m>[31m
+                [0m鈫?杩斿洖[0m
+              [36m</a>[31m
+              [36m<h1[31m
+                [33mclass[31m=[32m"ml-4 text-xl font-bold text-gray-900"[31m
+              [36m>[31m
+                [0m鐭ヨ瘑鐐圭鐞?[0m
+              [36m</h1>[31m
+            [36m</div>[31m
+            [36m<button[31m
+              [33mclass[31m=[32m"bg-primary-600 text-white px-4 py-2 rounded-md hover:bg-primary-700"[31m
+            [36m>[31m
+              [0m+ 鏂板鐭ヨ瘑鐐?[0m
+            [36m</button>[31m
+          [36m</div>[31m
+        [36m</div>[31m
+      [36m</nav>[31m
+      [36m<main[31m
+        [33mclass[31m=[32m"max-w-7xl mx-auto py-6 px-4"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"bg-white shadow rounded-lg"[31m
+        [36m>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"px-4 py-5 sm:p-6"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"text-center text-gray-500 py-12"[31m
+            [36m>[31m
+              [0m鏆傛棤鐭ヨ瘑鐐癸紝鐐瑰嚮鍙充笂瑙掓坊鍔犵涓€涓煡璇嗙偣[0m
+            [36m</div>[31m
+          [36m</div>[31m
+        [36m</div>[31m
+      [36m</main>[31m
+    [36m</div>[31m
+  [36m</div>[31m
+[36m</body>[31m
+
+Ignored nodes: comments, script, style
+[36m<html>[31m
+  [36m<head />[31m
+  [36m<body>[31m
+    [36m<div>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"min-h-screen bg-gray-100"[31m
+      [36m>[31m
+        [36m<nav[31m
+          [33mclass[31m=[32m"bg-white shadow-sm"[31m
+        [36m>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"flex justify-between h-16"[31m
+            [36m>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"flex items-center"[31m
+              [36m>[31m
+                [36m<a[31m
+                  [33mclass[31m=[32m"text-primary-600 hover:text-primary-700"[31m
+                  [33mhref[31m=[32m"/"[31m
+                [36m>[31m
+                  [0m鈫?杩斿洖[0m
+                [36m</a>[31m
+                [36m<h1[31m
+                  [33mclass[31m=[32m"ml-4 text-xl font-bold text-gray-900"[31m
+                [36m>[31m
+                  [0m鐭ヨ瘑鐐圭鐞?[0m
+                [36m</h1>[31m
+              [36m</div>[31m
+              [36m<button[31m
+                [33mclass[31m=[32m"bg-primary-600 text-white px-4 py-2 rounded-md hover:bg-primary-700"[31m
+              [36m>[31m
+                [0m+ 鏂板鐭ヨ瘑鐐?[0m
+              [36m</button>[31m
+            [36m</div>[31m
+          [36m</div>[31m
+        [36m</nav>[31m
+        [36m<main[31m
+          [33mclass[31m=[32m"max-w-7xl mx-auto py-6 px-4"[31m
+        [36m>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"bg-white shadow rounded-lg"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"px-4 py-5 sm:p-6"[31m
+            [36m>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"text-center text-gray-500 py-12"[31m
+              [36m>[31m
+                [0m鏆傛棤鐭ヨ瘑鐐癸紝鐐瑰嚮鍙充笂瑙掓坊鍔犵涓€涓煡璇嗙偣[0m
+              [36m</div>[31m
+            [36m</div>[31m
+          [36m</div>[31m
+        [36m</main>[31m
+      [36m</div>[31m
+    [36m</div>[31m
+  [36m</body>[31m
+[36m</html>[31m[39m
+[90m [2m鉂?[22m Proxy.waitForWrapper node_modules/@testing-library/dom/dist/wait-for.js:[2m163:27[22m[39m
+[36m [2m鉂?[22m tests/Knowledge.test.jsx:[2m50:11[22m[39m
+    [90m 48|[39m     [34mrenderWithRouter[39m([33m<[39m[33mKnowledge[39m [33m/[39m[33m>[39m)[33m;[39m
+    [90m 49|[39m
+    [90m 50|[39m     [35mawait[39m [34mwaitFor[39m(() [33m=>[39m {
+    [90m   |[39m           [31m^[39m
+    [90m 51|[39m       [34mexpect[39m(screen[33m.[39m[34mgetByText[39m([36m/鍕捐偂瀹氱悊/i[39m))[33m.[39m[34mtoB
+eInTheDocument[39m()[33m;[39m
+    [90m 52|[39m       [34mexpect[39m(screen[33m.[39m[34mgetByText[39m([36m/鐗涢】瀹氬緥/i[39m))[33m.[39m[34mtoB
+eInTheDocument[39m()[33m;[39m
+
+[31m[2m鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆[14/42]鈳?[22m[39m
+
+[41m[1m FAIL [22m[49m tests/Knowledge.test.jsx[2m > [22mKnowledge Page Tests[2m > [22m搴旇鍙互鎼滅储鐭ヨ瘑鐐?[31m[1mTe
+stingLibraryElementError[22m: Unable to find an element with the placeholder text of: /鎼滅储鐭ヨ瘑鐐?i
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<div[31m
+      [33mclass[31m=[32m"min-h-screen bg-gray-100"[31m
+    [36m>[31m
+      [36m<nav[31m
+        [33mclass[31m=[32m"bg-white shadow-sm"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"[31m
+        [36m>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"flex justify-between h-16"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"flex items-center"[31m
+            [36m>[31m
+              [36m<a[31m
+                [33mclass[31m=[32m"text-primary-600 hover:text-primary-700"[31m
+                [33mhref[31m=[32m"/"[31m
+              [36m>[31m
+                [0m鈫?杩斿洖[0m
+              [36m</a>[31m
+              [36m<h1[31m
+                [33mclass[31m=[32m"ml-4 text-xl font-bold text-gray-900"[31m
+              [36m>[31m
+                [0m鐭ヨ瘑鐐圭鐞?[0m
+              [36m</h1>[31m
+            [36m</div>[31m
+            [36m<button[31m
+              [33mclass[31m=[32m"bg-primary-600 text-white px-4 py-2 rounded-md hover:bg-primary-700"[31m
+            [36m>[31m
+              [0m+ 鏂板鐭ヨ瘑鐐?[0m
+            [36m</button>[31m
+          [36m</div>[31m
+        [36m</div>[31m
+      [36m</nav>[31m
+      [36m<main[31m
+        [33mclass[31m=[32m"max-w-7xl mx-auto py-6 px-4"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"bg-white shadow rounded-lg"[31m
+        [36m>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"px-4 py-5 sm:p-6"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"text-center text-gray-500 py-12"[31m
+            [36m>[31m
+              [0m鏆傛棤鐭ヨ瘑鐐癸紝鐐瑰嚮鍙充笂瑙掓坊鍔犵涓€涓煡璇嗙偣[0m
+            [36m</div>[31m
+          [36m</div>[31m
+        [36m</div>[31m
+      [36m</main>[31m
+    [36m</div>[31m
+  [36m</div>[31m
+[36m</body>[31m[39m
+[90m [2m鉂?[22m Object.getElementError node_modules/@testing-library/dom/dist/config.js:[2m37:19[22m[39m
+[90m [2m鉂?[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m76:38[22m[39m
+[90m [2m鉂?[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m52:17[22m[39m
+[90m [2m鉂?[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m95:19[22m[39m
+[36m [2m鉂?[22m tests/Knowledge.test.jsx:[2m64:32[22m[39m
+    [90m 62|[39m     [34mrenderWithRouter[39m([33m<[39m[33mKnowledge[39m [33m/[39m[33m>[39m)[33m;[39m
+    [90m 63|[39m
+    [90m 64|[39m     [35mconst[39m searchInput [33m=[39m screen[33m.[39m[34mgetByPlaceholderText[39m([36m/鎼滅
+储鐭ヨ瘑鐐?i[39m)[33m;[39m
+    [90m   |[39m                                [31m^[39m
+    [90m 65|[39m     fireEvent[33m.[39m[34mchange[39m(searchInput[33m,[39m { target[33m:[39m { value[33m:[3
+9m [32m'鍕捐偂'[39m } })[33m;[39m
+    [90m 66|[39m
+
+[31m[2m鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆[15/42]鈳?[22m[39m
+
+[41m[1m FAIL [22m[49m tests/Knowledge.test.jsx[2m > [22mKnowledge Page Tests[2m > [22m搴旇鍙互鍒涘缓鏂扮煡璇嗙偣
+[31m[1mTestingLibraryElementError[22m[39m: Unable to find an element with the placeholder text of: /鏍囬/i
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"min-h-screen bg-gray-100"[39m
+    [36m>[39m
+      [36m<nav[39m
+        [33mclass[39m=[32m"bg-white shadow-sm"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex justify-between h-16"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex items-center"[39m
+            [36m>[39m
+              [36m<a[39m
+                [33mclass[39m=[32m"text-primary-600 hover:text-primary-700"[39m
+                [33mhref[39m=[32m"/"[39m
+              [36m>[39m
+                [0m鈫?杩斿洖[0m
+              [36m</a>[39m
+              [36m<h1[39m
+                [33mclass[39m=[32m"ml-4 text-xl font-bold text-gray-900"[39m
+              [36m>[39m
+                [0m鐭ヨ瘑鐐圭鐞?[0m
+              [36m</h1>[39m
+            [36m</div>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"bg-primary-600 text-white px-4 py-2 rounded-md hover:bg-primary-700"[39m
+            [36m>[39m
+              [0m鍙栨秷[0m
+            [36m</button>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</nav>[39m
+      [36m<main[39m
+        [33mclass[39m=[32m"max-w-7xl mx-auto py-6 px-4"[39m
+      [36m>[39m
+        [36m<form[39m
+          [33mclass[39m=[32m"bg-white shadow rounded-lg p-6 mb-6"[39m
+        [36m>[39m
+          [36m<h3[39m
+            [33mclass[39m=[32m"text-lg font-medium mb-4"[39m
+          [36m>[39m
+            [0m鏂板鐭ヨ瘑鐐?[0m
+          [36m</h3>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"space-y-4"[39m
+          [36m>[39m
+            [36m<div>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"block text-sm font-medium text-gray-700"[39m
+              [36m>[39m
+                [0m鏍囬[0m
+              [36m</label>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 f
+ocus:ring-primary-500 sm:text-sm border p-2"[39m
+                [33mrequired[39m=[32m""[39m
+                [33mtype[39m=[32m"text"[39m
+                [33mvalue[39m=[32m""[39m
+              [36m/>[39m
+            [36m</div>[39m
+            [36m<div>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"block text-sm font-medium text-gray-700"[39m
+              [36m>[39m
+                [0m鍐呭[0m
+              [36m</label>[39m
+              [36m<textarea[39m
+                [33mclass[39m=[32m"mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 f
+ocus:ring-primary-500 sm:text-sm border p-2"[39m
+                [33mrows[39m=[32m"4"[39m
+              [36m/>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"grid grid-cols-2 gap-4"[39m
+            [36m>[39m
+              [36m<div>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"block text-sm font-medium text-gray-700"[39m
+                [36m>[39m
+                  [0m鍒嗙被[0m
+                [36m</label>[39m
+                [36m<input[39m
+                  [33mclass[39m=[32m"mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500
+ focus:ring-primary-500 sm:text-sm border p-2"[39m
+                  [33mplaceholder[39m=[32m"渚嬪锛氭暟瀛︺€佽嫳璇€佺紪绋?[39m
+                  [33mtype[39m=[32m"text"[39m
+                  [33mvalue[39m=[32m""[39m
+                [36m/>[39m
+              [36m</div>[39m
+              [36m<div>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"block text-sm font-medium text-gray-700"[39m
+                [36m>[39m
+                  [0m鏍囩[0m
+                [36m</label>[39m
+                [36m<input[39m
+                  [33mclass[39m=[32m"mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500
+ focus:ring-primary-500 sm:text-sm border p-2"[39m
+                  [33mplaceholder[39m=[32m"鐢ㄩ€楀彿鍒嗛殧锛屼緥濡傦細閲嶇偣锛岄毦鐐?[39m
+                  [33mtype[39m=[32m"text"[39m
+                  [33mvalue[39m=[32m""[39m
+                [36m/>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"w-full bg-primary-600 text-white py-2 px-4 rounded-md hover:bg-primary-700"[39m
+              [33mtype[39m=[32m"submit"[39m
+            [36m>[39m
+              [0m鍒涘缓[0m
+            [36m</button>[39m
+          [36m</div>[39m
+        [36m</form>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"bg-white shadow rounded-lg"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"px-4 py-5 sm:p-6"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"text-center text-gray-500 py-12"[39m
+            [36m>[39m
+              [0m鏆傛棤鐭ヨ瘑鐐癸紝鐐瑰嚮鍙充笂瑙掓坊鍔犵涓€涓煡璇嗙偣[0m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</main>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<html>[39m
+  [36m<head />[39m
+  [36m<body>[39m
+    [36m<div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"min-h-screen bg-gray-100"[39m
+      [36m>[39m
+        [36m<nav[39m
+          [33mclass[39m=[32m"bg-white shadow-sm"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex justify-between h-16"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"flex items-center"[39m
+              [36m>[39m
+                [36m<a[39m
+                  [33mclass[39m=[32m"text-primary-600 hover:text-primary-700"[39m
+                  [33mhref[39m=[32m"/"[39m
+                [36m>[39m
+                  [0m鈫?杩斿洖[0m
+                [36m</a>[39m
+                [36m<h1[39m
+                  [33mclass[39m=[32m"ml-4 text-xl font-bold text-gray-900"[39m
+                [36m>[39m
+                  [0m鐭ヨ瘑鐐圭鐞?[0m
+                [36m</h1>[39m
+              [36m</div>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"bg-primary-600 text-white px-4 py-2 rounded-md hover:bg-primary-700"[39m
+              [36m>[39m
+                [0m鍙栨秷[0m
+              [36m</button>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</nav>[39m
+        [36m<main[39m
+          [33mclass[39m=[32m"max-w-7xl mx-auto py-6 px-4"[39m
+        [36m>[39m
+          [36m<form[39m
+            [33mclass[39m=[32m"bg-white shadow rounded-lg p-6 mb-6"[39m
+          [36m>[39m
+            [36m<h3[39m
+              [33mclass[39m=[32m"text-lg font-medium mb-4"[39m
+            [36m>[39m
+              [0m鏂板鐭ヨ瘑鐐?[0m
+            [36m</h3>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"space-y-4"[39m
+            [36m>[39m
+              [36m<div>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"block text-sm font-medium text-gray-700"[39m
+                [36m>[39m
+                  [0m鏍囬[0m
+                [36m</label>[39m
+                [36m<input[39m
+                  [33mclass[39m=[32m"mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500
+ focus:ring-primary-500 sm:text-sm border p-2"[39m
+                  [33mrequired[39m=[32m""[39m
+                  [33mtype[39m=[32m"text"[39m
+                  [33mvalue[39m=[32m""[39m
+                [36m/>[39m
+              [36m</div>[39m
+              [36m<div>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"block text-sm font-medium text-gray-700"[39m
+                [36m>[39m
+                  [0m鍐呭[0m
+                [36m</label>[39m
+                [36m<textarea[39m
+                  [33mclass[39m=[32m"mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500
+ focus:ring-primary-500 sm:text-sm border p-2"[39m
+                  [33mrows[39m=[32m"4"[39m
+                [36m/>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"grid grid-cols-2 gap-4"[39m
+              [36m>[39m
+                [36m<div>[39m
+                  [36m<label[39m
+                    [33mclass[39m=[32m"block text-sm font-medium text-gray-700"[39m
+                  [36m>[39m
+                    [0m鍒嗙被[0m
+                  [36m</label>[39m
+                  [36m<input[39m
+                    [33mclass[39m=[32m"mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-5
+00 focus:ring-primary-500 sm:text-sm border p-2"[39m
+                    [33mplaceholder[39m=[32m"渚嬪锛氭暟瀛︺€佽嫳璇€佺紪绋?[39m
+                    [33mtype[39m=[32m"text"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [36m<label[39m
+                    [33mclass[39m=[32m"block text-sm font-medium text-gray-700"[39m
+                  [36m>[39m
+                    [0m鏍囩[0m
+                  [36m</label>[39m
+                  [36m<input[39m
+                    [33mclass[39m=[32m"mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-5
+00 focus:ring-primary-500 sm:text-sm border p-2"[39m
+                    [33mplaceholder[39m=[32m"鐢ㄩ€楀彿鍒嗛殧锛屼緥濡傦細閲嶇偣锛岄毦鐐?[39m
+                    [33mtype[39m=[32m"text"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"w-full bg-primary-600 text-white py-2 px-4 rounded-md hover:bg-primary-700"[39m
+                [33mtype[39m=[32m"submit"[39m
+              [36m>[39m
+                [0m鍒涘缓[0m
+              [36m</button>[39m
+            [36m</div>[39m
+          [36m</form>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"bg-white shadow rounded-lg"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"px-4 py-5 sm:p-6"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"text-center text-gray-500 py-12"[39m
+              [36m>[39m
+                [0m鏆傛棤鐭ヨ瘑鐐癸紝鐐瑰嚮鍙充笂瑙掓坊鍔犵涓€涓煡璇嗙偣[0m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</main>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</body>[39m
+[36m</html>[39m
+[90m [2m鉂?[22m Proxy.waitForWrapper node_modules/@testing-library/dom/dist/wait-for.js:[2m163:27[22m[39m
+[36m [2m鉂?[22m tests/Knowledge.test.jsx:[2m83:11[22m[39m
+    [90m 81|[39m
+    [90m 82|[39m     [90m// 绛夊緟妯℃€佹鎵撳紑[39m
+    [90m 83|[39m     [35mawait[39m [34mwaitFor[39m(() [33m=>[39m {
+    [90m   |[39m           [31m^[39m
+    [90m 84|[39m       [34mexpect[39m(screen[33m.[39m[34mgetByPlaceholderText[39m([36m/鏍囬/i[39m))[33m.[39m
+[34mtoBeInTheDocument[39m()[33m;[39m
+    [90m 85|[39m     })[33m;[39m
+
+[31m[2m鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆[16/42]鈳?[22m[39m
+
+[41m[1m FAIL [22m[49m tests/Knowledge.test.jsx[2m > [22mKnowledge Page Tests[2m > [22m搴旇鍙互缂栬緫鐭ヨ瘑鐐?[31m[1mTe
+stingLibraryElementError[22m: Unable to find an element with the text: /鍘熺煡璇嗙偣/i. This could be because the text is br
+oken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more 
+flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<div[31m
+      [33mclass[31m=[32m"min-h-screen bg-gray-100"[31m
+    [36m>[31m
+      [36m<nav[31m
+        [33mclass[31m=[32m"bg-white shadow-sm"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"[31m
+        [36m>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"flex justify-between h-16"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"flex items-center"[31m
+            [36m>[31m
+              [36m<a[31m
+                [33mclass[31m=[32m"text-primary-600 hover:text-primary-700"[31m
+                [33mhref[31m=[32m"/"[31m
+              [36m>[31m
+                [0m鈫?杩斿洖[0m
+              [36m</a>[31m
+              [36m<h1[31m
+                [33mclass[31m=[32m"ml-4 text-xl font-bold text-gray-900"[31m
+              [36m>[31m
+                [0m鐭ヨ瘑鐐圭鐞?[0m
+              [36m</h1>[31m
+            [36m</div>[31m
+            [36m<button[31m
+              [33mclass[31m=[32m"bg-primary-600 text-white px-4 py-2 rounded-md hover:bg-primary-700"[31m
+            [36m>[31m
+              [0m+ 鏂板鐭ヨ瘑鐐?[0m
+            [36m</button>[31m
+          [36m</div>[31m
+        [36m</div>[31m
+      [36m</nav>[31m
+      [36m<main[31m
+        [33mclass[31m=[32m"max-w-7xl mx-auto py-6 px-4"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"bg-white shadow rounded-lg"[31m
+        [36m>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"px-4 py-5 sm:p-6"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"text-center text-gray-500 py-12"[31m
+            [36m>[31m
+              [0m鏆傛棤鐭ヨ瘑鐐癸紝鐐瑰嚮鍙充笂瑙掓坊鍔犵涓€涓煡璇嗙偣[0m
+            [36m</div>[31m
+          [36m</div>[31m
+        [36m</div>[31m
+      [36m</main>[31m
+    [36m</div>[31m
+  [36m</div>[31m
+[36m</body>[31m
+
+Ignored nodes: comments, script, style
+[36m<html>[31m
+  [36m<head />[31m
+  [36m<body>[31m
+    [36m<div>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"min-h-screen bg-gray-100"[31m
+      [36m>[31m
+        [36m<nav[31m
+          [33mclass[31m=[32m"bg-white shadow-sm"[31m
+        [36m>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"flex justify-between h-16"[31m
+            [36m>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"flex items-center"[31m
+              [36m>[31m
+                [36m<a[31m
+                  [33mclass[31m=[32m"text-primary-600 hover:text-primary-700"[31m
+                  [33mhref[31m=[32m"/"[31m
+                [36m>[31m
+                  [0m鈫?杩斿洖[0m
+                [36m</a>[31m
+                [36m<h1[31m
+                  [33mclass[31m=[32m"ml-4 text-xl font-bold text-gray-900"[31m
+                [36m>[31m
+                  [0m鐭ヨ瘑鐐圭鐞?[0m
+                [36m</h1>[31m
+              [36m</div>[31m
+              [36m<button[31m
+                [33mclass[31m=[32m"bg-primary-600 text-white px-4 py-2 rounded-md hover:bg-primary-700"[31m
+              [36m>[31m
+                [0m+ 鏂板鐭ヨ瘑鐐?[0m
+              [36m</button>[31m
+            [36m</div>[31m
+          [36m</div>[31m
+        [36m</nav>[31m
+        [36m<main[31m
+          [33mclass[31m=[32m"max-w-7xl mx-auto py-6 px-4"[31m
+        [36m>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"bg-white shadow rounded-lg"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"px-4 py-5 sm:p-6"[31m
+            [36m>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"text-center text-gray-500 py-12"[31m
+              [36m>[31m
+                [0m鏆傛棤鐭ヨ瘑鐐癸紝鐐瑰嚮鍙充笂瑙掓坊鍔犵涓€涓煡璇嗙偣[0m
+              [36m</div>[31m
+            [36m</div>[31m
+          [36m</div>[31m
+        [36m</main>[31m
+      [36m</div>[31m
+    [36m</div>[31m
+  [36m</body>[31m
+[36m</html>[31m[39m
+[90m [2m鉂?[22m Proxy.waitForWrapper node_modules/@testing-library/dom/dist/wait-for.js:[2m163:27[22m[39m
+[36m [2m鉂?[22m tests/Knowledge.test.jsx:[2m113:11[22m[39m
+    [90m111|[39m     [34mrenderWithRouter[39m([33m<[39m[33mKnowledge[39m [33m/[39m[33m>[39m)[33m;[39m
+    [90m112|[39m
+    [90m113|[39m     [35mawait[39m [34mwaitFor[39m(() [33m=>[39m {
+    [90m   |[39m           [31m^[39m
+    [90m114|[39m       [34mexpect[39m(screen[33m.[39m[34mgetByText[39m([36m/鍘熺煡璇嗙偣/i[39m))[33m.[39m[34mtoB
+eInTheDocument[39m()[33m;[39m
+    [90m115|[39m     })[33m;[39m
+
+[31m[2m鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆[17/42]鈳?[22m[39m
+
+[41m[1m FAIL [22m[49m tests/Knowledge.test.jsx[2m > [22mKnowledge Page Tests[2m > [22m搴旇鍙互鍒犻櫎鐭ヨ瘑鐐?[31m[1mTe
+stingLibraryElementError[22m: Unable to find an element with the text: /寰呭垹闄?i. This could be because the text is brok
+en up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more fl
+exible.
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<div[31m
+      [33mclass[31m=[32m"min-h-screen bg-gray-100"[31m
+    [36m>[31m
+      [36m<nav[31m
+        [33mclass[31m=[32m"bg-white shadow-sm"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"[31m
+        [36m>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"flex justify-between h-16"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"flex items-center"[31m
+            [36m>[31m
+              [36m<a[31m
+                [33mclass[31m=[32m"text-primary-600 hover:text-primary-700"[31m
+                [33mhref[31m=[32m"/"[31m
+              [36m>[31m
+                [0m鈫?杩斿洖[0m
+              [36m</a>[31m
+              [36m<h1[31m
+                [33mclass[31m=[32m"ml-4 text-xl font-bold text-gray-900"[31m
+              [36m>[31m
+                [0m鐭ヨ瘑鐐圭鐞?[0m
+              [36m</h1>[31m
+            [36m</div>[31m
+            [36m<button[31m
+              [33mclass[31m=[32m"bg-primary-600 text-white px-4 py-2 rounded-md hover:bg-primary-700"[31m
+            [36m>[31m
+              [0m+ 鏂板鐭ヨ瘑鐐?[0m
+            [36m</button>[31m
+          [36m</div>[31m
+        [36m</div>[31m
+      [36m</nav>[31m
+      [36m<main[31m
+        [33mclass[31m=[32m"max-w-7xl mx-auto py-6 px-4"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"bg-white shadow rounded-lg"[31m
+        [36m>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"px-4 py-5 sm:p-6"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"text-center text-gray-500 py-12"[31m
+            [36m>[31m
+              [0m鏆傛棤鐭ヨ瘑鐐癸紝鐐瑰嚮鍙充笂瑙掓坊鍔犵涓€涓煡璇嗙偣[0m
+            [36m</div>[31m
+          [36m</div>[31m
+        [36m</div>[31m
+      [36m</main>[31m
+    [36m</div>[31m
+  [36m</div>[31m
+[36m</body>[31m
+
+Ignored nodes: comments, script, style
+[36m<html>[31m
+  [36m<head />[31m
+  [36m<body>[31m
+    [36m<div>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"min-h-screen bg-gray-100"[31m
+      [36m>[31m
+        [36m<nav[31m
+          [33mclass[31m=[32m"bg-white shadow-sm"[31m
+        [36m>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"flex justify-between h-16"[31m
+            [36m>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"flex items-center"[31m
+              [36m>[31m
+                [36m<a[31m
+                  [33mclass[31m=[32m"text-primary-600 hover:text-primary-700"[31m
+                  [33mhref[31m=[32m"/"[31m
+                [36m>[31m
+                  [0m鈫?杩斿洖[0m
+                [36m</a>[31m
+                [36m<h1[31m
+                  [33mclass[31m=[32m"ml-4 text-xl font-bold text-gray-900"[31m
+                [36m>[31m
+                  [0m鐭ヨ瘑鐐圭鐞?[0m
+                [36m</h1>[31m
+              [36m</div>[31m
+              [36m<button[31m
+                [33mclass[31m=[32m"bg-primary-600 text-white px-4 py-2 rounded-md hover:bg-primary-700"[31m
+              [36m>[31m
+                [0m+ 鏂板鐭ヨ瘑鐐?[0m
+              [36m</button>[31m
+            [36m</div>[31m
+          [36m</div>[31m
+        [36m</nav>[31m
+        [36m<main[31m
+          [33mclass[31m=[32m"max-w-7xl mx-auto py-6 px-4"[31m
+        [36m>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"bg-white shadow rounded-lg"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"px-4 py-5 sm:p-6"[31m
+            [36m>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"text-center text-gray-500 py-12"[31m
+              [36m>[31m
+                [0m鏆傛棤鐭ヨ瘑鐐癸紝鐐瑰嚮鍙充笂瑙掓坊鍔犵涓€涓煡璇嗙偣[0m
+              [36m</div>[31m
+            [36m</div>[31m
+          [36m</div>[31m
+        [36m</main>[31m
+      [36m</div>[31m
+    [36m</div>[31m
+  [36m</body>[31m
+[36m</html>[31m[39m
+[90m [2m鉂?[22m Proxy.waitForWrapper node_modules/@testing-library/dom/dist/wait-for.js:[2m163:27[22m[39m
+[36m [2m鉂?[22m tests/Knowledge.test.jsx:[2m134:11[22m[39m
+    [90m132|[39m     [34mrenderWithRouter[39m([33m<[39m[33mKnowledge[39m [33m/[39m[33m>[39m)[33m;[39m
+    [90m133|[39m
+    [90m134|[39m     [35mawait[39m [34mwaitFor[39m(() [33m=>[39m {
+    [90m   |[39m           [31m^[39m
+    [90m135|[39m       [34mexpect[39m(screen[33m.[39m[34mgetByText[39m([36m/寰呭垹闄?i[39m))[33m.[39m[34mtoBeI
+nTheDocument[39m()[33m;[39m
+    [90m136|[39m     })[33m;[39m
+
+[31m[2m鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆[18/42]鈳?[22m[39m
+
+[41m[1m FAIL [22m[49m tests/Login.test.jsx[2m > [22mLogin Page Tests[2m > [22m搴旇娓叉煋鐧诲綍椤甸潰
+[31m[1mTypeError[22m: Cannot read properties of undefined (reading 'Provider')[39m
+[36m [2m鉂?[22m renderWithProviders tests/Login.test.jsx:[2m27:20[22m[39m
+    [90m 25|[39m   [35mreturn[39m [34mrender[39m(
+    [90m 26|[39m     [33m<[39m[33mBrowserRouter[39m[33m>[39m
+    [90m 27|[39m       [33m<[39m[33mAuthContext[39m[33m.[39m[33mProvider[39m [33mvalue[39m[33m=[39m[33m{
+[39mmockAuthContext[33m}[39m[33m>[39m
+    [90m   |[39m                    [31m^[39m
+    [90m 28|[39m         [33m{[39mcomponent[33m}[39m
+    [90m 29|[39m       [33m<[39m[33m/[39m[33mAuthContext[39m[33m.[39m[33mProvider[39m[33m>[39m
+[90m [2m鉂?[22m tests/Login.test.jsx:[2m42:5[22m[39m
+
+[31m[2m鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆[19/42]鈳?[22m[39m
+
+[41m[1m FAIL [22m[49m tests/Login.test.jsx[2m > [22mLogin Page Tests[2m > [22m搴旇楠岃瘉鎵嬫満鍙锋牸寮?[31m[1mTypeError
+[22m: Cannot read properties of undefined (reading 'Provider')[39m
+[36m [2m鉂?[22m renderWithProviders tests/Login.test.jsx:[2m27:20[22m[39m
+    [90m 25|[39m   [35mreturn[39m [34mrender[39m(
+    [90m 26|[39m     [33m<[39m[33mBrowserRouter[39m[33m>[39m
+    [90m 27|[39m       [33m<[39m[33mAuthContext[39m[33m.[39m[33mProvider[39m [33mvalue[39m[33m=[39m[33m{
+[39mmockAuthContext[33m}[39m[33m>[39m
+
+    [90m   |[39m                    [31m^[39m
+    [90m 28|[39m         [33m{[39mcomponent[33m}[39m
+    [90m 29|[39m       [33m<[39m[33m/[39m[33mAuthContext[39m[33m.[39m[33mProvider[39m[33m>[39m
+[90m [2m鉂?[22m tests/Login.test.jsx:[2m50:5[22m[39m
+
+[31m[2m鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆[20/42]鈳?[22m[39m
+
+[41m[1m FAIL [22m[49m tests/Login.test.jsx[2m > [22mLogin Page Tests[2m > [22m搴旇鍙互璺宠浆鍒版敞鍐岄〉闈?[31m[1mTypeErr
+or[22m: Cannot read properties of undefined (reading 'Provider')[39m
+[36m [2m鉂?[22m renderWithProviders tests/Login.test.jsx:[2m27:20[22m[39m
+    [90m 25|[39m   [35mreturn[39m [34mrender[39m(
+    [90m 26|[39m     [33m<[39m[33mBrowserRouter[39m[33m>[39m
+    [90m 27|[39m       [33m<[39m[33mAuthContext[39m[33m.[39m[33mProvider[39m [33mvalue[39m[33m=[39m[33m{
+[39mmockAuthContext[33m}[39m[33m>[39m
+    [90m   |[39m                    [31m^[39m
+    [90m 28|[39m         [33m{[39mcomponent[33m}[39m
+    [90m 29|[39m       [33m<[39m[33m/[39m[33mAuthContext[39m[33m.[39m[33mProvider[39m[33m>[39m
+[90m [2m鉂?[22m tests/Login.test.jsx:[2m64:5[22m[39m
+
+[31m[2m鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆[21/42]鈳?[22m[39m
+
+[41m[1m FAIL [22m[49m tests/Register.test.jsx[2m > [22mRegister Page Tests[2m > [22m搴旇娓叉煋娉ㄥ唽椤甸潰
+[41m[1m FAIL [22m[49m tests/Register.test.jsx[2m > [22mRegister Page Tests[2m > [22m搴旇鍙互閫夋嫨瑙掕壊
+[41m[1m FAIL [22m[49m tests/Register.test.jsx[2m > [22mRegister Page Tests[2m > [22m搴旇楠岃瘉蹇呭～瀛楁
+[41m[1m FAIL [22m[49m tests/Register.test.jsx[2m > [22mRegister Page Tests[2m > [22m搴旇鎴愬姛娉ㄥ唽瀛︾敓璐﹀彿
+[41m[1m FAIL [22m[49m tests/Register.test.jsx[2m > [22mRegister Page Tests[2m > [22m搴旇鏄剧ず娉ㄥ唽閿欒
+[41m[1m FAIL [22m[49m tests/Register.test.jsx[2m > [22mRegister Page Tests[2m > [22m搴旇鍙互璺宠浆鍒扮櫥褰曢〉闈?[31m[1mE
+rror[22m: useAuth must be used within AuthProvider[39m
+[36m [2m鉂?[22m useAuth src/context/AuthContext.jsx:[2m105:11[22m[39m
+    [90m103|[39m   [35mconst[39m context [33m=[39m [34museContext[39m([33mAuthContext[39m)
+    [90m104|[39m   [35mif[39m ([33m![39mcontext) {
+    [90m105|[39m     [35mthrow[39m [35mnew[39m [33mError[39m([32m'useAuth must be used within AuthProvider'[3
+9m)
+    [90m   |[39m           [31m^[39m
+    [90m106|[39m   }
+    [90m107|[39m   [35mreturn[39m context
+[90m [2m鉂?[22m RegisterPage src/pages/Register.jsx:[2m22:24[22m[39m
+[90m [2m鉂?[22m renderWithHooks node_modules/react-dom/cjs/react-dom.development.js:[2m15486:18[22m[39m
+[90m [2m鉂?[22m mountIndeterminateComponent node_modules/react-dom/cjs/react-dom.development.js:[2m20103:13[22m[39m
+[90m [2m鉂?[22m beginWork node_modules/react-dom/cjs/react-dom.development.js:[2m21626:16[22m[39m
+[90m [2m鉂?[22m beginWork$1 node_modules/react-dom/cjs/react-dom.development.js:[2m27465:14[22m[39m
+[90m [2m鉂?[22m performUnitOfWork node_modules/react-dom/cjs/react-dom.development.js:[2m26599:12[22m[39m
+[90m [2m鉂?[22m workLoopSync node_modules/react-dom/cjs/react-dom.development.js:[2m26505:5[22m[39m
+[90m [2m鉂?[22m renderRootSync node_modules/react-dom/cjs/react-dom.development.js:[2m26473:7[22m[39m
+[90m [2m鉂?[22m recoverFromConcurrentError node_modules/react-dom/cjs/react-dom.development.js:[2m25889:20[22m[39m
+
+[31m[2m鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆鈳幆[22/42]鈳?[22m[39m
+
+[2m Test Files [22m [1m[31m6 failed[39m[22m[90m (6)[39m
+[2m      Tests [22m [1m[31m42 failed[39m[22m[90m (42)[39m
+[2m   Start at [22m 07:42:55
+[2m   Duration [22m 10.81s[2m (transform 1.09s, setup 2.97s, import 5.63s, tests 7.52s, environment 22.21s)[22m
+
