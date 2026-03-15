@@ -77,7 +77,7 @@ exports.login = (req, res) => {
     
     // 如果用户不存在，自动创建
     if (!user) {
-      user = UserModel.create(phone, 'student');
+      user = UserModel.create(phone, 'STUDENT');
       // 创建默认学生资料
       UserModel.createStudentProfile(user.id, null, null);
     }
@@ -216,9 +216,9 @@ exports.register = (req, res) => {
       return res.status(400).json({ error: '该手机号已注册' });
     }
 
-    // 安全修复：默认所有新用户为 student 角色
+    // 安全修复：默认所有新用户为 STUDENT 角色
     // ADMIN/TEACHER 角色只能通过后台创建，防止注册时权限提升
-    const defaultRole = 'student';
+    const defaultRole = 'STUDENT';
     const user = UserModel.create(phone, defaultRole, nickname);
 
     // 创建默认学生资料

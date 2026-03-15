@@ -3,17 +3,35 @@
  * ISSUE-P1-002: 创建课本解析相关表
  */
 
-const { db } = require('../../config/database');
+const Database = require('better-sqlite3');
+const path = require('path');
+const fs = require('fs');
 
 function migrate() {
   console.log('开始 Textbook Parser 数据库迁移...');
 
   try {
+    // 直接打开 SQLite 数据库
+    const dbPath = process.env.DATABASE_PATH || path.join(__dirname, '../../database/studyass.db');
+    const dbDir = path.dirname(dbPath);
+    
+    if (!fs.existsSync(dbDir)) {
+      fs.mkdirSync(dbDir, { recursive: true });
+    }
+    
+    const db = new Database(dbPath);
+    db.pragma('journal_mode = WAL');
+
     // 创建课本文本表
     db.exec(`
       CREATE TABLE IF NOT EXISTS textbooks (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         user_id INTEGER NOT NULL,
+        title TEXT,
+        file_path TEXT,
+        file_url TEXT,
+        file_size INTEGER,
+        units TEXT,
         original_task_id INTEGER,
         book_info TEXT,
         structure TEXT,
@@ -67,6 +85,8 @@ function migrate() {
     db.exec(`
       CREATE INDEX IF NOT EXISTS idx_textbook_tasks_status ON textbook_parse_tasks(status);
     `);
+
+    db.close();
 
     console.log('✅ textbooks 表创建成功');
     console.log('✅ textbook_parse_tasks 表创建成功');

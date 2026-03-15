@@ -13,26 +13,34 @@ class TextbookModel {
     const stmt = db.prepare(`
       INSERT INTO textbooks (
         user_id,
-        original_task_id,
-        book_info,
-        structure,
-        sections,
-        knowledge_points,
+        title,
+        file_path,
+        file_url,
+        file_size,
+        units,
         status
       ) VALUES (?, ?, ?, ?, ?, ?, ?)
     `);
 
     const result = stmt.run(
-      data.userId,
-      data.originalTaskId,
-      JSON.stringify(data.bookInfo || {}),
-      JSON.stringify(data.structure || []),
-      JSON.stringify(data.sections || {}),
-      JSON.stringify(data.knowledgePoints || []),
+      data.user_id || data.userId,
+      data.title,
+      data.file_path,
+      data.file_url,
+      data.file_size,
+      JSON.stringify(data.units || []),
       data.status || 'pending'
     );
 
-    return result.lastInsertRowid;
+    return { id: result.lastInsertRowid, ...data };
+  }
+
+  /**
+   * 删除课本
+   */
+  static delete(id) {
+    const stmt = db.prepare('DELETE FROM textbooks WHERE id = ?');
+    return stmt.run(id);
   }
 
   /**
@@ -53,14 +61,13 @@ class TextbookModel {
     let query = 'SELECT * FROM textbooks WHERE user_id = ?';
     const params = [userId];
 
-    if (status) {
-      query += ' AND status = ?';
-      params.push(status);
+    query += ' ORDER BY created_at DESC';
+    
+    if (page && pageSize) {
+      const offset = (page - 1) * pageSize;
+      query += ' LIMIT ? OFFSET ?';
+      params.push(pageSize, offset);
     }
-
-    query += ' ORDER BY created_at DESC LIMIT ? OFFSET ?';
-    const offset = (page - 1) * pageSize;
-    params.push(pageSize, offset);
 
     const stmt = db.prepare(query);
     const textbooks = stmt.all(...params);
@@ -75,13 +82,9 @@ class TextbookModel {
     const updates = ['status = ?', 'updated_at = CURRENT_TIMESTAMP'];
     const values = [status];
 
-    if (data.bookInfo) {
-      updates.push('book_info = ?');
-      values.push(JSON.stringify(data.bookInfo));
-    }
-    if (data.structure) {
-      updates.push('structure = ?');
-      values.push(JSON.stringify(data.structure));
+    if (data.units) {
+      updates.push('units = ?');
+      values.push(JSON.stringify(data.units));
     }
 
     values.push(id);
@@ -102,27 +105,9 @@ class TextbookModel {
     if (!textbook) return null;
 
     try {
-      if (textbook.book_info) textbook.book_info = JSON.parse(textbook.book_info);
+      if (textbook.units) textbook.units = JSON.parse(textbook.units);
     } catch (e) {
-      textbook.book_info = {};
-    }
-
-    try {
-      if (textbook.structure) textbook.structure = JSON.parse(textbook.structure);
-    } catch (e) {
-      textbook.structure = [];
-    }
-
-    try {
-      if (textbook.sections) textbook.sections = JSON.parse(textbook.sections);
-    } catch (e) {
-      textbook.sections = {};
-    }
-
-    try {
-      if (textbook.knowledge_points) textbook.knowledge_points = JSON.parse(textbook.knowledge_points);
-    } catch (e) {
-      textbook.knowledge_points = [];
+      textbook.units = [];
     }
 
     return textbook;

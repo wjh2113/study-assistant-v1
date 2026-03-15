@@ -6,6 +6,8 @@ import Dashboard from './pages/Dashboard'
 import Knowledge from './pages/Knowledge'
 import AIChat from './pages/AIChat'
 import Progress from './pages/Progress'
+import Textbooks from './pages/Textbooks'
+import Points from './pages/Points'
 
 function PrivateRoute({ children }) {
   const { user, loading } = useAuth()
@@ -59,6 +61,22 @@ function App() {
         element={
           <PrivateRoute>
             <Progress />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/points"
+        element={
+          <PrivateRoute>
+            <Points />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/textbooks"
+        element={
+          <PrivateRoute>
+            <Textbooks />
           </PrivateRoute>
         }
       />

@@ -50,3 +50,33 @@ export const aiAPI = {
   // 删除
   delete: (id) => api.delete(`/ai/${id}`)
 }
+
+// 课本 API
+export const textbooksAPI = {
+  // 获取列表
+  getList: () => api.get('/textbooks'),
+  
+  // 上传课本
+  upload: (formData, config) => api.post('/textbooks/upload', formData, {
+    headers: { 'Content-Type': 'multipart/form-data' },
+    ...config
+  }),
+  
+  // 获取单元列表
+  getUnits: (id) => api.get(`/textbooks/${id}/units`),
+  
+  // 删除
+  delete: (id) => api.delete(`/textbooks/${id}`)
+}
+
+// 积分 API
+export const pointsAPI = {
+  // 获取积分余额
+  getBalance: () => api.get('/points/balance'),
+  
+  // 获取积分流水
+  getLedger: (params) => api.get('/points/ledger', { params }),
+  
+  // 获取积分统计
+  getStats: () => api.get('/points/stats')
+}

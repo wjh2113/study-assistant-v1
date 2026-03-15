@@ -21,6 +21,7 @@ const weaknessRoutes = require('./routes/weakness');
 const pointsRoutes = require('./routes/points');
 const leaderboardRoutes = require('./routes/leaderboard');
 const uploadRoutes = require('./routes/upload');
+const practiceRoutes = require('./routes/practice'); // P0-006: 练习会话
 
 // 初始化数据库
 initDatabase();
@@ -62,6 +63,7 @@ app.use('/api/weakness', weaknessRoutes); // 薄弱点分析
 app.use('/api/points', pointsRoutes); // 积分系统
 app.use('/api/leaderboard', leaderboardRoutes); // 排行榜
 app.use('/api/upload', uploadRoutes); // 文件上传
+app.use('/api/practice', practiceRoutes); // P0-006: 练习会话（带所有权校验）
 
 // 发送验证码接口（单独速率限制）
 app.use('/api/auth/send-code', sendCodeLimiter);
