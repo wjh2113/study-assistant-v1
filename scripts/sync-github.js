@@ -14,7 +14,7 @@
  * 
  * 定时执行（每 30 分钟）：
  * Windows: 使用任务计划程序
- * Linux/Mac: */30 * * * * node /path/to/sync-github.js
+ * Linux/Mac: 使用 crontab (每 30 分钟)
  */
 
 const { execSync } = require('child_process');
