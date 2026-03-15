@@ -73,15 +73,21 @@ export default function AIChatPage() {
               <textarea
                 rows="3"
                 value={question}
-                onChange={(e) => setQuestion(e.target.value)}
+                onChange={(e) => {
+                  setQuestion(e.target.value)
+                  if (submitError) setSubmitError('')
+                }}
                 className="w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 border p-3"
                 placeholder="例如：什么是勾股定理？如何理解牛顿第一定律？"
               />
+              {submitError && (
+                <p className="mt-1 text-sm text-red-600">{submitError}</p>
+              )}
             </div>
             <button
               type="submit"
-              disabled={loading || !question.trim()}
-              className="mt-4 w-full bg-primary-600 text-white py-2 px-4 rounded-md hover:bg-primary-700 disabled:opacity-50"
+              disabled={!canSubmit}
+              className="mt-4 w-full bg-primary-600 text-white py-2 px-4 rounded-md hover:bg-primary-700 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {loading ? '思考中...' : '提问'}
             </button>
@@ -109,4 +115,15 @@ export default function AIChatPage() {
                     <p className="font-medium text-gray-900">{record.question}</p>
                     <span className="text-xs text-gray-400">
                       {new Date(record.created_at).toLocaleString()}
-       
+                    </span>
+                  </div>
+                  <p className="mt-2 text-sm text-gray-600 line-clamp-2">{record.answer}</p>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      </main>
+    </div>
+  )
+}
