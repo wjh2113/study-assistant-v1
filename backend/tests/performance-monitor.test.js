@@ -45,10 +45,10 @@ jest.mock('prom-client', () => {
 
   class MockRegistry {
     constructor() {
-      this.metrics = [];
+      this._metrics = [];
     }
     registerMetric(metric) {
-      this.metrics.push(metric);
+      this._metrics.push(metric);
     }
     async metrics() {
       return '# Prometheus metrics\n# HELP test Test metric\n# TYPE test gauge\ntest 0';

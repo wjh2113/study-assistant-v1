@@ -10,54 +10,54 @@
           "testName": "POST /api/auth/send-code",
           "passed": true,
           "statusCode": 200,
-          "responseTime": "87ms",
+          "responseTime": "83ms",
           "error": "{\"message\":\"验证码已发送\",\"hint\":\"验证码 5 分钟内有效\"}",
-          "timestamp": "2026-03-17T12:34:22.039Z"
+          "timestamp": "2026-03-17T13:45:39.608Z"
         },
         {
           "module": "auth",
           "testName": "POST /api/auth/register",
           "passed": true,
           "statusCode": 201,
-          "responseTime": "21ms",
-          "error": "{\"message\":\"注册成功\",\"user\":{\"id\":\"c652fe63-45de-4785-8bea-2cb1605621d4\",\"role\":\"STUDENT\",\"phone\":\"13800138099\",\"nickname\":\"全量测试用户\",\"avatar_url\":null,\"profile\":{\"user_id\":\"c652fe63-45de-4785-8bea-2cb1605",
-          "timestamp": "2026-03-17T12:34:22.062Z"
+          "responseTime": "36ms",
+          "error": "{\"message\":\"注册成功\",\"user\":{\"id\":\"b7ad40c5-52bc-4b6f-a957-84ada4f41995\",\"role\":\"STUDENT\",\"phone\":\"13800138099\",\"nickname\":\"全量测试用户\",\"avatar_url\":null,\"profile\":{\"user_id\":\"b7ad40c5-52bc-4b6f-a957-84ada4f",
+          "timestamp": "2026-03-17T13:45:39.646Z"
         },
         {
           "module": "auth",
           "testName": "POST /api/auth/login",
-          "passed": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjNjUyZmU2My00NWRlLTQ3ODUtOGJlYS0yY2IxNjA1NjIxZDQiLCJpYXQiOjE3NzM3NTA4NjIsImV4cCI6MTc3NDM1NTY2Mn0._D2hSNrUZfaI__gp0TmXtc7fY1uax99R9WHVlHuVDJs",
+          "passed": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJiN2FkNDBjNS01MmJjLTRiNmYtYTk1Ny04NGFkYTRmNDE5OTUiLCJpYXQiOjE3NzM3NTUxMzksImV4cCI6MTc3NDM1OTkzOX0.m_tipUsHlIi0e0EP4ik00XLZQ__8hXd6-JTDpvfAnzQ",
           "statusCode": 200,
-          "responseTime": "23ms",
-          "error": "{\"message\":\"登录成功\",\"user\":{\"id\":\"c652fe63-45de-4785-8bea-2cb1605621d4\",\"role\":\"STUDENT\",\"phone\":\"13800138099\",\"nickname\":\"全量测试用户\",\"avatar_url\":null,\"profile\":{\"user_id\":\"c652fe63-45de-4785-8bea-2cb1605",
-          "timestamp": "2026-03-17T12:34:22.087Z"
+          "responseTime": "38ms",
+          "error": "{\"message\":\"登录成功\",\"user\":{\"id\":\"b7ad40c5-52bc-4b6f-a957-84ada4f41995\",\"role\":\"STUDENT\",\"phone\":\"13800138099\",\"nickname\":\"全量测试用户\",\"avatar_url\":null,\"profile\":{\"user_id\":\"b7ad40c5-52bc-4b6f-a957-84ada4f",
+          "timestamp": "2026-03-17T13:45:39.687Z"
         },
         {
           "module": "auth",
           "testName": "POST /api/auth/refresh",
           "passed": true,
           "statusCode": 401,
-          "responseTime": "23ms",
+          "responseTime": "37ms",
           "error": "{\"error\":\"未授权\"}",
-          "timestamp": "2026-03-17T12:34:22.112Z"
+          "timestamp": "2026-03-17T13:45:39.727Z"
         },
         {
           "module": "auth",
           "testName": "GET /api/auth/me",
           "passed": true,
           "statusCode": 200,
-          "responseTime": "16ms",
-          "error": "{\"user\":{\"id\":\"c652fe63-45de-4785-8bea-2cb1605621d4\",\"role\":\"STUDENT\",\"phone\":\"13800138099\",\"nickname\":\"全量测试用户\",\"avatar_url\":null,\"profile\":{\"user_id\":\"c652fe63-45de-4785-8bea-2cb1605621d4\",\"grade\":\"高",
-          "timestamp": "2026-03-17T12:34:22.129Z"
+          "responseTime": "50ms",
+          "error": "{\"user\":{\"id\":\"b7ad40c5-52bc-4b6f-a957-84ada4f41995\",\"role\":\"STUDENT\",\"phone\":\"13800138099\",\"nickname\":\"全量测试用户\",\"avatar_url\":null,\"profile\":{\"user_id\":\"b7ad40c5-52bc-4b6f-a957-84ada4f41995\",\"grade\":nu",
+          "timestamp": "2026-03-17T13:45:39.779Z"
         },
         {
           "module": "auth",
           "testName": "PUT /api/auth/me",
           "passed": true,
           "statusCode": 200,
-          "responseTime": "25ms",
-          "error": "{\"message\":\"更新成功\",\"user\":{\"id\":\"c652fe63-45de-4785-8bea-2cb1605621d4\",\"role\":\"STUDENT\",\"phone\":\"13800138099\",\"nickname\":\"更新后的昵称\",\"avatar_url\":null}}",
-          "timestamp": "2026-03-17T12:34:22.156Z"
+          "responseTime": "45ms",
+          "error": "{\"message\":\"更新成功\",\"user\":{\"id\":\"b7ad40c5-52bc-4b6f-a957-84ada4f41995\",\"role\":\"STUDENT\",\"phone\":\"13800138099\",\"nickname\":\"更新后的昵称\",\"avatar_url\":null}}",
+          "timestamp": "2026-03-17T13:45:39.826Z"
         }
       ]
     },
@@ -71,36 +71,36 @@
           "testName": "POST /api/ai/ask",
           "passed": false,
           "statusCode": 500,
-          "responseTime": "10364ms",
+          "responseTime": "8936ms",
           "error": "{\"error\":\"服务器错误\"}",
-          "timestamp": "2026-03-17T12:34:32.522Z"
+          "timestamp": "2026-03-17T13:45:48.766Z"
         },
         {
           "module": "ai",
           "testName": "GET /api/ai/history",
           "passed": true,
           "statusCode": 200,
-          "responseTime": "18ms",
-          "error": "{\"data\":[{\"id\":null,\"user_id\":\"c652fe63-45de-4785-8bea-2cb1605621d4\",\"question\":\"什么是勾股定理？\",\"answer\":\"勾股定理（又称毕达哥拉斯定理）是平面几何中一个非常重要的基本定理，描述的是**直角三角形三边之间的数量关系**。\\n\\n✅ **内容表述：**  \\n在一个直角三角形中，**两条直角边的平方和等于斜",
-          "timestamp": "2026-03-17T12:34:32.542Z"
+          "responseTime": "23ms",
+          "error": "{\"data\":[{\"id\":null,\"user_id\":\"b7ad40c5-52bc-4b6f-a957-84ada4f41995\",\"question\":\"什么是勾股定理？\",\"answer\":\"勾股定理（又称毕达哥拉斯定理）是平面几何中一个非常重要的基本定理，描述的是**直角三角形三边之间的数量关系**。\\n\\n✅ **定理内容：**  \\n在一个直角三角形中，**两条直角边的平方和等于斜",
+          "timestamp": "2026-03-17T13:45:48.791Z"
         },
         {
           "module": "ai",
           "testName": "GET /api/ai/search",
           "passed": false,
           "statusCode": 400,
-          "responseTime": "14ms",
+          "responseTime": "24ms",
           "error": "{\"error\":\"搜索关键词不能为空\"}",
-          "timestamp": "2026-03-17T12:34:32.557Z"
+          "timestamp": "2026-03-17T13:45:48.817Z"
         },
         {
           "module": "ai",
           "testName": "DELETE /api/ai/:id",
           "passed": true,
           "statusCode": 404,
-          "responseTime": "13ms",
+          "responseTime": "18ms",
           "error": "{\"error\":\"记录不存在\"}",
-          "timestamp": "2026-03-17T12:34:32.571Z"
+          "timestamp": "2026-03-17T13:45:48.837Z"
         }
       ]
     },
@@ -114,54 +114,54 @@
           "testName": "GET /api/knowledge",
           "passed": true,
           "statusCode": 200,
-          "responseTime": "15ms",
+          "responseTime": "20ms",
           "error": "{\"data\":[],\"total\":0}",
-          "timestamp": "2026-03-17T12:34:32.588Z"
+          "timestamp": "2026-03-17T13:45:48.858Z"
         },
         {
           "module": "knowledge",
           "testName": "GET /api/knowledge/:id",
           "passed": true,
           "statusCode": 404,
-          "responseTime": "21ms",
+          "responseTime": "38ms",
           "error": "{\"error\":\"知识点不存在\"}",
-          "timestamp": "2026-03-17T12:34:32.611Z"
+          "timestamp": "2026-03-17T13:45:48.899Z"
         },
         {
           "module": "knowledge",
           "testName": "POST /api/knowledge",
           "passed": true,
           "statusCode": 201,
-          "responseTime": "29ms",
+          "responseTime": "40ms",
           "error": "{\"message\":\"创建成功\"}",
-          "timestamp": "2026-03-17T12:34:32.643Z"
+          "timestamp": "2026-03-17T13:45:48.942Z"
         },
         {
           "module": "knowledge",
           "testName": "PUT /api/knowledge/:id",
           "passed": true,
           "statusCode": 404,
-          "responseTime": "25ms",
+          "responseTime": "49ms",
           "error": "{\"error\":\"知识点不存在\"}",
-          "timestamp": "2026-03-17T12:34:32.671Z"
+          "timestamp": "2026-03-17T13:45:48.995Z"
         },
         {
           "module": "knowledge",
           "testName": "DELETE /api/knowledge/:id",
           "passed": true,
           "statusCode": 404,
-          "responseTime": "30ms",
+          "responseTime": "57ms",
           "error": "{\"error\":\"知识点不存在\"}",
-          "timestamp": "2026-03-17T12:34:32.703Z"
+          "timestamp": "2026-03-17T13:45:49.057Z"
         },
         {
           "module": "knowledge",
           "testName": "GET /api/knowledge/search",
           "passed": false,
           "statusCode": 400,
-          "responseTime": "25ms",
+          "responseTime": "84ms",
           "error": "{\"error\":\"搜索关键词不能为空\"}",
-          "timestamp": "2026-03-17T12:34:32.731Z"
+          "timestamp": "2026-03-17T13:45:49.145Z"
         }
       ]
     },
@@ -175,9 +175,9 @@
           "testName": "GET /api/progress",
           "passed": true,
           "statusCode": 200,
-          "responseTime": "51ms",
+          "responseTime": "45ms",
           "error": "{\"data\":[]}",
-          "timestamp": "2026-03-17T12:34:32.784Z"
+          "timestamp": "2026-03-17T13:45:49.194Z"
         },
         {
           "module": "progress",
@@ -186,25 +186,25 @@
           "statusCode": 200,
           "responseTime": "28ms",
           "error": "{\"data\":{\"totalPoints\":0,\"totalDuration\":0,\"avgCompletionRate\":0,\"completedPoints\":0}}",
-          "timestamp": "2026-03-17T12:34:32.814Z"
+          "timestamp": "2026-03-17T13:45:49.226Z"
         },
         {
           "module": "progress",
           "testName": "POST /api/progress/upsert",
           "passed": false,
           "statusCode": 400,
-          "responseTime": "16ms",
+          "responseTime": "36ms",
           "error": "{\"error\":\"知识点 ID 不能为空\"}",
-          "timestamp": "2026-03-17T12:34:32.832Z"
+          "timestamp": "2026-03-17T13:45:49.265Z"
         },
         {
           "module": "progress",
           "testName": "POST /api/progress/log",
           "passed": false,
           "statusCode": 400,
-          "responseTime": "15ms",
+          "responseTime": "32ms",
           "error": "{\"error\":\"知识点 ID 和学习时长不能为空\"}",
-          "timestamp": "2026-03-17T12:34:32.849Z"
+          "timestamp": "2026-03-17T13:45:49.300Z"
         }
       ]
     },
@@ -218,36 +218,36 @@
           "testName": "GET /api/points/balance",
           "passed": false,
           "statusCode": 404,
-          "responseTime": "13ms",
+          "responseTime": "59ms",
           "error": "{\"error\":\"接口不存在\"}",
-          "timestamp": "2026-03-17T12:34:32.864Z"
+          "timestamp": "2026-03-17T13:45:49.363Z"
         },
         {
           "module": "points",
           "testName": "GET /api/points/ledger",
           "passed": false,
           "statusCode": 404,
-          "responseTime": "15ms",
+          "responseTime": "39ms",
           "error": "{\"error\":\"接口不存在\"}",
-          "timestamp": "2026-03-17T12:34:32.881Z"
+          "timestamp": "2026-03-17T13:45:49.406Z"
         },
         {
           "module": "points",
           "testName": "POST /api/points/earn",
           "passed": false,
           "statusCode": 404,
-          "responseTime": "15ms",
+          "responseTime": "34ms",
           "error": "{\"error\":\"接口不存在\"}",
-          "timestamp": "2026-03-17T12:34:32.897Z"
+          "timestamp": "2026-03-17T13:45:49.443Z"
         },
         {
           "module": "points",
           "testName": "GET /api/points/rank",
           "passed": false,
           "statusCode": 404,
-          "responseTime": "13ms",
+          "responseTime": "29ms",
           "error": "{\"error\":\"接口不存在\"}",
-          "timestamp": "2026-03-17T12:34:32.912Z"
+          "timestamp": "2026-03-17T13:45:49.476Z"
         }
       ]
     },
@@ -261,36 +261,36 @@
           "testName": "GET /api/weakness/analysis",
           "passed": false,
           "statusCode": 404,
-          "responseTime": "19ms",
+          "responseTime": "44ms",
           "error": "{\"error\":\"接口不存在\"}",
-          "timestamp": "2026-03-17T12:34:32.932Z"
+          "timestamp": "2026-03-17T13:45:49.523Z"
         },
         {
           "module": "weakness",
           "testName": "GET /api/weakness/recommendations",
           "passed": false,
           "statusCode": 404,
-          "responseTime": "18ms",
+          "responseTime": "35ms",
           "error": "{\"error\":\"接口不存在\"}",
-          "timestamp": "2026-03-17T12:34:32.953Z"
+          "timestamp": "2026-03-17T13:45:49.560Z"
         },
         {
           "module": "weakness",
           "testName": "POST /api/weakness/practice",
           "passed": false,
           "statusCode": 404,
-          "responseTime": "15ms",
+          "responseTime": "34ms",
           "error": "{\"error\":\"接口不存在\"}",
-          "timestamp": "2026-03-17T12:34:32.969Z"
+          "timestamp": "2026-03-17T13:45:49.599Z"
         },
         {
           "module": "weakness",
           "testName": "GET /api/weakness/stats",
           "passed": false,
           "statusCode": 404,
-          "responseTime": "16ms",
+          "responseTime": "28ms",
           "error": "{\"error\":\"接口不存在\"}",
-          "timestamp": "2026-03-17T12:34:32.986Z"
+          "timestamp": "2026-03-17T13:45:49.629Z"
         }
       ]
     },
@@ -304,36 +304,36 @@
           "testName": "GET /api/leaderboards/total",
           "passed": false,
           "statusCode": 404,
-          "responseTime": "14ms",
+          "responseTime": "29ms",
           "error": "{\"error\":\"接口不存在\"}",
-          "timestamp": "2026-03-17T12:34:33.001Z"
+          "timestamp": "2026-03-17T13:45:49.661Z"
         },
         {
           "module": "leaderboard",
           "testName": "GET /api/leaderboards/weekly",
           "passed": false,
           "statusCode": 404,
-          "responseTime": "20ms",
+          "responseTime": "29ms",
           "error": "{\"error\":\"接口不存在\"}",
-          "timestamp": "2026-03-17T12:34:33.022Z"
+          "timestamp": "2026-03-17T13:45:49.692Z"
         },
         {
           "module": "leaderboard",
           "testName": "GET /api/leaderboards/monthly",
           "passed": false,
           "statusCode": 404,
-          "responseTime": "15ms",
+          "responseTime": "32ms",
           "error": "{\"error\":\"接口不存在\"}",
-          "timestamp": "2026-03-17T12:34:33.039Z"
+          "timestamp": "2026-03-17T13:45:49.726Z"
         },
         {
           "module": "leaderboard",
           "testName": "GET /api/leaderboards/subject/:subject",
           "passed": false,
           "statusCode": 404,
-          "responseTime": "14ms",
+          "responseTime": "27ms",
           "error": "{\"error\":\"接口不存在\"}",
-          "timestamp": "2026-03-17T12:34:33.056Z"
+          "timestamp": "2026-03-17T13:45:49.756Z"
         }
       ]
     },
@@ -347,54 +347,54 @@
           "testName": "GET /api/textbooks",
           "passed": true,
           "statusCode": 200,
-          "responseTime": "21ms",
+          "responseTime": "33ms",
           "error": "{\"success\":true,\"data\":[]}",
-          "timestamp": "2026-03-17T12:34:33.079Z"
+          "timestamp": "2026-03-17T13:45:49.792Z"
         },
         {
           "module": "textbooks",
           "testName": "GET /api/textbooks/:id",
           "passed": true,
           "statusCode": 404,
-          "responseTime": "23ms",
+          "responseTime": "38ms",
           "error": "{\"success\":false,\"error\":\"课本文本不存在\"}",
-          "timestamp": "2026-03-17T12:34:33.105Z"
+          "timestamp": "2026-03-17T13:45:49.833Z"
         },
         {
           "module": "textbooks",
           "testName": "POST /api/textbooks",
           "passed": false,
           "statusCode": 404,
-          "responseTime": "18ms",
+          "responseTime": "33ms",
           "error": "{\"error\":\"接口不存在\"}",
-          "timestamp": "2026-03-17T12:34:33.124Z"
+          "timestamp": "2026-03-17T13:45:49.869Z"
         },
         {
           "module": "textbooks",
           "testName": "PUT /api/textbooks/:id",
           "passed": true,
           "statusCode": 404,
-          "responseTime": "15ms",
+          "responseTime": "28ms",
           "error": "{\"error\":\"接口不存在\"}",
-          "timestamp": "2026-03-17T12:34:33.140Z"
+          "timestamp": "2026-03-17T13:45:49.900Z"
         },
         {
           "module": "textbooks",
           "testName": "DELETE /api/textbooks/:id",
           "passed": true,
           "statusCode": 404,
-          "responseTime": "13ms",
+          "responseTime": "36ms",
           "error": "{\"success\":false,\"error\":\"课本不存在\"}",
-          "timestamp": "2026-03-17T12:34:33.155Z"
+          "timestamp": "2026-03-17T13:45:49.939Z"
         },
         {
           "module": "textbooks",
           "testName": "GET /api/textbooks/:id/units",
           "passed": true,
           "statusCode": 404,
-          "responseTime": "13ms",
+          "responseTime": "34ms",
           "error": "{\"success\":false,\"error\":\"课本不存在\"}",
-          "timestamp": "2026-03-17T12:34:33.170Z"
+          "timestamp": "2026-03-17T13:45:49.975Z"
         }
       ]
     },
@@ -408,27 +408,27 @@
           "testName": "POST /api/upload/textbook",
           "passed": true,
           "statusCode": 400,
-          "responseTime": "29ms",
+          "responseTime": "103ms",
           "error": "{\"error\":\"缺少必要参数\"}",
-          "timestamp": "2026-03-17T12:34:33.200Z"
+          "timestamp": "2026-03-17T13:45:50.082Z"
         },
         {
           "module": "upload",
           "testName": "POST /api/upload/avatar",
           "passed": true,
           "statusCode": 400,
-          "responseTime": "21ms",
+          "responseTime": "73ms",
           "error": "{\"error\":\"缺少用户 ID\"}",
-          "timestamp": "2026-03-17T12:34:33.223Z"
+          "timestamp": "2026-03-17T13:45:50.159Z"
         },
         {
           "module": "upload",
           "testName": "POST /api/upload/attachment",
           "passed": true,
           "statusCode": 400,
-          "responseTime": "28ms",
+          "responseTime": "62ms",
           "error": "{\"error\":\"缺少实体类型或 ID\"}",
-          "timestamp": "2026-03-17T12:34:33.253Z"
+          "timestamp": "2026-03-17T13:45:50.226Z"
         }
       ]
     },
@@ -442,36 +442,36 @@
           "testName": "POST /api/ai-gateway/generate",
           "passed": false,
           "statusCode": 404,
-          "responseTime": "17ms",
+          "responseTime": "41ms",
           "error": "{\"error\":\"接口不存在\"}",
-          "timestamp": "2026-03-17T12:34:33.272Z"
+          "timestamp": "2026-03-17T13:45:50.273Z"
         },
         {
           "module": "ai-gateway",
           "testName": "POST /api/ai-gateway/parse",
           "passed": false,
           "statusCode": 404,
-          "responseTime": "22ms",
+          "responseTime": "38ms",
           "error": "{\"error\":\"接口不存在\"}",
-          "timestamp": "2026-03-17T12:34:33.296Z"
+          "timestamp": "2026-03-17T13:45:50.315Z"
         },
         {
           "module": "ai-gateway",
           "testName": "POST /api/ai-gateway/analyze",
           "passed": false,
           "statusCode": 404,
-          "responseTime": "14ms",
+          "responseTime": "40ms",
           "error": "{\"error\":\"接口不存在\"}",
-          "timestamp": "2026-03-17T12:34:33.313Z"
+          "timestamp": "2026-03-17T13:45:50.358Z"
         },
         {
           "module": "ai-gateway",
           "testName": "GET /api/ai-gateway/models",
           "passed": false,
           "statusCode": 404,
-          "responseTime": "15ms",
+          "responseTime": "31ms",
           "error": "{\"error\":\"接口不存在\"}",
-          "timestamp": "2026-03-17T12:34:33.329Z"
+          "timestamp": "2026-03-17T13:45:50.393Z"
         }
       ]
     },
@@ -485,36 +485,36 @@
           "testName": "GET /api/health",
           "passed": true,
           "statusCode": 200,
-          "responseTime": "14ms",
-          "error": "{\"status\":\"ok\",\"timestamp\":\"2026-03-17T12:34:33.336Z\",\"uptime\":104.4475839,\"services\":{\"database\":\"connected\",\"memory\":{\"used\":594,\"total\":742,\"unit\":\"MB\"}}}",
-          "timestamp": "2026-03-17T12:34:33.345Z"
+          "responseTime": "35ms",
+          "error": "{\"status\":\"ok\",\"timestamp\":\"2026-03-17T13:45:50.409Z\",\"uptime\":114.0536808,\"services\":{\"database\":\"connected\",\"memory\":{\"used\":634,\"total\":923,\"unit\":\"MB\"}}}",
+          "timestamp": "2026-03-17T13:45:50.431Z"
         },
         {
           "module": "health",
           "testName": "GET /api/health/db",
           "passed": false,
           "statusCode": 404,
-          "responseTime": "15ms",
+          "responseTime": "34ms",
           "error": "{\"error\":\"接口不存在\"}",
-          "timestamp": "2026-03-17T12:34:33.361Z"
+          "timestamp": "2026-03-17T13:45:50.468Z"
         },
         {
           "module": "health",
           "testName": "GET /api/health/redis",
           "passed": false,
           "statusCode": 404,
-          "responseTime": "20ms",
+          "responseTime": "29ms",
           "error": "{\"error\":\"接口不存在\"}",
-          "timestamp": "2026-03-17T12:34:33.382Z"
+          "timestamp": "2026-03-17T13:45:50.499Z"
         },
         {
           "module": "health",
           "testName": "GET /api/health/uptime",
           "passed": false,
           "statusCode": 404,
-          "responseTime": "15ms",
+          "responseTime": "33ms",
           "error": "{\"error\":\"接口不存在\"}",
-          "timestamp": "2026-03-17T12:34:33.400Z"
+          "timestamp": "2026-03-17T13:45:50.535Z"
         }
       ]
     }
@@ -522,161 +522,161 @@
   "total": 49,
   "passed": 24,
   "failed": 25,
-  "startTime": 1773750861950,
-  "endTime": 1773750873401,
+  "startTime": 1773755139521,
+  "endTime": 1773755150537,
   "details": [
     {
       "module": "auth",
       "testName": "POST /api/auth/send-code",
       "passed": true,
       "statusCode": 200,
-      "responseTime": "87ms",
+      "responseTime": "83ms",
       "error": "{\"message\":\"验证码已发送\",\"hint\":\"验证码 5 分钟内有效\"}",
-      "timestamp": "2026-03-17T12:34:22.039Z"
+      "timestamp": "2026-03-17T13:45:39.608Z"
     },
     {
       "module": "auth",
       "testName": "POST /api/auth/register",
       "passed": true,
       "statusCode": 201,
-      "responseTime": "21ms",
-      "error": "{\"message\":\"注册成功\",\"user\":{\"id\":\"c652fe63-45de-4785-8bea-2cb1605621d4\",\"role\":\"STUDENT\",\"phone\":\"13800138099\",\"nickname\":\"全量测试用户\",\"avatar_url\":null,\"profile\":{\"user_id\":\"c652fe63-45de-4785-8bea-2cb1605",
-      "timestamp": "2026-03-17T12:34:22.062Z"
+      "responseTime": "36ms",
+      "error": "{\"message\":\"注册成功\",\"user\":{\"id\":\"b7ad40c5-52bc-4b6f-a957-84ada4f41995\",\"role\":\"STUDENT\",\"phone\":\"13800138099\",\"nickname\":\"全量测试用户\",\"avatar_url\":null,\"profile\":{\"user_id\":\"b7ad40c5-52bc-4b6f-a957-84ada4f",
+      "timestamp": "2026-03-17T13:45:39.646Z"
     },
     {
       "module": "auth",
       "testName": "POST /api/auth/login",
-      "passed": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjNjUyZmU2My00NWRlLTQ3ODUtOGJlYS0yY2IxNjA1NjIxZDQiLCJpYXQiOjE3NzM3NTA4NjIsImV4cCI6MTc3NDM1NTY2Mn0._D2hSNrUZfaI__gp0TmXtc7fY1uax99R9WHVlHuVDJs",
+      "passed": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJiN2FkNDBjNS01MmJjLTRiNmYtYTk1Ny04NGFkYTRmNDE5OTUiLCJpYXQiOjE3NzM3NTUxMzksImV4cCI6MTc3NDM1OTkzOX0.m_tipUsHlIi0e0EP4ik00XLZQ__8hXd6-JTDpvfAnzQ",
       "statusCode": 200,
-      "responseTime": "23ms",
-      "error": "{\"message\":\"登录成功\",\"user\":{\"id\":\"c652fe63-45de-4785-8bea-2cb1605621d4\",\"role\":\"STUDENT\",\"phone\":\"13800138099\",\"nickname\":\"全量测试用户\",\"avatar_url\":null,\"profile\":{\"user_id\":\"c652fe63-45de-4785-8bea-2cb1605",
-      "timestamp": "2026-03-17T12:34:22.087Z"
+      "responseTime": "38ms",
+      "error": "{\"message\":\"登录成功\",\"user\":{\"id\":\"b7ad40c5-52bc-4b6f-a957-84ada4f41995\",\"role\":\"STUDENT\",\"phone\":\"13800138099\",\"nickname\":\"全量测试用户\",\"avatar_url\":null,\"profile\":{\"user_id\":\"b7ad40c5-52bc-4b6f-a957-84ada4f",
+      "timestamp": "2026-03-17T13:45:39.687Z"
     },
     {
       "module": "auth",
       "testName": "POST /api/auth/refresh",
       "passed": true,
       "statusCode": 401,
-      "responseTime": "23ms",
+      "responseTime": "37ms",
       "error": "{\"error\":\"未授权\"}",
-      "timestamp": "2026-03-17T12:34:22.112Z"
+      "timestamp": "2026-03-17T13:45:39.727Z"
     },
     {
       "module": "auth",
       "testName": "GET /api/auth/me",
       "passed": true,
       "statusCode": 200,
-      "responseTime": "16ms",
-      "error": "{\"user\":{\"id\":\"c652fe63-45de-4785-8bea-2cb1605621d4\",\"role\":\"STUDENT\",\"phone\":\"13800138099\",\"nickname\":\"全量测试用户\",\"avatar_url\":null,\"profile\":{\"user_id\":\"c652fe63-45de-4785-8bea-2cb1605621d4\",\"grade\":\"高",
-      "timestamp": "2026-03-17T12:34:22.129Z"
+      "responseTime": "50ms",
+      "error": "{\"user\":{\"id\":\"b7ad40c5-52bc-4b6f-a957-84ada4f41995\",\"role\":\"STUDENT\",\"phone\":\"13800138099\",\"nickname\":\"全量测试用户\",\"avatar_url\":null,\"profile\":{\"user_id\":\"b7ad40c5-52bc-4b6f-a957-84ada4f41995\",\"grade\":nu",
+      "timestamp": "2026-03-17T13:45:39.779Z"
     },
     {
       "module": "auth",
       "testName": "PUT /api/auth/me",
       "passed": true,
       "statusCode": 200,
-      "responseTime": "25ms",
-      "error": "{\"message\":\"更新成功\",\"user\":{\"id\":\"c652fe63-45de-4785-8bea-2cb1605621d4\",\"role\":\"STUDENT\",\"phone\":\"13800138099\",\"nickname\":\"更新后的昵称\",\"avatar_url\":null}}",
-      "timestamp": "2026-03-17T12:34:22.156Z"
+      "responseTime": "45ms",
+      "error": "{\"message\":\"更新成功\",\"user\":{\"id\":\"b7ad40c5-52bc-4b6f-a957-84ada4f41995\",\"role\":\"STUDENT\",\"phone\":\"13800138099\",\"nickname\":\"更新后的昵称\",\"avatar_url\":null}}",
+      "timestamp": "2026-03-17T13:45:39.826Z"
     },
     {
       "module": "ai",
       "testName": "POST /api/ai/ask",
       "passed": false,
       "statusCode": 500,
-      "responseTime": "10364ms",
+      "responseTime": "8936ms",
       "error": "{\"error\":\"服务器错误\"}",
-      "timestamp": "2026-03-17T12:34:32.522Z"
+      "timestamp": "2026-03-17T13:45:48.766Z"
     },
     {
       "module": "ai",
       "testName": "GET /api/ai/history",
       "passed": true,
       "statusCode": 200,
-      "responseTime": "18ms",
-      "error": "{\"data\":[{\"id\":null,\"user_id\":\"c652fe63-45de-4785-8bea-2cb1605621d4\",\"question\":\"什么是勾股定理？\",\"answer\":\"勾股定理（又称毕达哥拉斯定理）是平面几何中一个非常重要的基本定理，描述的是**直角三角形三边之间的数量关系**。\\n\\n✅ **内容表述：**  \\n在一个直角三角形中，**两条直角边的平方和等于斜",
-      "timestamp": "2026-03-17T12:34:32.542Z"
+      "responseTime": "23ms",
+      "error": "{\"data\":[{\"id\":null,\"user_id\":\"b7ad40c5-52bc-4b6f-a957-84ada4f41995\",\"question\":\"什么是勾股定理？\",\"answer\":\"勾股定理（又称毕达哥拉斯定理）是平面几何中一个非常重要的基本定理，描述的是**直角三角形三边之间的数量关系**。\\n\\n✅ **定理内容：**  \\n在一个直角三角形中，**两条直角边的平方和等于斜",
+      "timestamp": "2026-03-17T13:45:48.791Z"
     },
     {
       "module": "ai",
       "testName": "GET /api/ai/search",
       "passed": false,
       "statusCode": 400,
-      "responseTime": "14ms",
+      "responseTime": "24ms",
       "error": "{\"error\":\"搜索关键词不能为空\"}",
-      "timestamp": "2026-03-17T12:34:32.557Z"
+      "timestamp": "2026-03-17T13:45:48.817Z"
     },
     {
       "module": "ai",
       "testName": "DELETE /api/ai/:id",
       "passed": true,
       "statusCode": 404,
-      "responseTime": "13ms",
+      "responseTime": "18ms",
       "error": "{\"error\":\"记录不存在\"}",
-      "timestamp": "2026-03-17T12:34:32.571Z"
+      "timestamp": "2026-03-17T13:45:48.837Z"
     },
     {
       "module": "knowledge",
       "testName": "GET /api/knowledge",
       "passed": true,
       "statusCode": 200,
-      "responseTime": "15ms",
+      "responseTime": "20ms",
       "error": "{\"data\":[],\"total\":0}",
-      "timestamp": "2026-03-17T12:34:32.588Z"
+      "timestamp": "2026-03-17T13:45:48.858Z"
     },
     {
       "module": "knowledge",
       "testName": "GET /api/knowledge/:id",
       "passed": true,
       "statusCode": 404,
-      "responseTime": "21ms",
+      "responseTime": "38ms",
       "error": "{\"error\":\"知识点不存在\"}",
-      "timestamp": "2026-03-17T12:34:32.611Z"
+      "timestamp": "2026-03-17T13:45:48.899Z"
     },
     {
       "module": "knowledge",
       "testName": "POST /api/knowledge",
       "passed": true,
       "statusCode": 201,
-      "responseTime": "29ms",
+      "responseTime": "40ms",
       "error": "{\"message\":\"创建成功\"}",
-      "timestamp": "2026-03-17T12:34:32.643Z"
+      "timestamp": "2026-03-17T13:45:48.942Z"
     },
     {
       "module": "knowledge",
       "testName": "PUT /api/knowledge/:id",
       "passed": true,
       "statusCode": 404,
-      "responseTime": "25ms",
+      "responseTime": "49ms",
       "error": "{\"error\":\"知识点不存在\"}",
-      "timestamp": "2026-03-17T12:34:32.671Z"
+      "timestamp": "2026-03-17T13:45:48.995Z"
     },
     {
       "module": "knowledge",
       "testName": "DELETE /api/knowledge/:id",
       "passed": true,
       "statusCode": 404,
-      "responseTime": "30ms",
+      "responseTime": "57ms",
       "error": "{\"error\":\"知识点不存在\"}",
-      "timestamp": "2026-03-17T12:34:32.703Z"
+      "timestamp": "2026-03-17T13:45:49.057Z"
     },
     {
       "module": "knowledge",
       "testName": "GET /api/knowledge/search",
       "passed": false,
       "statusCode": 400,
-      "responseTime": "25ms",
+      "responseTime": "84ms",
       "error": "{\"error\":\"搜索关键词不能为空\"}",
-      "timestamp": "2026-03-17T12:34:32.731Z"
+      "timestamp": "2026-03-17T13:45:49.145Z"
     },
     {
       "module": "progress",
       "testName": "GET /api/progress",
       "passed": true,
       "statusCode": 200,
-      "responseTime": "51ms",
+      "responseTime": "45ms",
       "error": "{\"data\":[]}",
-      "timestamp": "2026-03-17T12:34:32.784Z"
+      "timestamp": "2026-03-17T13:45:49.194Z"
     },
     {
       "module": "progress",
@@ -685,286 +685,286 @@
       "statusCode": 200,
       "responseTime": "28ms",
       "error": "{\"data\":{\"totalPoints\":0,\"totalDuration\":0,\"avgCompletionRate\":0,\"completedPoints\":0}}",
-      "timestamp": "2026-03-17T12:34:32.814Z"
+      "timestamp": "2026-03-17T13:45:49.226Z"
     },
     {
       "module": "progress",
       "testName": "POST /api/progress/upsert",
       "passed": false,
       "statusCode": 400,
-      "responseTime": "16ms",
+      "responseTime": "36ms",
       "error": "{\"error\":\"知识点 ID 不能为空\"}",
-      "timestamp": "2026-03-17T12:34:32.832Z"
+      "timestamp": "2026-03-17T13:45:49.265Z"
     },
     {
       "module": "progress",
       "testName": "POST /api/progress/log",
       "passed": false,
       "statusCode": 400,
-      "responseTime": "15ms",
+      "responseTime": "32ms",
       "error": "{\"error\":\"知识点 ID 和学习时长不能为空\"}",
-      "timestamp": "2026-03-17T12:34:32.849Z"
+      "timestamp": "2026-03-17T13:45:49.300Z"
     },
     {
       "module": "points",
       "testName": "GET /api/points/balance",
       "passed": false,
       "statusCode": 404,
-      "responseTime": "13ms",
+      "responseTime": "59ms",
       "error": "{\"error\":\"接口不存在\"}",
-      "timestamp": "2026-03-17T12:34:32.864Z"
+      "timestamp": "2026-03-17T13:45:49.363Z"
     },
     {
       "module": "points",
       "testName": "GET /api/points/ledger",
       "passed": false,
       "statusCode": 404,
-      "responseTime": "15ms",
+      "responseTime": "39ms",
       "error": "{\"error\":\"接口不存在\"}",
-      "timestamp": "2026-03-17T12:34:32.881Z"
+      "timestamp": "2026-03-17T13:45:49.406Z"
     },
     {
       "module": "points",
       "testName": "POST /api/points/earn",
       "passed": false,
       "statusCode": 404,
-      "responseTime": "15ms",
+      "responseTime": "34ms",
       "error": "{\"error\":\"接口不存在\"}",
-      "timestamp": "2026-03-17T12:34:32.897Z"
+      "timestamp": "2026-03-17T13:45:49.443Z"
     },
     {
       "module": "points",
       "testName": "GET /api/points/rank",
       "passed": false,
       "statusCode": 404,
-      "responseTime": "13ms",
+      "responseTime": "29ms",
       "error": "{\"error\":\"接口不存在\"}",
-      "timestamp": "2026-03-17T12:34:32.912Z"
+      "timestamp": "2026-03-17T13:45:49.476Z"
     },
     {
       "module": "weakness",
       "testName": "GET /api/weakness/analysis",
       "passed": false,
       "statusCode": 404,
-      "responseTime": "19ms",
+      "responseTime": "44ms",
       "error": "{\"error\":\"接口不存在\"}",
-      "timestamp": "2026-03-17T12:34:32.932Z"
+      "timestamp": "2026-03-17T13:45:49.523Z"
     },
     {
       "module": "weakness",
       "testName": "GET /api/weakness/recommendations",
       "passed": false,
       "statusCode": 404,
-      "responseTime": "18ms",
+      "responseTime": "35ms",
       "error": "{\"error\":\"接口不存在\"}",
-      "timestamp": "2026-03-17T12:34:32.953Z"
+      "timestamp": "2026-03-17T13:45:49.560Z"
     },
     {
       "module": "weakness",
       "testName": "POST /api/weakness/practice",
       "passed": false,
       "statusCode": 404,
-      "responseTime": "15ms",
+      "responseTime": "34ms",
       "error": "{\"error\":\"接口不存在\"}",
-      "timestamp": "2026-03-17T12:34:32.969Z"
+      "timestamp": "2026-03-17T13:45:49.599Z"
     },
     {
       "module": "weakness",
       "testName": "GET /api/weakness/stats",
       "passed": false,
       "statusCode": 404,
-      "responseTime": "16ms",
+      "responseTime": "28ms",
       "error": "{\"error\":\"接口不存在\"}",
-      "timestamp": "2026-03-17T12:34:32.986Z"
+      "timestamp": "2026-03-17T13:45:49.629Z"
     },
     {
       "module": "leaderboard",
       "testName": "GET /api/leaderboards/total",
       "passed": false,
       "statusCode": 404,
-      "responseTime": "14ms",
+      "responseTime": "29ms",
       "error": "{\"error\":\"接口不存在\"}",
-      "timestamp": "2026-03-17T12:34:33.001Z"
+      "timestamp": "2026-03-17T13:45:49.661Z"
     },
     {
       "module": "leaderboard",
       "testName": "GET /api/leaderboards/weekly",
       "passed": false,
       "statusCode": 404,
-      "responseTime": "20ms",
+      "responseTime": "29ms",
       "error": "{\"error\":\"接口不存在\"}",
-      "timestamp": "2026-03-17T12:34:33.022Z"
+      "timestamp": "2026-03-17T13:45:49.692Z"
     },
     {
       "module": "leaderboard",
       "testName": "GET /api/leaderboards/monthly",
       "passed": false,
       "statusCode": 404,
-      "responseTime": "15ms",
+      "responseTime": "32ms",
       "error": "{\"error\":\"接口不存在\"}",
-      "timestamp": "2026-03-17T12:34:33.039Z"
+      "timestamp": "2026-03-17T13:45:49.726Z"
     },
     {
       "module": "leaderboard",
       "testName": "GET /api/leaderboards/subject/:subject",
       "passed": false,
       "statusCode": 404,
-      "responseTime": "14ms",
+      "responseTime": "27ms",
       "error": "{\"error\":\"接口不存在\"}",
-      "timestamp": "2026-03-17T12:34:33.056Z"
+      "timestamp": "2026-03-17T13:45:49.756Z"
     },
     {
       "module": "textbooks",
       "testName": "GET /api/textbooks",
       "passed": true,
       "statusCode": 200,
-      "responseTime": "21ms",
+      "responseTime": "33ms",
       "error": "{\"success\":true,\"data\":[]}",
-      "timestamp": "2026-03-17T12:34:33.079Z"
+      "timestamp": "2026-03-17T13:45:49.792Z"
     },
     {
       "module": "textbooks",
       "testName": "GET /api/textbooks/:id",
       "passed": true,
       "statusCode": 404,
-      "responseTime": "23ms",
+      "responseTime": "38ms",
       "error": "{\"success\":false,\"error\":\"课本文本不存在\"}",
-      "timestamp": "2026-03-17T12:34:33.105Z"
+      "timestamp": "2026-03-17T13:45:49.833Z"
     },
     {
       "module": "textbooks",
       "testName": "POST /api/textbooks",
       "passed": false,
       "statusCode": 404,
-      "responseTime": "18ms",
+      "responseTime": "33ms",
       "error": "{\"error\":\"接口不存在\"}",
-      "timestamp": "2026-03-17T12:34:33.124Z"
+      "timestamp": "2026-03-17T13:45:49.869Z"
     },
     {
       "module": "textbooks",
       "testName": "PUT /api/textbooks/:id",
       "passed": true,
       "statusCode": 404,
-      "responseTime": "15ms",
+      "responseTime": "28ms",
       "error": "{\"error\":\"接口不存在\"}",
-      "timestamp": "2026-03-17T12:34:33.140Z"
+      "timestamp": "2026-03-17T13:45:49.900Z"
     },
     {
       "module": "textbooks",
       "testName": "DELETE /api/textbooks/:id",
       "passed": true,
       "statusCode": 404,
-      "responseTime": "13ms",
+      "responseTime": "36ms",
       "error": "{\"success\":false,\"error\":\"课本不存在\"}",
-      "timestamp": "2026-03-17T12:34:33.155Z"
+      "timestamp": "2026-03-17T13:45:49.939Z"
     },
     {
       "module": "textbooks",
       "testName": "GET /api/textbooks/:id/units",
       "passed": true,
       "statusCode": 404,
-      "responseTime": "13ms",
+      "responseTime": "34ms",
       "error": "{\"success\":false,\"error\":\"课本不存在\"}",
-      "timestamp": "2026-03-17T12:34:33.170Z"
+      "timestamp": "2026-03-17T13:45:49.975Z"
     },
     {
       "module": "upload",
       "testName": "POST /api/upload/textbook",
       "passed": true,
       "statusCode": 400,
-      "responseTime": "29ms",
+      "responseTime": "103ms",
       "error": "{\"error\":\"缺少必要参数\"}",
-      "timestamp": "2026-03-17T12:34:33.200Z"
+      "timestamp": "2026-03-17T13:45:50.082Z"
     },
     {
       "module": "upload",
       "testName": "POST /api/upload/avatar",
       "passed": true,
       "statusCode": 400,
-      "responseTime": "21ms",
+      "responseTime": "73ms",
       "error": "{\"error\":\"缺少用户 ID\"}",
-      "timestamp": "2026-03-17T12:34:33.223Z"
+      "timestamp": "2026-03-17T13:45:50.159Z"
     },
     {
       "module": "upload",
       "testName": "POST /api/upload/attachment",
       "passed": true,
       "statusCode": 400,
-      "responseTime": "28ms",
+      "responseTime": "62ms",
       "error": "{\"error\":\"缺少实体类型或 ID\"}",
-      "timestamp": "2026-03-17T12:34:33.253Z"
+      "timestamp": "2026-03-17T13:45:50.226Z"
     },
     {
       "module": "ai-gateway",
       "testName": "POST /api/ai-gateway/generate",
       "passed": false,
       "statusCode": 404,
-      "responseTime": "17ms",
+      "responseTime": "41ms",
       "error": "{\"error\":\"接口不存在\"}",
-      "timestamp": "2026-03-17T12:34:33.272Z"
+      "timestamp": "2026-03-17T13:45:50.273Z"
     },
     {
       "module": "ai-gateway",
       "testName": "POST /api/ai-gateway/parse",
       "passed": false,
       "statusCode": 404,
-      "responseTime": "22ms",
+      "responseTime": "38ms",
       "error": "{\"error\":\"接口不存在\"}",
-      "timestamp": "2026-03-17T12:34:33.296Z"
+      "timestamp": "2026-03-17T13:45:50.315Z"
     },
     {
       "module": "ai-gateway",
       "testName": "POST /api/ai-gateway/analyze",
       "passed": false,
       "statusCode": 404,
-      "responseTime": "14ms",
+      "responseTime": "40ms",
       "error": "{\"error\":\"接口不存在\"}",
-      "timestamp": "2026-03-17T12:34:33.313Z"
+      "timestamp": "2026-03-17T13:45:50.358Z"
     },
     {
       "module": "ai-gateway",
       "testName": "GET /api/ai-gateway/models",
       "passed": false,
       "statusCode": 404,
-      "responseTime": "15ms",
+      "responseTime": "31ms",
       "error": "{\"error\":\"接口不存在\"}",
-      "timestamp": "2026-03-17T12:34:33.329Z"
+      "timestamp": "2026-03-17T13:45:50.393Z"
     },
     {
       "module": "health",
       "testName": "GET /api/health",
       "passed": true,
       "statusCode": 200,
-      "responseTime": "14ms",
-      "error": "{\"status\":\"ok\",\"timestamp\":\"2026-03-17T12:34:33.336Z\",\"uptime\":104.4475839,\"services\":{\"database\":\"connected\",\"memory\":{\"used\":594,\"total\":742,\"unit\":\"MB\"}}}",
-      "timestamp": "2026-03-17T12:34:33.345Z"
+      "responseTime": "35ms",
+      "error": "{\"status\":\"ok\",\"timestamp\":\"2026-03-17T13:45:50.409Z\",\"uptime\":114.0536808,\"services\":{\"database\":\"connected\",\"memory\":{\"used\":634,\"total\":923,\"unit\":\"MB\"}}}",
+      "timestamp": "2026-03-17T13:45:50.431Z"
     },
     {
       "module": "health",
       "testName": "GET /api/health/db",
       "passed": false,
       "statusCode": 404,
-      "responseTime": "15ms",
+      "responseTime": "34ms",
       "error": "{\"error\":\"接口不存在\"}",
-      "timestamp": "2026-03-17T12:34:33.361Z"
+      "timestamp": "2026-03-17T13:45:50.468Z"
     },
     {
       "module": "health",
       "testName": "GET /api/health/redis",
       "passed": false,
       "statusCode": 404,
-      "responseTime": "20ms",
+      "responseTime": "29ms",
       "error": "{\"error\":\"接口不存在\"}",
-      "timestamp": "2026-03-17T12:34:33.382Z"
+      "timestamp": "2026-03-17T13:45:50.499Z"
     },
     {
       "module": "health",
       "testName": "GET /api/health/uptime",
       "passed": false,
       "statusCode": 404,
-      "responseTime": "15ms",
+      "responseTime": "33ms",
       "error": "{\"error\":\"接口不存在\"}",
-      "timestamp": "2026-03-17T12:34:33.400Z"
+      "timestamp": "2026-03-17T13:45:50.535Z"
     }
   ]
 }

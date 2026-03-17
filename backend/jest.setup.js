@@ -28,27 +28,38 @@ process.env.REDIS_PORT = '6379';
 // Mock Redis 连接（避免实际连接）
 jest.mock('ioredis', () => {
   class MockRedis {
-    constructor() {}
-    connect() { return Promise.resolve(); }
-    disconnect() { return Promise.resolve(); }
-    quit() { return Promise.resolve(); }
-    on() {}
-    once() {}
-    removeListener() {}
-    removeAllListeners() {}
-    call() { return Promise.resolve(null); }
-    send_command() { return Promise.resolve(null); }
-    get() { return Promise.resolve(null); }
-    set() { return Promise.resolve('OK'); }
-    del() { return Promise.resolve(1); }
-    exists() { return Promise.resolve(0); }
-    keys() { return Promise.resolve([]); }
-    flushdb() { return Promise.resolve('OK'); }
-    info() { return Promise.resolve(''); }
-    ping() { return Promise.resolve('PONG'); }
-    subscribe() { return Promise.resolve(); }
-    unsubscribe() { return Promise.resolve(); }
-    publish() { return Promise.resolve(0); }
+    constructor() {
+      this.connect = jest.fn().mockResolvedValue();
+      this.disconnect = jest.fn().mockResolvedValue();
+      this.quit = jest.fn().mockResolvedValue();
+      this.on = jest.fn(function() { return this; });
+      this.once = jest.fn(function() { return this; });
+      this.removeListener = jest.fn();
+      this.removeAllListeners = jest.fn();
+      this.call = jest.fn().mockResolvedValue(null);
+      this.send_command = jest.fn().mockResolvedValue(null);
+      this.get = jest.fn().mockResolvedValue(null);
+      this.set = jest.fn().mockResolvedValue('OK');
+      this.del = jest.fn().mockResolvedValue(1);
+      this.exists = jest.fn().mockResolvedValue(0);
+      this.keys = jest.fn().mockResolvedValue([]);
+      this.flushdb = jest.fn().mockResolvedValue('OK');
+      this.info = jest.fn().mockResolvedValue('');
+      this.ping = jest.fn().mockResolvedValue('PONG');
+      this.subscribe = jest.fn().mockResolvedValue();
+      this.unsubscribe = jest.fn().mockResolvedValue();
+      this.publish = jest.fn().mockResolvedValue(0);
+      this.hincrbyfloat = jest.fn().mockResolvedValue(1);
+      this.hincrby = jest.fn().mockResolvedValue(1);
+      this.expire = jest.fn().mockResolvedValue(1);
+      this.hvals = jest.fn().mockResolvedValue([]);
+      this.hgetall = jest.fn().mockResolvedValue({});
+      this.hget = jest.fn().mockResolvedValue(null);
+      this.setex = jest.fn().mockResolvedValue('OK');
+      this.lpush = jest.fn().mockResolvedValue(1);
+      this.ltrim = jest.fn().mockResolvedValue('OK');
+      this.lrange = jest.fn().mockResolvedValue([]);
+    }
   }
   return MockRedis;
 });

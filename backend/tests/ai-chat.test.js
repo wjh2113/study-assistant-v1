@@ -1,8 +1,8 @@
 ﻿/**
  * AI Chat 模块单元测试
  * ISSUE-P2-AI-001: AI 智能答疑
- * 测试覆盖：AIChatService、VectorSearchService
- * 目标覆盖率：80%+
+ * 测试覆盖: AIChatService、VectorSearchService
+ * 目标覆盖率: 80%+
  */
 
 const AIChatService = require('../src/modules/ai-chat/AIChatService');
@@ -230,7 +230,7 @@ describe('AIChatService', () => {
 
     test('应该包含年级信息', () => {
       const prompt = AIChatService.buildSystemPrompt('math', { grade: '五年级' });
-      expect(prompt).toContain('学生年级：五年级');
+      expect(prompt).toContain('学生年级: 五年级');
     });
 
     test('应该提示结合课本', () => {
@@ -274,8 +274,8 @@ describe('AIChatService', () => {
       ];
       const prompt = AIChatService.buildPrompt('问题', [], ragResults, false);
       expect(prompt).toContain('【相关知识】');
-      expect(prompt).toContain('1. 重力:重力是地球引力');
-      expect(prompt).toContain('2. 质量:质量是物体属性');
+      expect(prompt).toContain('1. 重力: 重力是地球引力');
+      expect(prompt).toContain('2. 质量: 质量是物体属性');
     });
 
     test('应该添加示例要求', () => {
@@ -367,7 +367,7 @@ describe('AIChatService', () => {
 
       await expect(
         AIChatService.sendMessage(sessionId, '问题')
-      ).rejects.toThrow('AI 响应失败：API 调用失败');
+      ).rejects.toThrow('AI 响应失败: API 调用失败');
     });
 
     test('应该抛出错当会话不存在', async () => {
@@ -532,7 +532,7 @@ describe('VectorSearchService', () => {
       process.env.AI_API_KEY = 'test-key';
       
       const result = await VectorSearchService.generateEmbedding('测试');
-      // 降级方案：返回零向量
+      // 降级方案: 返回零向量
       expect(result).toHaveLength(1536);
       expect(result.every(v => v === 0)).toBe(true);
     });

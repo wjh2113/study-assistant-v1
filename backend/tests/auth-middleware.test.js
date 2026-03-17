@@ -168,7 +168,7 @@ describe('Auth Middleware Tests', () => {
       expect(next).not.toHaveBeenCalled();
       expect(res.status).toHaveBeenCalledWith(401);
       expect(res.json).toHaveBeenCalledWith({
-        error: '未提供认证 token'
+        error: '未授权，请登录后重试'
       });
     });
 
@@ -231,6 +231,52 @@ describe('Auth Middleware Tests', () => {
       expect(next).not.toHaveBeenCalled();
       expect(res.status).toHaveBeenCalledWith(401);
     });
+
+    it('Bearer 后没有 token 应该返回 401', () => {
+      const req = {
+        headers: {
+          authorization: 'Bearer '
+        }
+      };
+
+      const res = {
+        status: jest.fn().mockReturnThis(),
+        json: jest.fn()
+      };
+
+      const next = jest.fn();
+
+      authMiddleware(req, res, next);
+
+      expect(next).not.toHaveBeenCalled();
+      expect(res.status).toHaveBeenCalledWith(401);
+      expect(res.json).toHaveBeenCalledWith({
+        error: '未授权，请登录后重试'
+      });
+    });
+
+    it('Bearer 后只有空格应该返回 401', () => {
+      const req = {
+        headers: {
+          authorization: 'Bearer    '
+        }
+      };
+
+      const res = {
+        status: jest.fn().mockReturnThis(),
+        json: jest.fn()
+      };
+
+      const next = jest.fn();
+
+      authMiddleware(req, res, next);
+
+      expect(next).not.toHaveBeenCalled();
+      expect(res.status).toHaveBeenCalledWith(401);
+      expect(res.json).toHaveBeenCalledWith({
+        error: '未授权，请登录后重试'
+      });
+    });
   });
 
   // ============================================================================
@@ -264,7 +310,7 @@ describe('Auth Middleware Tests', () => {
       expect(next).not.toHaveBeenCalled();
       expect(res.status).toHaveBeenCalledWith(401);
       expect(res.json).toHaveBeenCalledWith({
-        error: 'token 已过期'
+        error: '登录已过期，请重新登录'
       });
     });
   });
@@ -293,7 +339,7 @@ describe('Auth Middleware Tests', () => {
       expect(next).not.toHaveBeenCalled();
       expect(res.status).toHaveBeenCalledWith(401);
       expect(res.json).toHaveBeenCalledWith({
-        error: '无效的 token'
+        error: '无效的令牌'
       });
     });
 
@@ -412,7 +458,7 @@ describe('Auth Middleware Tests', () => {
       expect(next).not.toHaveBeenCalled();
       expect(res.status).toHaveBeenCalledWith(401);
       expect(res.json).toHaveBeenCalledWith({
-        error: '无效的 token 格式'
+        error: '无效的令牌：缺少用户标识'
       });
     });
 

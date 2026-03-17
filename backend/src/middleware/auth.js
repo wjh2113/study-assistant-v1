@@ -14,7 +14,13 @@ const authMiddleware = (req, res, next) => {
     }
 
     // 处理多个空格的情况，提取 token 并去除首尾空格
-    const token = authHeader.split(' ')[1]?.trim();
+    // 使用正则表达式匹配 Bearer 后的 token，支持多个空格
+    const tokenMatch = authHeader.match(/^Bearer\s+(.+)$/);
+    const token = tokenMatch ? tokenMatch[1].trim() : null;
+    
+    if (!token) {
+      return res.status(401).json({ error: '未授权，请登录后重试' });
+    }
     
     // 验证 token
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
