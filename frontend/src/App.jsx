@@ -5,9 +5,17 @@ import Register from './pages/Register'
 import Dashboard from './pages/Dashboard'
 import Knowledge from './pages/Knowledge'
 import AIChat from './pages/AIChat'
+import AIChatV2 from './pages/AIChatV2'
+import EssayGrading from './pages/EssayGrading'
+import LearningPlan from './pages/LearningPlan'
 import Progress from './pages/Progress'
 import Textbooks from './pages/Textbooks'
 import Points from './pages/Points'
+import Practice from './pages/Practice'
+import ParentBind from './pages/ParentBind'
+import StudentMonitor from './pages/StudentMonitor'
+import Leaderboard from './pages/Leaderboard'
+import Profile from './pages/home/Profile'
 
 function PrivateRoute({ children }) {
   const { user, loading } = useAuth()
@@ -57,6 +65,30 @@ function App() {
         }
       />
       <Route
+        path="/ai-chat-v2"
+        element={
+          <PrivateRoute>
+            <AIChatV2 />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/ai/essay-grading"
+        element={
+          <PrivateRoute>
+            <EssayGrading />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/ai/learning-plan"
+        element={
+          <PrivateRoute>
+            <LearningPlan />
+          </PrivateRoute>
+        }
+      />
+      <Route
         path="/progress"
         element={
           <PrivateRoute>
@@ -77,6 +109,54 @@ function App() {
         element={
           <PrivateRoute>
             <Textbooks />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/practice"
+        element={
+          <PrivateRoute>
+            <Practice />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/leaderboard"
+        element={
+          <PrivateRoute>
+            <Leaderboard />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/parent/bind"
+        element={
+          <PrivateRoute>
+            <ParentBind />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/parent/monitor"
+        element={
+          <PrivateRoute>
+            <StudentMonitor />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/parent/monitor/:studentId"
+        element={
+          <PrivateRoute>
+            <StudentMonitor />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/profile"
+        element={
+          <PrivateRoute>
+            <Profile />
           </PrivateRoute>
         }
       />

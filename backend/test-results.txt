@@ -1,0 +1,1055 @@
+﻿
+> studyass-backend@1.0.0 test
+> jest --coverage --testPathPattern=ai-gateway-v2.test.js|auth-flow.test.js|auth-middleware.test.js --passWithNoTests
+
+  console.log
+    馃И 娴嬭瘯鐜宸查厤缃細TEST_MODE=true, DATABASE_PATH=E:\openclaw\workspace-studyass-mgr\backend\test-temp-15020.db, QUEUE_PROVIDER=memory
+
+      at Object.<anonymous> (jest.setup.js:128:9)
+
+  console.warn
+    棰樼洰 1 缂哄皯蹇呴渶瀛楁锛歲uestion
+
+    [0m [90m 741 |[39m     [36mfor[39m ([36mconst[39m field [36mof[39m required) {
+     [90m 742 |[39m       [36mif[39m ([33m![39mquestion[field]) {
+    [31m[1m>[22m[39m[90m 743 |[39m         console[33m.[39mwarn([32m`棰樼洰 ${defaultId} 缂哄皯蹇呴渶瀛楁锛?{field}`[39m)[33m;[39m
+     [90m     |[39m                 [31m[1m^[22m[39m
+     [90m 744 |[39m         [36mreturn[39m [36mnull[39m[33m;[39m
+     [90m 745 |[39m       }
+     [90m 746 |[39m     }[0m
+
+      at AiGatewayServiceV2.warn [as validateQuestion] (src/modules/ai-gateway/AiGatewayServiceV2.js:743:17)
+      at Object.validateQuestion (tests/ai-gateway-v2.test.js:75:44)
+
+  console.error
+    鈿狅笍  鎻愪緵鍟?aliyun 鏍囪涓轰笉鍋ュ悍锛岄敊璇鏁帮細5
+
+    [0m [90m 453 |[39m       [36mif[39m (status[33m.[39merrorCount [33m>=[39m [35m5[39m) {
+     [90m 454 |[39m         status[33m.[39mhealthy [33m=[39m [36mfalse[39m[33m;[39m
+    [31m[1m>[22m[39m[90m 455 |[39m         console[33m.[39merror([32m`鈿狅笍  鎻愪緵鍟?${provider} 鏍囪涓轰笉鍋ュ悍锛岄敊璇鏁帮細${status.errorCount}`[39m)[33m;[39m
+     [90m     |[39m                 [31m[1m^[22m[39m
+     [90m 456 |[39m       }
+     [90m 457 |[39m     }
+     [90m 458 |[39m   }[0m
+
+      at AiGatewayServiceV2.error [as updateHealthStatus] (src/modules/ai-gateway/AiGatewayServiceV2.js:455:17)
+      at Object.updateHealthStatus (tests/ai-gateway-v2.test.js:168:28)
+
+node.exe : FAIL tests/ai-gateway-v2.test.js
+所在位置 行:1 字符: 1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (FAIL tests/ai-gateway-v2.test.js:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  AiGatewayServiceV2
+    selectModel
+      鈭?搴旇涓?simple-question 浠诲姟閫夋嫨 qwen-flash (8 ms)
+      鈭?搴旇涓?complex-question 浠诲姟閫夋嫨 qwen-max (1 ms)
+      鈭?鏈煡浠诲姟绫诲瀷搴旇榛樿浣跨敤 chat 璺敱 (1 ms)
+    getModelConfig
+      鈭?搴旇鑳借幏鍙?qwen-flash 鐨勯厤缃?(2 ms)
+      鈭?搴旇鑳借幏鍙?gpt-4 鐨勯厤缃?(1 ms)
+      鈭?涓嶅瓨鍦ㄧ殑妯″瀷搴旇杩斿洖 null (1 ms)
+    validateQuestion
+      鈭?搴旇楠岃瘉瀹屾暣鐨勯鐩璞?(3 ms)
+      鈭?缂哄皯蹇呴渶瀛楁搴旇杩斿洖 null (41 ms)
+      鈭?搴旇涓虹己澶卞瓧娈垫彁渚涢粯璁ゅ€?(2 ms)
+    parseAndValidateQuestions
+      鈭?搴旇瑙ｆ瀽鏍囧噯 JSON 鏍煎紡 (2 ms)
+      鈭?搴旇澶勭悊鏁扮粍鏍煎紡 (1 ms)
+    updateHealthStatus
+      鈭?鎴愬姛璋冪敤搴旇鍑忓皯閿欒璁℃暟 (3 ms)
+      鈭?澶辫触璋冪敤搴旇澧炲姞閿欒璁℃暟 (2 ms)
+      鈭?閿欒璁℃暟杈惧埌 5 搴旇鏍囪涓轰笉鍋ュ悍 (7 ms)
+    buildQuestionPrompt
+      鈭?搴旇鐢熸垚姝ｇ‘鐨勬彁绀鸿瘝 (2 ms)
+  AiGatewayServiceV2 - 闆嗘垚娴嬭瘯
+    chat
+      脳 API Key 鏈厤缃椂搴旇杩斿洖閿欒 (2 ms)
+
+  鈼?AiGatewayServiceV2 - 闆嗘垚娴嬭瘯 鈥?chat 鈥?API Key 鏈厤缃椂搴旇杩斿洖閿欒
+
+    TypeError: Cannot read properties of null (reading 'inc')
+
+    [0m [90m 257 |[39m [90m   */[39m
+     [90m 258 |[39m   [36mstatic[39m recordCacheMiss(taskType) {
+    [31m[1m>[22m[39m[90m 259 |[39m     [36mthis[39m[33m.[39mmetrics[33m.[39maiCacheMisses[33m.[39minc({ t
+ask_type[33m:[39m taskType })[33m;[39m
+     [90m     |[39m                                [31m[1m^[22m[39m
+     [90m 260 |[39m   }
+     [90m 261 |[39m
+     [90m 262 |[39m   [90m/**[39m[0m
+
+      at PrometheusExporter.inc [as recordCacheMiss] (src/modules/monitoring/PrometheusExporter.js:259:32)
+      at AiGatewayServiceV2.recordCacheMiss [as callModel] (src/modules/ai-gateway/AiGatewayServiceV2.js:245:26)
+      at Object.<anonymous> (tests/ai-gateway-v2.test.js:208:22)
+
+  console.log
+    馃И 娴嬭瘯鐜宸查厤缃細TEST_MODE=true, DATABASE_PATH=E:\openclaw\workspace-studyass-mgr\backend\test-temp-15020.db, QUEUE_PROVIDER=memory
+
+      at Object.<anonymous> (jest.setup.js:128:9)
+
+FAIL tests/auth-middleware.test.js
+  Auth Middleware Tests
+    鏈夋晥 Token 娴嬭瘯
+      鈭?鏈夋晥 token 搴旇閫氳繃楠岃瘉骞舵坊鍔?req.user (8 ms)
+      鈭?搴旇鏀寔 userId 瀛楁 (3 ms)
+      鈭?搴旇浼樺厛浣跨敤 sub 瀛楁 (2 ms)
+      鈭?搴旇鍔犺浇鐢ㄦ埛淇℃伅 (2 ms)
+    缂哄け Token 娴嬭瘯
+      脳 Authorization header 缂哄け搴旇杩斿洖 401 (7 ms)
+      鈭?绌?Authorization header 搴旇杩斿洖 401 (2 ms)
+      鈭?闈?Bearer 鏍煎紡 token 搴旇杩斿洖 401 (11 ms)
+      鈭?Basic 璁よ瘉搴旇杩斿洖 401 (3 ms)
+    Token 杩囨湡娴嬭瘯
+      脳 杩囨湡 token 搴旇杩斿洖 401 (6 ms)
+    Token 鏃犳晥娴嬭瘯
+      脳 鏃犳晥 token 搴旇杩斿洖 401 (3 ms)
+      鈭?绛惧悕閿欒鐨?token 搴旇杩斿洖 401 (12 ms)
+      鈭?琚鏀圭殑 token 搴旇杩斿洖 401 (2 ms)
+    鐢ㄦ埛涓嶅瓨鍦ㄦ祴璇?      鈭?鐢ㄦ埛涓嶅瓨鍦ㄥ簲璇ヨ繑鍥?401 (2 ms)
+    Token 鏍煎紡娴嬭瘯
+      脳 缂哄皯 sub 鍜?userId 鐨?token 搴旇杩斿洖 401 (2 ms)
+      鈭?sub 涓虹┖鐨?token 搴旇杩斿洖 401 (3 ms)
+      鈭?userId 涓?null 鐨?token 搴旇杩斿洖 401 (2 ms)
+    杈圭晫鍦烘櫙娴嬭瘯
+      脳 Bearer 鍚庡浣欑┖鏍煎簲璇ヨ澶勭悊 (2 ms)
+      鈭?token 鏈熬绌烘牸搴旇琚鐞?(2 ms)
+      鈭?澶?payload token 搴旇琚鐞?(2 ms)
+    瀹夊叏娴嬭瘯
+      鈭?绌哄€?token 搴旇琚嫆缁?(2 ms)
+      鈭?undefined token 搴旇琚嫆缁?(1 ms)
+      鈭?瀵硅薄 token 搴旇琚嫆缁?(1 ms)
+    瑙掕壊娴嬭瘯
+      鈭?搴旇淇濈暀鐢ㄦ埛瑙掕壊淇℃伅 (3 ms)
+      鈭?搴旇鏀寔鎵€鏈夎鑹茬被鍨?(4 ms)
+
+  鈼?Auth Middleware Tests 鈥?缂哄け Token 娴嬭瘯 鈥?Authorization header 缂哄け搴旇杩斿洖 401
+
+    expect(jest.fn()).toHaveBeenCalledWith(...expected)
+
+    - Expected
+    + Received
+
+      Object {
+    -   "error": "鏈彁渚涜璇?token",
+    +   "error": "鏈巿鏉冿紝璇风櫥褰曞悗閲嶈瘯",
+      },
+
+    Number of calls: 1
+
+    [0m [90m 168 |[39m       expect(next)[33m.[39mnot[33m.[39mtoHaveBeenCalled()[33m;[39m
+     [90m 169 |[39m       expect(res[33m.[39mstatus)[33m.[39mtoHaveBeenCalledWith([35m401[39m)[33m;[39m
+    [31m[1m>[22m[39m[90m 170 |[39m       expect(res[33m.[39mjson)[33m.[39mtoHaveBeenCalledWith({
+     [90m     |[39m                        [31m[1m^[22m[39m
+     [90m 171 |[39m         error[33m:[39m [32m'鏈彁渚涜璇?token'[39m
+     [90m 172 |[39m       })[33m;[39m
+     [90m 173 |[39m     })[33m;[39m[0m
+
+      at Object.toHaveBeenCalledWith (tests/auth-middleware.test.js:170:24)
+
+  鈼?Auth Middleware Tests 鈥?Token 杩囨湡娴嬭瘯 鈥?杩囨湡 token 搴旇杩斿洖 401
+
+    expect(jest.fn()).toHaveBeenCalledWith(...expected)
+
+    - Expected
+    + Received
+
+      Object {
+    -   "error": "token 宸茶繃鏈?,
+    +   "error": "鐧诲綍宸茶繃鏈燂紝璇烽噸鏂扮櫥褰?,
+      },
+
+    Number of calls: 1
+
+    [0m [90m 264 |[39m       expect(next)[33m.[39mnot[33m.[39mtoHaveBeenCalled()[33m;[39m
+     [90m 265 |[39m       expect(res[33m.[39mstatus)[33m.[39mtoHaveBeenCalledWith([35m401[39m)[33m;[39m
+    [31m[1m>[22m[39m[90m 266 |[39m       expect(res[33m.[39mjson)[33m.[39mtoHaveBeenCalledWith({
+     [90m     |[39m                        [31m[1m^[22m[39m
+     [90m 267 |[39m         error[33m:[39m [32m'token 宸茶繃鏈?[39m
+     [90m 268 |[39m       })[33m;[39m
+     [90m 269 |[39m     })[33m;[39m[0m
+
+      at Object.toHaveBeenCalledWith (tests/auth-middleware.test.js:266:24)
+
+  鈼?Auth Middleware Tests 鈥?Token 鏃犳晥娴嬭瘯 鈥?鏃犳晥 token 搴旇杩斿洖 401
+
+    expect(jest.fn()).toHaveBeenCalledWith(...expected)
+
+    - Expected
+    + Received
+
+      Object {
+    -   "error": "鏃犳晥鐨?token",
+    +   "error": "鏃犳晥鐨勪护鐗?,
+      },
+
+    Number of calls: 1
+
+    [0m [90m 293 |[39m       expect(next)[33m.[39mnot[33m.[39mtoHaveBeenCalled()[33m;[39m
+     [90m 294 |[39m       expect(res[33m.[39mstatus)[33m.[39mtoHaveBeenCalledWith([35m401[39m)[33m;[39m
+    [31m[1m>[22m[39m[90m 295 |[39m       expect(res[33m.[39mjson)[33m.[39mtoHaveBeenCalledWith({
+     [90m     |[39m                        [31m[1m^[22m[39m
+     [90m 296 |[39m         error[33m:[39m [32m'鏃犳晥鐨?token'[39m
+     [90m 297 |[39m       })[33m;[39m
+     [90m 298 |[39m     })[33m;[39m[0m
+
+      at Object.toHaveBeenCalledWith (tests/auth-middleware.test.js:295:24)
+
+  鈼?Auth Middleware Tests 鈥?Token 鏍煎紡娴嬭瘯 鈥?缂哄皯 sub 鍜?userId 鐨?token 搴旇杩斿洖 401
+
+    expect(jest.fn()).toHaveBeenCalledWith(...expected)
+
+    - Expected
+    + Received
+
+      Object {
+    -   "error": "鏃犳晥鐨?token 鏍煎紡",
+    +   "error": "鏃犳晥鐨勪护鐗岋細缂哄皯鐢ㄦ埛鏍囪瘑",
+      },
+
+    Number of calls: 1
+
+    [0m [90m 412 |[39m       expect(next)[33m.[39mnot[33m.[39mtoHaveBeenCalled()[33m;[39m
+     [90m 413 |[39m       expect(res[33m.[39mstatus)[33m.[39mtoHaveBeenCalledWith([35m401[39m)[33m;[39m
+    [31m[1m>[22m[39m[90m 414 |[39m       expect(res[33m.[39mjson)[33m.[39mtoHaveBeenCalledWith({
+     [90m     |[39m                        [31m[1m^[22m[39m
+     [90m 415 |[39m         error[33m:[39m [32m'鏃犳晥鐨?token 鏍煎紡'[39m
+     [90m 416 |[39m       })[33m;[39m
+     [90m 417 |[39m     })[33m;[39m[0m
+
+      at Object.toHaveBeenCalledWith (tests/auth-middleware.test.js:414:24)
+
+  鈼?Auth Middleware Tests 鈥?杈圭晫鍦烘櫙娴嬭瘯 鈥?Bearer 鍚庡浣欑┖鏍煎簲璇ヨ澶勭悊
+
+    expect(jest.fn()).toHaveBeenCalled()
+
+    Expected number of calls: >= 1
+    Received number of calls:    0
+
+    [0m [90m 486 |[39m
+     [90m 487 |[39m       [90m// 搴旇鑳芥纭В鏋?token[39m
+    [31m[1m>[22m[39m[90m 488 |[39m       expect(next)[33m.[39mtoHaveBeenCalled()[33m;[39m
+     [90m     |[39m                    [31m[1m^[22m[39m
+     [90m 489 |[39m     })[33m;[39m
+     [90m 490 |[39m
+     [90m 491 |[39m     it([32m'token 鏈熬绌烘牸搴旇琚鐞?[39m[33m,[39m () [33m=>[39m {[0m
+
+      at Object.toHaveBeenCalled (tests/auth-middleware.test.js:488:20)
+
+  console.log
+    馃И 娴嬭瘯鐜宸查厤缃細TEST_MODE=true, DATABASE_PATH=E:\openclaw\workspace-studyass-mgr\backend\test-temp-15020.db, QUEUE_PROVIDER=memory
+
+      at Object.<anonymous> (jest.setup.js:128:9)
+
+  console.log
+    [DB] 鏁版嵁搴撶储寮曚紭鍖栧畬鎴?
+      at log (src/database/optimized-queries.js:173:11)
+
+  console.log
+    馃搳 Prometheus 鎸囨爣宸插垵濮嬪寲 (port=9090, path=/metrics)
+
+      at PrometheusExporter.log [as init] (src/modules/monitoring/PrometheusExporter.js:51:13)
+
+  console.log
+    馃И 寮€濮?Authentication Flow E2E 娴嬭瘯
+
+      at Object.log (tests/auth-flow.test.js:34:13)
+
+  console.error
+    鉂?Prometheus 鏈嶅姟鍣ㄩ敊璇? listen EADDRINUSE: address already in use :::9090
+
+    [0m [90m 171 |[39m
+     [90m 172 |[39m     [36mthis[39m[33m.[39mserver[33m.[39mon([32m'error'[39m[33m,[39m (error) [33m=>[39m {
+    [31m[1m>[22m[39m[90m 173 |[39m       console[33m.[39merror([32m'鉂?Prometheus 鏈嶅姟鍣ㄩ敊璇?'[39m[33m,[39m error[33m.[39mmessage)[33m;[39m
+     [90m     |[39m               [31m[1m^[22m[39m
+     [90m 174 |[39m     })[33m;[39m
+     [90m 175 |[39m   }
+     [90m 176 |[39m[0m
+
+      at Server.error (src/modules/monitoring/PrometheusExporter.js:173:15)
+
+  console.log
+    馃攲 娴嬭瘯鏈嶅姟鍣ㄥ惎鍔ㄥ湪绔彛 64192
+
+      at Object.log (tests/auth-flow.test.js:38:13)
+
+  console.warn
+    鈿狅笍  鏁版嵁搴撴竻鐞嗕笉鍙敤
+
+    [0m [90m 44 |[39m       dbCleaner [33m=[39m [36mnew[39m [33mDbCleaner[39m(db)[33m;[39m
+     [90m 45 |[39m     } [36mcatch[39m (error) {
+    [31m[1m>[22m[39m[90m 46 |[39m       console[33m.[39mwarn([32m'鈿狅笍  鏁版嵁搴撴竻鐞嗕笉鍙敤'[39m)[33m;[39m
+     [90m    |[39m               [31m[1m^[22m[39m
+     [90m 47 |[39m     }
+     [90m 48 |[39m   }[33m,[39m [35m30000[39m)[33m;[39m
+     [90m 49 |[39m[0m
+
+      at Object.warn (tests/auth-flow.test.js:46:15)
+
+[32minfo[39m: HTTP_REQUEST {"duration":8,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":400,"timestamp":"2026-03-17 20:48:09","type":"request","url":"/send-code"}
+[32minfo[39m: HTTP_REQUEST {"duration":1,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":400,"timestamp":"2026-03-17 20:48:09","type":"request","url":"/send-code"}
+[32minfo[39m: HTTP_REQUEST {"duration":2,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":400,"timestamp":"2026-03-17 20:48:09","type":"request","url":"/register"}
+[32minfo[39m: HTTP_REQUEST {"duration":2,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":400,"timestamp":"2026-03-17 20:48:09","type":"request","url":"/send-code"}
+[32minfo[39m: HTTP_REQUEST {"duration":2,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":400,"timestamp":"2026-03-17 20:48:09","type":"request","url":"/register"}
+[32minfo[39m: HTTP_REQUEST {"duration":1,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":400,"timestamp":"2026-03-17 20:48:09","type":"request","url":"/register"}
+[32minfo[39m: HTTP_REQUEST {"duration":1,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":400,"timestamp":"2026-03-17 20:48:09","type":"request","url":"/send-code"}
+[32minfo[39m: HTTP_REQUEST {"duration":1,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":400,"timestamp":"2026-03-17 20:48:09","type":"request","url":"/register"}
+[32minfo[39m: HTTP_REQUEST {"duration":3,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":400,"timestamp":"2026-03-17 20:48:09","type":"request","url":"/send-code"}
+[32minfo[39m: HTTP_REQUEST {"duration":1,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":400,"timestamp":"2026-03-17 20:48:09","type":"request","url":"/register"}
+[32minfo[39m: HTTP_REQUEST {"duration":1,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":400,"timestamp":"2026-03-17 20:48:09","type":"request","url":"/send-code"}
+[32minfo[39m: HTTP_REQUEST {"duration":1,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":400,"timestamp":"2026-03-17 20:48:09","type":"request","url":"/register"}
+[32minfo[39m: HTTP_REQUEST {"duration":1,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":400,"timestamp":"2026-03-17 20:48:09","type":"request","url":"/login"}
+[32minfo[39m: HTTP_REQUEST {"duration":1,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":400,"timestamp":"2026-03-17 20:48:09","type":"request","url":"/send-code"}
+[32minfo[39m: HTTP_REQUEST {"duration":1,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":400,"timestamp":"2026-03-17 20:48:09","type":"request","url":"/login"}
+[32minfo[39m: HTTP_REQUEST {"duration":2,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":401,"timestamp":"2026-03-17 20:48:09","type":"request","url":"/refresh"}
+[32minfo[39m: HTTP_REQUEST {"duration":2,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":400,"timestamp":"2026-03-17 20:48:09","type":"request","url":"/send-code"}
+[32minfo[39m: HTTP_REQUEST {"duration":1,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":400,"timestamp":"2026-03-17 20:48:09","type":"request","url":"/login"}
+[32minfo[39m: HTTP_REQUEST {"duration":2,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":401,"timestamp":"2026-03-17 20:48:09","type":"request","url":"/refresh"}
+[32minfo[39m: HTTP_REQUEST {"duration":3,"ip":"::ffff:127.0.0.1","method":"GET","service":"studyass-backend","status":401,"timestamp":"2026-03-17 20:48:09","type":"request","url":"/me"}
+[32minfo[39m: HTTP_REQUEST {"duration":2,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":400,"timestamp":"2026-03-17 20:48:09","type":"request","url":"/send-code"}
+[32minfo[39m: HTTP_REQUEST {"duration":2,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":400,"timestamp":"2026-03-17 20:48:09","type":"request","url":"/login"}
+[32minfo[39m: HTTP_REQUEST {"duration":2,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":401,"timestamp":"2026-03-17 20:48:09","type":"request","url":"/refresh"}
+[32minfo[39m: HTTP_REQUEST {"duration":2,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":401,"timestamp":"2026-03-17 20:48:09","type":"request","url":"/refresh"}
+[32minfo[39m: HTTP_REQUEST {"duration":1,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":400,"timestamp":"2026-03-17 20:48:10","type":"request","url":"/send-code"}
+[32minfo[39m: HTTP_REQUEST {"duration":1,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":400,"timestamp":"2026-03-17 20:48:10","type":"request","url":"/login"}
+[32minfo[39m: HTTP_REQUEST {"duration":1,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":400,"timestamp":"2026-03-17 20:48:10","type":"request","url":"/send-code"}
+[32minfo[39m: HTTP_REQUEST {"duration":2,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":400,"timestamp":"2026-03-17 20:48:10","type":"request","url":"/login"}
+[32minfo[39m: HTTP_REQUEST {"duration":1,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":400,"timestamp":"2026-03-17 20:48:10","type":"request","url":"/send-code"}
+[32minfo[39m: HTTP_REQUEST {"duration":1,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":400,"timestamp":"2026-03-17 20:48:10","type":"request","url":"/login"}
+[32minfo[39m: HTTP_REQUEST {"duration":2,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":400,"timestamp":"2026-03-17 20:48:10","type":"request","url":"/send-code"}
+[32minfo[39m: HTTP_REQUEST {"duration":1,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":400,"timestamp":"2026-03-17 20:48:10","type":"request","url":"/login"}
+  console.error
+    [VerificationService] 瀛樺偍楠岃瘉鐮佸け璐? client.setex is not a function
+
+    [0m [90m 127 |[39m     }
+     [90m 128 |[39m   } [36mcatch[39m (error) {
+    [31m[1m>[22m[39m[90m 129 |[39m     console[33m.[39merror([32m'[VerificationService] 瀛樺偍楠岃瘉鐮佸け璐?'[39m[33m,[39m error[33m.[39mmessage)[33m;[39m
+     [90m     |[39m             [31m[1m^[22m[39m
+     [90m 130 |[39m     [90m// Fallback 鍒版湰鍦板瓨鍌?[39m
+     [90m 131 |[39m     verificationCodeMap[33m.[39m[36mset[39m(key[33m,[39m {
+     [90m 132 |[39m       code[33m,[39m[0m
+
+      at Object.error [as generateAndSaveCode] (src/services/verificationService.js:129:13)
+      at generateAndSaveCode (src/controllers/authController.js:27:44)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at next (node_modules/express/lib/router/route.js:149:13)
+      at Route.dispatch (node_modules/express/lib/router/route.js:119:3)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at node_modules/express/lib/router/index.js:284:15
+      at router.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at router.handle (node_modules/express/lib/router/index.js:175:3)
+      at router (node_modules/express/lib/router/index.js:47:12)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:328:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at router.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at next (src/modules/logger/WinstonLoggerService.js:118:3)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:328:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at router.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at node_modules/express-rate-limit/dist/index.cjs:947:7
+      at node_modules/express-rate-limit/dist/index.cjs:830:5
+
+[32minfo[39m: HTTP_REQUEST {"duration":8,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":200,"timestamp":"2026-03-17 20:48:10","type":"request","url":"/send-code"}
+  console.log
+    [VerificationService] 鉁?娴嬭瘯妯″紡锛氶獙璇佺爜楠岃瘉鎴愬姛锛?3800000000 (register)
+
+      at Object.log [as verifyCode] (src/services/verificationService.js:160:13)
+
+[32minfo[39m: HTTP_REQUEST {"duration":6,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":201,"timestamp":"2026-03-17 20:48:10","type":"request","url":"/register"}
+  console.error
+    [VerificationService] 瀛樺偍楠岃瘉鐮佸け璐? client.setex is not a function
+
+    [0m [90m 127 |[39m     }
+     [90m 128 |[39m   } [36mcatch[39m (error) {
+    [31m[1m>[22m[39m[90m 129 |[39m     console[33m.[39merror([32m'[VerificationService] 瀛樺偍楠岃瘉鐮佸け璐?'[39m[33m,[39m error[33m.[39mmessage)[33m;[39m
+     [90m     |[39m             [31m[1m^[22m[39m
+     [90m 130 |[39m     [90m// Fallback 鍒版湰鍦板瓨鍌?[39m
+     [90m 131 |[39m     verificationCodeMap[33m.[39m[36mset[39m(key[33m,[39m {
+     [90m 132 |[39m       code[33m,[39m[0m
+
+      at Object.error [as generateAndSaveCode] (src/services/verificationService.js:129:13)
+      at generateAndSaveCode (src/controllers/authController.js:27:44)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at next (node_modules/express/lib/router/route.js:149:13)
+      at Route.dispatch (node_modules/express/lib/router/route.js:119:3)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at node_modules/express/lib/router/index.js:284:15
+      at router.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at router.handle (node_modules/express/lib/router/index.js:175:3)
+      at router (node_modules/express/lib/router/index.js:47:12)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:328:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at router.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at next (src/modules/logger/WinstonLoggerService.js:118:3)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:328:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at router.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at node_modules/express-rate-limit/dist/index.cjs:947:7
+      at node_modules/express-rate-limit/dist/index.cjs:830:5
+
+[32minfo[39m: HTTP_REQUEST {"duration":5,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":200,"timestamp":"2026-03-17 20:48:10","type":"request","url":"/send-code"}
+  console.log
+    [VerificationService] 鉁?娴嬭瘯妯″紡锛氶獙璇佺爜楠岃瘉鎴愬姛锛?3800000001 (register)
+
+      at Object.log [as verifyCode] (src/services/verificationService.js:160:13)
+
+[32minfo[39m: HTTP_REQUEST {"duration":4,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":201,"timestamp":"2026-03-17 20:48:10","type":"request","url":"/register"}
+  console.error
+    [VerificationService] 瀛樺偍楠岃瘉鐮佸け璐? client.setex is not a function
+
+    [0m [90m 127 |[39m     }
+     [90m 128 |[39m   } [36mcatch[39m (error) {
+    [31m[1m>[22m[39m[90m 129 |[39m     console[33m.[39merror([32m'[VerificationService] 瀛樺偍楠岃瘉鐮佸け璐?'[39m[33m,[39m error[33m.[39mmessage)[33m;[39m
+     [90m     |[39m             [31m[1m^[22m[39m
+     [90m 130 |[39m     [90m// Fallback 鍒版湰鍦板瓨鍌?[39m
+     [90m 131 |[39m     verificationCodeMap[33m.[39m[36mset[39m(key[33m,[39m {
+     [90m 132 |[39m       code[33m,[39m[0m
+
+      at Object.error [as generateAndSaveCode] (src/services/verificationService.js:129:13)
+      at generateAndSaveCode (src/controllers/authController.js:27:44)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at next (node_modules/express/lib/router/route.js:149:13)
+      at Route.dispatch (node_modules/express/lib/router/route.js:119:3)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at node_modules/express/lib/router/index.js:284:15
+      at router.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at router.handle (node_modules/express/lib/router/index.js:175:3)
+      at router (node_modules/express/lib/router/index.js:47:12)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:328:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at router.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at next (src/modules/logger/WinstonLoggerService.js:118:3)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:328:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at router.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at node_modules/express-rate-limit/dist/index.cjs:947:7
+      at node_modules/express-rate-limit/dist/index.cjs:830:5
+
+[32minfo[39m: HTTP_REQUEST {"duration":6,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":200,"timestamp":"2026-03-17 20:48:10","type":"request","url":"/send-code"}
+  console.log
+    [VerificationService] 鉁?娴嬭瘯妯″紡锛氶獙璇佺爜楠岃瘉鎴愬姛锛?3800000002 (register)
+
+      at Object.log [as verifyCode] (src/services/verificationService.js:160:13)
+
+[32minfo[39m: HTTP_REQUEST {"duration":4,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":201,"timestamp":"2026-03-17 20:48:10","type":"request","url":"/register"}
+  console.error
+    [VerificationService] 瀛樺偍楠岃瘉鐮佸け璐? client.setex is not a function
+
+    [0m [90m 127 |[39m     }
+     [90m 128 |[39m   } [36mcatch[39m (error) {
+    [31m[1m>[22m[39m[90m 129 |[39m     console[33m.[39merror([32m'[VerificationService] 瀛樺偍楠岃瘉鐮佸け璐?'[39m[33m,[39m error[33m.[39mmessage)[33m;[39m
+     [90m     |[39m             [31m[1m^[22m[39m
+     [90m 130 |[39m     [90m// Fallback 鍒版湰鍦板瓨鍌?[39m
+     [90m 131 |[39m     verificationCodeMap[33m.[39m[36mset[39m(key[33m,[39m {
+     [90m 132 |[39m       code[33m,[39m[0m
+
+      at Object.error [as generateAndSaveCode] (src/services/verificationService.js:129:13)
+      at generateAndSaveCode (src/controllers/authController.js:27:44)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at next (node_modules/express/lib/router/route.js:149:13)
+      at Route.dispatch (node_modules/express/lib/router/route.js:119:3)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at node_modules/express/lib/router/index.js:284:15
+      at router.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at router.handle (node_modules/express/lib/router/index.js:175:3)
+      at router (node_modules/express/lib/router/index.js:47:12)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:328:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at router.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at next (src/modules/logger/WinstonLoggerService.js:118:3)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:328:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at router.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at node_modules/express-rate-limit/dist/index.cjs:947:7
+      at node_modules/express-rate-limit/dist/index.cjs:830:5
+
+[32minfo[39m: HTTP_REQUEST {"duration":4,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":200,"timestamp":"2026-03-17 20:48:10","type":"request","url":"/send-code"}
+  console.log
+    [VerificationService] 鉁?娴嬭瘯妯″紡锛氶獙璇佺爜楠岃瘉鎴愬姛锛?3800000003 (register)
+
+      at Object.log [as verifyCode] (src/services/verificationService.js:160:13)
+
+[32minfo[39m: HTTP_REQUEST {"duration":4,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":201,"timestamp":"2026-03-17 20:48:10","type":"request","url":"/register"}
+  console.error
+    [VerificationService] 瀛樺偍楠岃瘉鐮佸け璐? client.setex is not a function
+
+    [0m [90m 127 |[39m     }
+     [90m 128 |[39m   } [36mcatch[39m (error) {
+    [31m[1m>[22m[39m[90m 129 |[39m     console[33m.[39merror([32m'[VerificationService] 瀛樺偍楠岃瘉鐮佸け璐?'[39m[33m,[39m error[33m.[39mmessage)[33m;[39m
+     [90m     |[39m             [31m[1m^[22m[39m
+     [90m 130 |[39m     [90m// Fallback 鍒版湰鍦板瓨鍌?[39m
+     [90m 131 |[39m     verificationCodeMap[33m.[39m[36mset[39m(key[33m,[39m {
+     [90m 132 |[39m       code[33m,[39m[0m
+
+      at Object.error [as generateAndSaveCode] (src/services/verificationService.js:129:13)
+      at generateAndSaveCode (src/controllers/authController.js:27:44)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at next (node_modules/express/lib/router/route.js:149:13)
+      at Route.dispatch (node_modules/express/lib/router/route.js:119:3)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at node_modules/express/lib/router/index.js:284:15
+      at router.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at router.handle (node_modules/express/lib/router/index.js:175:3)
+      at router (node_modules/express/lib/router/index.js:47:12)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:328:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at router.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at next (src/modules/logger/WinstonLoggerService.js:118:3)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:328:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at router.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at node_modules/express-rate-limit/dist/index.cjs:947:7
+      at node_modules/express-rate-limit/dist/index.cjs:830:5
+
+[32minfo[39m: HTTP_REQUEST {"duration":6,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":200,"timestamp":"2026-03-17 20:48:10","type":"request","url":"/send-code"}
+  console.log
+    [VerificationService] 鉁?娴嬭瘯妯″紡锛氶獙璇佺爜楠岃瘉鎴愬姛锛?3800000004 (register)
+
+      at Object.log [as verifyCode] (src/services/verificationService.js:160:13)
+
+[32minfo[39m: HTTP_REQUEST {"duration":5,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":201,"timestamp":"2026-03-17 20:48:10","type":"request","url":"/register"}
+  console.log
+    [VerificationService] 鉁?娴嬭瘯妯″紡锛氶獙璇佺爜楠岃瘉鎴愬姛锛?3800000000 (login)
+
+      at Object.log [as verifyCode] (src/services/verificationService.js:160:13)
+
+[32minfo[39m: HTTP_REQUEST {"duration":6,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":200,"timestamp":"2026-03-17 20:48:10","type":"request","url":"/login"}
+  console.log
+    [VerificationService] 鉁?娴嬭瘯妯″紡锛氶獙璇佺爜楠岃瘉鎴愬姛锛?3800000001 (login)
+
+      at Object.log [as verifyCode] (src/services/verificationService.js:160:13)
+
+[32minfo[39m: HTTP_REQUEST {"duration":3,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":200,"timestamp":"2026-03-17 20:48:10","type":"request","url":"/login"}
+  console.log
+    [VerificationService] 鉁?娴嬭瘯妯″紡锛氶獙璇佺爜楠岃瘉鎴愬姛锛?3800000002 (login)
+
+      at Object.log [as verifyCode] (src/services/verificationService.js:160:13)
+
+[32minfo[39m: HTTP_REQUEST {"duration":4,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":200,"timestamp":"2026-03-17 20:48:10","type":"request","url":"/login"}
+  console.log
+    [VerificationService] 鉁?娴嬭瘯妯″紡锛氶獙璇佺爜楠岃瘉鎴愬姛锛?3800000003 (login)
+
+      at Object.log [as verifyCode] (src/services/verificationService.js:160:13)
+
+[32minfo[39m: HTTP_REQUEST {"duration":3,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":200,"timestamp":"2026-03-17 20:48:10","type":"request","url":"/login"}
+  console.log
+    [VerificationService] 鉁?娴嬭瘯妯″紡锛氶獙璇佺爜楠岃瘉鎴愬姛锛?3800000004 (login)
+
+      at Object.log [as verifyCode] (src/services/verificationService.js:160:13)
+
+[32minfo[39m: HTTP_REQUEST {"duration":4,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":200,"timestamp":"2026-03-17 20:48:10","type":"request","url":"/login"}
+  console.error
+    [VerificationService] 瀛樺偍楠岃瘉鐮佸け璐? client.setex is not a function
+
+    [0m [90m 127 |[39m     }
+     [90m 128 |[39m   } [36mcatch[39m (error) {
+    [31m[1m>[22m[39m[90m 129 |[39m     console[33m.[39merror([32m'[VerificationService] 瀛樺偍楠岃瘉鐮佸け璐?'[39m[33m,[39m error[33m.[39mmessage)[33m;[39m
+     [90m     |[39m             [31m[1m^[22m[39m
+     [90m 130 |[39m     [90m// Fallback 鍒版湰鍦板瓨鍌?[39m
+     [90m 131 |[39m     verificationCodeMap[33m.[39m[36mset[39m(key[33m,[39m {
+     [90m 132 |[39m       code[33m,[39m[0m
+
+      at Object.error [as generateAndSaveCode] (src/services/verificationService.js:129:13)
+      at generateAndSaveCode (src/controllers/authController.js:27:44)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at next (node_modules/express/lib/router/route.js:149:13)
+      at Route.dispatch (node_modules/express/lib/router/route.js:119:3)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at node_modules/express/lib/router/index.js:284:15
+      at router.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at router.handle (node_modules/express/lib/router/index.js:175:3)
+      at router (node_modules/express/lib/router/index.js:47:12)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:328:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at router.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at next (src/modules/logger/WinstonLoggerService.js:118:3)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:328:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at router.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at node_modules/express-rate-limit/dist/index.cjs:947:7
+      at node_modules/express-rate-limit/dist/index.cjs:830:5
+
+[32minfo[39m: HTTP_REQUEST {"duration":6,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":200,"timestamp":"2026-03-17 20:48:10","type":"request","url":"/send-code"}
+  console.log
+    [VerificationService] 鉁?娴嬭瘯妯″紡锛氶獙璇佺爜楠岃瘉鎴愬姛锛?3800000001 (login)
+
+      at Object.log [as verifyCode] (src/services/verificationService.js:160:13)
+
+[32minfo[39m: HTTP_REQUEST {"duration":3,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":200,"timestamp":"2026-03-17 20:48:10","type":"request","url":"/login"}
+  console.error
+    [VerificationService] 瀛樺偍楠岃瘉鐮佸け璐? client.setex is not a function
+
+    [0m [90m 127 |[39m     }
+     [90m 128 |[39m   } [36mcatch[39m (error) {
+    [31m[1m>[22m[39m[90m 129 |[39m     console[33m.[39merror([32m'[VerificationService] 瀛樺偍楠岃瘉鐮佸け璐?'[39m[33m,[39m error[33m.[39mmessage)[33m;[39m
+     [90m     |[39m             [31m[1m^[22m[39m
+     [90m 130 |[39m     [90m// Fallback 鍒版湰鍦板瓨鍌?[39m
+     [90m 131 |[39m     verificationCodeMap[33m.[39m[36mset[39m(key[33m,[39m {
+     [90m 132 |[39m       code[33m,[39m[0m
+
+      at Object.error [as generateAndSaveCode] (src/services/verificationService.js:129:13)
+      at generateAndSaveCode (src/controllers/authController.js:27:44)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at next (node_modules/express/lib/router/route.js:149:13)
+      at Route.dispatch (node_modules/express/lib/router/route.js:119:3)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at node_modules/express/lib/router/index.js:284:15
+      at router.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at router.handle (node_modules/express/lib/router/index.js:175:3)
+      at router (node_modules/express/lib/router/index.js:47:12)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:328:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at router.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at next (src/modules/logger/WinstonLoggerService.js:118:3)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:328:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at router.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at node_modules/express-rate-limit/dist/index.cjs:947:7
+      at node_modules/express-rate-limit/dist/index.cjs:830:5
+
+[32minfo[39m: HTTP_REQUEST {"duration":6,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":200,"timestamp":"2026-03-17 20:48:10","type":"request","url":"/send-code"}
+  console.log
+    [VerificationService] 鉁?娴嬭瘯妯″紡锛氶獙璇佺爜楠岃瘉鎴愬姛锛?3800000002 (login)
+
+      at Object.log [as verifyCode] (src/services/verificationService.js:160:13)
+
+[32minfo[39m: HTTP_REQUEST {"duration":3,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":200,"timestamp":"2026-03-17 20:48:10","type":"request","url":"/login"}
+[32minfo[39m: HTTP_REQUEST {"duration":4,"ip":"::ffff:127.0.0.1","method":"GET","service":"studyass-backend","status":200,"timestamp":"2026-03-17 20:48:10","type":"request","url":"/me","userId":"aa0b4388-0c24-4978-8632-3619383840ca"}
+[32minfo[39m: HTTP_REQUEST {"duration":4,"ip":"::ffff:127.0.0.1","method":"GET","service":"studyass-backend","status":200,"timestamp":"2026-03-17 20:48:10","type":"request","url":"/me","userId":"bc79bc9f-e5df-44b6-9142-57755fe5aca2"}
+[32minfo[39m: HTTP_REQUEST {"duration":2,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":400,"timestamp":"2026-03-17 20:48:10","type":"request","url":"/send-code"}
+[32minfo[39m: HTTP_REQUEST {"duration":1,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":400,"timestamp":"2026-03-17 20:48:10","type":"request","url":"/send-code"}
+[32minfo[39m: HTTP_REQUEST {"duration":2,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":400,"timestamp":"2026-03-17 20:48:10","type":"request","url":"/register"}
+[32minfo[39m: HTTP_REQUEST {"duration":1,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":400,"timestamp":"2026-03-17 20:48:10","type":"request","url":"/send-code"}
+[32minfo[39m: HTTP_REQUEST {"duration":2,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":400,"timestamp":"2026-03-17 20:48:10","type":"request","url":"/register"}
+[32minfo[39m: HTTP_REQUEST {"duration":2,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":400,"timestamp":"2026-03-17 20:48:10","type":"request","url":"/send-code"}
+[32minfo[39m: HTTP_REQUEST {"duration":1,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":400,"timestamp":"2026-03-17 20:48:10","type":"request","url":"/register"}
+[32minfo[39m: HTTP_REQUEST {"duration":1,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":400,"timestamp":"2026-03-17 20:48:10","type":"request","url":"/send-code"}
+[32minfo[39m: HTTP_REQUEST {"duration":1,"ip":"::ffff:127.0.0.1","method":"POST","service":"studyass-backend","status":400,"timestamp":"2026-03-17 20:48:10","type":"request","url":"/register"}
+[32minfo[39m: HTTP_REQUEST {"duration":2,"ip":"::ffff:127.0.0.1","method":"GET","service":"studyass-backend","status":401,"timestamp":"2026-03-17 20:48:10","type":"request","url":"/me"}
+[32minfo[39m: HTTP_REQUEST {"duration":1,"ip":"::ffff:127.0.0.1","method":"PUT","service":"studyass-backend","status":401,"timestamp":"2026-03-17 20:48:10","type":"request","url":"/me"}
+  console.log
+    鉁?Authentication Flow E2E 娴嬭瘯瀹屾垚
+
+      at Object.log (tests/auth-flow.test.js:51:13)
+
+FAIL tests/auth-flow.test.js
+  Authentication Flow E2E Tests
+    瀹屾暣娉ㄥ唽娴佺▼
+      脳 搴旇瀹屾垚瀛︾敓鐢ㄦ埛娉ㄥ唽鍏ㄦ祦绋?(84 ms)
+      脳 搴旇瀹屾垚瀹堕暱鐢ㄦ埛娉ㄥ唽鍏ㄦ祦绋?(46 ms)
+      脳 搴旇鎷掔粷閲嶅娉ㄥ唽 (45 ms)
+    瀹屾暣鐧诲綍娴佺▼
+      脳 搴旇瀹屾垚鐜版湁鐢ㄦ埛鐧诲綍娴佺▼ (30 ms)
+      脳 搴旇鎷掔粷閿欒楠岃瘉鐮佺櫥褰?(45 ms)
+      脳 搴旇鎷掔粷鏈敞鍐岀敤鎴风櫥褰?(45 ms)
+    Token 鍒锋柊娴佺▼
+      脳 搴旇鎴愬姛鍒锋柊 token (39 ms)
+      脳 搴旇浣跨敤鏂?token 璁块棶鍙椾繚鎶よ祫婧?(67 ms)
+      鈭?搴旇鎷掔粷浣跨敤鏃?token 鍒锋柊 (56 ms)
+    鐢ㄦ埛淇℃伅绠＄悊娴佺▼
+      脳 搴旇鎴愬姛鑾峰彇褰撳墠鐢ㄦ埛淇℃伅 (33 ms)
+      脳 搴旇鎴愬姛鏇存柊鐢ㄦ埛鏄电О (28 ms)
+      脳 搴旇鎴愬姛鏇存柊鐢ㄦ埛澶村儚 (27 ms)
+      脳 搴旇鎷掔粷鏈巿鏉冭闂敤鎴蜂俊鎭?(28 ms)
+    澶氱敤鎴峰苟鍙戞祦绋?      鈭?搴旇鏀寔澶氫釜鐢ㄦ埛鍚屾椂娉ㄥ唽鍜岀櫥褰?(285 ms)
+      鈭?搴旇闅旂涓嶅悓鐢ㄦ埛鐨勬暟鎹?(119 ms)
+    杈圭晫鍜岄敊璇満鏅?      鈭?搴旇澶勭悊鏃犳晥鎵嬫満鍙锋牸寮?(23 ms)
+      鈭?搴旇澶勭悊绌哄弬鏁?(15 ms)
+      鈭?搴旇澶勭悊缂哄皯蹇呴渶瀛楁 (15 ms)
+      鈭?搴旇澶勭悊鏃犳晥瑙掕壊 (37 ms)
+      鈭?搴旇澶勭悊瓒呴暱鏄电О (32 ms)
+    瀹屾暣璁よ瘉浼氳瘽
+      脳 搴旇鏀寔瀹屾暣鐨勮璇佷細璇濈敓鍛藉懆鏈?(55 ms)
+
+  鈼?Authentication Flow E2E Tests 鈥?瀹屾暣娉ㄥ唽娴佺▼ 鈥?搴旇瀹屾垚瀛︾敓鐢ㄦ埛娉ㄥ唽鍏ㄦ祦绋?
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 400
+
+    [0m [90m 527 |[39m [90m   */[39m
+     [90m 528 |[39m   assertSuccessResponse(res[33m,[39m expectedStatus [33m=[39m [35m200[39m) {
+    [31m[1m>[22m[39m[90m 529 |[39m     expect(res[33m.[39mstatusCode)[33m.[39mtoBe(expectedStatus)[33m;[39m
+     [90m     |[39m                            [31m[1m^[22m[39m
+     [90m 530 |[39m     expect(res[33m.[39mbody)[33m.[39mtoBeDefined()[33m;[39m
+     [90m 531 |[39m   }[33m,[39m
+     [90m 532 |[39m[0m
+
+      at Object.toBe [as assertSuccessResponse] (tests/test-utils.js:529:28)
+      at Object.assertSuccessResponse (tests/auth-flow.test.js:87:18)
+
+  鈼?Authentication Flow E2E Tests 鈥?瀹屾暣娉ㄥ唽娴佺▼ 鈥?搴旇瀹屾垚瀹堕暱鐢ㄦ埛娉ㄥ唽鍏ㄦ祦绋?
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 201
+    Received: 400
+
+    [0m [90m 527 |[39m [90m   */[39m
+     [90m 528 |[39m   assertSuccessResponse(res[33m,[39m expectedStatus [33m=[39m [35m200[39m) {
+    [31m[1m>[22m[39m[90m 529 |[39m     expect(res[33m.[39mstatusCode)[33m.[39mtoBe(expectedStatus)[33m;[39m
+     [90m     |[39m                            [31m[1m^[22m[39m
+     [90m 530 |[39m     expect(res[33m.[39mbody)[33m.[39mtoBeDefined()[33m;[39m
+     [90m 531 |[39m   }[33m,[39m
+     [90m 532 |[39m[0m
+
+      at Object.toBe [as assertSuccessResponse] (tests/test-utils.js:529:28)
+      at Object.assertSuccessResponse (tests/auth-flow.test.js:135:18)
+
+  鈼?Authentication Flow E2E Tests 鈥?瀹屾暣娉ㄥ唽娴佺▼ 鈥?搴旇鎷掔粷閲嶅娉ㄥ唽
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "璇ユ墜鏈哄彿宸叉敞鍐?
+    Received: "鎵嬫満鍙锋牸寮忔棤鏁?
+
+    [0m [90m 164 |[39m         })[33m;[39m
+     [90m 165 |[39m       assertions[33m.[39massertErrorResponse(secondRegisterRes[33m,[39m [35m400[39m)[33m;
+[39m
+    [31m[1m>[22m[39m[90m 166 |[39m       expect(secondRegisterRes[33m.[39mbody[33m.[39merror)[33m.[39mtoBe(
+[32m'璇ユ墜鏈哄彿宸叉敞鍐?[39m)[33m;[39m
+     [90m     |[39m                                            [31m[1m^[22m[39m
+     [90m 167 |[39m     })[33m;[39m
+     [90m 168 |[39m   })[33m;[39m
+     [90m 169 |[39m[0m
+
+      at Object.toBe (tests/auth-flow.test.js:166:44)
+
+  鈼?Authentication Flow E2E Tests 鈥?瀹屾暣鐧诲綍娴佺▼ 鈥?搴旇瀹屾垚鐜版湁鐢ㄦ埛鐧诲綍娴佺▼
+
+    TypeError: Cannot read properties of undefined (reading 'phone')
+
+    [0m [90m 193 |[39m
+     [90m 194 |[39m     it([32m'搴旇瀹屾垚鐜版湁鐢ㄦ埛鐧诲綍娴佺▼'[39m[33m,[39m [36masync[39m () [33m=>[39m {
+    [31m[1m>[22m[39m[90m 195 |[39m       [36mconst[39m phone [33m=[39m registeredUser[33m.[39mphone[33m;[
+39m
+     [90m     |[39m                                    [31m[1m^[22m[39m
+     [90m 196 |[39m       [36mconst[39m code [33m=[39m [32m'123456'[39m[33m;[39m
+     [90m 197 |[39m
+     [90m 198 |[39m       [90m// 姝ラ 1: 鍙戦€侀獙璇佺爜[39m[0m
+
+      at Object.phone (tests/auth-flow.test.js:195:36)
+
+  鈼?Authentication Flow E2E Tests 鈥?瀹屾暣鐧诲綍娴佺▼ 鈥?搴旇鎷掔粷閿欒楠岃瘉鐮佺櫥褰?
+    TypeError: Cannot read properties of undefined (reading 'phone')
+
+    [0m [90m 214 |[39m
+     [90m 215 |[39m     it([32m'搴旇鎷掔粷閿欒楠岃瘉鐮佺櫥褰?[39m[33m,[39m [36masync[39m () [33m=>[39m {
+    [31m[1m>[22m[39m[90m 216 |[39m       [36mconst[39m phone [33m=[39m registeredUser[33m.[39mphone[33m;[
+39m
+     [90m     |[39m                                    [31m[1m^[22m[39m
+     [90m 217 |[39m       [36mconst[39m loginRes [33m=[39m [36mawait[39m request(server)
+     [90m 218 |[39m         [33m.[39mpost([32m'/api/auth/login'[39m)
+     [90m 219 |[39m         [33m.[39msend({ phone[33m,[39m code[33m:[39m [32m'wrong_code'[39m })[33m;[39m[
+0m
+
+      at Object.phone (tests/auth-flow.test.js:216:36)
+
+  鈼?Authentication Flow E2E Tests 鈥?瀹屾暣鐧诲綍娴佺▼ 鈥?搴旇鎷掔粷鏈敞鍐岀敤鎴风櫥褰?
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 401
+    Received: 400
+
+    [0m [90m 535 |[39m [90m   */[39m
+     [90m 536 |[39m   assertErrorResponse(res[33m,[39m expectedStatus [33m=[39m [35m400[39m) {
+    [31m[1m>[22m[39m[90m 537 |[39m     expect(res[33m.[39mstatusCode)[33m.[39mtoBe(expectedStatus)[33m;[39m
+     [90m     |[39m                            [31m[1m^[22m[39m
+     [90m 538 |[39m     expect(res[33m.[39mbody)[33m.[39mtoHaveProperty([32m'error'[39m)[33m;[39m
+     [90m 539 |[39m   }[33m,[39m
+     [90m 540 |[39m[0m
+
+      at Object.toBe [as assertErrorResponse] (tests/test-utils.js:537:28)
+      at Object.assertErrorResponse (tests/auth-flow.test.js:229:18)
+
+  鈼?Authentication Flow E2E Tests 鈥?Token 鍒锋柊娴佺▼ 鈥?搴旇鎴愬姛鍒锋柊 token
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 401
+
+    [0m [90m 527 |[39m [90m   */[39m
+     [90m 528 |[39m   assertSuccessResponse(res[33m,[39m expectedStatus [33m=[39m [35m200[39m) {
+    [31m[1m>[22m[39m[90m 529 |[39m     expect(res[33m.[39mstatusCode)[33m.[39mtoBe(expectedStatus)[33m;[39m
+     [90m     |[39m                            [31m[1m^[22m[39m
+     [90m 530 |[39m     expect(res[33m.[39mbody)[33m.[39mtoBeDefined()[33m;[39m
+     [90m 531 |[39m   }[33m,[39m
+     [90m 532 |[39m[0m
+
+      at Object.toBe [as assertSuccessResponse] (tests/test-utils.js:529:28)
+      at Object.assertSuccessResponse (tests/auth-flow.test.js:249:18)
+
+  鈼?Authentication Flow E2E Tests 鈥?Token 鍒锋柊娴佺▼ 鈥?搴旇浣跨敤鏂?token 璁块棶鍙椾繚鎶よ祫婧?
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 401
+
+    [0m [90m 527 |[39m [90m   */[39m
+     [90m 528 |[39m   assertSuccessResponse(res[33m,[39m expectedStatus [33m=[39m [35m200[39m) {
+    [31m[1m>[22m[39m[90m 529 |[39m     expect(res[33m.[39mstatusCode)[33m.[39mtoBe(expectedStatus)[33m;[39m
+     [90m     |[39m                            [31m[1m^[22m[39m
+     [90m 530 |[39m     expect(res[33m.[39mbody)[33m.[39mtoBeDefined()[33m;[39m
+     [90m 531 |[39m   }[33m,[39m
+     [90m 532 |[39m[0m
+
+      at Object.toBe [as assertSuccessResponse] (tests/test-utils.js:529:28)
+      at Object.assertSuccessResponse (tests/auth-flow.test.js:266:18)
+
+  鈼?Authentication Flow E2E Tests 鈥?鐢ㄦ埛淇℃伅绠＄悊娴佺▼ 鈥?搴旇鎴愬姛鑾峰彇褰撳墠鐢ㄦ埛淇℃伅
+
+    TypeError: Cannot read properties of undefined (reading 'id')
+
+    [0m [90m 293 |[39m       [36mconst[39m loginResult [33m=[39m [36mawait[39m authHelper[33m.[39mcreateAndL
+ogin()[33m;[39m
+     [90m 294 |[39m       authToken [33m=[39m loginResult[33m.[39mtoken[33m;[39m
+    [31m[1m>[22m[39m[90m 295 |[39m       userId [33m=[39m loginResult[33m.[39muser[33m.[39mid[33m;[39m
+     [90m     |[39m                                 [31m[1m^[22m[39m
+     [90m 296 |[39m     })[33m;[39m
+     [90m 297 |[39m
+     [90m 298 |[39m     it([32m'搴旇鎴愬姛鑾峰彇褰撳墠鐢ㄦ埛淇℃伅'[39m[33m,[39m [36masync[39m () [33m=>[39m {[0m
+
+      at Object.id (tests/auth-flow.test.js:295:33)
+
+  鈼?Authentication Flow E2E Tests 鈥?鐢ㄦ埛淇℃伅绠＄悊娴佺▼ 鈥?搴旇鎴愬姛鏇存柊鐢ㄦ埛鏄电О
+
+    TypeError: Cannot read properties of undefined (reading 'id')
+
+    [0m [90m 293 |[39m       [36mconst[39m loginResult [33m=[39m [36mawait[39m authHelper[33m.[39mcreateAndL
+ogin()[33m;[39m
+     [90m 294 |[39m       authToken [33m=[39m loginResult[33m.[39mtoken[33m;[39m
+    [31m[1m>[22m[39m[90m 295 |[39m       userId [33m=[39m loginResult[33m.[39muser[33m.[39mid[33m;[39m
+     [90m     |[39m                                 [31m[1m^[22m[39m
+     [90m 296 |[39m     })[33m;[39m
+     [90m 297 |[39m
+     [90m 298 |[39m     it([32m'搴旇鎴愬姛鑾峰彇褰撳墠鐢ㄦ埛淇℃伅'[39m[33m,[39m [36masync[39m () [33m=>[39m {[0m
+
+      at Object.id (tests/auth-flow.test.js:295:33)
+
+  鈼?Authentication Flow E2E Tests 鈥?鐢ㄦ埛淇℃伅绠＄悊娴佺▼ 鈥?搴旇鎴愬姛鏇存柊鐢ㄦ埛澶村儚
+
+    TypeError: Cannot read properties of undefined (reading 'id')
+
+    [0m [90m 293 |[39m       [36mconst[39m loginResult [33m=[39m [36mawait[39m authHelper[33m.[39mcreateAndL
+ogin()[33m;[39m
+     [90m 294 |[39m       authToken [33m=[39m loginResult[33m.[39mtoken[33m;[39m
+    [31m[1m>[22m[39m[90m 295 |[39m       userId [33m=[39m loginResult[33m.[39muser[33m.[39mid[33m;[39m
+     [90m     |[39m                                 [31m[1m^[22m[39m
+     [90m 296 |[39m     })[33m;[39m
+     [90m 297 |[39m
+     [90m 298 |[39m     it([32m'搴旇鎴愬姛鑾峰彇褰撳墠鐢ㄦ埛淇℃伅'[39m[33m,[39m [36masync[39m () [33m=>[39m {[0m
+
+      at Object.id (tests/auth-flow.test.js:295:33)
+
+  鈼?Authentication Flow E2E Tests 鈥?鐢ㄦ埛淇℃伅绠＄悊娴佺▼ 鈥?搴旇鎷掔粷鏈巿鏉冭闂敤鎴蜂俊鎭?
+    TypeError: Cannot read properties of undefined (reading 'id')
+
+    [0m [90m 293 |[39m       [36mconst[39m loginResult [33m=[39m [36mawait[39m authHelper[33m.[39mcreateAndL
+ogin()[33m;[39m
+     [90m 294 |[39m       authToken [33m=[39m loginResult[33m.[39mtoken[33m;[39m
+    [31m[1m>[22m[39m[90m 295 |[39m       userId [33m=[39m loginResult[33m.[39muser[33m.[39mid[33m;[39m
+     [90m     |[39m                                 [31m[1m^[22m[39m
+     [90m 296 |[39m     })[33m;[39m
+     [90m 297 |[39m
+     [90m 298 |[39m     it([32m'搴旇鎴愬姛鑾峰彇褰撳墠鐢ㄦ埛淇℃伅'[39m[33m,[39m [36masync[39m () [33m=>[39m {[0m
+
+      at Object.id (tests/auth-flow.test.js:295:33)
+
+  鈼?Authentication Flow E2E Tests 鈥?瀹屾暣璁よ瘉浼氳瘽 鈥?搴旇鏀寔瀹屾暣鐨勮璇佷細璇濈敓鍛藉懆鏈?
+    TypeError: Cannot read properties of undefined (reading 'nickname')
+
+    [0m [90m 494 |[39m         [33m.[39m[36mset[39m([32m'Authorization'[39m[33m,[39m [32m`Bearer ${token}`
+[39m)
+     [90m 495 |[39m         [33m.[39msend({ nickname[33m:[39m [32m'鏇存柊鍚庣殑鏄电О'[39m })[33m;[39m
+    [31m[1m>[22m[39m[90m 496 |[39m       expect(updateRes[33m.[39mbody[33m.[39muser[33m.[39mnickname)[33m.
+[39mtoBe([32m'鏇存柊鍚庣殑鏄电О'[39m)[33m;[39m
+     [90m     |[39m                                  [31m[1m^[22m[39m
+     [90m 497 |[39m
+     [90m 498 |[39m       [90m// 5. 鍒锋柊 token[39m
+     [90m 499 |[39m       [36mconst[39m refreshRes [33m=[39m [36mawait[39m request(server)[0m
+
+      at Object.nickname (tests/auth-flow.test.js:496:34)
+
+-----------------------------------|---------|----------|---------|---------|------------------------------------------------------------------------------
+File                               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                                                            
+-----------------------------------|---------|----------|---------|---------|------------------------------------------------------------------------------
+All files                          |    14.7 |     7.66 |    7.82 |   15.12 |                                                                              
+ config                            |   29.41 |    24.65 |    4.34 |   29.62 |                                                                              
+  cdn.js                           |    5.55 |     25.8 |       0 |    5.71 | 84-189                                                                       
+  database.js                      |      70 |    33.33 |      25 |      70 | 18-31,42,54-55,262-264                                                       
+  oss.js                           |       0 |        0 |       0 |       0 | 16-145                                                                       
+  queue.js                         |   34.48 |    33.33 |       0 |   34.48 | 37-41,89-160                                                                 
+ controllers                       |   26.38 |    19.16 |   15.15 |   27.12 |                                                                              
+  aiController.js                  |   13.63 |        0 |       0 |   13.63 | 6-65,71-85,91-101,107-123                                                    
+  authController.js                |   67.85 |    69.69 |   83.33 |   67.85 | 23,41-48,61,72,80-82,107-108,119,126-128,134,160-161,169-185,210,216,249-250 
+  healthController.js              |      20 |      100 |       0 |      20 | 13-37                                                                        
+  knowledgeController.js           |    8.53 |        0 |       0 |    9.58 | 5-13,18-45,51-66,72-88,94-120,126-142,148-158                                
+  practiceController.js            |      12 |        0 |       0 |      12 | 13-28,37-52,62-75,85-103,113-124,134-159,169-192,202-222                     
+  progressController.js            |   16.12 |        0 |       0 |   16.12 | 5-23,29-34,40-52,58-76                                                       
+ middleware                        |   31.74 |    17.43 |   27.02 |   32.51 |                                                                              
+  auth.js                          |     100 |      100 |     100 |     100 |                                                                              
+  cache.js                         |    5.88 |        0 |       0 |    5.88 | 12-130                                                                       
+  compression.js                   |   15.78 |     6.89 |   35.29 |   16.19 | 37-65,77-177,202-248                                                         
+  performance-monitor.js           |   56.25 |    27.27 |   27.27 |   56.25 | 113-128,140-215                                                              
+ models                            |   19.41 |     3.37 |   17.07 |   19.64 |                                                                              
+  AIQARecord.js                    |   14.28 |        0 |       0 |   14.28 | 6-45                                                                         
+  KnowledgePoint.js                |    3.17 |        0 |       0 |    3.22 | 6-117                                                                        
+  LearningProgress.js              |    8.69 |        0 |       0 |    8.69 | 6-83                                                                         
+  PracticeSession.js               |   11.11 |        0 |       0 |   11.11 | 16-170                                                                       
+  User.js                          |   55.81 |       25 |   53.84 |   57.14 | 38-45,69-107,118-119                                                         
+ modules                           |     100 |      100 |     100 |     100 |                                                                              
+  index.js                         |     100 |      100 |     100 |     100 |                                                                              
+ modules/ai-chat                   |       0 |        0 |       0 |       0 |                                                                              
+  AIChatController.js              |       0 |        0 |       0 |       0 | 6-305                                                                        
+  AIChatService.js                 |       0 |        0 |       0 |       0 | 6-281                                                                        
+  VectorSearchService.js           |       0 |        0 |       0 |       0 | 6-267                                                                        
+  migration.js                     |       0 |        0 |       0 |       0 | 9-222                                                                        
+ modules/ai-gateway                |   11.43 |    14.72 |      12 |   11.72 |                                                                              
+  AiGatewayController.js           |    8.33 |        0 |       0 |    8.33 | 15-184                                                                       
+  AiGatewayControllerV2.js         |    4.47 |        0 |       0 |    4.47 | 14-337                                                                       
+  AiGatewayService.js              |    3.15 |     8.41 |       0 |    3.37 | 37-367                                                                       
+  AiGatewayServiceV2.js            |   25.19 |    31.63 |   25.71 |    26.1 | 123-178,225,238-240,249-427,464-622,720,729-730,765-923                      
+  AiTaskLogModel.js                |    2.38 |        0 |       0 |     2.4 | 23-216                                                                       
+  BatchUpdateService.js            |    4.38 |     7.69 |       0 |    4.62 | 23-356                                                                       
+  ResponseCacheService.js          |    9.64 |    15.51 |   18.75 |     9.7 | 24-52,76-168,188-306                                                         
+  migration-v2.js                  |       0 |        0 |       0 |       0 | 9-70                                                                         
+  migration.js                     |       0 |        0 |       0 |       0 | 6-62                                                                         
+ modules/ai-gateway/providers      |   11.19 |        0 |       0 |   11.27 |                                                                              
+  BaiduWenxinProvider.js           |    8.33 |        0 |       0 |    8.47 | 32-220                                                                       
+  IFlytekSparkProvider.js          |    9.85 |        0 |       0 |    9.85 | 46-245                                                                       
+  index.js                         |     100 |      100 |     100 |     100 |                                                                              
+ modules/ai-grading                |       0 |        0 |       0 |       0 |                                                                              
+  AIGradingService.js              |       0 |        0 |       0 |       0 | 6-423                                                                        
+ modules/ai-planning               |    3.18 |        0 |       0 |    3.36 |                                                                              
+  AIPlanningController.js          |     5.2 |        0 |       0 |     5.2 | 16-358                                                                       
+  AIPlanningService.js             |     3.3 |        0 |       0 |    3.41 | 23-480                                                                       
+  DynamicTaskGenerator.js          |     3.1 |        0 |       0 |    3.33 | 40-650                                                                       
+  PersonalizedPlanningAlgorithm.js |    3.08 |        0 |       0 |    3.31 | 41-604                                                                       
+  PlanExecutionTracker.js          |    2.35 |        0 |       0 |    2.52 | 38-882                                                                       
+ modules/cost-analysis             |    2.89 |     6.45 |       0 |    3.26 |                                                                              
+  CostAnalysisService.js           |    2.89 |     6.45 |       0 |    3.26 | 54-526                                                                       
+ modules/leaderboard               |    7.69 |     5.33 |    6.45 |    7.72 |                                                                              
+  LeaderboardCache.js              |   10.98 |    14.28 |    12.5 |   11.11 | 19,23,40-231                                                                 
+  LeaderboardController.js         |    7.54 |        0 |       0 |    7.54 | 17-195                                                                       
+  LeaderboardModel.js              |    4.08 |        0 |       0 |    4.08 | 13-246                                                                       
+  migration.js                     |       0 |        0 |       0 |       0 | 6-51                                                                         
+ modules/logger                    |   38.46 |    45.45 |      20 |   38.46 |                                                                              
+  WinstonLoggerService.js          |    62.5 |    55.55 |   22.22 |    62.5 | 13,68-94,125-135                                                             
+  migration.js                     |       0 |        0 |       0 |       0 | 6-55                                                                         
+ modules/monitoring                |   49.18 |       40 |    23.8 |   49.18 |                                                                              
+  PrometheusExporter.js            |   49.18 |       40 |    23.8 |   49.18 | 149-150,154-164,169,181-252,266-323                                          
+ modules/points-system             |    3.04 |        0 |       0 |     3.1 |                                                                              
+  PointsSystemController.js        |    5.26 |        0 |       0 |    5.26 | 14-161                                                                       
+  PointsSystemModel.js             |     2.8 |        0 |       0 |    2.88 | 37-350                                                                       
+  migration.js                     |       0 |        0 |       0 |       0 | 6-73                                                                         
+ modules/rate-limiter              |      60 |    22.22 |   33.33 |   63.15 |                                                                              
+  RateLimiterConfig.js             |      60 |    22.22 |   33.33 |   63.15 | 22-26,56,72,87,102                                                           
+ modules/textbook-parser           |    3.72 |        0 |     2.5 |    3.92 |                                                                              
+  TextbookModel.js                 |    2.24 |        0 |       0 |    2.35 | 13-240                                                                       
+  TextbookParserService.js         |    2.87 |        0 |       0 |     3.1 | 17-567                                                                       
+  TextbookParserWorker.js          |    12.5 |        0 |   14.28 |   12.82 | 19-150                                                                       
+  migration.js                     |       0 |        0 |       0 |       0 | 6-106                                                                        
+ modules/weakness-analysis         |    3.12 |        0 |       0 |     3.3 |                                                                              
+  KnowledgeMasteryModel.js         |    1.96 |        0 |       0 |    2.15 | 13-390                                                                       
+  WeaknessAnalysisController.js    |       5 |        0 |       0 |       5 | 14-156                                                                       
+  WeaknessAnalysisService.js       |    4.54 |        0 |       0 |    4.76 | 18-280                                                                       
+  migration.js                     |       0 |        0 |       0 |       0 | 6-64                                                                         
+ routes                            |   53.79 |     2.59 |    6.66 |   53.79 |                                                                              
+  ai-gateway-v2.js                 |   66.66 |      100 |       0 |   66.66 | 10-15                                                                        
+  ai-gateway.js                    |     100 |      100 |     100 |     100 |                                                                              
+  ai-planning.js                   |     100 |      100 |     100 |     100 |                                                                              
+  ai.js                            |     100 |      100 |     100 |     100 |                                                                              
+  auth.js                          |     100 |      100 |     100 |     100 |                                                                              
+  health.js                        |     100 |      100 |     100 |     100 |                                                                              
+  knowledge.js                     |     100 |      100 |     100 |     100 |                                                                              
+  leaderboard.js                   |     100 |      100 |     100 |     100 |                                                                              
+  points.js                        |     100 |      100 |     100 |     100 |                                                                              
+  practice.js                      |     100 |      100 |     100 |     100 |                                                                              
+  progress.js                      |     100 |      100 |     100 |     100 |                                                                              
+  textbooks.js                     |      20 |        0 |       0 |      20 | 19-27,37-40,53-89,101-128,140-164,176-195,207-216,228-255,267-299,311-335    
+  upload.js                        |   28.73 |     5.12 |   16.66 |   28.73 | 22-23,31-39,47-50,78,93-164,180-214,231-276,288-291,302                      
+  weakness.js                      |     100 |      100 |     100 |     100 |                                                                              
+ services                          |   48.14 |    30.35 |   54.54 |   47.16 |                                                                              
+  verificationService.js           |   48.14 |    30.35 |   54.54 |   47.16 | 35,45-46,51-52,83-84,102,116-126,164-205,223-274                             
+ workers                           |       0 |        0 |       0 |       0 |                                                                              
+  aiQuestionGenerator.js           |       0 |        0 |       0 |       0 | 6-192                                                                        
+  index.js                         |       0 |      100 |       0 |       0 | 7-44                                                                         
+  leaderboardCalculator.js         |       0 |        0 |       0 |       0 | 6-147                                                                        
+  reportGenerator.js               |       0 |        0 |       0 |       0 | 7-158                                                                        
+  textbookParser.js                |       0 |        0 |       0 |       0 | 7-149                                                                        
+-----------------------------------|---------|----------|---------|---------|------------------------------------------------------------------------------
+
+=============================== Coverage summary ===============================
+Statements   : 14.7% ( 720/4897 )
+Branches     : 7.66% ( 193/2518 )
+Functions    : 7.82% ( 55/703 )
+Lines        : 15.12% ( 715/4726 )
+================================================================================
+Jest: "global" coverage threshold for statements (80%) not met: 14.7%
+Jest: "global" coverage threshold for branches (70%) not met: 7.66%
+Jest: "global" coverage threshold for lines (80%) not met: 15.12%
+Jest: "global" coverage threshold for functions (80%) not met: 7.82%
+Test Suites: 3 failed, 3 total
+Tests:       19 failed, 42 passed, 61 total
+Snapshots:   0 total
+Time:        6.024 s
+Ran all test suites matching /ai-gateway-v2.test.js|auth-flow.test.js|auth-middleware.test.js/i.
+
+Jest has detected the following 1 open handle potentially keeping Jest from exiting:
+
+  鈼? CustomGC
+
+    [0m [90m  6 |[39m [36mconst[39m fs [33m=[39m require([32m'fs'[39m)[33m;[39m
+     [90m  7 |[39m [36mconst[39m path [33m=[39m require([32m'path'[39m)[33m;[39m
+    [31m[1m>[22m[39m[90m  8 |[39m [36mconst[39m pdfParse [33m=[39m require([32m'pdf-parse'[39m)[33m;[39m
+     [90m    |[39m                  [31m[1m^[22m[39m
+     [90m  9 |[39m
+     [90m 10 |[39m [36mclass[39m [33mTextbookParserService[39m {
+     [90m 11 |[39m   [90m/**[39m[0m
+
+      at requireNative (node_modules/@napi-rs/canvas/js-binding.js:100:16)
+      at Object.<anonymous> (node_modules/@napi-rs/canvas/js-binding.js:319:17)
+      at Object.<anonymous> (node_modules/@napi-rs/canvas/index.js:19:5)
+      at Module.Object.<anonymous> (node_modules/pdf-parse/node_modules/pdfjs-dist/legacy/build/pdf.mjs:14346:10)
+      at Object.require (src/modules/textbook-parser/TextbookParserService.js:8:18)
+      at Object.require (src/modules/index.js:16:31)
+      at Object.require (src/server.js:28:72)
+      at Object.require (tests/auth-flow.test.js:16:13)
+

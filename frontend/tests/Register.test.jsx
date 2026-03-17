@@ -2,9 +2,9 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import Register from '../src/pages/Register.jsx';
 import { BrowserRouter } from 'react-router-dom';
-import { AuthProvider } from '../src/context/AuthContext';
+import { AuthContext, AuthProvider } from '../src/context/AuthContext';
 
-// BUG-002 修复：添�?AuthProvider wrapper
+// BUG-TEST-002 修复：添加 AuthProvider wrapper
 
 vi.mock('../src/services/api', () => ({
   authAPI: {
@@ -13,20 +13,22 @@ vi.mock('../src/services/api', () => ({
   }
 }));
 
-// BUG-002 修复：使�?AuthProvider wrapper
+// BUG-TEST-002 修复：使用 AuthProvider + AuthContext.Provider wrapper
 const renderWithAuth = (component, authValue = {}) => {
   return render(
     <BrowserRouter>
-      <AuthProvider value={{
-        user: authValue.user || { username: '测试用户' },
-        loading: false,
-        login: { sendCode: vi.fn(), verify: vi.fn() },
-        register: { sendCode: vi.fn(), verify: vi.fn() },
-        logout: vi.fn(),
-        refreshToken: vi.fn(),
-        ...authValue
-      }}>
-        {component}
+      <AuthProvider>
+        <AuthContext.Provider value={{
+          user: authValue.user || { username: '测试用户' },
+          loading: false,
+          login: { sendCode: vi.fn(), verify: vi.fn() },
+          register: { sendCode: vi.fn(), verify: vi.fn() },
+          logout: vi.fn(),
+          refreshToken: vi.fn(),
+          ...authValue
+        }}>
+          {component}
+        </AuthContext.Provider>
       </AuthProvider>
     </BrowserRouter>
   );
@@ -43,7 +45,7 @@ describe('Register Page Tests', () => {
     expect(screen.getByText(/注册账号/i)).toBeInTheDocument();
     expect(screen.getByPlaceholderText(/请输入手机号/i)).toBeInTheDocument();
     expect(screen.getByPlaceholderText(/请输入验证码/i)).toBeInTheDocument();
-    expect(screen.getByPlaceholderText(/请输入昵�?i)).toBeInTheDocument();
+    expect(screen.getByPlaceholderText(/请输入昵称/i)).toBeInTheDocument();
   });
 
   it('应该可以选择角色', async () => {
@@ -61,7 +63,7 @@ describe('Register Page Tests', () => {
 
   it('应该验证必填字段', async () => {
     const { authAPI } = await import('../src/services/api');
-    authAPI.register.mockRejectedValue({ error: '手机号、验证码和角色不能为�? });
+    authAPI.register.mockRejectedValue({ error: '手机号、验证码和角色不能为空' });
 
     renderWithAuth(<Register />);
     
@@ -69,7 +71,7 @@ describe('Register Page Tests', () => {
     fireEvent.click(registerBtn);
 
     await waitFor(() => {
-      expect(screen.getByText(/手机号、验证码和角色不能为�?i)).toBeInTheDocument();
+      expect(screen.getByText(/手机号、验证码和角色不能为空/i)).toBeInTheDocument();
     });
   });
 
@@ -84,7 +86,7 @@ describe('Register Page Tests', () => {
     
     const phoneInput = screen.getByPlaceholderText(/请输入手机号/i);
     const codeInput = screen.getByPlaceholderText(/请输入验证码/i);
-    const nicknameInput = screen.getByPlaceholderText(/请输入昵�?i);
+    const nicknameInput = screen.getByPlaceholderText(/请输入昵称/i);
     const studentRadio = screen.getByLabelText(/学生/i);
     const registerBtn = screen.getByText(/注册/i);
 
@@ -104,13 +106,13 @@ describe('Register Page Tests', () => {
 
   it('应该显示注册错误', async () => {
     const { authAPI } = await import('../src/services/api');
-    authAPI.register.mockRejectedValue({ error: '该手机号已注�? });
+    authAPI.register.mockRejectedValue({ error: '该手机号已注册' });
 
     renderWithAuth(<Register />);
     
     const phoneInput = screen.getByPlaceholderText(/请输入手机号/i);
     const codeInput = screen.getByPlaceholderText(/请输入验证码/i);
-    const nicknameInput = screen.getByPlaceholderText(/请输入昵�?i);
+    const nicknameInput = screen.getByPlaceholderText(/请输入昵称/i);
     const registerBtn = screen.getByText(/注册/i);
 
     fireEvent.change(phoneInput, { target: { value: '13800138000' } });
@@ -119,16 +121,15 @@ describe('Register Page Tests', () => {
     fireEvent.click(registerBtn);
 
     await waitFor(() => {
-      expect(screen.getByText(/该手机号已注�?i)).toBeInTheDocument();
+      expect(screen.getByText(/该手机号已注册/i)).toBeInTheDocument();
     });
   });
 
-  it('应该可以跳转到登录页�?, () => {
+  it('应该可以跳转到登录页面', () => {
     renderWithAuth(<Register />);
     
-    const loginLink = screen.getByText(/已有账号？立即登�?i);
+    const loginLink = screen.getByText(/已有账号？立即登录/i);
     expect(loginLink).toBeInTheDocument();
     expect(loginLink.closest('a')).toHaveAttribute('href', '/login');
   });
 });
-

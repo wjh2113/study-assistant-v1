@@ -1,6 +1,5 @@
 /**
- * AI Task Log Model - AI 任务调用日志
- * ISSUE-P0-003: AI 出题功能
+ * AI Task Log Model - 支持更多字段
  */
 
 const { db } = require('../../config/database');
@@ -10,30 +9,36 @@ class AiTaskLogModel {
    * 创建任务日志
    */
   static create(data) {
+    const {
+      userId,
+      taskType,
+      input,
+      output = null,
+      status = 'pending',
+      errorMessage = null,
+      modelUsed = null,
+      providerUsed = null,
+      tokenUsage = null,
+      duration_ms = null
+    } = data;
+
     const stmt = db.prepare(`
-      INSERT INTO ai_task_logs (
-        user_id,
-        task_type,
-        input,
-        output,
-        status,
-        error_message,
-        model_used,
-        token_usage,
-        duration_ms
-      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+      INSERT INTO ai_task_logs 
+      (user_id, task_type, input, output, status, error_message, model_used, provider_used, token_usage, duration_ms)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     `);
 
     const result = stmt.run(
-      data.userId,
-      data.taskType,
-      JSON.stringify(data.input || {}),
-      data.output ? JSON.stringify(data.output) : null,
-      data.status || 'pending',
-      data.errorMessage || null,
-      data.modelUsed || null,
-      data.tokenUsage ? JSON.stringify(data.tokenUsage) : null,
-      data.durationMs || null
+      userId,
+      taskType,
+      JSON.stringify(input),
+      output ? JSON.stringify(output) : null,
+      status,
+      errorMessage,
+      modelUsed,
+      providerUsed,
+      tokenUsage ? JSON.stringify(tokenUsage) : null,
+      duration_ms
     );
 
     return result.lastInsertRowid;
@@ -43,59 +48,74 @@ class AiTaskLogModel {
    * 更新任务日志
    */
   static update(id, data) {
-    const updates = [];
+    const fields = [];
     const values = [];
 
     if (data.status !== undefined) {
-      updates.push('status = ?');
+      fields.push('status = ?');
       values.push(data.status);
     }
     if (data.output !== undefined) {
-      updates.push('output = ?');
+      fields.push('output = ?');
       values.push(data.output ? JSON.stringify(data.output) : null);
     }
     if (data.errorMessage !== undefined) {
-      updates.push('error_message = ?');
+      fields.push('error_message = ?');
       values.push(data.errorMessage);
     }
     if (data.modelUsed !== undefined) {
-      updates.push('model_used = ?');
+      fields.push('model_used = ?');
       values.push(data.modelUsed);
     }
+    if (data.providerUsed !== undefined) {
+      fields.push('provider_used = ?');
+      values.push(data.providerUsed);
+    }
     if (data.tokenUsage !== undefined) {
-      updates.push('token_usage = ?');
+      fields.push('token_usage = ?');
       values.push(data.tokenUsage ? JSON.stringify(data.tokenUsage) : null);
     }
-    if (data.durationMs !== undefined) {
-      updates.push('duration_ms = ?');
-      values.push(data.durationMs);
+    if (data.duration_ms !== undefined) {
+      fields.push('duration_ms = ?');
+      values.push(data.duration_ms);
     }
 
-    if (updates.length === 0) return;
+    if (fields.length === 0) return;
 
-    updates.push('updated_at = CURRENT_TIMESTAMP');
+    fields.push('updated_at = CURRENT_TIMESTAMP');
     values.push(id);
 
     const stmt = db.prepare(`
       UPDATE ai_task_logs
-      SET ${updates.join(', ')}
+      SET ${fields.join(', ')}
       WHERE id = ?
     `);
 
-    stmt.run(...values);
+    return stmt.run(...values);
   }
 
   /**
-   * 根据 ID 获取日志
+   * 获取单条日志
    */
   static getById(id) {
     const stmt = db.prepare('SELECT * FROM ai_task_logs WHERE id = ?');
     const log = stmt.get(id);
-    return this.parseLog(log);
+    
+    if (log) {
+      try {
+        log.input = log.input ? JSON.parse(log.input) : null;
+        log.output = log.output ? JSON.parse(log.output) : null;
+        log.token_usage = log.token_usage ? JSON.parse(log.token_usage) : null;
+      } catch (e) {
+        console.error('解析日志数据失败:', e.message);
+      }
+    }
+    
+    return log;
   }
 
   /**
-   * 根据用户 ID 获取日志列表
+   * 按用户 ID 获取日志
    */
   static getByUserId(userId, options = {}) {
     const {
@@ -112,6 +132,7 @@ class AiTaskLogModel {
       query += ' AND task_type = ?';
       params.push(taskType);
     }
+
     if (status) {
       query += ' AND status = ?';
       params.push(status);
@@ -124,7 +145,18 @@ class AiTaskLogModel {
     const stmt = db.prepare(query);
     const logs = stmt.all(...params);
 
-    return logs.map(log => this.parseLog(log));
+    return logs.map(log => {
+      try {
+        log.input = log.input ? JSON.parse(log.input) : null;
+        log.output = log.output ? JSON.parse(log.output) : null;
+        log.token_usage = log.token_usage ? JSON.parse(log.token_usage) : null;
+      } catch (e) {
+        log.input = null;
+        log.output = null;
+        log.token_usage = null;
+      }
+      return log;
+    });
   }
 
   /**
@@ -140,6 +172,7 @@ class AiTaskLogModel {
       query += ' AND task_type = ?';
       params.push(taskType);
     }
+
     if (status) {
       query += ' AND status = ?';
       params.push(status);
@@ -147,34 +180,21 @@ class AiTaskLogModel {
 
     const stmt = db.prepare(query);
     const result = stmt.get(...params);
+    
     return result.count;
   }
 
   /**
-   * 解析日志数据
+   * 删除日志
    */
-  static parseLog(log) {
-    if (!log) return null;
+  static delete(id, userId) {
+    const stmt = db.prepare(`
+      DELETE FROM ai_task_logs
+      WHERE id = ? AND user_id = ?
+    `);
 
-    try {
-      if (log.input) log.input = JSON.parse(log.input);
-    } catch (e) {
-      log.input = {};
-    }
-
-    try {
-      if (log.output) log.output = JSON.parse(log.output);
-    } catch (e) {
-      log.output = null;
-    }
-
-    try {
-      if (log.token_usage) log.token_usage = JSON.parse(log.token_usage);
-    } catch (e) {
-      log.token_usage = null;
-    }
-
-    return log;
+    const result = stmt.run(id, userId);
+    return result.changes > 0;
   }
 
   /**
@@ -182,15 +202,15 @@ class AiTaskLogModel {
    */
   static getStats(userId, days = 7) {
     const stmt = db.prepare(`
-      SELECT
-        task_type,
+      SELECT 
         status,
         COUNT(*) as count,
-        AVG(duration_ms) as avg_duration
+        AVG(duration_ms) as avg_duration,
+        SUM(CASE WHEN token_usage IS NOT NULL THEN json_extract(token_usage, '$.total_tokens') ELSE 0 END) as total_tokens
       FROM ai_task_logs
       WHERE user_id = ?
         AND created_at >= datetime('now', '-' || ? || ' days')
-      GROUP BY task_type, status
+      GROUP BY status
     `);
 
     return stmt.all(userId, days);

@@ -10,23 +10,25 @@ exports.ask = async (req, res) => {
       return res.status(400).json({ error: '问题不能为空' });
     }
 
-    // 调用 AI API（这里使用示例配置，实际使用时需要替换为真实的 API）
+    // 调用阿里云 DashScope API
     let answer;
     try {
       const response = await axios.post(
-        process.env.AI_API_URL || 'https://api.example.com/v1/chat',
+        process.env.AI_API_URL || 'https://dashscope.aliyuncs.com/api/v1/services/aigc/text-generation/generation',
         {
-          model: 'gpt-3.5-turbo',
-          messages: [
-            {
-              role: 'system',
-              content: '你是一个学习助手，负责解答用户的学习问题。请用清晰、易懂的方式回答。'
-            },
-            {
-              role: 'user',
-              content: question
-            }
-          ]
+          model: process.env.AI_MODEL || 'qwen-plus',
+          input: {
+            messages: [
+              {
+                role: 'system',
+                content: '你是一个学习助手，负责解答用户的学习问题。请用清晰、易懂的方式回答。'
+              },
+              {
+                role: 'user',
+                content: question
+              }
+            ]
+          }
         },
         {
           headers: {
@@ -35,7 +37,8 @@ exports.ask = async (req, res) => {
           }
         }
       );
-      answer = response.data.choices?.[0]?.message?.content || '抱歉，暂时无法回答您的问题。';
+      // 阿里云 DashScope 响应格式
+      answer = response.data.output?.text || response.data.output?.choices?.[0]?.message?.content || '抱歉，暂时无法回答您的问题。';
     } catch (apiError) {
       console.error('AI API 调用失败:', apiError.message);
       answer = 'AI 服务暂时不可用，请稍后重试。';

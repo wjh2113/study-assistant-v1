@@ -1,4 +1,5 @@
 import api from './api'
+import { aiGatewayV2API, aiGradingAPI, aiPlanningAPI } from './aiServices'
 
 // 知识点 API
 export const knowledgeAPI = {
@@ -80,3 +81,27 @@ export const pointsAPI = {
   // 获取积分统计
   getStats: () => api.get('/points/stats')
 }
+
+// 家长监控 API
+export const familyAPI = {
+  // 获取绑定列表
+  getBindings: () => api.get('/family/bindings'),
+  
+  // 创建绑定
+  createBinding: (data) => api.post('/family/bindings', data),
+  
+  // 删除绑定
+  deleteBinding: (id) => api.delete(`/family/bindings/${id}`),
+  
+  // 获取学生统计
+  getStudentStats: (studentId) => api.get(`/family/students/${studentId}/stats`),
+  
+  // 获取学生学习进度
+  getStudentProgress: (studentId) => api.get(`/family/students/${studentId}/progress`),
+  
+  // 获取积分排行
+  getPointsRanking: (params) => api.get('/family/rankings', { params })
+}
+
+// AI Gateway V2 API - 多 AI 服务路由
+export { aiGatewayV2API, aiGradingAPI, aiPlanningAPI }

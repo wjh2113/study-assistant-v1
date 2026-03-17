@@ -97,7 +97,7 @@ async function parseTextbookPDF(job) {
 }
 
 /**
- * 创建课本解析 Worker
+ * 创建课本解析 Worker - Redis 7.0.15 兼容
  */
 function createTextbookParserWorker() {
   const worker = new Worker(
@@ -108,6 +108,11 @@ function createTextbookParserWorker() {
     {
       connection,
       concurrency: 2, // 同时处理 2 个任务
+      
+      // Redis 7.x 兼容性配置
+      blockingConnection: {
+        maxRetriesPerRequest: null,
+      },
     }
   );
   

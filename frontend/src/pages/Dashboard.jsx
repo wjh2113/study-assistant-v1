@@ -10,6 +10,12 @@ export default function Dashboard() {
   const [knowledgePoints, setKnowledgePoints] = useState([])
   const [loading, setLoading] = useState(true)
   const [pointsBalance, setPointsBalance] = useState(null)
+  const [showLogoutConfirm, setShowLogoutConfirm] = useState(false)
+
+  const handleLogout = () => {
+    logout()
+    navigate('/login')
+  }
 
   useEffect(() => {
     loadData()
@@ -48,17 +54,39 @@ export default function Dashboard() {
                   📖 知识点
                 </button>
                 <button
+                  onClick={() => navigate('/practice')}
+                  className="text-gray-600 hover:text-primary-600"
+                >
+                  📝 智能练习
+                </button>
+                <button
                   onClick={() => navigate('/textbooks')}
                   className="text-gray-600 hover:text-primary-600"
                 >
                   📚 课本管理
                 </button>
-                <button
-                  onClick={() => navigate('/ai-chat')}
-                  className="text-gray-600 hover:text-primary-600"
-                >
-                  🤖 AI 答疑
-                </button>
+                <div className="relative group">
+                  <button className="text-gray-600 hover:text-primary-600 flex items-center">
+                    🤖 AI 答疑
+                    <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 hidden group-hover:block z-50">
+                    <Link to="/ai-chat" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                      🤖 AI 答疑 (旧版)
+                    </Link>
+                    <Link to="/ai-chat-v2" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                      💬 AI 智能答疑 V2
+                    </Link>
+                    <Link to="/ai/essay-grading" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                      📝 AI 作文评分
+                    </Link>
+                    <Link to="/ai/learning-plan" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                      📅 AI 学习规划
+                    </Link>
+                  </div>
+                </div>
                 <button
                   onClick={() => navigate('/progress')}
                   className="text-gray-600 hover:text-primary-600"
@@ -66,17 +94,29 @@ export default function Dashboard() {
                   📊 学习进度
                 </button>
                 <button
+                  onClick={() => navigate('/leaderboard')}
+                  className="text-gray-600 hover:text-primary-600"
+                >
+                  🏆 排行榜
+                </button>
+                <button
                   onClick={() => navigate('/points')}
                   className="text-gray-600 hover:text-primary-600 font-medium"
                 >
                   💰 积分{pointsBalance?.points !== undefined ? `(${pointsBalance.points})` : ''}
                 </button>
+                <button
+                  onClick={() => navigate('/parent/bind')}
+                  className="text-gray-600 hover:text-primary-600 font-medium"
+                >
+                  👨‍👩‍👧 家长监控
+                </button>
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              <span className="text-gray-600">你好，{user?.username}</span>
+              <span className="text-gray-600">你好，{user?.nickname || user?.username || '用户'}</span>
               <button
-                onClick={logout}
+                onClick={() => setShowLogoutConfirm(true)}
                 className="text-gray-600 hover:text-gray-900"
               >
                 退出登录
@@ -148,6 +188,30 @@ export default function Dashboard() {
           </div>
         )}
       </main>
+
+      {/* 退出登录确认弹窗 */}
+      {showLogoutConfirm && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-lg p-6 max-w-sm mx-4">
+            <h3 className="text-lg font-medium text-gray-900 mb-4">确认退出登录？</h3>
+            <p className="text-gray-600 mb-6">退出后需要重新登录才能继续使用。</p>
+            <div className="flex gap-3">
+              <button
+                onClick={() => setShowLogoutConfirm(false)}
+                className="flex-1 py-2 px-4 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50"
+              >
+                取消
+              </button>
+              <button
+                onClick={handleLogout}
+                className="flex-1 py-2 px-4 bg-red-600 text-white rounded-md hover:bg-red-700"
+              >
+                确认退出
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }

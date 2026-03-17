@@ -2,209 +2,209 @@
   "modules": {
     "auth": {
       "total": 6,
-      "passed": 2,
-      "failed": 4,
+      "passed": 6,
+      "failed": 0,
       "tests": [
         {
           "module": "auth",
           "testName": "POST /api/auth/send-code",
           "passed": true,
           "statusCode": 200,
-          "responseTime": "119ms",
+          "responseTime": "87ms",
           "error": "{\"message\":\"验证码已发送\",\"hint\":\"验证码 5 分钟内有效\"}",
-          "timestamp": "2026-03-15T00:39:55.687Z"
+          "timestamp": "2026-03-17T12:34:22.039Z"
         },
         {
           "module": "auth",
           "testName": "POST /api/auth/register",
-          "passed": false,
-          "statusCode": 500,
-          "responseTime": "23ms",
-          "error": "{\"error\":\"服务器错误\"}",
-          "timestamp": "2026-03-15T00:39:55.715Z"
+          "passed": true,
+          "statusCode": 201,
+          "responseTime": "21ms",
+          "error": "{\"message\":\"注册成功\",\"user\":{\"id\":\"c652fe63-45de-4785-8bea-2cb1605621d4\",\"role\":\"STUDENT\",\"phone\":\"13800138099\",\"nickname\":\"全量测试用户\",\"avatar_url\":null,\"profile\":{\"user_id\":\"c652fe63-45de-4785-8bea-2cb1605",
+          "timestamp": "2026-03-17T12:34:22.062Z"
         },
         {
           "module": "auth",
           "testName": "POST /api/auth/login",
-          "passed": false,
-          "statusCode": 500,
-          "responseTime": "22ms",
-          "error": "{\"error\":\"服务器错误\"}",
-          "timestamp": "2026-03-15T00:39:55.739Z"
+          "passed": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjNjUyZmU2My00NWRlLTQ3ODUtOGJlYS0yY2IxNjA1NjIxZDQiLCJpYXQiOjE3NzM3NTA4NjIsImV4cCI6MTc3NDM1NTY2Mn0._D2hSNrUZfaI__gp0TmXtc7fY1uax99R9WHVlHuVDJs",
+          "statusCode": 200,
+          "responseTime": "23ms",
+          "error": "{\"message\":\"登录成功\",\"user\":{\"id\":\"c652fe63-45de-4785-8bea-2cb1605621d4\",\"role\":\"STUDENT\",\"phone\":\"13800138099\",\"nickname\":\"全量测试用户\",\"avatar_url\":null,\"profile\":{\"user_id\":\"c652fe63-45de-4785-8bea-2cb1605",
+          "timestamp": "2026-03-17T12:34:22.087Z"
         },
         {
           "module": "auth",
           "testName": "POST /api/auth/refresh",
           "passed": true,
           "statusCode": 401,
-          "responseTime": "25ms",
+          "responseTime": "23ms",
           "error": "{\"error\":\"未授权\"}",
-          "timestamp": "2026-03-15T00:39:55.766Z"
+          "timestamp": "2026-03-17T12:34:22.112Z"
         },
         {
           "module": "auth",
           "testName": "GET /api/auth/me",
-          "passed": false,
-          "statusCode": 401,
-          "responseTime": "15ms",
-          "error": "{\"error\":\"无效的令牌\"}",
-          "timestamp": "2026-03-15T00:39:55.783Z"
+          "passed": true,
+          "statusCode": 200,
+          "responseTime": "16ms",
+          "error": "{\"user\":{\"id\":\"c652fe63-45de-4785-8bea-2cb1605621d4\",\"role\":\"STUDENT\",\"phone\":\"13800138099\",\"nickname\":\"全量测试用户\",\"avatar_url\":null,\"profile\":{\"user_id\":\"c652fe63-45de-4785-8bea-2cb1605621d4\",\"grade\":\"高",
+          "timestamp": "2026-03-17T12:34:22.129Z"
         },
         {
           "module": "auth",
           "testName": "PUT /api/auth/me",
-          "passed": false,
-          "statusCode": 401,
-          "responseTime": "15ms",
-          "error": "{\"error\":\"无效的令牌\"}",
-          "timestamp": "2026-03-15T00:39:55.800Z"
+          "passed": true,
+          "statusCode": 200,
+          "responseTime": "25ms",
+          "error": "{\"message\":\"更新成功\",\"user\":{\"id\":\"c652fe63-45de-4785-8bea-2cb1605621d4\",\"role\":\"STUDENT\",\"phone\":\"13800138099\",\"nickname\":\"更新后的昵称\",\"avatar_url\":null}}",
+          "timestamp": "2026-03-17T12:34:22.156Z"
         }
       ]
     },
     "ai": {
       "total": 4,
-      "passed": 0,
-      "failed": 4,
+      "passed": 2,
+      "failed": 2,
       "tests": [
         {
           "module": "ai",
           "testName": "POST /api/ai/ask",
           "passed": false,
-          "statusCode": 401,
-          "responseTime": "17ms",
-          "error": "{\"error\":\"无效的令牌\"}",
-          "timestamp": "2026-03-15T00:39:55.820Z"
+          "statusCode": 500,
+          "responseTime": "10364ms",
+          "error": "{\"error\":\"服务器错误\"}",
+          "timestamp": "2026-03-17T12:34:32.522Z"
         },
         {
           "module": "ai",
           "testName": "GET /api/ai/history",
-          "passed": false,
-          "statusCode": 401,
-          "responseTime": "15ms",
-          "error": "{\"error\":\"无效的令牌\"}",
-          "timestamp": "2026-03-15T00:39:55.836Z"
+          "passed": true,
+          "statusCode": 200,
+          "responseTime": "18ms",
+          "error": "{\"data\":[{\"id\":null,\"user_id\":\"c652fe63-45de-4785-8bea-2cb1605621d4\",\"question\":\"什么是勾股定理？\",\"answer\":\"勾股定理（又称毕达哥拉斯定理）是平面几何中一个非常重要的基本定理，描述的是**直角三角形三边之间的数量关系**。\\n\\n✅ **内容表述：**  \\n在一个直角三角形中，**两条直角边的平方和等于斜",
+          "timestamp": "2026-03-17T12:34:32.542Z"
         },
         {
           "module": "ai",
           "testName": "GET /api/ai/search",
           "passed": false,
-          "statusCode": 401,
-          "responseTime": "18ms",
-          "error": "{\"error\":\"无效的令牌\"}",
-          "timestamp": "2026-03-15T00:39:55.855Z"
+          "statusCode": 400,
+          "responseTime": "14ms",
+          "error": "{\"error\":\"搜索关键词不能为空\"}",
+          "timestamp": "2026-03-17T12:34:32.557Z"
         },
         {
           "module": "ai",
           "testName": "DELETE /api/ai/:id",
-          "passed": false,
-          "statusCode": 401,
-          "responseTime": "26ms",
-          "error": "{\"error\":\"无效的令牌\"}",
-          "timestamp": "2026-03-15T00:39:55.883Z"
+          "passed": true,
+          "statusCode": 404,
+          "responseTime": "13ms",
+          "error": "{\"error\":\"记录不存在\"}",
+          "timestamp": "2026-03-17T12:34:32.571Z"
         }
       ]
     },
     "knowledge": {
       "total": 6,
-      "passed": 0,
-      "failed": 6,
+      "passed": 5,
+      "failed": 1,
       "tests": [
         {
           "module": "knowledge",
           "testName": "GET /api/knowledge",
-          "passed": false,
-          "statusCode": 401,
+          "passed": true,
+          "statusCode": 200,
           "responseTime": "15ms",
-          "error": "{\"error\":\"无效的令牌\"}",
-          "timestamp": "2026-03-15T00:39:55.900Z"
+          "error": "{\"data\":[],\"total\":0}",
+          "timestamp": "2026-03-17T12:34:32.588Z"
         },
         {
           "module": "knowledge",
           "testName": "GET /api/knowledge/:id",
-          "passed": false,
-          "statusCode": 401,
-          "responseTime": "15ms",
-          "error": "{\"error\":\"无效的令牌\"}",
-          "timestamp": "2026-03-15T00:39:55.916Z"
+          "passed": true,
+          "statusCode": 404,
+          "responseTime": "21ms",
+          "error": "{\"error\":\"知识点不存在\"}",
+          "timestamp": "2026-03-17T12:34:32.611Z"
         },
         {
           "module": "knowledge",
           "testName": "POST /api/knowledge",
-          "passed": false,
-          "statusCode": 401,
-          "responseTime": "15ms",
-          "error": "{\"error\":\"无效的令牌\"}",
-          "timestamp": "2026-03-15T00:39:55.933Z"
+          "passed": true,
+          "statusCode": 201,
+          "responseTime": "29ms",
+          "error": "{\"message\":\"创建成功\"}",
+          "timestamp": "2026-03-17T12:34:32.643Z"
         },
         {
           "module": "knowledge",
           "testName": "PUT /api/knowledge/:id",
-          "passed": false,
-          "statusCode": 401,
-          "responseTime": "12ms",
-          "error": "{\"error\":\"无效的令牌\"}",
-          "timestamp": "2026-03-15T00:39:55.947Z"
+          "passed": true,
+          "statusCode": 404,
+          "responseTime": "25ms",
+          "error": "{\"error\":\"知识点不存在\"}",
+          "timestamp": "2026-03-17T12:34:32.671Z"
         },
         {
           "module": "knowledge",
           "testName": "DELETE /api/knowledge/:id",
-          "passed": false,
-          "statusCode": 401,
-          "responseTime": "12ms",
-          "error": "{\"error\":\"无效的令牌\"}",
-          "timestamp": "2026-03-15T00:39:55.960Z"
+          "passed": true,
+          "statusCode": 404,
+          "responseTime": "30ms",
+          "error": "{\"error\":\"知识点不存在\"}",
+          "timestamp": "2026-03-17T12:34:32.703Z"
         },
         {
           "module": "knowledge",
           "testName": "GET /api/knowledge/search",
           "passed": false,
-          "statusCode": 401,
-          "responseTime": "21ms",
-          "error": "{\"error\":\"无效的令牌\"}",
-          "timestamp": "2026-03-15T00:39:55.982Z"
+          "statusCode": 400,
+          "responseTime": "25ms",
+          "error": "{\"error\":\"搜索关键词不能为空\"}",
+          "timestamp": "2026-03-17T12:34:32.731Z"
         }
       ]
     },
     "progress": {
       "total": 4,
-      "passed": 0,
-      "failed": 4,
+      "passed": 2,
+      "failed": 2,
       "tests": [
         {
           "module": "progress",
           "testName": "GET /api/progress",
-          "passed": false,
-          "statusCode": 401,
-          "responseTime": "12ms",
-          "error": "{\"error\":\"无效的令牌\"}",
-          "timestamp": "2026-03-15T00:39:55.995Z"
+          "passed": true,
+          "statusCode": 200,
+          "responseTime": "51ms",
+          "error": "{\"data\":[]}",
+          "timestamp": "2026-03-17T12:34:32.784Z"
         },
         {
           "module": "progress",
           "testName": "GET /api/progress/stats",
-          "passed": false,
-          "statusCode": 401,
-          "responseTime": "12ms",
-          "error": "{\"error\":\"无效的令牌\"}",
-          "timestamp": "2026-03-15T00:39:56.008Z"
+          "passed": true,
+          "statusCode": 200,
+          "responseTime": "28ms",
+          "error": "{\"data\":{\"totalPoints\":0,\"totalDuration\":0,\"avgCompletionRate\":0,\"completedPoints\":0}}",
+          "timestamp": "2026-03-17T12:34:32.814Z"
         },
         {
           "module": "progress",
           "testName": "POST /api/progress/upsert",
           "passed": false,
-          "statusCode": 401,
-          "responseTime": "13ms",
-          "error": "{\"error\":\"无效的令牌\"}",
-          "timestamp": "2026-03-15T00:39:56.022Z"
+          "statusCode": 400,
+          "responseTime": "16ms",
+          "error": "{\"error\":\"知识点 ID 不能为空\"}",
+          "timestamp": "2026-03-17T12:34:32.832Z"
         },
         {
           "module": "progress",
           "testName": "POST /api/progress/log",
           "passed": false,
-          "statusCode": 401,
-          "responseTime": "12ms",
-          "error": "{\"error\":\"无效的令牌\"}",
-          "timestamp": "2026-03-15T00:39:56.036Z"
+          "statusCode": 400,
+          "responseTime": "15ms",
+          "error": "{\"error\":\"知识点 ID 和学习时长不能为空\"}",
+          "timestamp": "2026-03-17T12:34:32.849Z"
         }
       ]
     },
@@ -217,37 +217,37 @@
           "module": "points",
           "testName": "GET /api/points/balance",
           "passed": false,
-          "statusCode": 401,
-          "responseTime": "12ms",
-          "error": "{\"error\":\"无效的令牌\"}",
-          "timestamp": "2026-03-15T00:39:56.050Z"
+          "statusCode": 404,
+          "responseTime": "13ms",
+          "error": "{\"error\":\"接口不存在\"}",
+          "timestamp": "2026-03-17T12:34:32.864Z"
         },
         {
           "module": "points",
           "testName": "GET /api/points/ledger",
           "passed": false,
-          "statusCode": 401,
-          "responseTime": "14ms",
-          "error": "{\"error\":\"无效的令牌\"}",
-          "timestamp": "2026-03-15T00:39:56.066Z"
+          "statusCode": 404,
+          "responseTime": "15ms",
+          "error": "{\"error\":\"接口不存在\"}",
+          "timestamp": "2026-03-17T12:34:32.881Z"
         },
         {
           "module": "points",
           "testName": "POST /api/points/earn",
           "passed": false,
-          "statusCode": 401,
-          "responseTime": "12ms",
-          "error": "{\"error\":\"无效的令牌\"}",
-          "timestamp": "2026-03-15T00:39:56.079Z"
+          "statusCode": 404,
+          "responseTime": "15ms",
+          "error": "{\"error\":\"接口不存在\"}",
+          "timestamp": "2026-03-17T12:34:32.897Z"
         },
         {
           "module": "points",
           "testName": "GET /api/points/rank",
           "passed": false,
-          "statusCode": 401,
-          "responseTime": "18ms",
-          "error": "{\"error\":\"无效的令牌\"}",
-          "timestamp": "2026-03-15T00:39:56.098Z"
+          "statusCode": 404,
+          "responseTime": "13ms",
+          "error": "{\"error\":\"接口不存在\"}",
+          "timestamp": "2026-03-17T12:34:32.912Z"
         }
       ]
     },
@@ -260,37 +260,37 @@
           "module": "weakness",
           "testName": "GET /api/weakness/analysis",
           "passed": false,
-          "statusCode": 401,
-          "responseTime": "15ms",
-          "error": "{\"error\":\"无效的令牌\"}",
-          "timestamp": "2026-03-15T00:39:56.115Z"
+          "statusCode": 404,
+          "responseTime": "19ms",
+          "error": "{\"error\":\"接口不存在\"}",
+          "timestamp": "2026-03-17T12:34:32.932Z"
         },
         {
           "module": "weakness",
           "testName": "GET /api/weakness/recommendations",
           "passed": false,
-          "statusCode": 401,
-          "responseTime": "11ms",
-          "error": "{\"error\":\"无效的令牌\"}",
-          "timestamp": "2026-03-15T00:39:56.127Z"
+          "statusCode": 404,
+          "responseTime": "18ms",
+          "error": "{\"error\":\"接口不存在\"}",
+          "timestamp": "2026-03-17T12:34:32.953Z"
         },
         {
           "module": "weakness",
           "testName": "POST /api/weakness/practice",
           "passed": false,
-          "statusCode": 401,
-          "responseTime": "11ms",
-          "error": "{\"error\":\"无效的令牌\"}",
-          "timestamp": "2026-03-15T00:39:56.140Z"
+          "statusCode": 404,
+          "responseTime": "15ms",
+          "error": "{\"error\":\"接口不存在\"}",
+          "timestamp": "2026-03-17T12:34:32.969Z"
         },
         {
           "module": "weakness",
           "testName": "GET /api/weakness/stats",
           "passed": false,
-          "statusCode": 401,
-          "responseTime": "11ms",
-          "error": "{\"error\":\"无效的令牌\"}",
-          "timestamp": "2026-03-15T00:39:56.153Z"
+          "statusCode": 404,
+          "responseTime": "16ms",
+          "error": "{\"error\":\"接口不存在\"}",
+          "timestamp": "2026-03-17T12:34:32.986Z"
         }
       ]
     },
@@ -304,97 +304,97 @@
           "testName": "GET /api/leaderboards/total",
           "passed": false,
           "statusCode": 404,
-          "responseTime": "12ms",
+          "responseTime": "14ms",
           "error": "{\"error\":\"接口不存在\"}",
-          "timestamp": "2026-03-15T00:39:56.166Z"
+          "timestamp": "2026-03-17T12:34:33.001Z"
         },
         {
           "module": "leaderboard",
           "testName": "GET /api/leaderboards/weekly",
           "passed": false,
           "statusCode": 404,
-          "responseTime": "11ms",
+          "responseTime": "20ms",
           "error": "{\"error\":\"接口不存在\"}",
-          "timestamp": "2026-03-15T00:39:56.178Z"
+          "timestamp": "2026-03-17T12:34:33.022Z"
         },
         {
           "module": "leaderboard",
           "testName": "GET /api/leaderboards/monthly",
           "passed": false,
           "statusCode": 404,
-          "responseTime": "11ms",
+          "responseTime": "15ms",
           "error": "{\"error\":\"接口不存在\"}",
-          "timestamp": "2026-03-15T00:39:56.191Z"
+          "timestamp": "2026-03-17T12:34:33.039Z"
         },
         {
           "module": "leaderboard",
           "testName": "GET /api/leaderboards/subject/:subject",
           "passed": false,
           "statusCode": 404,
-          "responseTime": "12ms",
+          "responseTime": "14ms",
           "error": "{\"error\":\"接口不存在\"}",
-          "timestamp": "2026-03-15T00:39:56.204Z"
+          "timestamp": "2026-03-17T12:34:33.056Z"
         }
       ]
     },
     "textbooks": {
       "total": 6,
-      "passed": 0,
-      "failed": 6,
+      "passed": 5,
+      "failed": 1,
       "tests": [
         {
           "module": "textbooks",
           "testName": "GET /api/textbooks",
-          "passed": false,
-          "statusCode": 401,
-          "responseTime": "14ms",
-          "error": "{\"error\":\"无效的令牌\"}",
-          "timestamp": "2026-03-15T00:39:56.220Z"
+          "passed": true,
+          "statusCode": 200,
+          "responseTime": "21ms",
+          "error": "{\"success\":true,\"data\":[]}",
+          "timestamp": "2026-03-17T12:34:33.079Z"
         },
         {
           "module": "textbooks",
           "testName": "GET /api/textbooks/:id",
-          "passed": false,
-          "statusCode": 401,
-          "responseTime": "11ms",
-          "error": "{\"error\":\"无效的令牌\"}",
-          "timestamp": "2026-03-15T00:39:56.233Z"
+          "passed": true,
+          "statusCode": 404,
+          "responseTime": "23ms",
+          "error": "{\"success\":false,\"error\":\"课本文本不存在\"}",
+          "timestamp": "2026-03-17T12:34:33.105Z"
         },
         {
           "module": "textbooks",
           "testName": "POST /api/textbooks",
           "passed": false,
-          "statusCode": 401,
-          "responseTime": "11ms",
-          "error": "{\"error\":\"无效的令牌\"}",
-          "timestamp": "2026-03-15T00:39:56.246Z"
+          "statusCode": 404,
+          "responseTime": "18ms",
+          "error": "{\"error\":\"接口不存在\"}",
+          "timestamp": "2026-03-17T12:34:33.124Z"
         },
         {
           "module": "textbooks",
           "testName": "PUT /api/textbooks/:id",
-          "passed": false,
-          "statusCode": 401,
-          "responseTime": "12ms",
-          "error": "{\"error\":\"无效的令牌\"}",
-          "timestamp": "2026-03-15T00:39:56.259Z"
+          "passed": true,
+          "statusCode": 404,
+          "responseTime": "15ms",
+          "error": "{\"error\":\"接口不存在\"}",
+          "timestamp": "2026-03-17T12:34:33.140Z"
         },
         {
           "module": "textbooks",
           "testName": "DELETE /api/textbooks/:id",
-          "passed": false,
-          "statusCode": 401,
-          "responseTime": "11ms",
-          "error": "{\"error\":\"无效的令牌\"}",
-          "timestamp": "2026-03-15T00:39:56.271Z"
+          "passed": true,
+          "statusCode": 404,
+          "responseTime": "13ms",
+          "error": "{\"success\":false,\"error\":\"课本不存在\"}",
+          "timestamp": "2026-03-17T12:34:33.155Z"
         },
         {
           "module": "textbooks",
           "testName": "GET /api/textbooks/:id/units",
-          "passed": false,
-          "statusCode": 401,
-          "responseTime": "11ms",
-          "error": "{\"error\":\"无效的令牌\"}",
-          "timestamp": "2026-03-15T00:39:56.283Z"
+          "passed": true,
+          "statusCode": 404,
+          "responseTime": "13ms",
+          "error": "{\"success\":false,\"error\":\"课本不存在\"}",
+          "timestamp": "2026-03-17T12:34:33.170Z"
         }
       ]
     },
@@ -408,27 +408,27 @@
           "testName": "POST /api/upload/textbook",
           "passed": true,
           "statusCode": 400,
-          "responseTime": "26ms",
+          "responseTime": "29ms",
           "error": "{\"error\":\"缺少必要参数\"}",
-          "timestamp": "2026-03-15T00:39:56.310Z"
+          "timestamp": "2026-03-17T12:34:33.200Z"
         },
         {
           "module": "upload",
           "testName": "POST /api/upload/avatar",
           "passed": true,
           "statusCode": 400,
-          "responseTime": "16ms",
+          "responseTime": "21ms",
           "error": "{\"error\":\"缺少用户 ID\"}",
-          "timestamp": "2026-03-15T00:39:56.327Z"
+          "timestamp": "2026-03-17T12:34:33.223Z"
         },
         {
           "module": "upload",
           "testName": "POST /api/upload/attachment",
           "passed": true,
           "statusCode": 400,
-          "responseTime": "19ms",
+          "responseTime": "28ms",
           "error": "{\"error\":\"缺少实体类型或 ID\"}",
-          "timestamp": "2026-03-15T00:39:56.347Z"
+          "timestamp": "2026-03-17T12:34:33.253Z"
         }
       ]
     },
@@ -442,36 +442,36 @@
           "testName": "POST /api/ai-gateway/generate",
           "passed": false,
           "statusCode": 404,
-          "responseTime": "11ms",
+          "responseTime": "17ms",
           "error": "{\"error\":\"接口不存在\"}",
-          "timestamp": "2026-03-15T00:39:56.359Z"
+          "timestamp": "2026-03-17T12:34:33.272Z"
         },
         {
           "module": "ai-gateway",
           "testName": "POST /api/ai-gateway/parse",
           "passed": false,
           "statusCode": 404,
-          "responseTime": "11ms",
+          "responseTime": "22ms",
           "error": "{\"error\":\"接口不存在\"}",
-          "timestamp": "2026-03-15T00:39:56.371Z"
+          "timestamp": "2026-03-17T12:34:33.296Z"
         },
         {
           "module": "ai-gateway",
           "testName": "POST /api/ai-gateway/analyze",
           "passed": false,
           "statusCode": 404,
-          "responseTime": "11ms",
+          "responseTime": "14ms",
           "error": "{\"error\":\"接口不存在\"}",
-          "timestamp": "2026-03-15T00:39:56.384Z"
+          "timestamp": "2026-03-17T12:34:33.313Z"
         },
         {
           "module": "ai-gateway",
           "testName": "GET /api/ai-gateway/models",
           "passed": false,
           "statusCode": 404,
-          "responseTime": "10ms",
+          "responseTime": "15ms",
           "error": "{\"error\":\"接口不存在\"}",
-          "timestamp": "2026-03-15T00:39:56.395Z"
+          "timestamp": "2026-03-17T12:34:33.329Z"
         }
       ]
     },
@@ -485,486 +485,486 @@
           "testName": "GET /api/health",
           "passed": true,
           "statusCode": 200,
-          "responseTime": "12ms",
-          "error": "{\"status\":\"ok\",\"timestamp\":\"2026-03-15T00:39:56.401Z\",\"uptime\":3.7294484,\"services\":{\"database\":\"connected\",\"memory\":{\"used\":200,\"total\":295,\"unit\":\"MB\"}}}",
-          "timestamp": "2026-03-15T00:39:56.409Z"
+          "responseTime": "14ms",
+          "error": "{\"status\":\"ok\",\"timestamp\":\"2026-03-17T12:34:33.336Z\",\"uptime\":104.4475839,\"services\":{\"database\":\"connected\",\"memory\":{\"used\":594,\"total\":742,\"unit\":\"MB\"}}}",
+          "timestamp": "2026-03-17T12:34:33.345Z"
         },
         {
           "module": "health",
           "testName": "GET /api/health/db",
           "passed": false,
           "statusCode": 404,
-          "responseTime": "11ms",
+          "responseTime": "15ms",
           "error": "{\"error\":\"接口不存在\"}",
-          "timestamp": "2026-03-15T00:39:56.421Z"
+          "timestamp": "2026-03-17T12:34:33.361Z"
         },
         {
           "module": "health",
           "testName": "GET /api/health/redis",
           "passed": false,
           "statusCode": 404,
-          "responseTime": "11ms",
+          "responseTime": "20ms",
           "error": "{\"error\":\"接口不存在\"}",
-          "timestamp": "2026-03-15T00:39:56.433Z"
+          "timestamp": "2026-03-17T12:34:33.382Z"
         },
         {
           "module": "health",
           "testName": "GET /api/health/uptime",
           "passed": false,
           "statusCode": 404,
-          "responseTime": "14ms",
+          "responseTime": "15ms",
           "error": "{\"error\":\"接口不存在\"}",
-          "timestamp": "2026-03-15T00:39:56.448Z"
+          "timestamp": "2026-03-17T12:34:33.400Z"
         }
       ]
     }
   },
   "total": 49,
-  "passed": 6,
-  "failed": 43,
-  "startTime": 1773535195566,
-  "endTime": 1773535196449,
+  "passed": 24,
+  "failed": 25,
+  "startTime": 1773750861950,
+  "endTime": 1773750873401,
   "details": [
     {
       "module": "auth",
       "testName": "POST /api/auth/send-code",
       "passed": true,
       "statusCode": 200,
-      "responseTime": "119ms",
+      "responseTime": "87ms",
       "error": "{\"message\":\"验证码已发送\",\"hint\":\"验证码 5 分钟内有效\"}",
-      "timestamp": "2026-03-15T00:39:55.687Z"
+      "timestamp": "2026-03-17T12:34:22.039Z"
     },
     {
       "module": "auth",
       "testName": "POST /api/auth/register",
-      "passed": false,
-      "statusCode": 500,
-      "responseTime": "23ms",
-      "error": "{\"error\":\"服务器错误\"}",
-      "timestamp": "2026-03-15T00:39:55.715Z"
+      "passed": true,
+      "statusCode": 201,
+      "responseTime": "21ms",
+      "error": "{\"message\":\"注册成功\",\"user\":{\"id\":\"c652fe63-45de-4785-8bea-2cb1605621d4\",\"role\":\"STUDENT\",\"phone\":\"13800138099\",\"nickname\":\"全量测试用户\",\"avatar_url\":null,\"profile\":{\"user_id\":\"c652fe63-45de-4785-8bea-2cb1605",
+      "timestamp": "2026-03-17T12:34:22.062Z"
     },
     {
       "module": "auth",
       "testName": "POST /api/auth/login",
-      "passed": false,
-      "statusCode": 500,
-      "responseTime": "22ms",
-      "error": "{\"error\":\"服务器错误\"}",
-      "timestamp": "2026-03-15T00:39:55.739Z"
+      "passed": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjNjUyZmU2My00NWRlLTQ3ODUtOGJlYS0yY2IxNjA1NjIxZDQiLCJpYXQiOjE3NzM3NTA4NjIsImV4cCI6MTc3NDM1NTY2Mn0._D2hSNrUZfaI__gp0TmXtc7fY1uax99R9WHVlHuVDJs",
+      "statusCode": 200,
+      "responseTime": "23ms",
+      "error": "{\"message\":\"登录成功\",\"user\":{\"id\":\"c652fe63-45de-4785-8bea-2cb1605621d4\",\"role\":\"STUDENT\",\"phone\":\"13800138099\",\"nickname\":\"全量测试用户\",\"avatar_url\":null,\"profile\":{\"user_id\":\"c652fe63-45de-4785-8bea-2cb1605",
+      "timestamp": "2026-03-17T12:34:22.087Z"
     },
     {
       "module": "auth",
       "testName": "POST /api/auth/refresh",
       "passed": true,
       "statusCode": 401,
-      "responseTime": "25ms",
+      "responseTime": "23ms",
       "error": "{\"error\":\"未授权\"}",
-      "timestamp": "2026-03-15T00:39:55.766Z"
+      "timestamp": "2026-03-17T12:34:22.112Z"
     },
     {
       "module": "auth",
       "testName": "GET /api/auth/me",
-      "passed": false,
-      "statusCode": 401,
-      "responseTime": "15ms",
-      "error": "{\"error\":\"无效的令牌\"}",
-      "timestamp": "2026-03-15T00:39:55.783Z"
+      "passed": true,
+      "statusCode": 200,
+      "responseTime": "16ms",
+      "error": "{\"user\":{\"id\":\"c652fe63-45de-4785-8bea-2cb1605621d4\",\"role\":\"STUDENT\",\"phone\":\"13800138099\",\"nickname\":\"全量测试用户\",\"avatar_url\":null,\"profile\":{\"user_id\":\"c652fe63-45de-4785-8bea-2cb1605621d4\",\"grade\":\"高",
+      "timestamp": "2026-03-17T12:34:22.129Z"
     },
     {
       "module": "auth",
       "testName": "PUT /api/auth/me",
-      "passed": false,
-      "statusCode": 401,
-      "responseTime": "15ms",
-      "error": "{\"error\":\"无效的令牌\"}",
-      "timestamp": "2026-03-15T00:39:55.800Z"
+      "passed": true,
+      "statusCode": 200,
+      "responseTime": "25ms",
+      "error": "{\"message\":\"更新成功\",\"user\":{\"id\":\"c652fe63-45de-4785-8bea-2cb1605621d4\",\"role\":\"STUDENT\",\"phone\":\"13800138099\",\"nickname\":\"更新后的昵称\",\"avatar_url\":null}}",
+      "timestamp": "2026-03-17T12:34:22.156Z"
     },
     {
       "module": "ai",
       "testName": "POST /api/ai/ask",
       "passed": false,
-      "statusCode": 401,
-      "responseTime": "17ms",
-      "error": "{\"error\":\"无效的令牌\"}",
-      "timestamp": "2026-03-15T00:39:55.820Z"
+      "statusCode": 500,
+      "responseTime": "10364ms",
+      "error": "{\"error\":\"服务器错误\"}",
+      "timestamp": "2026-03-17T12:34:32.522Z"
     },
     {
       "module": "ai",
       "testName": "GET /api/ai/history",
-      "passed": false,
-      "statusCode": 401,
-      "responseTime": "15ms",
-      "error": "{\"error\":\"无效的令牌\"}",
-      "timestamp": "2026-03-15T00:39:55.836Z"
+      "passed": true,
+      "statusCode": 200,
+      "responseTime": "18ms",
+      "error": "{\"data\":[{\"id\":null,\"user_id\":\"c652fe63-45de-4785-8bea-2cb1605621d4\",\"question\":\"什么是勾股定理？\",\"answer\":\"勾股定理（又称毕达哥拉斯定理）是平面几何中一个非常重要的基本定理，描述的是**直角三角形三边之间的数量关系**。\\n\\n✅ **内容表述：**  \\n在一个直角三角形中，**两条直角边的平方和等于斜",
+      "timestamp": "2026-03-17T12:34:32.542Z"
     },
     {
       "module": "ai",
       "testName": "GET /api/ai/search",
       "passed": false,
-      "statusCode": 401,
-      "responseTime": "18ms",
-      "error": "{\"error\":\"无效的令牌\"}",
-      "timestamp": "2026-03-15T00:39:55.855Z"
+      "statusCode": 400,
+      "responseTime": "14ms",
+      "error": "{\"error\":\"搜索关键词不能为空\"}",
+      "timestamp": "2026-03-17T12:34:32.557Z"
     },
     {
       "module": "ai",
       "testName": "DELETE /api/ai/:id",
-      "passed": false,
-      "statusCode": 401,
-      "responseTime": "26ms",
-      "error": "{\"error\":\"无效的令牌\"}",
-      "timestamp": "2026-03-15T00:39:55.883Z"
+      "passed": true,
+      "statusCode": 404,
+      "responseTime": "13ms",
+      "error": "{\"error\":\"记录不存在\"}",
+      "timestamp": "2026-03-17T12:34:32.571Z"
     },
     {
       "module": "knowledge",
       "testName": "GET /api/knowledge",
-      "passed": false,
-      "statusCode": 401,
+      "passed": true,
+      "statusCode": 200,
       "responseTime": "15ms",
-      "error": "{\"error\":\"无效的令牌\"}",
-      "timestamp": "2026-03-15T00:39:55.900Z"
+      "error": "{\"data\":[],\"total\":0}",
+      "timestamp": "2026-03-17T12:34:32.588Z"
     },
     {
       "module": "knowledge",
       "testName": "GET /api/knowledge/:id",
-      "passed": false,
-      "statusCode": 401,
-      "responseTime": "15ms",
-      "error": "{\"error\":\"无效的令牌\"}",
-      "timestamp": "2026-03-15T00:39:55.916Z"
+      "passed": true,
+      "statusCode": 404,
+      "responseTime": "21ms",
+      "error": "{\"error\":\"知识点不存在\"}",
+      "timestamp": "2026-03-17T12:34:32.611Z"
     },
     {
       "module": "knowledge",
       "testName": "POST /api/knowledge",
-      "passed": false,
-      "statusCode": 401,
-      "responseTime": "15ms",
-      "error": "{\"error\":\"无效的令牌\"}",
-      "timestamp": "2026-03-15T00:39:55.933Z"
+      "passed": true,
+      "statusCode": 201,
+      "responseTime": "29ms",
+      "error": "{\"message\":\"创建成功\"}",
+      "timestamp": "2026-03-17T12:34:32.643Z"
     },
     {
       "module": "knowledge",
       "testName": "PUT /api/knowledge/:id",
-      "passed": false,
-      "statusCode": 401,
-      "responseTime": "12ms",
-      "error": "{\"error\":\"无效的令牌\"}",
-      "timestamp": "2026-03-15T00:39:55.947Z"
+      "passed": true,
+      "statusCode": 404,
+      "responseTime": "25ms",
+      "error": "{\"error\":\"知识点不存在\"}",
+      "timestamp": "2026-03-17T12:34:32.671Z"
     },
     {
       "module": "knowledge",
       "testName": "DELETE /api/knowledge/:id",
-      "passed": false,
-      "statusCode": 401,
-      "responseTime": "12ms",
-      "error": "{\"error\":\"无效的令牌\"}",
-      "timestamp": "2026-03-15T00:39:55.960Z"
+      "passed": true,
+      "statusCode": 404,
+      "responseTime": "30ms",
+      "error": "{\"error\":\"知识点不存在\"}",
+      "timestamp": "2026-03-17T12:34:32.703Z"
     },
     {
       "module": "knowledge",
       "testName": "GET /api/knowledge/search",
       "passed": false,
-      "statusCode": 401,
-      "responseTime": "21ms",
-      "error": "{\"error\":\"无效的令牌\"}",
-      "timestamp": "2026-03-15T00:39:55.982Z"
+      "statusCode": 400,
+      "responseTime": "25ms",
+      "error": "{\"error\":\"搜索关键词不能为空\"}",
+      "timestamp": "2026-03-17T12:34:32.731Z"
     },
     {
       "module": "progress",
       "testName": "GET /api/progress",
-      "passed": false,
-      "statusCode": 401,
-      "responseTime": "12ms",
-      "error": "{\"error\":\"无效的令牌\"}",
-      "timestamp": "2026-03-15T00:39:55.995Z"
+      "passed": true,
+      "statusCode": 200,
+      "responseTime": "51ms",
+      "error": "{\"data\":[]}",
+      "timestamp": "2026-03-17T12:34:32.784Z"
     },
     {
       "module": "progress",
       "testName": "GET /api/progress/stats",
-      "passed": false,
-      "statusCode": 401,
-      "responseTime": "12ms",
-      "error": "{\"error\":\"无效的令牌\"}",
-      "timestamp": "2026-03-15T00:39:56.008Z"
+      "passed": true,
+      "statusCode": 200,
+      "responseTime": "28ms",
+      "error": "{\"data\":{\"totalPoints\":0,\"totalDuration\":0,\"avgCompletionRate\":0,\"completedPoints\":0}}",
+      "timestamp": "2026-03-17T12:34:32.814Z"
     },
     {
       "module": "progress",
       "testName": "POST /api/progress/upsert",
       "passed": false,
-      "statusCode": 401,
-      "responseTime": "13ms",
-      "error": "{\"error\":\"无效的令牌\"}",
-      "timestamp": "2026-03-15T00:39:56.022Z"
+      "statusCode": 400,
+      "responseTime": "16ms",
+      "error": "{\"error\":\"知识点 ID 不能为空\"}",
+      "timestamp": "2026-03-17T12:34:32.832Z"
     },
     {
       "module": "progress",
       "testName": "POST /api/progress/log",
       "passed": false,
-      "statusCode": 401,
-      "responseTime": "12ms",
-      "error": "{\"error\":\"无效的令牌\"}",
-      "timestamp": "2026-03-15T00:39:56.036Z"
+      "statusCode": 400,
+      "responseTime": "15ms",
+      "error": "{\"error\":\"知识点 ID 和学习时长不能为空\"}",
+      "timestamp": "2026-03-17T12:34:32.849Z"
     },
     {
       "module": "points",
       "testName": "GET /api/points/balance",
       "passed": false,
-      "statusCode": 401,
-      "responseTime": "12ms",
-      "error": "{\"error\":\"无效的令牌\"}",
-      "timestamp": "2026-03-15T00:39:56.050Z"
+      "statusCode": 404,
+      "responseTime": "13ms",
+      "error": "{\"error\":\"接口不存在\"}",
+      "timestamp": "2026-03-17T12:34:32.864Z"
     },
     {
       "module": "points",
       "testName": "GET /api/points/ledger",
       "passed": false,
-      "statusCode": 401,
-      "responseTime": "14ms",
-      "error": "{\"error\":\"无效的令牌\"}",
-      "timestamp": "2026-03-15T00:39:56.066Z"
+      "statusCode": 404,
+      "responseTime": "15ms",
+      "error": "{\"error\":\"接口不存在\"}",
+      "timestamp": "2026-03-17T12:34:32.881Z"
     },
     {
       "module": "points",
       "testName": "POST /api/points/earn",
       "passed": false,
-      "statusCode": 401,
-      "responseTime": "12ms",
-      "error": "{\"error\":\"无效的令牌\"}",
-      "timestamp": "2026-03-15T00:39:56.079Z"
+      "statusCode": 404,
+      "responseTime": "15ms",
+      "error": "{\"error\":\"接口不存在\"}",
+      "timestamp": "2026-03-17T12:34:32.897Z"
     },
     {
       "module": "points",
       "testName": "GET /api/points/rank",
       "passed": false,
-      "statusCode": 401,
-      "responseTime": "18ms",
-      "error": "{\"error\":\"无效的令牌\"}",
-      "timestamp": "2026-03-15T00:39:56.098Z"
+      "statusCode": 404,
+      "responseTime": "13ms",
+      "error": "{\"error\":\"接口不存在\"}",
+      "timestamp": "2026-03-17T12:34:32.912Z"
     },
     {
       "module": "weakness",
       "testName": "GET /api/weakness/analysis",
       "passed": false,
-      "statusCode": 401,
-      "responseTime": "15ms",
-      "error": "{\"error\":\"无效的令牌\"}",
-      "timestamp": "2026-03-15T00:39:56.115Z"
+      "statusCode": 404,
+      "responseTime": "19ms",
+      "error": "{\"error\":\"接口不存在\"}",
+      "timestamp": "2026-03-17T12:34:32.932Z"
     },
     {
       "module": "weakness",
       "testName": "GET /api/weakness/recommendations",
       "passed": false,
-      "statusCode": 401,
-      "responseTime": "11ms",
-      "error": "{\"error\":\"无效的令牌\"}",
-      "timestamp": "2026-03-15T00:39:56.127Z"
+      "statusCode": 404,
+      "responseTime": "18ms",
+      "error": "{\"error\":\"接口不存在\"}",
+      "timestamp": "2026-03-17T12:34:32.953Z"
     },
     {
       "module": "weakness",
       "testName": "POST /api/weakness/practice",
       "passed": false,
-      "statusCode": 401,
-      "responseTime": "11ms",
-      "error": "{\"error\":\"无效的令牌\"}",
-      "timestamp": "2026-03-15T00:39:56.140Z"
+      "statusCode": 404,
+      "responseTime": "15ms",
+      "error": "{\"error\":\"接口不存在\"}",
+      "timestamp": "2026-03-17T12:34:32.969Z"
     },
     {
       "module": "weakness",
       "testName": "GET /api/weakness/stats",
       "passed": false,
-      "statusCode": 401,
-      "responseTime": "11ms",
-      "error": "{\"error\":\"无效的令牌\"}",
-      "timestamp": "2026-03-15T00:39:56.153Z"
+      "statusCode": 404,
+      "responseTime": "16ms",
+      "error": "{\"error\":\"接口不存在\"}",
+      "timestamp": "2026-03-17T12:34:32.986Z"
     },
     {
       "module": "leaderboard",
       "testName": "GET /api/leaderboards/total",
       "passed": false,
       "statusCode": 404,
-      "responseTime": "12ms",
+      "responseTime": "14ms",
       "error": "{\"error\":\"接口不存在\"}",
-      "timestamp": "2026-03-15T00:39:56.166Z"
+      "timestamp": "2026-03-17T12:34:33.001Z"
     },
     {
       "module": "leaderboard",
       "testName": "GET /api/leaderboards/weekly",
       "passed": false,
       "statusCode": 404,
-      "responseTime": "11ms",
+      "responseTime": "20ms",
       "error": "{\"error\":\"接口不存在\"}",
-      "timestamp": "2026-03-15T00:39:56.178Z"
+      "timestamp": "2026-03-17T12:34:33.022Z"
     },
     {
       "module": "leaderboard",
       "testName": "GET /api/leaderboards/monthly",
       "passed": false,
       "statusCode": 404,
-      "responseTime": "11ms",
+      "responseTime": "15ms",
       "error": "{\"error\":\"接口不存在\"}",
-      "timestamp": "2026-03-15T00:39:56.191Z"
+      "timestamp": "2026-03-17T12:34:33.039Z"
     },
     {
       "module": "leaderboard",
       "testName": "GET /api/leaderboards/subject/:subject",
       "passed": false,
       "statusCode": 404,
-      "responseTime": "12ms",
+      "responseTime": "14ms",
       "error": "{\"error\":\"接口不存在\"}",
-      "timestamp": "2026-03-15T00:39:56.204Z"
+      "timestamp": "2026-03-17T12:34:33.056Z"
     },
     {
       "module": "textbooks",
       "testName": "GET /api/textbooks",
-      "passed": false,
-      "statusCode": 401,
-      "responseTime": "14ms",
-      "error": "{\"error\":\"无效的令牌\"}",
-      "timestamp": "2026-03-15T00:39:56.220Z"
+      "passed": true,
+      "statusCode": 200,
+      "responseTime": "21ms",
+      "error": "{\"success\":true,\"data\":[]}",
+      "timestamp": "2026-03-17T12:34:33.079Z"
     },
     {
       "module": "textbooks",
       "testName": "GET /api/textbooks/:id",
-      "passed": false,
-      "statusCode": 401,
-      "responseTime": "11ms",
-      "error": "{\"error\":\"无效的令牌\"}",
-      "timestamp": "2026-03-15T00:39:56.233Z"
+      "passed": true,
+      "statusCode": 404,
+      "responseTime": "23ms",
+      "error": "{\"success\":false,\"error\":\"课本文本不存在\"}",
+      "timestamp": "2026-03-17T12:34:33.105Z"
     },
     {
       "module": "textbooks",
       "testName": "POST /api/textbooks",
       "passed": false,
-      "statusCode": 401,
-      "responseTime": "11ms",
-      "error": "{\"error\":\"无效的令牌\"}",
-      "timestamp": "2026-03-15T00:39:56.246Z"
+      "statusCode": 404,
+      "responseTime": "18ms",
+      "error": "{\"error\":\"接口不存在\"}",
+      "timestamp": "2026-03-17T12:34:33.124Z"
     },
     {
       "module": "textbooks",
       "testName": "PUT /api/textbooks/:id",
-      "passed": false,
-      "statusCode": 401,
-      "responseTime": "12ms",
-      "error": "{\"error\":\"无效的令牌\"}",
-      "timestamp": "2026-03-15T00:39:56.259Z"
+      "passed": true,
+      "statusCode": 404,
+      "responseTime": "15ms",
+      "error": "{\"error\":\"接口不存在\"}",
+      "timestamp": "2026-03-17T12:34:33.140Z"
     },
     {
       "module": "textbooks",
       "testName": "DELETE /api/textbooks/:id",
-      "passed": false,
-      "statusCode": 401,
-      "responseTime": "11ms",
-      "error": "{\"error\":\"无效的令牌\"}",
-      "timestamp": "2026-03-15T00:39:56.271Z"
+      "passed": true,
+      "statusCode": 404,
+      "responseTime": "13ms",
+      "error": "{\"success\":false,\"error\":\"课本不存在\"}",
+      "timestamp": "2026-03-17T12:34:33.155Z"
     },
     {
       "module": "textbooks",
       "testName": "GET /api/textbooks/:id/units",
-      "passed": false,
-      "statusCode": 401,
-      "responseTime": "11ms",
-      "error": "{\"error\":\"无效的令牌\"}",
-      "timestamp": "2026-03-15T00:39:56.283Z"
+      "passed": true,
+      "statusCode": 404,
+      "responseTime": "13ms",
+      "error": "{\"success\":false,\"error\":\"课本不存在\"}",
+      "timestamp": "2026-03-17T12:34:33.170Z"
     },
     {
       "module": "upload",
       "testName": "POST /api/upload/textbook",
       "passed": true,
       "statusCode": 400,
-      "responseTime": "26ms",
+      "responseTime": "29ms",
       "error": "{\"error\":\"缺少必要参数\"}",
-      "timestamp": "2026-03-15T00:39:56.310Z"
+      "timestamp": "2026-03-17T12:34:33.200Z"
     },
     {
       "module": "upload",
       "testName": "POST /api/upload/avatar",
       "passed": true,
       "statusCode": 400,
-      "responseTime": "16ms",
+      "responseTime": "21ms",
       "error": "{\"error\":\"缺少用户 ID\"}",
-      "timestamp": "2026-03-15T00:39:56.327Z"
+      "timestamp": "2026-03-17T12:34:33.223Z"
     },
     {
       "module": "upload",
       "testName": "POST /api/upload/attachment",
       "passed": true,
       "statusCode": 400,
-      "responseTime": "19ms",
+      "responseTime": "28ms",
       "error": "{\"error\":\"缺少实体类型或 ID\"}",
-      "timestamp": "2026-03-15T00:39:56.347Z"
+      "timestamp": "2026-03-17T12:34:33.253Z"
     },
     {
       "module": "ai-gateway",
       "testName": "POST /api/ai-gateway/generate",
       "passed": false,
       "statusCode": 404,
-      "responseTime": "11ms",
+      "responseTime": "17ms",
       "error": "{\"error\":\"接口不存在\"}",
-      "timestamp": "2026-03-15T00:39:56.359Z"
+      "timestamp": "2026-03-17T12:34:33.272Z"
     },
     {
       "module": "ai-gateway",
       "testName": "POST /api/ai-gateway/parse",
       "passed": false,
       "statusCode": 404,
-      "responseTime": "11ms",
+      "responseTime": "22ms",
       "error": "{\"error\":\"接口不存在\"}",
-      "timestamp": "2026-03-15T00:39:56.371Z"
+      "timestamp": "2026-03-17T12:34:33.296Z"
     },
     {
       "module": "ai-gateway",
       "testName": "POST /api/ai-gateway/analyze",
       "passed": false,
       "statusCode": 404,
-      "responseTime": "11ms",
+      "responseTime": "14ms",
       "error": "{\"error\":\"接口不存在\"}",
-      "timestamp": "2026-03-15T00:39:56.384Z"
+      "timestamp": "2026-03-17T12:34:33.313Z"
     },
     {
       "module": "ai-gateway",
       "testName": "GET /api/ai-gateway/models",
       "passed": false,
       "statusCode": 404,
-      "responseTime": "10ms",
+      "responseTime": "15ms",
       "error": "{\"error\":\"接口不存在\"}",
-      "timestamp": "2026-03-15T00:39:56.395Z"
+      "timestamp": "2026-03-17T12:34:33.329Z"
     },
     {
       "module": "health",
       "testName": "GET /api/health",
       "passed": true,
       "statusCode": 200,
-      "responseTime": "12ms",
-      "error": "{\"status\":\"ok\",\"timestamp\":\"2026-03-15T00:39:56.401Z\",\"uptime\":3.7294484,\"services\":{\"database\":\"connected\",\"memory\":{\"used\":200,\"total\":295,\"unit\":\"MB\"}}}",
-      "timestamp": "2026-03-15T00:39:56.409Z"
+      "responseTime": "14ms",
+      "error": "{\"status\":\"ok\",\"timestamp\":\"2026-03-17T12:34:33.336Z\",\"uptime\":104.4475839,\"services\":{\"database\":\"connected\",\"memory\":{\"used\":594,\"total\":742,\"unit\":\"MB\"}}}",
+      "timestamp": "2026-03-17T12:34:33.345Z"
     },
     {
       "module": "health",
       "testName": "GET /api/health/db",
       "passed": false,
       "statusCode": 404,
-      "responseTime": "11ms",
+      "responseTime": "15ms",
       "error": "{\"error\":\"接口不存在\"}",
-      "timestamp": "2026-03-15T00:39:56.421Z"
+      "timestamp": "2026-03-17T12:34:33.361Z"
     },
     {
       "module": "health",
       "testName": "GET /api/health/redis",
       "passed": false,
       "statusCode": 404,
-      "responseTime": "11ms",
+      "responseTime": "20ms",
       "error": "{\"error\":\"接口不存在\"}",
-      "timestamp": "2026-03-15T00:39:56.433Z"
+      "timestamp": "2026-03-17T12:34:33.382Z"
     },
     {
       "module": "health",
       "testName": "GET /api/health/uptime",
       "passed": false,
       "statusCode": 404,
-      "responseTime": "14ms",
+      "responseTime": "15ms",
       "error": "{\"error\":\"接口不存在\"}",
-      "timestamp": "2026-03-15T00:39:56.448Z"
+      "timestamp": "2026-03-17T12:34:33.400Z"
     }
   ]
 }

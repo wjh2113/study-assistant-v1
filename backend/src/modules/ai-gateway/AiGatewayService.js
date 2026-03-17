@@ -6,23 +6,23 @@
 const axios = require('axios');
 
 class AiGatewayService {
-  // 模型配置
+  // 模型配置（支持统一 API Key  fallback）
   static MODEL_CONFIGS = {
     'qwen-flash': {
-      url: process.env.QWEN_FLASH_URL || 'https://dashscope.aliyuncs.com/api/v1/services/aigc/text-generation/generation',
-      apiKey: process.env.QWEN_FLASH_KEY,
+      url: process.env.QWEN_FLASH_URL || process.env.AI_API_URL || 'https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions',
+      apiKey: process.env.QWEN_FLASH_KEY || process.env.AI_API_KEY,
       model: 'qwen-turbo',
       timeout: 30000
     },
     'qwen-plus': {
-      url: process.env.QWEN_PLUS_URL || 'https://dashscope.aliyuncs.com/api/v1/services/aigc/text-generation/generation',
-      apiKey: process.env.QWEN_PLUS_KEY,
+      url: process.env.QWEN_PLUS_URL || process.env.AI_API_URL || 'https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions',
+      apiKey: process.env.QWEN_PLUS_KEY || process.env.AI_API_KEY,
       model: 'qwen-plus',
       timeout: 60000
     },
     'qwen-max': {
-      url: process.env.QWEN_MAX_URL || 'https://dashscope.aliyuncs.com/api/v1/services/aigc/text-generation/generation',
-      apiKey: process.env.QWEN_MAX_KEY,
+      url: process.env.QWEN_MAX_URL || process.env.AI_API_URL || 'https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions',
+      apiKey: process.env.QWEN_MAX_KEY || process.env.AI_API_KEY,
       model: 'qwen-max',
       timeout: 90000
     }
@@ -49,17 +49,30 @@ class AiGatewayService {
   }
 
   /**
-   * 调用 AI 模型
+   * 调用 AI 模型（带重试机制）
    * @param {string} model - 模型名称
    * @param {string} prompt - 提示词
    * @param {object} options - 额外选项
+   * @param {number} retryCount - 当前重试次数
    * @returns {Promise<object>} AI 响应
    */
-  static async callModel(model, prompt, options = {}) {
+  static async callModel(model, prompt, options = {}, retryCount = 0) {
     const config = this.MODEL_CONFIGS[model];
     if (!config) {
       throw new Error(`不支持的模型：${model}`);
     }
+
+    // 检查 API Key 是否配置
+    if (!config.apiKey) {
+      return {
+        success: false,
+        error: `模型 ${model} 的 API Key 未配置`,
+        model: model
+      };
+    }
+
+    const maxRetries = 3;
+    const retryDelay = 1000 * (retryCount + 1); // 指数退避
 
     try {
       const response = await axios.post(
@@ -87,24 +100,53 @@ class AiGatewayService {
         {
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${config.apiKey}`
+            'Authorization': `Bearer ${config.apiKey}`,
+            'X-DashScope-Key': config.apiKey
           },
           timeout: config.timeout
         }
       );
 
+      // 检查响应数据
+      if (!response.data || !response.data.output) {
+        throw new Error('API 返回数据格式不正确');
+      }
+
+      const content = response.data.output?.choices?.[0]?.message?.content;
+      if (!content) {
+        throw new Error('AI 返回内容为空');
+      }
+
       return {
         success: true,
-        data: response.data.output?.choices?.[0]?.message?.content,
+        data: content,
         usage: response.data.usage,
         model: model
       };
     } catch (error) {
+      const isRetryable = error.response?.status >= 500 || error.code === 'ECONNRESET' || error.code === 'ETIMEDOUT';
+      
+      if (isRetryable && retryCount < maxRetries) {
+        console.warn(`AI 模型调用失败 [${model}]，第 ${retryCount + 1} 次重试，${retryDelay}ms 后重试...`);
+        await new Promise(resolve => setTimeout(resolve, retryDelay));
+        return this.callModel(model, prompt, options, retryCount + 1);
+      }
+
       console.error(`AI 模型调用失败 [${model}]:`, error.message);
+      
+      // 详细的错误信息
+      let errorMessage = error.message;
+      if (error.response) {
+        errorMessage = `API 错误 (${error.response.status}): ${error.response.data?.message || error.response.statusText}`;
+      } else if (error.request) {
+        errorMessage = '网络请求失败，请检查网络连接';
+      }
+
       return {
         success: false,
-        error: error.message,
-        model: model
+        error: errorMessage,
+        model: model,
+        retryCount: retryCount
       };
     }
   }

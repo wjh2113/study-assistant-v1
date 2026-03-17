@@ -27,7 +27,7 @@ class TextbookModel {
       data.title,
       data.file_path,
       data.file_url,
-      data.file_size,
+      data.file_size || null,
       JSON.stringify(data.units || []),
       data.status || 'pending'
     );

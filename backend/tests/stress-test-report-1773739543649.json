@@ -1,0 +1,64 @@
+{
+  "timestamp": "2026-03-17T09:25:43.647Z",
+  "config": {
+    "baseUrl": "http://localhost:3000",
+    "concurrency": 10,
+    "duration": 30,
+    "pipelining": 1,
+    "endpoints": [
+      {
+        "path": "/api/health",
+        "method": "GET",
+        "name": "健康检查"
+      },
+      {
+        "path": "/api/auth/profile",
+        "method": "GET",
+        "name": "用户资料",
+        "auth": true
+      },
+      {
+        "path": "/api/knowledge",
+        "method": "GET",
+        "name": "知识点列表",
+        "auth": true
+      },
+      {
+        "path": "/api/progress",
+        "method": "GET",
+        "name": "学习进度",
+        "auth": true
+      },
+      {
+        "path": "/api/ai/question",
+        "method": "POST",
+        "name": "AI 出题",
+        "auth": true
+      }
+    ]
+  },
+  "summary": {
+    "duration": 0.498,
+    "totalRequests": 300,
+    "successfulRequests": 60,
+    "failedRequests": 240,
+    "throughput": 602.4096385542168,
+    "successRate": 20
+  },
+  "latencies": {
+    "average": 20.596666666666668,
+    "p50": 9,
+    "p90": 26,
+    "p95": 61,
+    "p99": 217,
+    "min": 4,
+    "max": 219
+  },
+  "errors": {
+    "用户资料: 404": 40,
+    "用户资料: 429": 20,
+    "知识点列表: 429": 60,
+    "学习进度: 429": 60,
+    "AI 出题: 429": 60
+  }
+}

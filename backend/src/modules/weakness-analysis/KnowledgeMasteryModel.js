@@ -148,26 +148,44 @@ class KnowledgeMasteryModel {
     } = options;
 
     let query = `
-      SELECT * FROM knowledge_mastery
-      WHERE user_id = ?
-        AND mastery_score >= ?
-        AND mastery_score <= ?
+      SELECT 
+        km.knowledge_point_id as knowledgePointId,
+        km.mastery_level as masteryLevel,
+        km.review_count as reviewCount,
+        kp.title as knowledgePointName,
+        kp.category as subject
+      FROM knowledge_mastery km
+      LEFT JOIN knowledge_points kp ON km.knowledge_point_id = kp.id
+      WHERE km.user_id = ?
+        AND km.mastery_level >= ?
+        AND km.mastery_level <= ?
     `;
     const params = [userId, minMastery, maxMastery];
 
     if (subject) {
-      query += ' AND subject = ?';
+      query += ' AND kp.category = ?';
       params.push(subject);
     }
 
     query += `
-      ORDER BY mastery_score ASC, total_count DESC
+      ORDER BY km.mastery_level ASC, km.review_count DESC
       LIMIT ?
     `;
     params.push(limit);
 
     const stmt = db.prepare(query);
-    return stmt.all(...params);
+    const results = stmt.all(...params);
+    
+    // 转换为标准格式
+    return results.map(r => ({
+      knowledgePointId: r.knowledgePointId,
+      knowledgePointName: r.knowledgePointName,
+      masteryLevel: r.masteryLevel,
+      reviewCount: r.reviewCount,
+      subject: r.subject,
+      trend: 'stable',
+      reason: '掌握度较低'
+    }));
   }
 
   /**

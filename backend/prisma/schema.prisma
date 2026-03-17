@@ -1,4 +1,4 @@
-// This is your Prisma schema file,
+// This is your Prisma schema file - SQLite compatible version
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
@@ -6,50 +6,14 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
-  url      = env("DATABASE_URL")
-}
-
-// 角色枚举（UPPER_CASE）
-enum Role {
-  STUDENT
-  PARENT
-  ADMIN
-}
-
-// 验证码用途（UPPER_CASE）
-enum VerificationPurpose {
-  LOGIN
-  REGISTER
-  RESET
-}
-
-// 家长验证状态（UPPER_CASE）
-enum VerifiedStatus {
-  PENDING
-  VERIFIED
-  REJECTED
-}
-
-// 知识点状态（UPPER_CASE）
-enum KnowledgeStatus {
-  ACTIVE
-  ARCHIVED
-  DRAFT
-}
-
-// 教材解析状态（UPPER_CASE）
-enum ParseStatus {
-  PENDING
-  PROCESSING
-  COMPLETED
-  FAILED
+  provider = "sqlite"
+  url      = env("DATABASE_PATH")
 }
 
 // 用户表
 model User {
   id            String    @id @default(uuid())
-  role          Role      @default(student)
+  role          String    @default("STUDENT") // 枚举：STUDENT, PARENT, ADMIN
   phone         String    @unique
   nickname      String?
   avatar_url    String?
@@ -88,7 +52,7 @@ model StudentProfile {
 model ParentProfile {
   user_id         String        @id
   real_name       String?
-  verified_status VerifiedStatus @default(pending)
+  verified_status String        @default("PENDING") // 枚举：PENDING, VERIFIED, REJECTED
   created_at      DateTime       @default(now())
   updated_at      DateTime       @updatedAt
   
@@ -99,13 +63,13 @@ model ParentProfile {
 
 // 验证码表
 model VerificationCode {
-  id         Int                 @id @default(autoincrement())
+  id         Int      @id @default(autoincrement())
   phone      String
   code       String
-  purpose    VerificationPurpose @default(login)
+  purpose    String   @default("LOGIN") // 枚举：LOGIN, REGISTER, RESET
   expires_at DateTime
-  used       Boolean             @default(false)
-  created_at DateTime            @default(now())
+  used       Boolean  @default(false)
+  created_at DateTime @default(now())
   
   @@index([phone, purpose])
   @@index([expires_at])
@@ -113,15 +77,15 @@ model VerificationCode {
 
 // 知识点表
 model KnowledgePoint {
-  id          String           @id @default(uuid())
+  id          String   @id @default(uuid())
   user_id     String
   title       String
   content     String?
   category    String?
   tags        String?
-  status      KnowledgeStatus  @default(active)
-  created_at  DateTime         @default(now())
-  updated_at  DateTime         @updatedAt
+  status      String   @default("ACTIVE") // 枚举：ACTIVE, ARCHIVED, DRAFT
+  created_at  DateTime @default(now())
+  updated_at  DateTime @updatedAt
   
   user User @relation(fields: [user_id], references: [id], onDelete: Cascade)
   learning_progress LearningProgress[]
@@ -190,8 +154,10 @@ model Textbook {
   subject     String?
   grade       Int?
   version     String?
-  parse_status ParseStatus @default(pending)
-  parse_result Json?
+  file_size   Int?        // 文件大小（字节）
+  units       String?     // 单元列表（JSON 字符串或逗号分隔）
+  parse_status String     @default("PENDING") // 枚举：PENDING, PROCESSING, COMPLETED, FAILED
+  parse_result String?    // JSON 字符串
   created_at  DateTime    @default(now())
   updated_at  DateTime    @updatedAt
   
@@ -273,7 +239,7 @@ model Question {
   session_id  String
   type        String
   question    String
-  options     Json?
+  options     String?  // JSON 字符串
   answer      String
   explanation String?
   order       Int

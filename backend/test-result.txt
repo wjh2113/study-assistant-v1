@@ -1,0 +1,1195 @@
+﻿
+> studyass-backend@1.0.0 test
+> jest --coverage --testPathPattern=controllers-full-coverage --verbose
+
+  console.log
+    馃И 娴嬭瘯鐜宸查厤缃細TEST_MODE=true, DATABASE_PATH=E:\openclaw\workspace-studyass-mgr\backend\test-temp-25796.db, QUEUE_PROVIDER=memory
+
+      at Object.<anonymous> (jest.setup.js:128:9)
+
+  console.log
+    鉁?娴嬭瘯鏈嶅姟鍣ㄥ凡鍚姩
+
+      at Object.log (tests/controllers-full-coverage.test.js:59:11)
+
+  console.log
+    鉁?娴嬭瘯鏈嶅姟鍣ㄥ凡鍏抽棴
+
+      at Object.log (tests/controllers-full-coverage.test.js:70:11)
+
+node.exe : FAIL tests/controllers-full-coverage.test.js
+所在位置 行:1 字符: 1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (FAIL tests/cont...overage.test.js:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  1. authController 瀹屾暣娴嬭瘯
+    POST /api/auth/send-code - 鍙戦€侀獙璇佺爜
+      脳 搴旇鎴愬姛鍙戦€佺櫥褰曢獙璇佺爜 (101 ms)
+      脳 搴旇鎴愬姛鍙戦€佹敞鍐岄獙璇佺爜 (17 ms)
+      鈭?搴旇鎷掔粷鏃犳晥鎵嬫満鍙锋牸寮?(18 ms)
+      脳 搴旇鎷掔粷鏃犳晥鐢ㄩ€?(16 ms)
+    POST /api/auth/register - 鐢ㄦ埛娉ㄥ唽
+      脳 搴旇鎴愬姛娉ㄥ唽瀛︾敓鐢ㄦ埛 (42 ms)
+      脳 搴旇鎷掔粷宸叉敞鍐岀殑鎵嬫満鍙?(38 ms)
+      鈭?搴旇鎷掔粷缂哄け蹇呰瀛楁 (14 ms)
+    POST /api/auth/login - 鐢ㄦ埛鐧诲綍
+      脳 搴旇鎴愬姛鐧诲綍骞惰繑鍥?token (33 ms)
+      脳 搴旇鎷掔粷鏃犳晥楠岃瘉鐮?(12 ms)
+      鈭?搴旇鎷掔粷缂哄け鍙傛暟 (12 ms)
+    POST /api/auth/refresh - 鍒锋柊 Token
+      脳 搴旇鎴愬姛鍒锋柊 token (45 ms)
+      鈭?搴旇鎷掔粷鏃犳晥 token (13 ms)
+      鈭?搴旇鎷掔粷缂哄け token (13 ms)
+    GET /api/auth/me - 鑾峰彇褰撳墠鐢ㄦ埛淇℃伅
+      脳 搴旇杩斿洖褰撳墠鐢ㄦ埛淇℃伅 (33 ms)
+      鈭?搴旇鎷掔粷鏈巿鏉冭姹?(15 ms)
+      鈭?搴旇鎷掔粷鏃犳晥 token (16 ms)
+    PUT /api/auth/me - 鏇存柊鐢ㄦ埛淇℃伅
+      脳 搴旇鎴愬姛鏇存柊鏄电О鍜屽ご鍍?(46 ms)
+      鈭?搴旇鎷掔粷鏈巿鏉冭姹?(13 ms)
+  2. aiController 娴嬭瘯
+    POST /api/ai/ask - AI 闂瓟
+      脳 搴旇鎴愬姛鎻愰棶骞惰繑鍥炵瓟妗?(36 ms)
+      脳 搴旇鎷掔粷绌洪棶棰?(31 ms)
+      鈭?搴旇鎷掔粷鏈巿鏉冭姹?(38 ms)
+    GET /api/ai/history - 鑾峰彇闂瓟鍘嗗彶
+      脳 搴旇杩斿洖闂瓟鍘嗗彶 (43 ms)
+      脳 搴旇鏀寔鍒嗛〉鍙傛暟 (34 ms)
+      鈭?搴旇鎷掔粷鏈巿鏉冭姹?(32 ms)
+    GET /api/ai/search - 鎼滅储闂瓟璁板綍
+      脳 搴旇鎼滅储闂瓟璁板綍 (32 ms)
+      脳 搴旇鎷掔粷绌哄叧閿瘝 (35 ms)
+    DELETE /api/ai/history/:id - 鍒犻櫎闂瓟璁板綍
+      脳 搴旇鍒犻櫎闂瓟璁板綍 (29 ms)
+      脳 搴旇鎷掔粷鍒犻櫎涓嶅瓨鍦ㄧ殑璁板綍 (32 ms)
+  3. practiceController 娴嬭瘯
+    POST /api/practice/sessions - 鍒涘缓缁冧範浼氳瘽
+      脳 搴旇鍒涘缓缁冧範浼氳瘽 (30 ms)
+      鈭?搴旇鎷掔粷鏈巿鏉冭姹?(34 ms)
+    GET /api/practice/sessions - 鑾峰彇浼氳瘽鍒楄〃
+      脳 搴旇鑾峰彇浼氳瘽鍒楄〃 (42 ms)
+      脳 搴旇鏀寔鐘舵€佽繃婊?(36 ms)
+    GET /api/practice/sessions/:id - 鑾峰彇浼氳瘽璇︽儏
+      脳 搴旇鑾峰彇浼氳瘽璇︽儏 (30 ms)
+      脳 搴旇鎷掔粷璁块棶涓嶅瓨鍦ㄧ殑浼氳瘽 (34 ms)
+    PUT /api/practice/sessions/:id - 鏇存柊浼氳瘽鐘舵€?      脳 搴旇鏇存柊浼氳瘽鐘舵€?(32 ms)
+    DELETE /api/practice/sessions/:id - 鍒犻櫎浼氳瘽
+      脳 搴旇鍒犻櫎浼氳瘽 (40 ms)
+    POST /api/practice/sessions/:id/questions - 娣诲姞闂
+      脳 搴旇娣诲姞闂鍒颁細璇?(29 ms)
+    POST /api/practice/sessions/:id/answers - 鎻愪氦绛旀
+      脳 搴旇鎻愪氦绛旀 (33 ms)
+    GET /api/practice/sessions/:id/answers - 鑾峰彇绛旈璁板綍
+      脳 搴旇鑾峰彇绛旈璁板綍 (31 ms)
+  4. knowledgeController 娴嬭瘯
+    POST /api/knowledge/points - 鍒涘缓鐭ヨ瘑鐐?      脳 搴旇鍒涘缓鐭ヨ瘑鐐?(34 ms)
+      脳 搴旇鎷掔粷绌烘爣棰?(31 ms)
+      鈭?搴旇鎷掔粷鏈巿鏉冭姹?(35 ms)
+    GET /api/knowledge/points - 鑾峰彇鐭ヨ瘑鐐瑰垪琛?      脳 搴旇鑾峰彇鐭ヨ瘑鐐瑰垪琛?(42 ms)
+      脳 搴旇鏀寔鍒嗙被杩囨护 (32 ms)
+    GET /api/knowledge/points/:id - 鑾峰彇鐭ヨ瘑鐐硅鎯?      脳 搴旇鑾峰彇鐭ヨ瘑鐐硅鎯?(35 ms)
+      脳 搴旇鎷掔粷璁块棶涓嶅瓨鍦ㄧ殑鐭ヨ瘑鐐?(33 ms)
+    PUT /api/knowledge/points/:id - 鏇存柊鐭ヨ瘑鐐?      脳 搴旇鏇存柊鐭ヨ瘑鐐?(31 ms)
+    DELETE /api/knowledge/points/:id - 鍒犻櫎鐭ヨ瘑鐐?      脳 搴旇鍒犻櫎鐭ヨ瘑鐐?(32 ms)
+    GET /api/knowledge/points/search - 鎼滅储鐭ヨ瘑鐐?      脳 搴旇鎼滅储鐭ヨ瘑鐐?(32 ms)
+      脳 搴旇鎷掔粷绌哄叧閿瘝 (32 ms)
+  5. userController 娴嬭瘯 (鏇存柊鐢ㄦ埛淇℃伅銆佸瘑鐮佷慨鏀?
+    PUT /api/auth/me - 鏇存柊鐢ㄦ埛淇℃伅
+      脳 搴旇鎴愬姛鏇存柊鏄电О (32 ms)
+      脳 搴旇鎴愬姛鏇存柊澶村儚 (31 ms)
+      脳 搴旇鎴愬姛鏇存柊澶氫釜瀛楁 (35 ms)
+      鈭?搴旇鎷掔粷鏈巿鏉冭姹?(30 ms)
+    杈圭晫鍦烘櫙娴嬭瘯
+      脳 搴旇澶勭悊杩囬暱鐨勬樀绉?(32 ms)
+      脳 搴旇澶勭悊鏃犳晥鐨?URL (34 ms)
+  6. textbookController 娴嬭瘯 (璇炬湰瑙ｆ瀽銆佸崟鍏冭幏鍙?
+    GET /api/textbooks - 鑾峰彇璇炬湰鏂囨湰鍒楄〃
+      脳 搴旇杩斿洖绌哄垪琛?(鏃犳暟鎹? (33 ms)
+    GET /api/textbooks/:id - 鑾峰彇璇炬湰璇︽儏
+      脳 搴旇鎷掔粷璁块棶涓嶅瓨鍦ㄧ殑璇炬湰 (36 ms)
+    GET /api/textbooks/:id/units - 鑾峰彇璇炬湰鍗曞厓鍒楄〃
+      脳 搴旇鎷掔粷璁块棶涓嶅瓨鍦ㄧ殑璇炬湰 (33 ms)
+    GET /api/textbooks/tasks - 鑾峰彇瑙ｆ瀽浠诲姟鍒楄〃
+      脳 搴旇杩斿洖浠诲姟鍒楄〃 (33 ms)
+    GET /api/textbooks/tasks/:taskId - 鑾峰彇浠诲姟鐘舵€?      脳 搴旇鎷掔粷璁块棶涓嶅瓨鍦ㄧ殑浠诲姟 (30 ms)
+    DELETE /api/textbooks/:id - 鍒犻櫎璇炬湰
+      脳 搴旇鎷掔粷鍒犻櫎涓嶅瓨鍦ㄧ殑璇炬湰 (34 ms)
+    POST /api/textbooks/upload - 涓婁紶璇炬湰 (妯℃嫙)
+      鈭?搴旇鎷掔粷鏈巿鏉冭姹?(34 ms)
+    POST /api/textbooks/parse - 瑙ｆ瀽璇炬湰 (妯℃嫙)
+      脳 搴旇鎷掔粷缂哄け鏂囦欢璺緞 (32 ms)
+      脳 搴旇鍒涘缓瑙ｆ瀽浠诲姟 (29 ms)
+
+  鈼?1. authController 瀹屾暣娴嬭瘯 鈥?POST /api/auth/send-code - 鍙戦€侀獙璇佺爜 鈥?搴旇鎴愬姛鍙戦€佺櫥褰曢獙璇佺爜
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 400
+
+    [0m [90m 83 |[39m         [33m.[39msend({ phone[33m,[39m purpose[33m:[39m [32m'login'[39m })[33m;[39m
+     [90m 84 |[39m
+    [31m[1m>[22m[39m[90m 85 |[39m       expect(res[33m.[39mstatusCode)[33m.[39mtoBe([35m200[39m)[33m;[39m
+     [90m    |[39m                              [31m[1m^[22m[39m
+     [90m 86 |[39m       expect(res[33m.[39mbody)[33m.[39mtoHaveProperty([32m'message'[39m)[33m;[39m
+     [90m 87 |[39m     })[33m;[39m
+     [90m 88 |[39m[0m
+
+      at Object.toBe (tests/controllers-full-coverage.test.js:85:30)
+
+  鈼?1. authController 瀹屾暣娴嬭瘯 鈥?POST /api/auth/send-code - 鍙戦€侀獙璇佺爜 鈥?搴旇鎴愬姛鍙戦€佹敞鍐岄獙璇佺爜
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 400
+
+    [0m [90m 93 |[39m         [33m.[39msend({ phone[33m,[39m purpose[33m:[39m [32m'register'[39m })[33m;[3
+9m
+     [90m 94 |[39m
+    [31m[1m>[22m[39m[90m 95 |[39m       expect(res[33m.[39mstatusCode)[33m.[39mtoBe([35m200[39m)[33m;[39m
+     [90m    |[39m                              [31m[1m^[22m[39m
+     [90m 96 |[39m     })[33m;[39m
+     [90m 97 |[39m
+     [90m 98 |[39m     it([32m'搴旇鎷掔粷鏃犳晥鎵嬫満鍙锋牸寮?[39m[33m,[39m [36masync[39m () [33m=>[39m {[0m
+
+      at Object.toBe (tests/controllers-full-coverage.test.js:95:30)
+
+  鈼?1. authController 瀹屾暣娴嬭瘯 鈥?POST /api/auth/send-code - 鍙戦€侀獙璇佺爜 鈥?搴旇鎷掔粷鏃犳晥鐢ㄩ€?
+    expect(received).toHaveProperty(path, value)
+
+    Expected path: "error"
+
+    Expected value: "楠岃瘉鐮佺敤閫旀棤鏁?
+    Received value: "鎵嬫満鍙锋牸寮忔棤鏁?
+
+    [0m [90m 112 |[39m
+     [90m 113 |[39m       expect(res[33m.[39mstatusCode)[33m.[39mtoBe([35m400[39m)[33m;[39m
+    [31m[1m>[22m[39m[90m 114 |[39m       expect(res[33m.[39mbody)[33m.[39mtoHaveProperty([32m'error'[39m[3
+3m,[39m [32m'楠岃瘉鐮佺敤閫旀棤鏁?[39m)[33m;[39m
+     [90m     |[39m                        [31m[1m^[22m[39m
+     [90m 115 |[39m     })[33m;[39m
+     [90m 116 |[39m   })[33m;[39m
+     [90m 117 |[39m[0m
+
+      at Object.toHaveProperty (tests/controllers-full-coverage.test.js:114:24)
+
+  鈼?1. authController 瀹屾暣娴嬭瘯 鈥?POST /api/auth/register - 鐢ㄦ埛娉ㄥ唽 鈥?搴旇鎴愬姛娉ㄥ唽瀛︾敓鐢ㄦ埛
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 201
+    Received: 400
+
+    [0m [90m 137 |[39m         })[33m;[39m
+     [90m 138 |[39m
+    [31m[1m>[22m[39m[90m 139 |[39m       expect(res[33m.[39mstatusCode)[33m.[39mtoBe([35m201[39m)[33m;[39
+m
+     [90m     |[39m                              [31m[1m^[22m[39m
+     [90m 140 |[39m       expect(res[33m.[39mbody)[33m.[39mtoHaveProperty([32m'message'[39m[33m,[39m [32m'娉ㄥ
+唽鎴愬姛'[39m)[33m;[39m
+     [90m 141 |[39m       expect(res[33m.[39mbody)[33m.[39mtoHaveProperty([32m'token'[39m)[33m;[39m
+     [90m 142 |[39m       expect(res[33m.[39mbody[33m.[39muser)[33m.[39mtoHaveProperty([32m'role'[39m[33m,[
+39m [32m'STUDENT'[39m)[33m;[39m[0m
+
+      at Object.toBe (tests/controllers-full-coverage.test.js:139:30)
+
+  鈼?1. authController 瀹屾暣娴嬭瘯 鈥?POST /api/auth/register - 鐢ㄦ埛娉ㄥ唽 鈥?搴旇鎷掔粷宸叉敞鍐岀殑鎵嬫満鍙?
+    expect(received).toHaveProperty(path, value)
+
+    Expected path: "error"
+
+    Expected value: "璇ユ墜鏈哄彿宸叉敞鍐?
+    Received value: "鎵嬫満鍙锋牸寮忔棤鏁?
+
+    [0m [90m 162 |[39m
+     [90m 163 |[39m       expect(res[33m.[39mstatusCode)[33m.[39mtoBe([35m400[39m)[33m;[39m
+    [31m[1m>[22m[39m[90m 164 |[39m       expect(res[33m.[39mbody)[33m.[39mtoHaveProperty([32m'error'[39m[3
+3m,[39m [32m'璇ユ墜鏈哄彿宸叉敞鍐?[39m)[33m;[39m
+     [90m     |[39m                        [31m[1m^[22m[39m
+     [90m 165 |[39m     })[33m;[39m
+     [90m 166 |[39m
+     [90m 167 |[39m     it([32m'搴旇鎷掔粷缂哄け蹇呰瀛楁'[39m[33m,[39m [36masync[39m () [33m=>[39m {[0m
+
+      at Object.toHaveProperty (tests/controllers-full-coverage.test.js:164:24)
+
+  鈼?1. authController 瀹屾暣娴嬭瘯 鈥?POST /api/auth/login - 鐢ㄦ埛鐧诲綍 鈥?搴旇鎴愬姛鐧诲綍骞惰繑鍥?token
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 400
+
+    [0m [90m 194 |[39m         [33m.[39msend({ phone[33m,[39m code })[33m;[39m
+     [90m 195 |[39m
+    [31m[1m>[22m[39m[90m 196 |[39m       expect(loginRes[33m.[39mstatusCode)[33m.[39mtoBe([35m200[39m)[33m
+;[39m
+     [90m     |[39m                                   [31m[1m^[22m[39m
+     [90m 197 |[39m       expect(loginRes[33m.[39mbody)[33m.[39mtoHaveProperty([32m'message'[39m[33m,[39m [3
+2m'鐧诲綍鎴愬姛'[39m)[33m;[39m
+     [90m 198 |[39m       expect(loginRes[33m.[39mbody)[33m.[39mtoHaveProperty([32m'token'[39m)[33m;[39m
+     [90m 199 |[39m       expect(loginRes[33m.[39mbody[33m.[39muser)[33m.[39mtoHaveProperty([32m'phone'[39m[
+33m,[39m phone)[33m;[39m[0m
+
+      at Object.toBe (tests/controllers-full-coverage.test.js:196:35)
+
+  鈼?1. authController 瀹屾暣娴嬭瘯 鈥?POST /api/auth/login - 鐢ㄦ埛鐧诲綍 鈥?搴旇鎷掔粷鏃犳晥楠岃瘉鐮?
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 401
+    Received: 400
+
+    [0m [90m 207 |[39m         [33m.[39msend({ phone[33m,[39m code[33m:[39m [32m'wrong'[39m })[33m;[39m
+     [90m 208 |[39m
+    [31m[1m>[22m[39m[90m 209 |[39m       expect(res[33m.[39mstatusCode)[33m.[39mtoBe([35m401[39m)[33m;[39
+m
+     [90m     |[39m                              [31m[1m^[22m[39m
+     [90m 210 |[39m       expect(res[33m.[39mbody)[33m.[39mtoHaveProperty([32m'error'[39m)[33m;[39m
+     [90m 211 |[39m     })[33m;[39m
+     [90m 212 |[39m[0m
+
+      at Object.toBe (tests/controllers-full-coverage.test.js:209:30)
+
+  鈼?1. authController 瀹屾暣娴嬭瘯 鈥?POST /api/auth/refresh - 鍒锋柊 Token 鈥?搴旇鎴愬姛鍒锋柊 token
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 401
+
+    [0m [90m 229 |[39m         [33m.[39m[36mset[39m([32m'Authorization'[39m[33m,[39m [32m`Bearer ${token}`
+[39m)[33m;[39m
+     [90m 230 |[39m
+    [31m[1m>[22m[39m[90m 231 |[39m       expect(res[33m.[39mstatusCode)[33m.[39mtoBe([35m200[39m)[33m;[39
+m
+     [90m     |[39m                              [31m[1m^[22m[39m
+     [90m 232 |[39m       expect(res[33m.[39mbody)[33m.[39mtoHaveProperty([32m'message'[39m[33m,[39m [32m'To
+ken 鍒锋柊鎴愬姛'[39m)[33m;[39m
+     [90m 233 |[39m       expect(res[33m.[39mbody)[33m.[39mtoHaveProperty([32m'token'[39m)[33m;[39m
+     [90m 234 |[39m     })[33m;[39m[0m
+
+      at Object.toBe (tests/controllers-full-coverage.test.js:231:30)
+
+  鈼?1. authController 瀹屾暣娴嬭瘯 鈥?GET /api/auth/me - 鑾峰彇褰撳墠鐢ㄦ埛淇℃伅 鈥?搴旇杩斿洖褰撳墠鐢ㄦ埛淇℃伅
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 401
+
+    [0m [90m 258 |[39m         [33m.[39m[36mset[39m([32m'Authorization'[39m[33m,[39m [32m`Bearer ${token}`
+[39m)[33m;[39m
+     [90m 259 |[39m
+    [31m[1m>[22m[39m[90m 260 |[39m       expect(res[33m.[39mstatusCode)[33m.[39mtoBe([35m200[39m)[33m;[39
+m
+     [90m     |[39m                              [31m[1m^[22m[39m
+     [90m 261 |[39m       expect(res[33m.[39mbody)[33m.[39mtoHaveProperty([32m'user'[39m)[33m;[39m
+     [90m 262 |[39m       expect(res[33m.[39mbody[33m.[39muser)[33m.[39mtoHaveProperty([32m'id'[39m[33m,[39
+m user[33m.[39mid)[33m;[39m
+     [90m 263 |[39m       expect(res[33m.[39mbody[33m.[39muser)[33m.[39mtoHaveProperty([32m'phone'[39m[33m,
+[39m user[33m.[39mphone)[33m;[39m[0m
+
+      at Object.toBe (tests/controllers-full-coverage.test.js:260:30)
+
+  鈼?1. authController 瀹屾暣娴嬭瘯 鈥?PUT /api/auth/me - 鏇存柊鐢ㄦ埛淇℃伅 鈥?搴旇鎴愬姛鏇存柊鏄电О鍜屽ご鍍?
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 401
+
+    [0m [90m 292 |[39m         })[33m;[39m
+     [90m 293 |[39m
+    [31m[1m>[22m[39m[90m 294 |[39m       expect(res[33m.[39mstatusCode)[33m.[39mtoBe([35m200[39m)[33m;[39
+m
+     [90m     |[39m                              [31m[1m^[22m[39m
+     [90m 295 |[39m       expect(res[33m.[39mbody)[33m.[39mtoHaveProperty([32m'message'[39m[33m,[39m [32m'鏇存
+柊鎴愬姛'[39m)[33m;[39m
+     [90m 296 |[39m       expect(res[33m.[39mbody[33m.[39muser)[33m.[39mtoHaveProperty([32m'nickname'[39m[33
+m,[39m [32m'鏂版樀绉?[39m)[33m;[39m
+     [90m 297 |[39m     })[33m;[39m[0m
+
+      at Object.toBe (tests/controllers-full-coverage.test.js:294:30)
+
+  鈼?2. aiController 娴嬭瘯 鈥?POST /api/ai/ask - AI 闂瓟 鈥?搴旇鎴愬姛鎻愰棶骞惰繑鍥炵瓟妗?
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 401
+
+    [0m [90m 329 |[39m         })[33m;[39m
+     [90m 330 |[39m
+    [31m[1m>[22m[39m[90m 331 |[39m       expect(res[33m.[39mstatusCode)[33m.[39mtoBe([35m200[39m)[33m;[39
+m
+     [90m     |[39m                              [31m[1m^[22m[39m
+     [90m 332 |[39m       expect(res[33m.[39mbody)[33m.[39mtoHaveProperty([32m'message'[39m)[33m;[39m
+     [90m 333 |[39m       expect(res[33m.[39mbody[33m.[39mdata)[33m.[39mtoHaveProperty([32m'question'[39m)[3
+3m;[39m
+     [90m 334 |[39m       expect(res[33m.[39mbody[33m.[39mdata)[33m.[39mtoHaveProperty([32m'answer'[39m)[33m
+;[39m[0m
+
+      at Object.toBe (tests/controllers-full-coverage.test.js:331:30)
+
+  鈼?2. aiController 娴嬭瘯 鈥?POST /api/ai/ask - AI 闂瓟 鈥?搴旇鎷掔粷绌洪棶棰?
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 401
+
+    [0m [90m 341 |[39m         [33m.[39msend({ question[33m:[39m [32m''[39m })[33m;[39m
+     [90m 342 |[39m
+    [31m[1m>[22m[39m[90m 343 |[39m       expect(res[33m.[39mstatusCode)[33m.[39mtoBe([35m400[39m)[33m;[39
+m
+     [90m     |[39m                              [31m[1m^[22m[39m
+     [90m 344 |[39m       expect(res[33m.[39mbody)[33m.[39mtoHaveProperty([32m'error'[39m)[33m;[39m
+     [90m 345 |[39m     })[33m;[39m
+     [90m 346 |[39m[0m
+
+      at Object.toBe (tests/controllers-full-coverage.test.js:343:30)
+
+  鈼?2. aiController 娴嬭瘯 鈥?GET /api/ai/history - 鑾峰彇闂瓟鍘嗗彶 鈥?搴旇杩斿洖闂瓟鍘嗗彶
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 401
+
+    [0m [90m 366 |[39m         [33m.[39m[36mset[39m([32m'Authorization'[39m[33m,[39m [32m`Bearer ${authToke
+n}`[39m)[33m;[39m
+     [90m 367 |[39m
+    [31m[1m>[22m[39m[90m 368 |[39m       expect(res[33m.[39mstatusCode)[33m.[39mtoBe([35m200[39m)[33m;[39
+m
+     [90m     |[39m                              [31m[1m^[22m[39m
+     [90m 369 |[39m       expect(res[33m.[39mbody)[33m.[39mtoHaveProperty([32m'data'[39m)[33m;[39m
+     [90m 370 |[39m       expect(res[33m.[39mbody)[33m.[39mtoHaveProperty([32m'total'[39m)[33m;[39m
+     [90m 371 |[39m     })[33m;[39m[0m
+
+      at Object.toBe (tests/controllers-full-coverage.test.js:368:30)
+
+  鈼?2. aiController 娴嬭瘯 鈥?GET /api/ai/history - 鑾峰彇闂瓟鍘嗗彶 鈥?搴旇鏀寔鍒嗛〉鍙傛暟
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 401
+
+    [0m [90m 376 |[39m         [33m.[39m[36mset[39m([32m'Authorization'[39m[33m,[39m [32m`Bearer ${authToke
+n}`[39m)[33m;[39m
+     [90m 377 |[39m
+    [31m[1m>[22m[39m[90m 378 |[39m       expect(res[33m.[39mstatusCode)[33m.[39mtoBe([35m200[39m)[33m;[39
+m
+     [90m     |[39m                              [31m[1m^[22m[39m
+     [90m 379 |[39m       expect(res[33m.[39mbody)[33m.[39mtoHaveProperty([32m'data'[39m)[33m;[39m
+     [90m 380 |[39m     })[33m;[39m
+     [90m 381 |[39m[0m
+
+      at Object.toBe (tests/controllers-full-coverage.test.js:378:30)
+
+  鈼?2. aiController 娴嬭瘯 鈥?GET /api/ai/search - 鎼滅储闂瓟璁板綍 鈥?搴旇鎼滅储闂瓟璁板綍
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 401
+
+    [0m [90m 394 |[39m         [33m.[39m[36mset[39m([32m'Authorization'[39m[33m,[39m [32m`Bearer ${authToke
+n}`[39m)[33m;[39m
+     [90m 395 |[39m
+    [31m[1m>[22m[39m[90m 396 |[39m       expect(res[33m.[39mstatusCode)[33m.[39mtoBe([35m200[39m)[33m;[39
+m
+     [90m     |[39m                              [31m[1m^[22m[39m
+     [90m 397 |[39m       expect(res[33m.[39mbody)[33m.[39mtoHaveProperty([32m'data'[39m)[33m;[39m
+     [90m 398 |[39m     })[33m;[39m
+     [90m 399 |[39m[0m
+
+      at Object.toBe (tests/controllers-full-coverage.test.js:396:30)
+
+  鈼?2. aiController 娴嬭瘯 鈥?GET /api/ai/search - 鎼滅储闂瓟璁板綍 鈥?搴旇鎷掔粷绌哄叧閿瘝
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 401
+
+    [0m [90m 403 |[39m         [33m.[39m[36mset[39m([32m'Authorization'[39m[33m,[39m [32m`Bearer ${authToke
+n}`[39m)[33m;[39m
+     [90m 404 |[39m
+    [31m[1m>[22m[39m[90m 405 |[39m       expect(res[33m.[39mstatusCode)[33m.[39mtoBe([35m400[39m)[33m;[39
+m
+     [90m     |[39m                              [31m[1m^[22m[39m
+     [90m 406 |[39m       expect(res[33m.[39mbody)[33m.[39mtoHaveProperty([32m'error'[39m)[33m;[39m
+     [90m 407 |[39m     })[33m;[39m
+     [90m 408 |[39m   })[33m;[39m[0m
+
+      at Object.toBe (tests/controllers-full-coverage.test.js:405:30)
+
+  鈼?2. aiController 娴嬭瘯 鈥?DELETE /api/ai/history/:id - 鍒犻櫎闂瓟璁板綍 鈥?搴旇鍒犻櫎闂瓟璁板綍
+
+    TypeError: Cannot read properties of undefined (reading 'id')
+
+    [0m [90m 416 |[39m         [33m.[39msend({ question[33m:[39m [32m'鍒犻櫎娴嬭瘯'[39m })[33m;[39m
+     [90m 417 |[39m
+    [31m[1m>[22m[39m[90m 418 |[39m       [36mconst[39m recordId [33m=[39m askRes[33m.[39mbody[33m.[39mdat
+a[33m.[39mid[33m;[39m
+     [90m     |[39m                                         [31m[1m^[22m[39m
+     [90m 419 |[39m
+     [90m 420 |[39m       [36mconst[39m res [33m=[39m [36mawait[39m request(server)
+     [90m 421 |[39m         [33m.[39m[36mdelete[39m([32m`/api/ai/history/${recordId}`[39m)[0m
+
+      at Object.id (tests/controllers-full-coverage.test.js:418:41)
+
+  鈼?2. aiController 娴嬭瘯 鈥?DELETE /api/ai/history/:id - 鍒犻櫎闂瓟璁板綍 鈥?搴旇鎷掔粷鍒犻櫎涓嶅瓨鍦ㄧ殑璁板綍
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 404
+    Received: 401
+
+    [0m [90m 431 |[39m         [33m.[39m[36mset[39m([32m'Authorization'[39m[33m,[39m [32m`Bearer ${authToke
+n}`[39m)[33m;[39m
+     [90m 432 |[39m
+    [31m[1m>[22m[39m[90m 433 |[39m       expect(res[33m.[39mstatusCode)[33m.[39mtoBe([35m404[39m)[33m;[39
+m
+     [90m     |[39m                              [31m[1m^[22m[39m
+     [90m 434 |[39m     })[33m;[39m
+     [90m 435 |[39m   })[33m;[39m
+     [90m 436 |[39m })[33m;[39m[0m
+
+      at Object.toBe (tests/controllers-full-coverage.test.js:433:30)
+
+  鈼?3. practiceController 娴嬭瘯 鈥?POST /api/practice/sessions - 鍒涘缓缁冧範浼氳瘽 鈥?搴旇鍒涘缓缁冧範浼氳瘽
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 201
+    Received: 401
+
+    [0m [90m 458 |[39m         })[33m;[39m
+     [90m 459 |[39m
+    [31m[1m>[22m[39m[90m 460 |[39m       expect(res[33m.[39mstatusCode)[33m.[39mtoBe([35m201[39m)[33m;[39
+m
+     [90m     |[39m                              [31m[1m^[22m[39m
+     [90m 461 |[39m       expect(res[33m.[39mbody)[33m.[39mtoHaveProperty([32m'message'[39m[33m,[39m [32m'鍒涘
+缓鎴愬姛'[39m)[33m;[39m
+     [90m 462 |[39m       expect(res[33m.[39mbody[33m.[39mdata)[33m.[39mtoHaveProperty([32m'user_id'[39m)[33
+m;[39m
+     [90m 463 |[39m       expect(res[33m.[39mbody[33m.[39mdata)[33m.[39mtoHaveProperty([32m'status'[39m[33m,
+[39m [32m'active'[39m)[33m;[39m[0m
+
+      at Object.toBe (tests/controllers-full-coverage.test.js:460:30)
+
+  鈼?3. practiceController 娴嬭瘯 鈥?GET /api/practice/sessions - 鑾峰彇浼氳瘽鍒楄〃 鈥?搴旇鑾峰彇浼氳瘽鍒楄〃
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 401
+
+    [0m [90m 485 |[39m         [33m.[39m[36mset[39m([32m'Authorization'[39m[33m,[39m [32m`Bearer ${authToke
+n}`[39m)[33m;[39m
+     [90m 486 |[39m
+    [31m[1m>[22m[39m[90m 487 |[39m       expect(res[33m.[39mstatusCode)[33m.[39mtoBe([35m200[39m)[33m;[39
+m
+     [90m     |[39m                              [31m[1m^[22m[39m
+     [90m 488 |[39m       expect(res[33m.[39mbody)[33m.[39mtoHaveProperty([32m'data'[39m)[33m;[39m
+     [90m 489 |[39m       expect(res[33m.[39mbody)[33m.[39mtoHaveProperty([32m'total'[39m)[33m;[39m
+     [90m 490 |[39m     })[33m;[39m[0m
+
+      at Object.toBe (tests/controllers-full-coverage.test.js:487:30)
+
+  鈼?3. practiceController 娴嬭瘯 鈥?GET /api/practice/sessions - 鑾峰彇浼氳瘽鍒楄〃 鈥?搴旇鏀寔鐘舵€佽繃婊?
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 401
+
+    [0m [90m 495 |[39m         [33m.[39m[36mset[39m([32m'Authorization'[39m[33m,[39m [32m`Bearer ${authToke
+n}`[39m)[33m;[39m
+     [90m 496 |[39m
+    [31m[1m>[22m[39m[90m 497 |[39m       expect(res[33m.[39mstatusCode)[33m.[39mtoBe([35m200[39m)[33m;[39
+m
+     [90m     |[39m                              [31m[1m^[22m[39m
+     [90m 498 |[39m       expect(res[33m.[39mbody)[33m.[39mtoHaveProperty([32m'data'[39m)[33m;[39m
+     [90m 499 |[39m     })[33m;[39m
+     [90m 500 |[39m   })[33m;[39m[0m
+
+      at Object.toBe (tests/controllers-full-coverage.test.js:497:30)
+
+  鈼?3. practiceController 娴嬭瘯 鈥?GET /api/practice/sessions/:id - 鑾峰彇浼氳瘽璇︽儏 鈥?搴旇鑾峰彇浼氳瘽璇︽儏
+
+    TypeError: Cannot read properties of undefined (reading 'id')
+
+    [0m [90m 508 |[39m         [33m.[39msend({ textbookId[33m:[39m [35m1[39m[33m,[39m unitId[33m:[39m [35
+m1[39m })[33m;[39m
+     [90m 509 |[39m
+    [31m[1m>[22m[39m[90m 510 |[39m       [36mconst[39m sessionId [33m=[39m createRes[33m.[39mbody[33m.[39
+mdata[33m.[39mid[33m;[39m
+     [90m     |[39m                                             [31m[1m^[22m[39m
+     [90m 511 |[39m
+     [90m 512 |[39m       [36mconst[39m res [33m=[39m [36mawait[39m request(server)
+     [90m 513 |[39m         [33m.[39m[36mget[39m([32m`/api/practice/sessions/${sessionId}`[39m)[0m
+
+      at Object.id (tests/controllers-full-coverage.test.js:510:45)
+
+  鈼?3. practiceController 娴嬭瘯 鈥?GET /api/practice/sessions/:id - 鑾峰彇浼氳瘽璇︽儏 鈥?搴旇鎷掔粷璁块棶涓嶅瓨鍦ㄧ殑浼氳瘽
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 404
+    Received: 401
+
+    [0m [90m 524 |[39m         [33m.[39m[36mset[39m([32m'Authorization'[39m[33m,[39m [32m`Bearer ${authToke
+n}`[39m)[33m;[39m
+     [90m 525 |[39m
+    [31m[1m>[22m[39m[90m 526 |[39m       expect(res[33m.[39mstatusCode)[33m.[39mtoBe([35m404[39m)[33m;[39
+m
+     [90m     |[39m                              [31m[1m^[22m[39m
+     [90m 527 |[39m     })[33m;[39m
+     [90m 528 |[39m   })[33m;[39m
+     [90m 529 |[39m[0m
+
+      at Object.toBe (tests/controllers-full-coverage.test.js:526:30)
+
+  鈼?3. practiceController 娴嬭瘯 鈥?PUT /api/practice/sessions/:id - 鏇存柊浼氳瘽鐘舵€?鈥?搴旇鏇存柊浼氳瘽鐘舵€?
+    TypeError: Cannot read properties of undefined (reading 'id')
+
+    [0m [90m 535 |[39m         [33m.[39msend({ textbookId[33m:[39m [35m1[39m[33m,[39m unitId[33m:[39m [35
+m1[39m })[33m;[39m
+     [90m 536 |[39m
+    [31m[1m>[22m[39m[90m 537 |[39m       [36mconst[39m sessionId [33m=[39m createRes[33m.[39mbody[33m.[39
+mdata[33m.[39mid[33m;[39m
+     [90m     |[39m                                             [31m[1m^[22m[39m
+     [90m 538 |[39m
+     [90m 539 |[39m       [36mconst[39m res [33m=[39m [36mawait[39m request(server)
+     [90m 540 |[39m         [33m.[39mput([32m`/api/practice/sessions/${sessionId}`[39m)[0m
+
+      at Object.id (tests/controllers-full-coverage.test.js:537:45)
+
+  鈼?3. practiceController 娴嬭瘯 鈥?DELETE /api/practice/sessions/:id - 鍒犻櫎浼氳瘽 鈥?搴旇鍒犻櫎浼氳瘽
+
+    TypeError: Cannot read properties of undefined (reading 'id')
+
+    [0m [90m 555 |[39m         [33m.[39msend({ textbookId[33m:[39m [35m1[39m[33m,[39m unitId[33m:[39m [35
+m1[39m })[33m;[39m
+     [90m 556 |[39m
+    [31m[1m>[22m[39m[90m 557 |[39m       [36mconst[39m sessionId [33m=[39m createRes[33m.[39mbody[33m.[39
+mdata[33m.[39mid[33m;[39m
+     [90m     |[39m                                             [31m[1m^[22m[39m
+     [90m 558 |[39m
+     [90m 559 |[39m       [36mconst[39m res [33m=[39m [36mawait[39m request(server)
+     [90m 560 |[39m         [33m.[39m[36mdelete[39m([32m`/api/practice/sessions/${sessionId}`[39m)[0m
+
+      at Object.id (tests/controllers-full-coverage.test.js:557:45)
+
+  鈼?3. practiceController 娴嬭瘯 鈥?POST /api/practice/sessions/:id/questions - 娣诲姞闂 鈥?搴旇娣诲姞闂鍒颁細璇?
+    TypeError: Cannot read properties of undefined (reading 'id')
+
+    [0m [90m 573 |[39m         [33m.[39msend({ textbookId[33m:[39m [35m1[39m[33m,[39m unitId[33m:[39m [35
+m1[39m })[33m;[39m
+     [90m 574 |[39m
+    [31m[1m>[22m[39m[90m 575 |[39m       [36mconst[39m sessionId [33m=[39m createRes[33m.[39mbody[33m.[39
+mdata[33m.[39mid[33m;[39m
+     [90m     |[39m                                             [31m[1m^[22m[39m
+     [90m 576 |[39m
+     [90m 577 |[39m       [36mconst[39m res [33m=[39m [36mawait[39m request(server)
+     [90m 578 |[39m         [33m.[39mpost([32m`/api/practice/sessions/${sessionId}/questions`[39m)[0m
+
+      at Object.id (tests/controllers-full-coverage.test.js:575:45)
+
+  鈼?3. practiceController 娴嬭瘯 鈥?POST /api/practice/sessions/:id/answers - 鎻愪氦绛旀 鈥?搴旇鎻愪氦绛旀
+
+    TypeError: Cannot read properties of undefined (reading 'id')
+
+    [0m [90m 598 |[39m         [33m.[39msend({ textbookId[33m:[39m [35m1[39m[33m,[39m unitId[33m:[39m [35
+m1[39m })[33m;[39m
+     [90m 599 |[39m
+    [31m[1m>[22m[39m[90m 600 |[39m       [36mconst[39m sessionId [33m=[39m createRes[33m.[39mbody[33m.[39
+mdata[33m.[39mid[33m;[39m
+     [90m     |[39m                                             [31m[1m^[22m[39m
+     [90m 601 |[39m
+     [90m 602 |[39m       [90m// 鍏堟坊鍔犻棶棰?[39m
+     [90m 603 |[39m       [36mconst[39m questionRes [33m=[39m [36mawait[39m request(server)[0m
+
+      at Object.id (tests/controllers-full-coverage.test.js:600:45)
+
+  鈼?3. practiceController 娴嬭瘯 鈥?GET /api/practice/sessions/:id/answers - 鑾峰彇绛旈璁板綍 鈥?搴旇鑾峰彇绛旈璁板綍
+
+    TypeError: Cannot read properties of undefined (reading 'id')
+
+    [0m [90m 634 |[39m         [33m.[39msend({ textbookId[33m:[39m [35m1[39m[33m,[39m unitId[33m:[39m [35
+m1[39m })[33m;[39m
+     [90m 635 |[39m
+    [31m[1m>[22m[39m[90m 636 |[39m       [36mconst[39m sessionId [33m=[39m createRes[33m.[39mbody[33m.[39
+mdata[33m.[39mid[33m;[39m
+     [90m     |[39m                                             [31m[1m^[22m[39m
+     [90m 637 |[39m
+     [90m 638 |[39m       [36mconst[39m res [33m=[39m [36mawait[39m request(server)
+     [90m 639 |[39m         [33m.[39m[36mget[39m([32m`/api/practice/sessions/${sessionId}/answers`[39m)[0m
+
+      at Object.id (tests/controllers-full-coverage.test.js:636:45)
+
+  鈼?4. knowledgeController 娴嬭瘯 鈥?POST /api/knowledge/points - 鍒涘缓鐭ヨ瘑鐐?鈥?搴旇鍒涘缓鐭ヨ瘑鐐?
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 201
+    Received: 401
+
+    [0m [90m 670 |[39m         })[33m;[39m
+     [90m 671 |[39m
+    [31m[1m>[22m[39m[90m 672 |[39m       expect(res[33m.[39mstatusCode)[33m.[39mtoBe([35m201[39m)[33m;[39
+m
+     [90m     |[39m                              [31m[1m^[22m[39m
+     [90m 673 |[39m       expect(res[33m.[39mbody)[33m.[39mtoHaveProperty([32m'message'[39m[33m,[39m [32m'鍒涘
+缓鎴愬姛'[39m)[33m;[39m
+     [90m 674 |[39m       expect(res[33m.[39mbody[33m.[39mdata)[33m.[39mtoHaveProperty([32m'title'[39m[33m,
+[39m [32m'鍕捐偂瀹氱悊'[39m)[33m;[39m
+     [90m 675 |[39m     })[33m;[39m[0m
+
+      at Object.toBe (tests/controllers-full-coverage.test.js:672:30)
+
+  鈼?4. knowledgeController 娴嬭瘯 鈥?POST /api/knowledge/points - 鍒涘缓鐭ヨ瘑鐐?鈥?搴旇鎷掔粷绌烘爣棰?
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 401
+
+    [0m [90m 681 |[39m         [33m.[39msend({ content[33m:[39m [32m'鍐呭'[39m })[33m;[39m
+     [90m 682 |[39m
+    [31m[1m>[22m[39m[90m 683 |[39m       expect(res[33m.[39mstatusCode)[33m.[39mtoBe([35m400[39m)[33m;[39
+m
+     [90m     |[39m                              [31m[1m^[22m[39m
+     [90m 684 |[39m       expect(res[33m.[39mbody)[33m.[39mtoHaveProperty([32m'error'[39m)[33m;[39m
+     [90m 685 |[39m     })[33m;[39m
+     [90m 686 |[39m[0m
+
+      at Object.toBe (tests/controllers-full-coverage.test.js:683:30)
+
+  鈼?4. knowledgeController 娴嬭瘯 鈥?GET /api/knowledge/points - 鑾峰彇鐭ヨ瘑鐐瑰垪琛?鈥?搴旇鑾峰彇鐭ヨ瘑鐐瑰垪琛?
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 401
+
+    [0m [90m 706 |[39m         [33m.[39m[36mset[39m([32m'Authorization'[39m[33m,[39m [32m`Bearer ${authToke
+n}`[39m)[33m;[39m
+     [90m 707 |[39m
+    [31m[1m>[22m[39m[90m 708 |[39m       expect(res[33m.[39mstatusCode)[33m.[39mtoBe([35m200[39m)[33m;[39
+m
+     [90m     |[39m                              [31m[1m^[22m[39m
+     [90m 709 |[39m       expect(res[33m.[39mbody)[33m.[39mtoHaveProperty([32m'data'[39m)[33m;[39m
+     [90m 710 |[39m       expect(res[33m.[39mbody)[33m.[39mtoHaveProperty([32m'total'[39m)[33m;[39m
+     [90m 711 |[39m     })[33m;[39m[0m
+
+      at Object.toBe (tests/controllers-full-coverage.test.js:708:30)
+
+  鈼?4. knowledgeController 娴嬭瘯 鈥?GET /api/knowledge/points - 鑾峰彇鐭ヨ瘑鐐瑰垪琛?鈥?搴旇鏀寔鍒嗙被杩囨护
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 401
+
+    [0m [90m 716 |[39m         [33m.[39m[36mset[39m([32m'Authorization'[39m[33m,[39m [32m`Bearer ${authToke
+n}`[39m)[33m;[39m
+     [90m 717 |[39m
+    [31m[1m>[22m[39m[90m 718 |[39m       expect(res[33m.[39mstatusCode)[33m.[39mtoBe([35m200[39m)[33m;[39
+m
+     [90m     |[39m                              [31m[1m^[22m[39m
+     [90m 719 |[39m       expect(res[33m.[39mbody)[33m.[39mtoHaveProperty([32m'data'[39m)[33m;[39m
+     [90m 720 |[39m     })[33m;[39m
+     [90m 721 |[39m   })[33m;[39m[0m
+
+      at Object.toBe (tests/controllers-full-coverage.test.js:718:30)
+
+  鈼?4. knowledgeController 娴嬭瘯 鈥?GET /api/knowledge/points/:id - 鑾峰彇鐭ヨ瘑鐐硅鎯?鈥?搴旇鑾峰彇鐭ヨ瘑鐐硅鎯?
+    TypeError: Cannot read properties of undefined (reading 'id')
+
+    [0m [90m 728 |[39m         [33m.[39msend({ title[33m:[39m [32m'璇︽儏娴嬭瘯'[39m })[33m;[39m
+     [90m 729 |[39m
+    [31m[1m>[22m[39m[90m 730 |[39m       [36mconst[39m pointId [33m=[39m createRes[33m.[39mbody[33m.[39md
+ata[33m.[39mid[33m;[39m
+     [90m     |[39m                                           [31m[1m^[22m[39m
+     [90m 731 |[39m
+     [90m 732 |[39m       [36mconst[39m res [33m=[39m [36mawait[39m request(server)
+     [90m 733 |[39m         [33m.[39m[36mget[39m([32m`/api/knowledge/points/${pointId}`[39m)[0m
+
+      at Object.id (tests/controllers-full-coverage.test.js:730:43)
+
+  鈼?4. knowledgeController 娴嬭瘯 鈥?GET /api/knowledge/points/:id - 鑾峰彇鐭ヨ瘑鐐硅鎯?鈥?搴旇鎷掔粷璁块棶涓嶅瓨鍦ㄧ殑鐭ヨ瘑鐐?
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 404
+    Received: 401
+
+    [0m [90m 744 |[39m         [33m.[39m[36mset[39m([32m'Authorization'[39m[33m,[39m [32m`Bearer ${authToke
+n}`[39m)[33m;[39m
+     [90m 745 |[39m
+    [31m[1m>[22m[39m[90m 746 |[39m       expect(res[33m.[39mstatusCode)[33m.[39mtoBe([35m404[39m)[33m;[39
+m
+     [90m     |[39m                              [31m[1m^[22m[39m
+     [90m 747 |[39m     })[33m;[39m
+     [90m 748 |[39m   })[33m;[39m
+     [90m 749 |[39m[0m
+
+      at Object.toBe (tests/controllers-full-coverage.test.js:746:30)
+
+  鈼?4. knowledgeController 娴嬭瘯 鈥?PUT /api/knowledge/points/:id - 鏇存柊鐭ヨ瘑鐐?鈥?搴旇鏇存柊鐭ヨ瘑鐐?
+    TypeError: Cannot read properties of undefined (reading 'id')
+
+    [0m [90m 755 |[39m         [33m.[39msend({ title[33m:[39m [32m'鍘熸爣棰?[39m })[33m;[39m
+     [90m 756 |[39m
+    [31m[1m>[22m[39m[90m 757 |[39m       [36mconst[39m pointId [33m=[39m createRes[33m.[39mbody[33m.[39md
+ata[33m.[39mid[33m;[39m
+     [90m     |[39m                                           [31m[1m^[22m[39m
+     [90m 758 |[39m
+     [90m 759 |[39m       [36mconst[39m res [33m=[39m [36mawait[39m request(server)
+     [90m 760 |[39m         [33m.[39mput([32m`/api/knowledge/points/${pointId}`[39m)[0m
+
+      at Object.id (tests/controllers-full-coverage.test.js:757:43)
+
+  鈼?4. knowledgeController 娴嬭瘯 鈥?DELETE /api/knowledge/points/:id - 鍒犻櫎鐭ヨ瘑鐐?鈥?搴旇鍒犻櫎鐭ヨ瘑鐐?
+    TypeError: Cannot read properties of undefined (reading 'id')
+
+    [0m [90m 774 |[39m         [33m.[39msend({ title[33m:[39m [32m'鍒犻櫎娴嬭瘯'[39m })[33m;[39m
+     [90m 775 |[39m
+    [31m[1m>[22m[39m[90m 776 |[39m       [36mconst[39m pointId [33m=[39m createRes[33m.[39mbody[33m.[39md
+ata[33m.[39mid[33m;[39m
+     [90m     |[39m                                           [31m[1m^[22m[39m
+     [90m 777 |[39m
+     [90m 778 |[39m       [36mconst[39m res [33m=[39m [36mawait[39m request(server)
+     [90m 779 |[39m         [33m.[39m[36mdelete[39m([32m`/api/knowledge/points/${pointId}`[39m)[0m
+
+      at Object.id (tests/controllers-full-coverage.test.js:776:43)
+
+  鈼?4. knowledgeController 娴嬭瘯 鈥?GET /api/knowledge/points/search - 鎼滅储鐭ヨ瘑鐐?鈥?搴旇鎼滅储鐭ヨ瘑鐐?
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 401
+
+    [0m [90m 791 |[39m         [33m.[39m[36mset[39m([32m'Authorization'[39m[33m,[39m [32m`Bearer ${authToke
+n}`[39m)[33m;[39m
+     [90m 792 |[39m
+    [31m[1m>[22m[39m[90m 793 |[39m       expect(res[33m.[39mstatusCode)[33m.[39mtoBe([35m200[39m)[33m;[39
+m
+     [90m     |[39m                              [31m[1m^[22m[39m
+     [90m 794 |[39m       expect(res[33m.[39mbody)[33m.[39mtoHaveProperty([32m'data'[39m)[33m;[39m
+     [90m 795 |[39m     })[33m;[39m
+     [90m 796 |[39m[0m
+
+      at Object.toBe (tests/controllers-full-coverage.test.js:793:30)
+
+  鈼?4. knowledgeController 娴嬭瘯 鈥?GET /api/knowledge/points/search - 鎼滅储鐭ヨ瘑鐐?鈥?搴旇鎷掔粷绌哄叧閿瘝
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 401
+
+    [0m [90m 800 |[39m         [33m.[39m[36mset[39m([32m'Authorization'[39m[33m,[39m [32m`Bearer ${authToke
+n}`[39m)[33m;[39m
+     [90m 801 |[39m
+    [31m[1m>[22m[39m[90m 802 |[39m       expect(res[33m.[39mstatusCode)[33m.[39mtoBe([35m400[39m)[33m;[39
+m
+     [90m     |[39m                              [31m[1m^[22m[39m
+     [90m 803 |[39m     })[33m;[39m
+     [90m 804 |[39m   })[33m;[39m
+     [90m 805 |[39m })[33m;[39m[0m
+
+      at Object.toBe (tests/controllers-full-coverage.test.js:802:30)
+
+  鈼?5. userController 娴嬭瘯 (鏇存柊鐢ㄦ埛淇℃伅銆佸瘑鐮佷慨鏀? 鈥?PUT /api/auth/me - 鏇存柊鐢ㄦ埛淇℃伅 鈥?搴旇鎴愬姛鏇存柊鏄电О
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 401
+
+    [0m [90m 824 |[39m         [33m.[39msend({ nickname[33m:[39m [32m'鏂版樀绉?[39m })[33m;[39m
+     [90m 825 |[39m
+    [31m[1m>[22m[39m[90m 826 |[39m       expect(res[33m.[39mstatusCode)[33m.[39mtoBe([35m200[39m)[33m;[39
+m
+     [90m     |[39m                              [31m[1m^[22m[39m
+     [90m 827 |[39m       expect(res[33m.[39mbody[33m.[39muser)[33m.[39mtoHaveProperty([32m'nickname'[39m[33
+m,[39m [32m'鏂版樀绉?[39m)[33m;[39m
+     [90m 828 |[39m     })[33m;[39m
+     [90m 829 |[39m[0m
+
+      at Object.toBe (tests/controllers-full-coverage.test.js:826:30)
+
+  鈼?5. userController 娴嬭瘯 (鏇存柊鐢ㄦ埛淇℃伅銆佸瘑鐮佷慨鏀? 鈥?PUT /api/auth/me - 鏇存柊鐢ㄦ埛淇℃伅 鈥?搴旇鎴愬姛鏇存柊澶村儚
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 401
+
+    [0m [90m 834 |[39m         [33m.[39msend({ avatar_url[33m:[39m [32m'https://example.com/new.jpg'[39m })[3
+3m;[39m
+     [90m 835 |[39m
+    [31m[1m>[22m[39m[90m 836 |[39m       expect(res[33m.[39mstatusCode)[33m.[39mtoBe([35m200[39m)[33m;[39
+m
+     [90m     |[39m                              [31m[1m^[22m[39m
+     [90m 837 |[39m       expect(res[33m.[39mbody[33m.[39muser)[33m.[39mtoHaveProperty([32m'avatar_url'[39m[
+33m,[39m [32m'https://example.com/new.jpg'[39m)[33m;[39m
+     [90m 838 |[39m     })[33m;[39m
+     [90m 839 |[39m[0m
+
+      at Object.toBe (tests/controllers-full-coverage.test.js:836:30)
+
+  鈼?5. userController 娴嬭瘯 (鏇存柊鐢ㄦ埛淇℃伅銆佸瘑鐮佷慨鏀? 鈥?PUT /api/auth/me - 鏇存柊鐢ㄦ埛淇℃伅 鈥?搴旇鎴愬姛鏇存柊澶氫釜瀛楁
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 401
+
+    [0m [90m 847 |[39m         })[33m;[39m
+     [90m 848 |[39m
+    [31m[1m>[22m[39m[90m 849 |[39m       expect(res[33m.[39mstatusCode)[33m.[39mtoBe([35m200[39m)[33m;[39
+m
+     [90m     |[39m                              [31m[1m^[22m[39m
+     [90m 850 |[39m     })[33m;[39m
+     [90m 851 |[39m
+     [90m 852 |[39m     it([32m'搴旇鎷掔粷鏈巿鏉冭姹?[39m[33m,[39m [36masync[39m () [33m=>[39m {[0m
+
+      at Object.toBe (tests/controllers-full-coverage.test.js:849:30)
+
+  鈼?5. userController 娴嬭瘯 (鏇存柊鐢ㄦ埛淇℃伅銆佸瘑鐮佷慨鏀? 鈥?杈圭晫鍦烘櫙娴嬭瘯 鈥?搴旇澶勭悊杩囬暱鐨勬樀绉?
+    expect(received).toContain(expected) // indexOf
+
+    Expected value: 401
+    Received array: [200, 400]
+
+    [0m [90m 866 |[39m         [33m.[39msend({ nickname[33m:[39m [32m'x'[39m[33m.[39mrepeat([35m100[39m) }
+)[33m;[39m
+     [90m 867 |[39m
+    [31m[1m>[22m[39m[90m 868 |[39m       expect([[35m200[39m[33m,[39m [35m400[39m])[33m.[39mtoContain(res
+[33m.[39mstatusCode)[33m;[39m
+     [90m     |[39m                          [31m[1m^[22m[39m
+     [90m 869 |[39m     })[33m;[39m
+     [90m 870 |[39m
+     [90m 871 |[39m     it([32m'搴旇澶勭悊鏃犳晥鐨?URL'[39m[33m,[39m [36masync[39m () [33m=>[39m {[0m
+
+      at Object.toContain (tests/controllers-full-coverage.test.js:868:26)
+
+  鈼?5. userController 娴嬭瘯 (鏇存柊鐢ㄦ埛淇℃伅銆佸瘑鐮佷慨鏀? 鈥?杈圭晫鍦烘櫙娴嬭瘯 鈥?搴旇澶勭悊鏃犳晥鐨?URL
+
+    expect(received).toContain(expected) // indexOf
+
+    Expected value: 401
+    Received array: [200, 400]
+
+    [0m [90m 875 |[39m         [33m.[39msend({ avatar_url[33m:[39m [32m'not-a-valid-url'[39m })[33m;[39m
+     [90m 876 |[39m
+    [31m[1m>[22m[39m[90m 877 |[39m       expect([[35m200[39m[33m,[39m [35m400[39m])[33m.[39mtoContain(res
+[33m.[39mstatusCode)[33m;[39m
+     [90m     |[39m                          [31m[1m^[22m[39m
+     [90m 878 |[39m     })[33m;[39m
+     [90m 879 |[39m   })[33m;[39m
+     [90m 880 |[39m })[33m;[39m[0m
+
+      at Object.toContain (tests/controllers-full-coverage.test.js:877:26)
+
+  鈼?6. textbookController 娴嬭瘯 (璇炬湰瑙ｆ瀽銆佸崟鍏冭幏鍙? 鈥?GET /api/textbooks - 鑾峰彇璇炬湰鏂囨湰鍒楄〃 鈥?搴旇杩斿洖绌哄垪琛?(鏃犳暟鎹?
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 401
+
+    [0m [90m 898 |[39m         [33m.[39m[36mset[39m([32m'Authorization'[39m[33m,[39m [32m`Bearer ${authToke
+n}`[39m)[33m;[39m
+     [90m 899 |[39m
+    [31m[1m>[22m[39m[90m 900 |[39m       expect(res[33m.[39mstatusCode)[33m.[39mtoBe([35m200[39m)[33m;[39
+m
+     [90m     |[39m                              [31m[1m^[22m[39m
+     [90m 901 |[39m       expect(res[33m.[39mbody)[33m.[39mtoHaveProperty([32m'success'[39m[33m,[39m [36mtru
+e[39m)[33m;[39m
+     [90m 902 |[39m       expect(res[33m.[39mbody)[33m.[39mtoHaveProperty([32m'data'[39m)[33m;[39m
+     [90m 903 |[39m     })[33m;[39m[0m
+
+      at Object.toBe (tests/controllers-full-coverage.test.js:900:30)
+
+  鈼?6. textbookController 娴嬭瘯 (璇炬湰瑙ｆ瀽銆佸崟鍏冭幏鍙? 鈥?GET /api/textbooks/:id - 鑾峰彇璇炬湰璇︽儏 鈥?搴旇鎷掔粷璁块棶涓嶅瓨鍦ㄧ殑璇炬湰
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 404
+    Received: 401
+
+    [0m [90m 910 |[39m         [33m.[39m[36mset[39m([32m'Authorization'[39m[33m,[39m [32m`Bearer ${authToke
+n}`[39m)[33m;[39m
+     [90m 911 |[39m
+    [31m[1m>[22m[39m[90m 912 |[39m       expect(res[33m.[39mstatusCode)[33m.[39mtoBe([35m404[39m)[33m;[39
+m
+     [90m     |[39m                              [31m[1m^[22m[39m
+     [90m 913 |[39m     })[33m;[39m
+     [90m 914 |[39m   })[33m;[39m
+     [90m 915 |[39m[0m
+
+      at Object.toBe (tests/controllers-full-coverage.test.js:912:30)
+
+  鈼?6. textbookController 娴嬭瘯 (璇炬湰瑙ｆ瀽銆佸崟鍏冭幏鍙? 鈥?GET /api/textbooks/:id/units - 鑾峰彇璇炬湰鍗曞厓鍒楄〃 鈥?搴旇鎷掔粷璁块棶涓嶅瓨鍦ㄧ殑璇炬湰
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 404
+    Received: 401
+
+    [0m [90m 920 |[39m         [33m.[39m[36mset[39m([32m'Authorization'[39m[33m,[39m [32m`Bearer ${authToke
+n}`[39m)[33m;[39m
+     [90m 921 |[39m
+    [31m[1m>[22m[39m[90m 922 |[39m       expect(res[33m.[39mstatusCode)[33m.[39mtoBe([35m404[39m)[33m;[39
+m
+     [90m     |[39m                              [31m[1m^[22m[39m
+     [90m 923 |[39m     })[33m;[39m
+     [90m 924 |[39m   })[33m;[39m
+     [90m 925 |[39m[0m
+
+      at Object.toBe (tests/controllers-full-coverage.test.js:922:30)
+
+  鈼?6. textbookController 娴嬭瘯 (璇炬湰瑙ｆ瀽銆佸崟鍏冭幏鍙? 鈥?GET /api/textbooks/tasks - 鑾峰彇瑙ｆ瀽浠诲姟鍒楄〃 鈥?搴旇杩斿洖浠诲姟鍒楄〃
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 401
+
+    [0m [90m 930 |[39m         [33m.[39m[36mset[39m([32m'Authorization'[39m[33m,[39m [32m`Bearer ${authToke
+n}`[39m)[33m;[39m
+     [90m 931 |[39m
+    [31m[1m>[22m[39m[90m 932 |[39m       expect(res[33m.[39mstatusCode)[33m.[39mtoBe([35m200[39m)[33m;[39
+m
+     [90m     |[39m                              [31m[1m^[22m[39m
+     [90m 933 |[39m       expect(res[33m.[39mbody)[33m.[39mtoHaveProperty([32m'success'[39m[33m,[39m [36mtru
+e[39m)[33m;[39m
+     [90m 934 |[39m     })[33m;[39m
+     [90m 935 |[39m   })[33m;[39m[0m
+
+      at Object.toBe (tests/controllers-full-coverage.test.js:932:30)
+
+  鈼?6. textbookController 娴嬭瘯 (璇炬湰瑙ｆ瀽銆佸崟鍏冭幏鍙? 鈥?GET /api/textbooks/tasks/:taskId - 鑾峰彇浠诲姟鐘舵€?鈥?搴旇鎷掔粷璁块棶涓嶅瓨鍦ㄧ殑浠诲姟
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 404
+    Received: 401
+
+    [0m [90m 941 |[39m         [33m.[39m[36mset[39m([32m'Authorization'[39m[33m,[39m [32m`Bearer ${authToke
+n}`[39m)[33m;[39m
+     [90m 942 |[39m
+    [31m[1m>[22m[39m[90m 943 |[39m       expect(res[33m.[39mstatusCode)[33m.[39mtoBe([35m404[39m)[33m;[39
+m
+     [90m     |[39m                              [31m[1m^[22m[39m
+     [90m 944 |[39m     })[33m;[39m
+     [90m 945 |[39m   })[33m;[39m
+     [90m 946 |[39m[0m
+
+      at Object.toBe (tests/controllers-full-coverage.test.js:943:30)
+
+  鈼?6. textbookController 娴嬭瘯 (璇炬湰瑙ｆ瀽銆佸崟鍏冭幏鍙? 鈥?DELETE /api/textbooks/:id - 鍒犻櫎璇炬湰 鈥?搴旇鎷掔粷鍒犻櫎涓嶅瓨鍦ㄧ殑璇炬湰
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 404
+    Received: 401
+
+    [0m [90m 951 |[39m         [33m.[39m[36mset[39m([32m'Authorization'[39m[33m,[39m [32m`Bearer ${authToke
+n}`[39m)[33m;[39m
+     [90m 952 |[39m
+    [31m[1m>[22m[39m[90m 953 |[39m       expect(res[33m.[39mstatusCode)[33m.[39mtoBe([35m404[39m)[33m;[39
+m
+     [90m     |[39m                              [31m[1m^[22m[39m
+     [90m 954 |[39m     })[33m;[39m
+     [90m 955 |[39m   })[33m;[39m
+     [90m 956 |[39m[0m
+
+      at Object.toBe (tests/controllers-full-coverage.test.js:953:30)
+
+  鈼?6. textbookController 娴嬭瘯 (璇炬湰瑙ｆ瀽銆佸崟鍏冭幏鍙? 鈥?POST /api/textbooks/parse - 瑙ｆ瀽璇炬湰 (妯℃嫙) 鈥?搴旇鎷掔粷缂哄け鏂囦欢璺緞
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 401
+
+    [0m [90m 971 |[39m         [33m.[39msend({})[33m;[39m
+     [90m 972 |[39m
+    [31m[1m>[22m[39m[90m 973 |[39m       expect(res[33m.[39mstatusCode)[33m.[39mtoBe([35m400[39m)[33m;[39
+m
+     [90m     |[39m                              [31m[1m^[22m[39m
+     [90m 974 |[39m       expect(res[33m.[39mbody)[33m.[39mtoHaveProperty([32m'success'[39m[33m,[39m [36mfal
+se[39m)[33m;[39m
+     [90m 975 |[39m     })[33m;[39m
+     [90m 976 |[39m[0m
+
+      at Object.toBe (tests/controllers-full-coverage.test.js:973:30)
+
+  鈼?6. textbookController 娴嬭瘯 (璇炬湰瑙ｆ瀽銆佸崟鍏冭幏鍙? 鈥?POST /api/textbooks/parse - 瑙ｆ瀽璇炬湰 (妯℃嫙) 鈥?搴旇鍒涘缓瑙ｆ瀽浠诲姟
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 401
+
+    [0m [90m 985 |[39m         })[33m;[39m
+     [90m 986 |[39m
+    [31m[1m>[22m[39m[90m 987 |[39m       expect(res[33m.[39mstatusCode)[33m.[39mtoBe([35m200[39m)[33m;[39
+m
+     [90m     |[39m                              [31m[1m^[22m[39m
+     [90m 988 |[39m       expect(res[33m.[39mbody)[33m.[39mtoHaveProperty([32m'success'[39m[33m,[39m [36mtru
+e[39m)[33m;[39m
+     [90m 989 |[39m       expect(res[33m.[39mbody[33m.[39mdata)[33m.[39mtoHaveProperty([32m'taskId'[39m)[33m
+;[39m
+     [90m 990 |[39m     })[33m;[39m[0m
+
+      at Object.toBe (tests/controllers-full-coverage.test.js:987:30)
+
+-----------------------------------|---------|----------|---------|---------|---------------------------------------------------------------------------
+File                               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                                                         
+-----------------------------------|---------|----------|---------|---------|---------------------------------------------------------------------------
+All files                          |    9.31 |     2.78 |    1.42 |    9.65 |                                                                           
+ config                            |   16.91 |     12.5 |       0 |   17.03 |                                                                           
+  cdn.js                           |       0 |        0 |       0 |       0 | 7-193                                                                     
+  database.js                      |    32.5 |    28.57 |       0 |    32.5 | 15-28,39,50-261                                                           
+  oss.js                           |       0 |        0 |       0 |       0 | 16-145                                                                    
+  queue.js                         |   34.48 |    33.33 |       0 |   34.48 | 37-41,89-160                                                              
+ controllers                       |   19.93 |    14.16 |   12.12 |    20.5 |                                                                           
+  aiController.js                  |   13.63 |        0 |       0 |   13.63 | 6-65,71-85,91-101,107-123                                                 
+  authController.js                |   42.85 |    51.51 |   66.66 |   42.85 | 22-48,71-108,126-128,134,144-161,169-185,209-250                          
+  healthController.js              |      20 |      100 |       0 |      20 | 13-37                                                                     
+  knowledgeController.js           |    8.53 |        0 |       0 |    9.58 | 5-13,18-45,51-66,72-88,94-120,126-142,148-158                             
+  practiceController.js            |      12 |        0 |       0 |      12 | 13-28,37-52,62-75,85-103,113-124,134-159,169-192,202-222                  
+  progressController.js            |   16.12 |        0 |       0 |   16.12 | 5-23,29-34,40-52,58-76                                                    
+ middleware                        |    4.76 |     4.58 |     2.7 |    4.93 |                                                                           
+  auth.js                          |   52.17 |    41.66 |     100 |   52.17 | 24-40,43                                                                  
+  cache.js                         |       0 |        0 |       0 |       0 | 6-134                                                                     
+  compression.js                   |       0 |        0 |       0 |       0 | 6-252                                                                     
+  performance-monitor.js           |       0 |        0 |       0 |       0 | 6-218                                                                     
+ models                            |     7.1 |        0 |       0 |    7.18 |                                                                           
+  AIQARecord.js                    |   14.28 |        0 |       0 |   14.28 | 6-45                                                                      
+  KnowledgePoint.js                |    3.17 |        0 |       0 |    3.22 | 6-117                                                                     
+  LearningProgress.js              |    8.69 |        0 |       0 |    8.69 | 6-83                                                                      
+  PracticeSession.js               |   11.11 |        0 |       0 |   11.11 | 16-170                                                                    
+  User.js                          |    7.14 |        0 |       0 |    7.31 | 8-120                                                                     
+ modules                           |     100 |      100 |     100 |     100 |                                                                           
+  index.js                         |     100 |      100 |     100 |     100 |                                                                           
+ modules/ai-chat                   |       0 |        0 |       0 |       0 |                                                                           
+  AIChatController.js              |       0 |        0 |       0 |       0 | 6-305                                                                     
+  AIChatService.js                 |       0 |        0 |       0 |       0 | 6-281                                                                     
+  VectorSearchService.js           |       0 |        0 |       0 |       0 | 6-267                                                                     
+  migration.js                     |       0 |        0 |       0 |       0 | 9-222                                                                     
+ modules/ai-gateway                |    4.18 |     3.93 |       0 |    4.38 |                                                                           
+  AiGatewayController.js           |    8.33 |        0 |       0 |    8.33 | 15-184                                                                    
+  AiGatewayControllerV2.js         |    4.47 |        0 |       0 |    4.47 | 14-337                                                                    
+  AiGatewayService.js              |    3.15 |     8.41 |       0 |    3.37 | 37-367                                                                    
+  AiGatewayServiceV2.js            |    4.96 |     3.57 |       0 |    5.22 | 123-923                                                                   
+  AiTaskLogModel.js                |    2.38 |        0 |       0 |     2.4 | 23-216                                                                    
+  BatchUpdateService.js            |    4.38 |     3.84 |       0 |    4.62 | 23-356                                                                    
+  ResponseCacheService.js          |    4.38 |     6.89 |       0 |    4.85 | 24-306                                                                    
+  migration-v2.js                  |       0 |        0 |       0 |       0 | 9-70                                                                      
+  migration.js                     |       0 |        0 |       0 |       0 | 6-62                                                                      
+ modules/ai-gateway/providers      |   11.19 |        0 |       0 |   11.27 |                                                                           
+  BaiduWenxinProvider.js           |    8.33 |        0 |       0 |    8.47 | 32-220                                                                    
+  IFlytekSparkProvider.js          |    9.85 |        0 |       0 |    9.85 | 46-245                                                                    
+  index.js                         |     100 |      100 |     100 |     100 |                                                                           
+ modules/ai-grading                |       0 |        0 |       0 |       0 |                                                                           
+  AIGradingService.js              |       0 |        0 |       0 |       0 | 6-423                                                                     
+ modules/ai-planning               |    3.18 |        0 |       0 |    3.36 |                                                                           
+  AIPlanningController.js          |     5.2 |        0 |       0 |     5.2 | 16-358                                                                    
+  AIPlanningService.js             |     3.3 |        0 |       0 |    3.41 | 23-480                                                                    
+  DynamicTaskGenerator.js          |     3.1 |        0 |       0 |    3.33 | 40-650                                                                    
+  PersonalizedPlanningAlgorithm.js |    3.08 |        0 |       0 |    3.31 | 41-604                                                                    
+  PlanExecutionTracker.js          |    2.35 |        0 |       0 |    2.52 | 38-882                                                                    
+ modules/cost-analysis             |    2.89 |     3.22 |       0 |    3.26 |                                                                           
+  CostAnalysisService.js           |    2.89 |     3.22 |       0 |    3.26 | 54-526                                                                    
+ modules/leaderboard               |    7.69 |     5.33 |    6.45 |    7.72 |                                                                           
+  LeaderboardCache.js              |   10.98 |    14.28 |    12.5 |   11.11 | 19,23,40-231                                                              
+  LeaderboardController.js         |    7.54 |        0 |       0 |    7.54 | 17-195                                                                    
+  LeaderboardModel.js              |    4.08 |        0 |       0 |    4.08 | 13-246                                                                    
+  migration.js                     |       0 |        0 |       0 |       0 | 6-51                                                                      
+ modules/logger                    |   25.64 |    45.45 |       0 |   25.64 |                                                                           
+  WinstonLoggerService.js          |   41.66 |    55.55 |       0 |   41.66 | 13,68-135                                                                 
+  migration.js                     |       0 |        0 |       0 |       0 | 6-55                                                                      
+ modules/monitoring                |   11.47 |    13.33 |       0 |   11.47 |                                                                           
+  PrometheusExporter.js            |   11.47 |    13.33 |       0 |   11.47 | 44-323                                                                    
+ modules/points-system             |    3.04 |        0 |       0 |     3.1 |                                                                           
+  PointsSystemController.js        |    5.26 |        0 |       0 |    5.26 | 14-161                                                                    
+  PointsSystemModel.js             |     2.8 |        0 |       0 |    2.88 | 37-350                                                                    
+  migration.js                     |       0 |        0 |       0 |       0 | 6-73                                                                      
+ modules/rate-limiter              |      35 |        0 |       0 |   36.84 |                                                                           
+  RateLimiterConfig.js             |      35 |        0 |       0 |   36.84 | 13-26,41,56,72,87,102                                                     
+ modules/textbook-parser           |    3.72 |        0 |     2.5 |    3.92 |                                                                           
+  TextbookModel.js                 |    2.24 |        0 |       0 |    2.35 | 13-240                                                                    
+  TextbookParserService.js         |    2.87 |        0 |       0 |     3.1 | 17-567                                                                    
+  TextbookParserWorker.js          |    12.5 |        0 |   14.28 |   12.82 | 19-150                                                                    
+  migration.js                     |       0 |        0 |       0 |       0 | 6-106                                                                     
+ modules/weakness-analysis         |    3.12 |        0 |       0 |     3.3 |                                                                           
+  KnowledgeMasteryModel.js         |    1.96 |        0 |       0 |    2.15 | 13-390                                                                    
+  WeaknessAnalysisController.js    |       5 |        0 |       0 |       5 | 14-156                                                                    
+  WeaknessAnalysisService.js       |    4.54 |        0 |       0 |    4.76 | 18-280                                                                    
+  migration.js                     |       0 |        0 |       0 |       0 | 6-64                                                                      
+ routes                            |   53.79 |     2.59 |    6.66 |   53.79 |                                                                           
+  ai-gateway-v2.js                 |   66.66 |      100 |       0 |   66.66 | 10-15                                                                     
+  ai-gateway.js                    |     100 |      100 |     100 |     100 |                                                                           
+  ai-planning.js                   |     100 |      100 |     100 |     100 |                                                                           
+  ai.js                            |     100 |      100 |     100 |     100 |                                                                           
+  auth.js                          |     100 |      100 |     100 |     100 |                                                                           
+  health.js                        |     100 |      100 |     100 |     100 |                                                                           
+  knowledge.js                     |     100 |      100 |     100 |     100 |                                                                           
+  leaderboard.js                   |     100 |      100 |     100 |     100 |                                                                           
+  points.js                        |     100 |      100 |     100 |     100 |                                                                           
+  practice.js                      |     100 |      100 |     100 |     100 |                                                                           
+  progress.js                      |     100 |      100 |     100 |     100 |                                                                           
+  textbooks.js                     |      20 |        0 |       0 |      20 | 19-27,37-40,53-89,101-128,140-164,176-195,207-216,228-255,267-299,311-335 
+  upload.js                        |   28.73 |     5.12 |   16.66 |   28.73 | 22-23,31-39,47-50,78,93-164,180-214,231-276,288-291,302                   
+  weakness.js                      |     100 |      100 |     100 |     100 |                                                                           
+ services                          |    6.48 |        0 |       0 |     6.6 |                                                                           
+  verificationService.js           |    6.48 |        0 |       0 |     6.6 | 29-274                                                                    
+ workers                           |       0 |        0 |       0 |       0 |                                                                           
+  aiQuestionGenerator.js           |       0 |        0 |       0 |       0 | 6-192                                                                     
+  index.js                         |       0 |      100 |       0 |       0 | 7-44                                                                      
+  leaderboardCalculator.js         |       0 |        0 |       0 |       0 | 6-147                                                                     
+  reportGenerator.js               |       0 |        0 |       0 |       0 | 7-158                                                                     
+  textbookParser.js                |       0 |        0 |       0 |       0 | 7-149                                                                     
+-----------------------------------|---------|----------|---------|---------|---------------------------------------------------------------------------
+
+=============================== Coverage summary ===============================
+Statements   : 9.31% ( 456/4896 )
+Branches     : 2.78% ( 70/2515 )
+Functions    : 1.42% ( 10/703 )
+Lines        : 9.65% ( 456/4725 )
+================================================================================
+Jest: "global" coverage threshold for statements (80%) not met: 9.31%
+Jest: "global" coverage threshold for branches (70%) not met: 2.78%
+Jest: "global" coverage threshold for lines (80%) not met: 9.65%
+Jest: "global" coverage threshold for functions (80%) not met: 1.42%
+Test Suites: 1 failed, 1 total
+Tests:       51 failed, 14 passed, 65 total
+Snapshots:   0 total
+Time:        7.279 s
+Ran all test suites matching /controllers-full-coverage/i.
+
+Jest has detected the following 1 open handle potentially keeping Jest from exiting:
+
+  鈼? CustomGC
+
+    [0m [90m  6 |[39m [36mconst[39m fs [33m=[39m require([32m'fs'[39m)[33m;[39m
+     [90m  7 |[39m [36mconst[39m path [33m=[39m require([32m'path'[39m)[33m;[39m
+    [31m[1m>[22m[39m[90m  8 |[39m [36mconst[39m pdfParse [33m=[39m require([32m'pdf-parse'[39m)[33m;[39m
+     [90m    |[39m                  [31m[1m^[22m[39m
+     [90m  9 |[39m
+     [90m 10 |[39m [36mclass[39m [33mTextbookParserService[39m {
+     [90m 11 |[39m   [90m/**[39m[0m
+
+      at requireNative (node_modules/@napi-rs/canvas/js-binding.js:100:16)
+      at Object.<anonymous> (node_modules/@napi-rs/canvas/js-binding.js:319:17)
+      at Object.<anonymous> (node_modules/@napi-rs/canvas/index.js:19:5)
+      at Module.Object.<anonymous> (node_modules/pdf-parse/node_modules/pdfjs-dist/legacy/build/pdf.mjs:14346:10)
+      at Object.require (src/modules/textbook-parser/TextbookParserService.js:8:18)
+      at Object.require (src/modules/textbook-parser/TextbookParserWorker.js:6:31)
+      at Object.require (src/routes/textbooks.js:12:30)
+      at Object.require (tests/controllers-full-coverage.test.js:43:29)
+

@@ -13,7 +13,8 @@ const authMiddleware = (req, res, next) => {
       return res.status(401).json({ error: '未授权，请登录后重试' });
     }
 
-    const token = authHeader.split(' ')[1];
+    // 处理多个空格的情况，提取 token 并去除首尾空格
+    const token = authHeader.split(' ')[1]?.trim();
     
     // 验证 token
     const decoded = jwt.verify(token, process.env.JWT_SECRET);

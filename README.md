@@ -22,6 +22,7 @@
 
 - Node.js >= 18.x
 - npm >= 9.x
+- **Redis >= 7.0** (BullMQ 队列必需，详见 [backend/README.md](backend/README.md))
 - Git
 
 ### 一键启动（开发环境）

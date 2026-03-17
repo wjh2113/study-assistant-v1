@@ -107,7 +107,8 @@ async function generateAndSaveCode(phone, purpose = 'login', expiresInMinutes = 
   const key = `verification:${phone}:${purpose}`;
   
   try {
-    const client = initRedis();
+    // Use module.exports.initRedis for testability
+    const client = module.exports.initRedis();
     if (client) {
       // 使用 Redis 存储，带 TTL
       await client.setex(key, expiresInMinutes * 60, code);
@@ -161,7 +162,8 @@ async function verifyCode(phone, code, purpose = 'login') {
   }
   
   try {
-    const client = initRedis();
+    // Use module.exports.initRedis for testability
+    const client = module.exports.initRedis();
     if (client) {
       const storedCode = await client.get(key);
       if (!storedCode) {
@@ -213,7 +215,8 @@ async function removeCode(phone, purpose = 'login') {
   const key = `verification:${phone}:${purpose}`;
   
   try {
-    const client = initRedis();
+    // Use module.exports.initRedis for testability
+    const client = module.exports.initRedis();
     if (client) {
       await client.del(key);
     } else {
@@ -230,7 +233,8 @@ async function removeCode(phone, purpose = 'login') {
  */
 async function getCodeCount() {
   try {
-    const client = initRedis();
+    // Use module.exports.initRedis for testability
+    const client = module.exports.initRedis();
     if (client) {
       // Redis 无法直接获取 key 数量，返回估算值
       return verificationCodeMap.size;
@@ -260,6 +264,17 @@ function getRateLimitStatus(phone) {
   };
 }
 
+/**
+ * Reset internal state for testing
+ */
+function resetForTesting() {
+  rateLimitMap.clear();
+  verificationCodeMap.clear();
+  if (redisClient) {
+    redisClient = null;
+  }
+}
+
 module.exports = {
   generateAndSaveCode,
   verifyCode,
@@ -267,5 +282,6 @@ module.exports = {
   getCodeCount,
   getRateLimitStatus,
   generateCode,
-  initRedis
+  initRedis,
+  resetForTesting
 };

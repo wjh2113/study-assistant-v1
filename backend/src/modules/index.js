@@ -3,10 +3,14 @@
  * AI 核心功能模块
  */
 
-// AI Gateway (ISSUE-P0-003)
+// AI Gateway V1 (ISSUE-P0-003)
 const AiGatewayService = require('./ai-gateway/AiGatewayService');
 const AiGatewayController = require('./ai-gateway/AiGatewayController');
 const AiTaskLogModel = require('./ai-gateway/AiTaskLogModel');
+
+// AI Gateway V2 (多 AI 服务路由)
+const AiGatewayServiceV2 = require('./ai-gateway/AiGatewayServiceV2');
+const AiGatewayControllerV2 = require('./ai-gateway/AiGatewayControllerV2');
 
 // Textbook Parser (ISSUE-P1-002)
 const TextbookParserService = require('./textbook-parser/TextbookParserService');
@@ -43,10 +47,14 @@ const {
 } = require('./logger/WinstonLoggerService');
 
 module.exports = {
-  // AI Gateway
+  // AI Gateway V1
   AiGatewayService,
   AiGatewayController,
   AiTaskLogModel,
+
+  // AI Gateway V2
+  AiGatewayServiceV2,
+  AiGatewayControllerV2,
 
   // Textbook Parser
   TextbookParserService,

@@ -47,12 +47,14 @@ class UserModel {
 
   // 创建学生资料
   static createStudentProfile(user_id, grade, school_name) {
+    // 确保 grade 是整数
+    const gradeInt = grade ? parseInt(grade, 10) : null;
     const stmt = db.prepare(`
       INSERT INTO student_profiles (user_id, grade, school_name)
       VALUES (?, ?, ?)
       ON CONFLICT(user_id) DO UPDATE SET grade = excluded.grade, school_name = excluded.school_name, updated_at = CURRENT_TIMESTAMP
     `);
-    stmt.run(user_id, grade, school_name);
+    stmt.run(user_id, gradeInt, school_name);
     return this.getStudentProfile(user_id);
   }
 

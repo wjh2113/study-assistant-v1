@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controllers 层 E2E 测试</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container { max-width: 1200px; margin: 0 auto; }
+        h1 { 
+            color: white; 
+            text-align: center; 
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .test-section {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .test-section h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+        .test-group {
+            margin: 15px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+        .test-group h3 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+            font-size: 14px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .result {
+            margin-top: 10px;
+            padding: 10px;
+            background: #2d3748;
+            color: #48bb78;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            max-height: 200px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+        .result.error { color: #fc8181; }
+        .result.info { color: #90cdf4; }
+        .status {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+        .status.success { background: #48bb78; color: white; }
+        .status.error { background: #fc8181; color: white; }
+        .status.pending { background: #f6ad55; color: white; }
+        input, select {
+            padding: 8px 12px;
+            border: 1px solid #e2e8f0;
+            border-radius: 5px;
+            margin: 5px;
+            font-size: 14px;
+        }
+        input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        .form-row {
+            display: flex;
+            gap: 10px;
+            margin: 10px 0;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .token-display {
+            background: #2d3748;
+            color: #48bb78;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: monospace;
+            font-size: 12px;
+            word-break: break-all;
+            margin: 10px 0;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 30px;
+            background: #e2e8f0;
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            transition: width 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1> Controllers 层 E2E 测试</h1>
+        
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressBar" style="width: 0%">0%</div>
+        </div>
+
+        <!-- 1. 健康检查 -->
+        <div class="test-section">
+            <h2>1️⃣ 健康检查</h2>
+            <div class="test-group">
+                <h3>服务器状态</h3>
+                <button onclick="testHealth()">测试 /api/health</button>
+                <div id="healthResult" class="result" style="display:none"></div>
+            </div>
+        </div>
+
+        <!-- 2. 认证流程测试 -->
+        <div class="test-section">
+            <h2>2️⃣ 认证流程 (AuthController)</h2>
+            
+            <div class="test-group">
+                <h3>步骤 1: 发送验证码</h3>
+                <div class="form-row">
+                    <input type="text" id="registerPhone" placeholder="手机号" value="13800138000">
+                    <select id="purpose">
+                        <option value="register">注册</option>
+                        <option value="login">登录</option>
+                    </select>
+                    <button onclick="testSendCode()">发送验证码</button>
+                </div>
+                <div id="sendCodeResult" class="result" style="display:none"></div>
+            </div>
+
+            <div class="test-group">
+                <h3>步骤 2: 用户注册</h3>
+                <div class="form-row">
+                    <input type="text" id="registerNickname" placeholder="昵称" value="测试用户">
+                    <input type="text" id="verificationCode" placeholder="验证码" value="123456">
+                    <button onclick="testRegister()">注册</button>
+                </div>
+                <div id="registerResult" class="result" style="display:none"></div>
+            </div>
+
+            <div class="test-group">
+                <h3>步骤 3: 用户登录</h3>
+                <div class="form-row">
+                    <input type="text" id="loginPhone" placeholder="手机号" value="13800138000">
+                    <input type="text" id="loginCode" placeholder="验证码" value="123456">
+                    <button onclick="testLogin()">登录</button>
+                </div>
+                <div id="loginResult" class="result" style="display:none"></div>
+                <div id="tokenDisplay" class="token-display" style="display:none"></div>
+            </div>
+
+            <div class="test-group">
+                <h3>步骤 4: 获取当前用户信息</h3>
+                <button onclick="testGetCurrentUser()">获取用户信息</button>
+                <div id="currentUserResult" class="result" style="display:none"></div>
+            </div>
+
+            <div class="test-group">
+                <h3>步骤 5: 更新用户信息</h3>
+                <div class="form-row">
+                    <input type="text" id="newNickname" placeholder="新昵称" value="新昵称">
+                    <button onclick="testUpdateUser()">更新用户信息</button>
+                </div>
+                <div id="updateUserResult" class="result" style="display:none"></div>
+            </div>
+
+            <div class="test-group">
+                <h3>步骤 6: 刷新 Token</h3>
+                <button onclick="testRefreshToken()">刷新 Token</button>
+                <div id="refreshTokenResult" class="result" style="display:none"></div>
+            </div>
+        </div>
+
+        <!-- 3. AI 功能测试 -->
+        <div class="test-section">
+            <h2>3️⃣ AI 功能 (AIController)</h2>
+            
+            <div class="test-group">
+                <h3>AI 问答</h3>
+                <div class="form-row">
+                    <input type="text" id="aiQuestion" placeholder="问题" value="什么是勾股定理？" style="width: 300px;">
+                    <button onclick="testAIAsk()">提问</button>
+                </div>
+                <div id="aiAskResult" class="result" style="display:none"></div>
+            </div>
+
+            <div class="test-group">
+                <h3>问答历史</h3>
+                <button onclick="testAIHistory()">获取问答历史</button>
+                <div id="aiHistoryResult" class="result" style="display:none"></div>
+            </div>
+
+            <div class="test-group">
+                <h3>搜索问答记录</h3>
+                <div class="form-row">
+                    <input type="text" id="searchKeyword" placeholder="关键词" value="勾股">
+                    <button onclick="testAISearch()">搜索</button>
+                </div>
+                <div id="aiSearchResult" class="result" style="display:none"></div>
+            </div>
+        </div>
+
+        <!-- 4. 知识点管理测试 -->
+        <div class="test-section">
+            <h2>4️⃣ 知识点管理 (KnowledgeController)</h2>
+            
+            <div class="test-group">
+                <h3>创建知识点</h3>
+                <div class="form-row">
+                    <input type="text" id="kpTitle" placeholder="标题" value="勾股定理">
+                    <input type="text" id="kpCategory" placeholder="分类" value="数学">
+                    <button onclick="testCreateKnowledge()">创建</button>
+                </div>
+                <div id="createKnowledgeResult" class="result" style="display:none"></div>
+            </div>
+
+            <div class="test-group">
+                <h3>获取知识点列表</h3>
+                <button onclick="testGetKnowledgeList()">获取列表</button>
+                <div id="knowledgeListResult" class="result" style="display:none"></div>
+            </div>
+
+            <div class="test-group">
+                <h3>搜索知识点</h3>
+                <div class="form-row">
+                    <input type="text" id="kpSearch" placeholder="搜索关键词" value="勾股">
+                    <button onclick="testSearchKnowledge()">搜索</button>
+                </div>
+                <div id="searchKnowledgeResult" class="result" style="display:none"></div>
+            </div>
+        </div>
+
+        <!-- 5. 练习功能测试 -->
+        <div class="test-section">
+            <h2>5️⃣ 练习功能 (PracticeController)</h2>
+            
+            <div class="test-group">
+                <h3>创建练习会话</h3>
+                <div class="form-row">
+                    <input type="text" id="textbookId" placeholder="课本 ID" value="1">
+                    <input type="text" id="unitId" placeholder="单元 ID" value="1">
+                    <button onclick="testCreatePracticeSession()">创建会话</button>
+                </div>
+                <div id="createSessionResult" class="result" style="display:none"></div>
+            </div>
+
+            <div class="test-group">
+                <h3>获取会话列表</h3>
+                <button onclick="testGetSessionList()">获取列表</button>
+                <div id="sessionListResult" class="result" style="display:none"></div>
+            </div>
+
+            <div class="test-group">
+                <h3>添加问题到会话</h3>
+                <div class="form-row">
+                    <input type="text" id="sessionId" placeholder="会话 ID">
+                    <button onclick="testAddQuestion()">添加问题</button>
+                </div>
+                <div id="addQuestionResult" class="result" style="display:none"></div>
+            </div>
+
+            <div class="test-group">
+                <h3>提交答案</h3>
+                <div class="form-row">
+                    <input type="text" id="questionId" placeholder="问题 ID">
+                    <input type="text" id="answer" placeholder="答案" value="B">
+                    <button onclick="testSubmitAnswer()">提交答案</button>
+                </div>
+                <div id="submitAnswerResult" class="result" style="display:none"></div>
+            </div>
+        </div>
+
+        <!-- 6. 课本解析测试 -->
+        <div class="test-section">
+            <h2>6️⃣ 课本解析 (TextbookController)</h2>
+            
+            <div class="test-group">
+                <h3>获取课本列表</h3>
+                <button onclick="testGetTextbooks()">获取列表</button>
+                <div id="textbooksResult" class="result" style="display:none"></div>
+            </div>
+
+            <div class="test-group">
+                <h3>获取解析任务列表</h3>
+                <button onclick="testGetTasks()">获取任务列表</button>
+                <div id="tasksResult" class="result" style="display:none"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:3000/api';
+        let authToken = '';
+        let testProgress = 0;
+        let totalTests = 0;
+
+        // 工具函数
+        function showResult(elementId, data, isError = false, isInfo = false) {
+            const el = document.getElementById(elementId);
+            el.style.display = 'block';
+            el.className = 'result' + (isError ? ' error' : '') + (isInfo ? ' info' : '');
+            el.textContent = typeof data === 'string' ? data : JSON.stringify(data, null, 2);
+        }
+
+        function updateProgress(increment) {
+            testProgress += increment;
+            const percentage = Math.min(100, Math.round((testProgress / totalTests) * 100));
+            document.getElementById('progressBar').style.width = percentage + '%';
+            document.getElementById('progressBar').textContent = percentage + '%';
+        }
+
+        async function apiRequest(endpoint, method = 'GET', body = null, useAuth = false) {
+            const headers = {
+                'Content-Type': 'application/json'
+            };
+            
+            if (useAuth && authToken) {
+                headers['Authorization'] = `Bearer ${authToken}`;
+            }
+
+            const options = {
+                method,
+                headers
+            };
+
+            if (body) {
+                options.body = JSON.stringify(body);
+            }
+
+            const response = await fetch(`${API_BASE}${endpoint}`, options);
+            const data = await response.json();
+            
+            if (!response.ok) {
+                throw new Error(data.error || `HTTP ${response.status}`);
+            }
+            
+            return data;
+        }
+
+        // 1. 健康检查
+        async function testHealth() {
+            try {
+                const data = await apiRequest('/health');
+                showResult('healthResult', data);
+                updateProgress(5);
+            } catch (error) {
+                showResult('healthResult', error.message, true);
+            }
+        }
+
+        // 2. 认证流程
+        async function testSendCode() {
+            const phone = document.getElementById('registerPhone').value;
+            const purpose = document.getElementById('purpose').value;
+            
+            try {
+                const data = await apiRequest('/auth/send-code', 'POST', { phone, purpose });
+                showResult('sendCodeResult', data, false, true);
+                updateProgress(5);
+            } catch (error) {
+                showResult('sendCodeResult', error.message, true);
+            }
+        }
+
+        async function testRegister() {
+            const phone = document.getElementById('registerPhone').value;
+            const code = document.getElementById('verificationCode').value;
+            const nickname = document.getElementById('registerNickname').value;
+            
+            try {
+                const data = await apiRequest('/auth/register', 'POST', { 
+                    phone, 
+                    code, 
+                    nickname,
+                    grade: '三年级',
+                    school_name: '测试小学'
+                });
+                showResult('registerResult', data);
+                if (data.token) {
+                    authToken = data.token;
+                    document.getElementById('tokenDisplay').style.display = 'block';
+                    document.getElementById('tokenDisplay').textContent = 'Token: ' + authToken;
+                }
+                updateProgress(5);
+            } catch (error) {
+                showResult('registerResult', error.message, true);
+            }
+        }
+
+        async function testLogin() {
+            const phone = document.getElementById('loginPhone').value;
+            const code = document.getElementById('loginCode').value;
+            
+            try {
+                const data = await apiRequest('/auth/login', 'POST', { phone, code });
+                showResult('loginResult', data);
+                if (data.token) {
+                    authToken = data.token;
+                    document.getElementById('tokenDisplay').style.display = 'block';
+                    document.getElementById('tokenDisplay').textContent = 'Token: ' + authToken;
+                }
+                updateProgress(5);
+            } catch (error) {
+                showResult('loginResult', error.message, true);
+            }
+        }
+
+        async function testGetCurrentUser() {
+            try {
+                const data = await apiRequest('/auth/me', 'GET', null, true);
+                showResult('currentUserResult', data);
+                updateProgress(5);
+            } catch (error) {
+                showResult('currentUserResult', error.message, true);
+            }
+        }
+
+        async function testUpdateUser() {
+            const nickname = document.getElementById('newNickname').value;
+            
+            try {
+                const data = await apiRequest('/auth/me', 'PUT', { nickname }, true);
+                showResult('updateUserResult', data);
+                updateProgress(5);
+            } catch (error) {
+                showResult('updateUserResult', error.message, true);
+            }
+        }
+
+        async function testRefreshToken() {
+            try {
+                const data = await apiRequest('/auth/refresh', 'POST', null, true);
+                showResult('refreshTokenResult', data);
+                if (data.token) {
+                    authToken = data.token;
+                    document.getElementById('tokenDisplay').textContent = 'Token: ' + authToken;
+                }
+                updateProgress(5);
+            } catch (error) {
+                showResult('refreshTokenResult', error.message, true);
+            }
+        }
+
+        // 3. AI 功能
+        async function testAIAsk() {
+            const question = document.getElementById('aiQuestion').value;
+            
+            try {
+                const data = await apiRequest('/ai/ask', 'POST', { question }, true);
+                showResult('aiAskResult', data);
+                updateProgress(5);
+            } catch (error) {
+                showResult('aiAskResult', error.message, true);
+            }
+        }
+
+        async function testAIHistory() {
+            try {
+                const data = await apiRequest('/ai/history', 'GET', null, true);
+                showResult('aiHistoryResult', data);
+                updateProgress(5);
+            } catch (error) {
+                showResult('aiHistoryResult', error.message, true);
+            }
+        }
+
+        async function testAISearch() {
+            const keyword = document.getElementById('searchKeyword').value;
+            
+            try {
+                const data = await apiRequest(`/ai/search?keyword=${keyword}`, 'GET', null, true);
+                showResult('aiSearchResult', data);
+                updateProgress(5);
+            } catch (error) {
+                showResult('aiSearchResult', error.message, true);
+            }
+        }
+
+        // 4. 知识点管理
+        async function testCreateKnowledge() {
+            const title = document.getElementById('kpTitle').value;
+            const category = document.getElementById('kpCategory').value;
+            
+            try {
+                const data = await apiRequest('/knowledge/points', 'POST', { 
+                    title, 
+                    category,
+                    content: '这是测试知识点内容',
+                    tags: ['测试', '数学']
+                }, true);
+                showResult('createKnowledgeResult', data);
+                updateProgress(5);
+            } catch (error) {
+                showResult('createKnowledgeResult', error.message, true);
+            }
+        }
+
+        async function testGetKnowledgeList() {
+            try {
+                const data = await apiRequest('/knowledge/points', 'GET', null, true);
+                showResult('knowledgeListResult', data);
+                updateProgress(5);
+            } catch (error) {
+                showResult('knowledgeListResult', error.message, true);
+            }
+        }
+
+        async function testSearchKnowledge() {
+            const keyword = document.getElementById('kpSearch').value;
+            
+            try {
+                const data = await apiRequest(`/knowledge/points/search?keyword=${keyword}`, 'GET', null, true);
+                showResult('searchKnowledgeResult', data);
+                updateProgress(5);
+            } catch (error) {
+                showResult('searchKnowledgeResult', error.message, true);
+            }
+        }
+
+        // 5. 练习功能
+        async function testCreatePracticeSession() {
+            const textbookId = document.getElementById('textbookId').value;
+            const unitId = document.getElementById('unitId').value;
+            
+            try {
+                const data = await apiRequest('/practice/sessions', 'POST', { 
+                    textbookId: parseInt(textbookId), 
+                    unitId: parseInt(unitId) 
+                }, true);
+                showResult('createSessionResult', data);
+                if (data.data && data.data.id) {
+                    document.getElementById('sessionId').value = data.data.id;
+                }
+                updateProgress(5);
+            } catch (error) {
+                showResult('createSessionResult', error.message, true);
+            }
+        }
+
+        async function testGetSessionList() {
+            try {
+                const data = await apiRequest('/practice/sessions', 'GET', null, true);
+                showResult('sessionListResult', data);
+                updateProgress(5);
+            } catch (error) {
+                showResult('sessionListResult', error.message, true);
+            }
+        }
+
+        async function testAddQuestion() {
+            const sessionId = document.getElementById('sessionId').value;
+            
+            if (!sessionId) {
+                showResult('addQuestionResult', '请先创建会话', true);
+                return;
+            }
+            
+            try {
+                const data = await apiRequest(`/practice/sessions/${sessionId}/questions`, 'POST', {
+                    type: 'choice',
+                    question: '1 + 1 = ?',
+                    options: ['A. 1', 'B. 2', 'C. 3'],
+                    answer: 'B',
+                    explanation: '简单加法'
+                }, true);
+                showResult('addQuestionResult', data);
+                if (data.data && data.data.id) {
+                    document.getElementById('questionId').value = data.data.id;
+                }
+                updateProgress(5);
+            } catch (error) {
+                showResult('addQuestionResult', error.message, true);
+            }
+        }
+
+        async function testSubmitAnswer() {
+            const sessionId = document.getElementById('sessionId').value;
+            const questionId = document.getElementById('questionId').value;
+            const answer = document.getElementById('answer').value;
+            
+            if (!sessionId || !questionId) {
+                showResult('submitAnswerResult', '请先创建会话和问题', true);
+                return;
+            }
+            
+            try {
+                const data = await apiRequest(`/practice/sessions/${sessionId}/answers`, 'POST', {
+                    questionId: parseInt(questionId),
+                    answer,
+                    isCorrect: answer === 'B'
+                }, true);
+                showResult('submitAnswerResult', data);
+                updateProgress(5);
+            } catch (error) {
+                showResult('submitAnswerResult', error.message, true);
+            }
+        }
+
+        // 6. 课本解析
+        async function testGetTextbooks() {
+            try {
+                const data = await apiRequest('/textbooks', 'GET', null, true);
+                showResult('textbooksResult', data);
+                updateProgress(5);
+            } catch (error) {
+                showResult('textbooksResult', error.message, true);
+            }
+        }
+
+        async function testGetTasks() {
+            try {
+                const data = await apiRequest('/textbooks/tasks', 'GET', null, true);
+                showResult('tasksResult', data);
+                updateProgress(5);
+            } catch (error) {
+                showResult('tasksResult', error.message, true);
+            }
+        }
+
+        // 初始化
+        totalTests = 20; // 总测试数
+        console.log(' Controllers E2E 测试页面已加载');
+        console.log('📊 总测试数:', totalTests);
+        console.log(' API 地址:', API_BASE);
+    </script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "total": 5,
+  "passed": 5,
+  "failed": 0,
+  "skipped": 0,
+  "flows": {
+    "ai_record": "PASS",
+    "textbook_upload": "PASS",
+    "textbook_parse": "PASS",
+    "textbook_units": "PASS",
+    "ai_grading_full": "PASS"
+  }
+}

@@ -1,35 +1,52 @@
 /**
  * BullMQ 队列配置
  * 用于课本解析等异步任务
+ * 
+ * Redis 7.0.15 兼容性修复：
+ * - 更新 ioredis 连接配置以支持 Redis 7.x
+ * - 添加 Redis 7 兼容的 blocking 配置
+ * - 优化连接池设置
  */
 
 const { Queue, Worker, QueueEvents } = require('bullmq');
 const Redis = require('ioredis');
 
-// Redis 连接配置
-// BUG-001 修复：添加兼容性配置以支持 Redis 3.x/4.x/5.x+
+// Redis 连接配置 - Redis 7.0.15 兼容
 const isTestMode = process.env.NODE_ENV === 'test' || process.env.TEST_MODE === 'true';
 
+// Redis 7.x 兼容的连接配置
 const connection = new Redis({
-  host: process.env.REDIS_HOST || 'localhost',
+  host: process.env.REDIS_HOST || '172.26.168.165', // WSL2 IP
   port: process.env.REDIS_PORT || 6379,
   password: process.env.REDIS_PASSWORD || undefined,
-  maxRetriesPerRequest: null, // 推荐用于 BullMQ
-  // BUG-001 修复：测试模式下跳过版本检查
-  enableReadyCheck: !isTestMode,
+  
+  // BullMQ 推荐配置
+  maxRetriesPerRequest: null,
+  
+  // Redis 7.x 兼容性配置
+  enableReadyCheck: true,
+  enableAutoPipelining: false,
+  
+  // 连接超时配置
+  connectTimeout: 10000,
+  commandTimeout: 5000,
+  keepAlive: 30000,
+  
+  // 重试策略
   retryStrategy: (times) => {
     if (times > 3) {
-      if (!isTestMode) {
-        console.error('[Queue] Redis 连接失败，请检查 Redis 服务是否启动');
-      }
+      console.error(`[Queue] Redis 连接失败，已重试 ${times} 次，请检查 Redis 服务 (172.26.168.165:6379)`);
       return null;
     }
     return Math.min(times * 200, 2000);
   },
-  // BUG-001 修复：禁用 Redis 6+ 特性以兼容旧版本
-  keepAlive: 30000,
-  connectTimeout: 10000,
-  commandTimeout: 5000,
+  
+  // Redis 7.x blocking 命令兼容性（毫秒）
+  // BullMQ 使用 BLMOVE/BZPOPMIN 等命令需要正确设置
+  showFriendlyErrorStack: true,
+  
+  // 连接池配置
+  maxLoadingRetryTime: 10000,
 });
 
 // 队列名称常量
@@ -39,11 +56,18 @@ const QueueName = {
   REPORT_GENERATE: 'report-generate', // 学习报告生成队列
 };
 
-// BUG-001 修复：测试模式下跳过 Redis 版本检查
+// BullMQ 队列配置 - Redis 7.0.15 兼容
 const queueOptions = {
   connection,
-  // BullMQ 3.x/4.x 支持跳过版本检查
-  skipVersionCheck: isTestMode,
+  // BullMQ 5.x 配置
+  skipVersionCheck: false, // 允许版本检查，BullMQ 5.71+ 支持 Redis 7.x
+  
+  // Redis 7.x 兼容性配置
+  blockingConnection: {
+    maxRetriesPerRequest: null,
+    connectTimeout: 10000,
+    keepAlive: 30000,
+  },
 };
 
 // 创建队列

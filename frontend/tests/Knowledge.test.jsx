@@ -2,9 +2,9 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import Knowledge from '../src/pages/Knowledge.jsx';
 import { BrowserRouter } from 'react-router-dom';
-import { AuthProvider } from '../src/context/AuthContext';
+import { AuthContext, AuthProvider } from '../src/context/AuthContext';
 
-// BUG-002 修复：添加 AuthProvider wrapper
+// BUG-TEST-002 修复：添加 AuthProvider wrapper
 
 vi.mock('../src/services/api', () => ({
   knowledgeAPI: {
@@ -16,20 +16,22 @@ vi.mock('../src/services/api', () => ({
   }
 }));
 
-// BUG-002 修复：使用 AuthProvider wrapper
+// BUG-TEST-002 修复：使用 AuthProvider + AuthContext.Provider wrapper
 const renderWithAuth = (component, authValue = {}) => {
   return render(
     <BrowserRouter>
-      <AuthProvider value={{
-        user: authValue.user || { username: '测试用户' },
-        loading: false,
-        login: { sendCode: vi.fn(), verify: vi.fn() },
-        register: { sendCode: vi.fn(), verify: vi.fn() },
-        logout: vi.fn(),
-        refreshToken: vi.fn(),
-        ...authValue
-      }}>
-        {component}
+      <AuthProvider>
+        <AuthContext.Provider value={{
+          user: authValue.user || { username: '测试用户' },
+          loading: false,
+          login: { sendCode: vi.fn(), verify: vi.fn() },
+          register: { sendCode: vi.fn(), verify: vi.fn() },
+          logout: vi.fn(),
+          refreshToken: vi.fn(),
+          ...authValue
+        }}>
+          {component}
+        </AuthContext.Provider>
       </AuthProvider>
     </BrowserRouter>
   );

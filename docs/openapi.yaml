@@ -1,0 +1,1003 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "StudyAss 学习助手 API",
+    "description": "StudyAss AI 学习平台 - RESTful API 接口文档",
+    "version": "1.0.0",
+    "contact": {
+      "name": "俊哥的学习助手团队"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000/api",
+      "description": "本地开发环境"
+    },
+    {
+      "url": "https://api.studyass.com/api",
+      "description": "生产环境"
+    }
+  ],
+  "tags": [
+    {
+      "name": "健康检查",
+      "description": "系统健康状态检查"
+    },
+    {
+      "name": "用户认证",
+      "description": "用户注册、登录、Token 管理"
+    },
+    {
+      "name": "知识点管理",
+      "description": "知识点的增删改查"
+    },
+    {
+      "name": "学习进度",
+      "description": "学习进度跟踪和统计"
+    },
+    {
+      "name": "AI 问答",
+      "description": "AI 答疑和问答历史"
+    },
+    {
+      "name": "AI 出题",
+      "description": "AI 智能出题功能"
+    },
+    {
+      "name": "AI Gateway V2",
+      "description": "多 AI 服务路由"
+    },
+    {
+      "name": "AI 学习规划",
+      "description": "个性化学习计划生成和管理"
+    },
+    {
+      "name": "课本解析",
+      "description": "PDF 课本上传和解析"
+    },
+    {
+      "name": "薄弱点分析",
+      "description": "知识点掌握度分析和推荐"
+    },
+    {
+      "name": "积分系统",
+      "description": "积分获取、打卡、记录"
+    },
+    {
+      "name": "排行榜",
+      "description": "用户排名和榜单"
+    },
+    {
+      "name": "文件上传",
+      "description": "课本、头像、附件上传"
+    },
+    {
+      "name": "练习会话",
+      "description": "练习会话管理和答题"
+    }
+  ],
+  "paths": {
+    "/health": {
+      "get": {
+        "tags": ["健康检查"],
+        "summary": "健康检查",
+        "operationId": "getHealth",
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "健康状态正常",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auth/send-code": {
+      "post": {
+        "tags": ["用户认证"],
+        "summary": "发送验证码",
+        "operationId": "sendCode",
+        "security": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SendCodeRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "验证码已发送"
+          },
+          "400": {
+            "description": "请求参数错误"
+          },
+          "429": {
+            "description": "发送过于频繁"
+          }
+        }
+      }
+    },
+    "/auth/login": {
+      "post": {
+        "tags": ["用户认证"],
+        "summary": "用户登录",
+        "operationId": "login",
+        "security": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "登录成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoginResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "验证码错误"
+          }
+        }
+      }
+    },
+    "/auth/register": {
+      "post": {
+        "tags": ["用户认证"],
+        "summary": "用户注册",
+        "operationId": "register",
+        "security": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "注册成功"
+          }
+        }
+      }
+    },
+    "/auth/refresh": {
+      "post": {
+        "tags": ["用户认证"],
+        "summary": "刷新 Token",
+        "operationId": "refreshToken",
+        "security": [{"bearerAuth": []}],
+        "responses": {
+          "200": {
+            "description": "Token 刷新成功"
+          }
+        }
+      }
+    },
+    "/auth/me": {
+      "get": {
+        "tags": ["用户认证"],
+        "summary": "获取当前用户信息",
+        "operationId": "getCurrentUser",
+        "security": [{"bearerAuth": []}],
+        "responses": {
+          "200": {
+            "description": "用户信息",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": ["用户认证"],
+        "summary": "更新用户信息",
+        "operationId": "updateUser",
+        "security": [{"bearerAuth": []}],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateUserRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "更新成功"
+          }
+        }
+      }
+    },
+    "/knowledge": {
+      "get": {
+        "tags": ["知识点管理"],
+        "summary": "获取知识点列表",
+        "operationId": "getKnowledgeList",
+        "security": [{"bearerAuth": []}],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {"type": "integer", "default": 1}
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {"type": "integer", "default": 20}
+          },
+          {
+            "name": "subject",
+            "in": "query",
+            "schema": {"type": "string"}
+          },
+          {
+            "name": "grade",
+            "in": "query",
+            "schema": {"type": "integer"}
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "知识点列表"
+          }
+        }
+      },
+      "post": {
+        "tags": ["知识点管理"],
+        "summary": "创建知识点",
+        "operationId": "createKnowledge",
+        "security": [{"bearerAuth": []}],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KnowledgeRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "创建成功"
+          }
+        }
+      }
+    },
+    "/knowledge/search": {
+      "get": {
+        "tags": ["知识点管理"],
+        "summary": "搜索知识点",
+        "operationId": "searchKnowledge",
+        "security": [{"bearerAuth": []}],
+        "parameters": [
+          {
+            "name": "keyword",
+            "in": "query",
+            "required": true,
+            "schema": {"type": "string"}
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "搜索结果"
+          }
+        }
+      }
+    },
+    "/knowledge/{id}": {
+      "get": {
+        "tags": ["知识点管理"],
+        "summary": "获取单个知识点",
+        "operationId": "getKnowledge",
+        "security": [{"bearerAuth": []}],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {"type": "integer"}
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "知识点详情"
+          }
+        }
+      },
+      "put": {
+        "tags": ["知识点管理"],
+        "summary": "更新知识点",
+        "operationId": "updateKnowledge",
+        "security": [{"bearerAuth": []}],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {"type": "integer"}
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KnowledgeRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "更新成功"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["知识点管理"],
+        "summary": "删除知识点",
+        "operationId": "deleteKnowledge",
+        "security": [{"bearerAuth": []}],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {"type": "integer"}
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "删除成功"
+          }
+        }
+      }
+    },
+    "/progress/upsert": {
+      "post": {
+        "tags": ["学习进度"],
+        "summary": "创建/更新学习进度",
+        "operationId": "upsertProgress",
+        "security": [{"bearerAuth": []}],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProgressUpsertRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "操作成功"
+          }
+        }
+      }
+    },
+    "/progress/log": {
+      "post": {
+        "tags": ["学习进度"],
+        "summary": "记录学习时长",
+        "operationId": "logStudyTime",
+        "security": [{"bearerAuth": []}],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StudyLogRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "记录成功"
+          }
+        }
+      }
+    },
+    "/progress": {
+      "get": {
+        "tags": ["学习进度"],
+        "summary": "获取学习进度列表",
+        "operationId": "getProgressList",
+        "security": [{"bearerAuth": []}],
+        "responses": {
+          "200": {
+            "description": "进度列表"
+          }
+        }
+      }
+    },
+    "/progress/stats": {
+      "get": {
+        "tags": ["学习进度"],
+        "summary": "获取学习统计",
+        "operationId": "getProgressStats",
+        "security": [{"bearerAuth": []}],
+        "responses": {
+          "200": {
+            "description": "统计数据"
+          }
+        }
+      }
+    },
+    "/ai/ask": {
+      "post": {
+        "tags": ["AI 问答"],
+        "summary": "AI 答疑",
+        "operationId": "askAI",
+        "security": [{"bearerAuth": []}],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AskRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "AI 回答"
+          }
+        }
+      }
+    },
+    "/ai/history": {
+      "get": {
+        "tags": ["AI 问答"],
+        "summary": "获取问答历史",
+        "operationId": "getAIHistory",
+        "security": [{"bearerAuth": []}],
+        "responses": {
+          "200": {
+            "description": "问答历史"
+          }
+        }
+      }
+    },
+    "/ai/generate-questions": {
+      "post": {
+        "tags": ["AI 出题"],
+        "summary": "AI 出题",
+        "operationId": "generateQuestions",
+        "security": [{"bearerAuth": []}],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerateQuestionsRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "题目生成成功"
+          }
+        }
+      }
+    },
+    "/ai/task-logs": {
+      "get": {
+        "tags": ["AI 出题"],
+        "summary": "获取任务日志列表",
+        "operationId": "getTaskLogs",
+        "security": [{"bearerAuth": []}],
+        "responses": {
+          "200": {
+            "description": "任务日志列表"
+          }
+        }
+      }
+    },
+    "/ai/planning/generate": {
+      "post": {
+        "tags": ["AI 学习规划"],
+        "summary": "生成学习计划",
+        "operationId": "generatePlan",
+        "security": [{"bearerAuth": []}],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GeneratePlanRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "计划生成成功"
+          }
+        }
+      }
+    },
+    "/ai/planning/user-profile": {
+      "get": {
+        "tags": ["AI 学习规划"],
+        "summary": "获取用户学习画像",
+        "operationId": "getUserProfile",
+        "security": [{"bearerAuth": []}],
+        "parameters": [
+          {
+            "name": "subject",
+            "in": "query",
+            "schema": {"type": "string"}
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "用户画像"
+          }
+        }
+      }
+    },
+    "/ai/planning/daily-tasks/{date}": {
+      "get": {
+        "tags": ["AI 学习规划"],
+        "summary": "获取每日任务",
+        "operationId": "getDailyTasks",
+        "security": [{"bearerAuth": []}],
+        "parameters": [
+          {
+            "name": "date",
+            "in": "path",
+            "required": true,
+            "schema": {"type": "string", "format": "date"}
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "每日任务列表"
+          }
+        }
+      }
+    },
+    "/textbooks/upload": {
+      "post": {
+        "tags": ["课本解析"],
+        "summary": "上传课本 PDF",
+        "operationId": "uploadTextbook",
+        "security": [{"bearerAuth": []}],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/TextbookUploadRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "上传成功"
+          }
+        }
+      }
+    },
+    "/textbooks": {
+      "get": {
+        "tags": ["课本解析"],
+        "summary": "获取课本列表",
+        "operationId": "getTextbooks",
+        "security": [{"bearerAuth": []}],
+        "responses": {
+          "200": {
+            "description": "课本列表"
+          }
+        }
+      }
+    },
+    "/weakness/analyze": {
+      "get": {
+        "tags": ["薄弱点分析"],
+        "summary": "分析薄弱点",
+        "operationId": "analyzeWeakness",
+        "security": [{"bearerAuth": []}],
+        "responses": {
+          "200": {
+            "description": "薄弱点分析结果"
+          }
+        }
+      }
+    },
+    "/weakness/mastery": {
+      "get": {
+        "tags": ["薄弱点分析"],
+        "summary": "获取知识点掌握度",
+        "operationId": "getMastery",
+        "security": [{"bearerAuth": []}],
+        "responses": {
+          "200": {
+            "description": "掌握度列表"
+          }
+        }
+      }
+    },
+    "/points/me": {
+      "get": {
+        "tags": ["积分系统"],
+        "summary": "获取我的积分",
+        "operationId": "getMyPoints",
+        "security": [{"bearerAuth": []}],
+        "responses": {
+          "200": {
+            "description": "积分信息"
+          }
+        }
+      }
+    },
+    "/points/check-in": {
+      "post": {
+        "tags": ["积分系统"],
+        "summary": "打卡",
+        "operationId": "checkIn",
+        "security": [{"bearerAuth": []}],
+        "responses": {
+          "200": {
+            "description": "打卡成功"
+          }
+        }
+      }
+    },
+    "/leaderboard/{type}": {
+      "get": {
+        "tags": ["排行榜"],
+        "summary": "获取排行榜",
+        "operationId": "getLeaderboard",
+        "security": [{"bearerAuth": []}],
+        "parameters": [
+          {
+            "name": "type",
+            "in": "path",
+            "schema": {"type": "string", "enum": ["total", "weekly", "monthly"], "default": "total"}
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "排行榜数据"
+          }
+        }
+      }
+    },
+    "/leaderboard/me/rank": {
+      "get": {
+        "tags": ["排行榜"],
+        "summary": "获取我的排名",
+        "operationId": "getMyRank",
+        "security": [{"bearerAuth": []}],
+        "responses": {
+          "200": {
+            "description": "我的排名"
+          }
+        }
+      }
+    },
+    "/upload/avatar": {
+      "post": {
+        "tags": ["文件上传"],
+        "summary": "上传头像",
+        "operationId": "uploadAvatar",
+        "security": [{"bearerAuth": []}],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/AvatarUploadRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "上传成功"
+          }
+        }
+      }
+    },
+    "/practice/sessions": {
+      "post": {
+        "tags": ["练习会话"],
+        "summary": "创建练习会话",
+        "operationId": "createSession",
+        "security": [{"bearerAuth": []}],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateSessionRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "会话创建成功"
+          }
+        }
+      },
+      "get": {
+        "tags": ["练习会话"],
+        "summary": "获取会话列表",
+        "operationId": "getSessions",
+        "security": [{"bearerAuth": []}],
+        "responses": {
+          "200": {
+            "description": "会话列表"
+          }
+        }
+      }
+    },
+    "/practice/sessions/{id}/answers": {
+      "post": {
+        "tags": ["练习会话"],
+        "summary": "提交答案",
+        "operationId": "submitAnswer",
+        "security": [{"bearerAuth": []}],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {"type": "integer"}
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SubmitAnswerRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "提交成功"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    },
+    "schemas": {
+      "HealthResponse": {
+        "type": "object",
+        "properties": {
+          "status": {"type": "string", "example": "ok"},
+          "timestamp": {"type": "string", "format": "date-time"},
+          "uptime": {"type": "number", "example": 3600},
+          "services": {
+            "type": "object",
+            "properties": {
+              "database": {"type": "string", "example": "connected"},
+              "memory": {
+                "type": "object",
+                "properties": {
+                  "used": {"type": "number", "example": 256},
+                  "total": {"type": "number", "example": 512},
+                  "unit": {"type": "string", "example": "MB"}
+                }
+              }
+            }
+          }
+        }
+      },
+      "SendCodeRequest": {
+        "type": "object",
+        "required": ["phone"],
+        "properties": {
+          "phone": {"type": "string", "example": "13800138000"},
+          "purpose": {"type": "string", "enum": ["login", "register"], "default": "login"}
+        }
+      },
+      "LoginRequest": {
+        "type": "object",
+        "required": ["phone", "code"],
+        "properties": {
+          "phone": {"type": "string", "example": "13800138000"},
+          "code": {"type": "string", "example": "123456"}
+        }
+      },
+      "LoginResponse": {
+        "type": "object",
+        "properties": {
+          "message": {"type": "string", "example": "登录成功"},
+          "user": {"$ref": "#/components/schemas/User"},
+          "token": {"type": "string"}
+        }
+      },
+      "RegisterRequest": {
+        "type": "object",
+        "required": ["phone", "code"],
+        "properties": {
+          "phone": {"type": "string"},
+          "code": {"type": "string"},
+          "nickname": {"type": "string"},
+          "grade": {"type": "integer"},
+          "school_name": {"type": "string"},
+          "real_name": {"type": "string"}
+        }
+      },
+      "User": {
+        "type": "object",
+        "properties": {
+          "id": {"type": "integer"},
+          "role": {"type": "string", "enum": ["STUDENT", "TEACHER", "ADMIN"]},
+          "phone": {"type": "string"},
+          "nickname": {"type": "string"},
+          "avatar_url": {"type": "string"},
+          "profile": {"type": "object"}
+        }
+      },
+      "UserResponse": {
+        "type": "object",
+        "properties": {
+          "user": {"$ref": "#/components/schemas/User"}
+        }
+      },
+      "UpdateUserRequest": {
+        "type": "object",
+        "properties": {
+          "nickname": {"type": "string"},
+          "avatar_url": {"type": "string"}
+        }
+      },
+      "KnowledgeRequest": {
+        "type": "object",
+        "properties": {
+          "name": {"type": "string"},
+          "subject": {"type": "string"},
+          "grade": {"type": "integer"},
+          "description": {"type": "string"},
+          "parent_id": {"type": "integer", "nullable": true}
+        }
+      },
+      "ProgressUpsertRequest": {
+        "type": "object",
+        "properties": {
+          "knowledge_point_id": {"type": "integer"},
+          "mastery": {"type": "number", "minimum": 0, "maximum": 1},
+          "last_reviewed_at": {"type": "string", "format": "date-time"}
+        }
+      },
+      "StudyLogRequest": {
+        "type": "object",
+        "properties": {
+          "subject": {"type": "string"},
+          "duration": {"type": "integer", "description": "学习时长 (分钟)"},
+          "description": {"type": "string"}
+        }
+      },
+      "AskRequest": {
+        "type": "object",
+        "required": ["question"],
+        "properties": {
+          "question": {"type": "string"},
+          "context": {
+            "type": "object",
+            "properties": {
+              "subject": {"type": "string"},
+              "grade": {"type": "integer"}
+            }
+          }
+        }
+      },
+      "GenerateQuestionsRequest": {
+        "type": "object",
+        "properties": {
+          "knowledge_point_id": {"type": "integer"},
+          "question_type": {"type": "string", "enum": ["choice", "fill", "calculation"]},
+          "difficulty": {"type": "string", "enum": ["easy", "medium", "hard"]},
+          "count": {"type": "integer", "minimum": 1, "maximum": 20}
+        }
+      },
+      "GeneratePlanRequest": {
+        "type": "object",
+        "properties": {
+          "subject": {"type": "string"},
+          "timeframe": {
+            "type": "object",
+            "properties": {
+              "total_days": {"type": "integer"},
+              "start_date": {"type": "string", "format": "date"},
+              "end_date": {"type": "string", "format": "date"}
+            }
+          },
+          "goals": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "knowledge_point_id": {"type": "integer"},
+                "current_mastery": {"type": "number"},
+                "target_mastery": {"type": "number"},
+                "priority": {"type": "string", "enum": ["low", "medium", "high"]}
+              }
+            }
+          },
+          "preferences": {
+            "type": "object",
+            "properties": {
+              "daily_time_limit": {"type": "integer"},
+              "include_weekend": {"type": "boolean"},
+              "learning_style": {"type": "string"}
+            }
+          }
+        }
+      },
+      "TextbookUploadRequest": {
+        "type": "object",
+        "properties": {
+          "file": {"type": "string", "format": "binary"},
+          "title": {"type": "string"},
+          "subject": {"type": "string"},
+          "grade": {"type": "string"},
+          "version": {"type": "string"}
+        }
+      },
+      "AvatarUploadRequest": {
+        "type": "object",
+        "properties": {
+          "file": {"type": "string", "format": "binary"},
+          "userId": {"type": "string"}
+        }
+      },
+      "CreateSessionRequest": {
+        "type": "object",
+        "properties": {
+          "subject": {"type": "string"},
+          "knowledge_point_ids": {"type": "array", "items": {"type": "integer"}},
+          "question_count": {"type": "integer"},
+          "difficulty": {"type": "string", "enum": ["easy", "medium", "hard"]},
+          "time_limit": {"type": "integer"}
+        }
+      },
+      "SubmitAnswerRequest": {
+        "type": "object",
+        "required": ["question_id", "answer"],
+        "properties": {
+          "question_id": {"type": "integer"},
+          "answer": {"type": "string"},
+          "time_spent": {"type": "integer"}
+        }
+      }
+    }
+  }
+}

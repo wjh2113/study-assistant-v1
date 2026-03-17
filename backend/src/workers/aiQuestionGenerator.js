@@ -141,7 +141,7 @@ function generateFallbackQuestions(count, unit) {
 }
 
 /**
- * 创建 AI 题目生成 Worker
+ * 创建 AI 题目生成 Worker - Redis 7.0.15 兼容
  */
 function createAIGeneratorWorker() {
   const worker = new Worker(
@@ -152,6 +152,11 @@ function createAIGeneratorWorker() {
     {
       connection,
       concurrency: 3, // 同时处理 3 个任务
+      
+      // Redis 7.x 兼容性配置
+      blockingConnection: {
+        maxRetriesPerRequest: null,
+      },
     }
   );
   

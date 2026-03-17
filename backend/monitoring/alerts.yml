@@ -1,0 +1,63 @@
+groups:
+  - name: ai_alerts
+    rules:
+      # AI 错误率过高
+      - alert: HighAIErrorRate
+        expr: rate(ai_request_errors_total[5m]) > 0.1
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: "AI 错误率过高"
+          description: "AI 请求错误率超过 10% (当前值：{{ $value }})"
+
+      # 响应时间过长
+      - alert: HighAILatency
+        expr: histogram_quantile(0.95, rate(ai_request_duration_seconds_bucket[5m])) > 10
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "AI 响应时间过长"
+          description: "P95 响应时间超过 10 秒 (当前值：{{ $value }}s)"
+
+      # Token 使用异常
+      - alert: HighTokenUsage
+        expr: rate(ai_tokens_total[1h]) > 100000
+        for: 30m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Token 使用量异常"
+          description: "每小时 Token 使用量超过 10 万 (当前值：{{ $value }})"
+
+      # 缓存命中率低
+      - alert: LowCacheHitRate
+        expr: rate(ai_cache_hits_total[1h]) / (rate(ai_cache_hits_total[1h]) + rate(ai_cache_misses_total[1h])) < 0.3
+        for: 30m
+        labels:
+          severity: info
+        annotations:
+          summary: "缓存命中率过低"
+          description: "缓存命中率低于 30% (当前值：{{ $value | humanizePercentage }})"
+
+      # 预算超支（需要自定义指标或通过 recording rule 计算）
+      # 暂时注释，待实现预算跟踪功能后启用
+      # - alert: BudgetExceeded
+      #   expr: budget_usage_percent > 90
+      #   for: 1h
+      #   labels:
+      #     severity: critical
+      #   annotations:
+      #     summary: "预算即将超支"
+      #     description: "预算使用率超过 90% (当前值：{{ $value }}%)"
+
+      # 服务不可用
+      - alert: ProviderDown
+        expr: up{job="nodejs"} == 0
+        for: 2m
+        labels:
+          severity: critical
+        annotations:
+          summary: "AI 服务不可用"
+          description: "应用实例 {{ $labels.instance }} 已下线"

@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { vi } from 'vitest';
 
-// BUG-002 修复：全局 Mock AuthContext
+// BUG-TEST-002 修复：全局 Mock AuthContext
 // 为所有使用 useAuth 的组件测试提供默认的 AuthProvider wrapper
 
 // Mock localStorage
@@ -27,6 +27,22 @@ Object.defineProperty(window, 'localStorage', {
 
 // 测试模式下自动 bypass 验证码
 process.env.TEST_MODE = 'true';
+
+// 创建 mock auth context
+export const mockAuthContext = {
+  user: null,
+  loading: false,
+  login: { 
+    sendCode: vi.fn(() => Promise.resolve()), 
+    verify: vi.fn(() => Promise.resolve()) 
+  },
+  register: { 
+    sendCode: vi.fn(() => Promise.resolve()), 
+    verify: vi.fn(() => Promise.resolve()) 
+  },
+  logout: vi.fn(),
+  refreshToken: vi.fn(() => Promise.resolve())
+};
 
 // 全局 Mock API 模块
 vi.mock('../src/services/api', () => ({
@@ -55,6 +71,8 @@ vi.mock('../src/services/api', () => ({
     getList: vi.fn(() => Promise.resolve({ data: { data: [] } }))
   },
   aiAPI: {
-    chat: vi.fn(() => Promise.resolve({ data: {} }))
+    chat: vi.fn(() => Promise.resolve({ data: {} })),
+    ask: vi.fn(() => Promise.resolve({ data: {} })),
+    getHistory: vi.fn(() => Promise.resolve({ data: { records: [] } }))
   }
 }));
