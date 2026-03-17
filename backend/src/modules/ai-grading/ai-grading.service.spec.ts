@@ -1,8 +1,8 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { ConfigService } from '@nestjs/config';
-import { AiGradingService } from '../ai-grading.service';
+import { AiGradingService } from './ai-grading.service';
 import { PrismaService } from '../../prisma/prisma.service';
-import { GradeEssayDto, GradeSubjectiveDto, EssayType } from '../dto/grading.dto';
+import { GradeEssayDto, GradeSubjectiveDto, EssayType } from './dto/grading.dto';
 
 describe('AiGradingService', () => {
   let service: AiGradingService;
@@ -279,7 +279,7 @@ describe('AiGradingService', () => {
 
       const totalScore = service['calculateWeightedScore'](dimensions);
 
-      expect(totalScore).toBe(83); // 90*0.4 + 80*0.3 + 70*0.2 + 100*0.1 = 36 + 24 + 14 + 10 = 84
+      expect(totalScore).toBe(84); // 90*0.4 + 80*0.3 + 70*0.2 + 100*0.1 = 36 + 24 + 14 + 10 = 84
     });
   });
 });

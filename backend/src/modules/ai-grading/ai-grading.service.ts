@@ -7,7 +7,7 @@ import {
   SubjectiveGradeResultDto,
   EssayDimensionScore,
   EssayType,
-} from '../dto/grading.dto';
+} from './dto/grading.dto';
 import { PrismaService } from '../../prisma/prisma.service';
 
 @Injectable()
@@ -229,7 +229,7 @@ export class AiGradingService {
     ];
 
     return dimensions.map((dim) => {
-      const score = aiResponse[dim.key] || this.calculateDimensionScore(dto, dim.key);
+      const score = aiResponse[dim.key] || this.calculateSingleDimensionScore(dto, dim.key);
       return {
         dimension: dim.name,
         score: Math.round(score),
@@ -238,6 +238,36 @@ export class AiGradingService {
         suggestions: this.generateDimensionSuggestions(dim.name, score, dto.essayType),
       };
     });
+  }
+
+  /**
+   * 计算单个维度得分（降级策略）
+   */
+  private calculateSingleDimensionScore(dto: GradeEssayDto, dimensionKey: string): number {
+    const wordCount = this.countChineseWords(dto.essayContent);
+    const baseScore = 70;
+    
+    // 根据字数给基础分
+    let wordScore = 0;
+    if (dto.expectedWordCount) {
+      const ratio = wordCount / dto.expectedWordCount;
+      if (ratio >= 0.9) wordScore = 10;
+      else if (ratio >= 0.7) wordScore = 5;
+    }
+    
+    // 根据不同维度返回分数
+    switch (dimensionKey) {
+      case 'content':
+        return baseScore + wordScore + Math.random() * 15;
+      case 'language':
+        return baseScore + Math.random() * 20;
+      case 'structure':
+        return baseScore + Math.random() * 15;
+      case 'presentation':
+        return baseScore + 10 + Math.random() * 10;
+      default:
+        return baseScore;
+    }
   }
 
   /**
@@ -268,11 +298,20 @@ export class AiGradingService {
     }
 
     const ratio = actual / expected;
-    if (ratio >= 0.9 && ratio <= 1.1) return 100; // 90%-110% 得满分
-    if (ratio >= 0.8) return 80;
-    if (ratio >= 0.7) return 60;
+    // 100% 得满分
+    if (ratio >= 1.0) return 100;
+    // 90% 得 80 分
+    if (ratio >= 0.9) return 80;
+    // 80% 得 60 分
+    if (ratio >= 0.8) return 60;
+    // 70% 得 50 分
+    if (ratio >= 0.7) return 50;
+    // 60% 得 40 分
     if (ratio >= 0.6) return 40;
-    return Math.max(0, ratio * 100);
+    // 50% 得 30 分
+    if (ratio >= 0.5) return 30;
+    // 低于 50% 按比例给分
+    return Math.max(0, Math.round(ratio * 100));
   }
 
   /**
@@ -351,6 +390,15 @@ export class AiGradingService {
       missingPoints: standardKeywords.filter((_, idx) => idx >= 3),
       suggestions: '建议仔细阅读题目，抓住关键信息点作答。',
     };
+  }
+
+  /**
+   * 提取关键得分点
+   */
+  private extractKeyPoints(studentAnswer: string, standardAnswer: string): string[] {
+    // 简单实现：从标准答案中提取关键词
+    const keywords = standardAnswer.split(/[，。；,]/).filter(k => k.length > 1 && k.length < 20);
+    return keywords.slice(0, 3);
   }
 
   /**
