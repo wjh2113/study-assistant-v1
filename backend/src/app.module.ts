@@ -16,6 +16,7 @@ import { PracticeModule } from './modules/practice/practice.module';
 import { LearningModule } from './modules/learning/learning.module';
 import { PointsModule } from './modules/points/points.module';
 import { FilesModule } from './modules/files/files.module';
+import { AiGradingModule } from './modules/ai-grading/ai-grading.module';
 
 @Module({
   imports: [
@@ -42,6 +43,9 @@ import { FilesModule } from './modules/files/files.module';
     LearningModule,
     PointsModule,
     FilesModule,
+    
+    // AI 批改模块
+    AiGradingModule,
   ],
   controllers: [AppController],
   providers: [AppService],

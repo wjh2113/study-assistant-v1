@@ -454,6 +454,58 @@ Authorization: Bearer <token>
 
 ---
 
+## 🤖 AI 批改模块 (AI Grading)
+
+详细文档请查看 [AI_GRADING_API.md](AI_GRADING_API.md)
+
+### 作文智能评分
+```http
+POST /api/ai/grading/essay
+Authorization: Bearer <token>
+Content-Type: application/json
+
+{
+  "essayContent": "作文内容...",
+  "essayType": "NARRATIVE",
+  "gradeLevel": 5,
+  "expectedWordCount": 400
+}
+```
+
+### 主观题批改
+```http
+POST /api/ai/grading/subjective
+Authorization: Bearer <token>
+Content-Type: application/json
+
+{
+  "questionContent": "题目内容",
+  "studentAnswer": "学生答案",
+  "standardAnswer": "参考答案",
+  "maxScore": 10
+}
+```
+
+### 生成评分报告
+```http
+POST /api/ai/grading/report
+Authorization: Bearer <token>
+Content-Type: application/json
+
+{
+  "sessionId": 123,
+  "reportType": "DETAILED"
+}
+```
+
+### 获取评分报告
+```http
+GET /api/ai/grading/report/:sessionId
+Authorization: Bearer <token>
+```
+
+---
+
 ## 🔍 通用响应格式
 
 ### 成功响应
