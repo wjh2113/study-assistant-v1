@@ -1,12 +1,12 @@
 import { Controller, Get, Post, Body, Param, Delete, Request, UseGuards, Query, ParseIntPipe } from '@nestjs/common';
-import { TextbookService } from './textbook.service';
-import { CreateTextbookDto, UpdateTextbookDto, QueryTextbooksDto, CreateUnitDto, UpdateUnitDto } from './textbook.dto';
+import { TextbooksService } from './textbooks.service';
+import { CreateTextbookDto, UpdateTextbookDto, QueryTextbooksDto, CreateUnitDto, UpdateUnitDto } from './textbooks.dto';
 import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 
 @Controller('textbooks')
 @UseGuards(JwtAuthGuard)
-export class TextbookController {
-  constructor(private textbookService: TextbookService) {}
+export class TextbooksController {
+  constructor(private textbooksService: TextbooksService) {}
 
   /**
    * 创建课本
@@ -14,7 +14,7 @@ export class TextbookController {
   @Post()
   async create(@Request() req, @Body() createTextbookDto: CreateTextbookDto) {
     const userId = req.user.sub;
-    return this.textbookService.create(userId, createTextbookDto);
+    return this.textbooksService.create(userId, createTextbookDto);
   }
 
   /**
@@ -27,7 +27,7 @@ export class TextbookController {
   ) {
     const userId = req.user.sub;
     const role = req.user.role;
-    return this.textbookService.findAll(queryDto, userId, role);
+    return this.textbooksService.findAll(queryDto, userId, role);
   }
 
   /**
@@ -35,7 +35,7 @@ export class TextbookController {
    */
   @Get(':id')
   async findOne(@Param('id', ParseIntPipe) id: number) {
-    return this.textbookService.findOne(id);
+    return this.textbooksService.findOne(id);
   }
 
   /**
@@ -46,7 +46,7 @@ export class TextbookController {
     @Param('id', ParseIntPipe) id: number,
     @Body() updateTextbookDto: UpdateTextbookDto,
   ) {
-    return this.textbookService.update(id, updateTextbookDto);
+    return this.textbooksService.update(id, updateTextbookDto);
   }
 
   /**
@@ -54,7 +54,7 @@ export class TextbookController {
    */
   @Delete(':id')
   async remove(@Param('id', ParseIntPipe) id: number) {
-    return this.textbookService.remove(id);
+    return this.textbooksService.remove(id);
   }
 
   /**
@@ -62,7 +62,7 @@ export class TextbookController {
    */
   @Post(':id/parse')
   async parsePdf(@Param('id', ParseIntPipe) id: number) {
-    return this.textbookService.parsePdf(id);
+    return this.textbooksService.parsePdf(id);
   }
 
   /**
@@ -70,7 +70,7 @@ export class TextbookController {
    */
   @Get(':id/units')
   async getUnits(@Param('id', ParseIntPipe) id: number) {
-    return this.textbookService.getUnits(id);
+    return this.textbooksService.getUnits(id);
   }
 
   /**
@@ -81,7 +81,7 @@ export class TextbookController {
     @Param('id', ParseIntPipe) id: number,
     @Body() createUnitDto: CreateUnitDto,
   ) {
-    return this.textbookService.createUnit(id, createUnitDto);
+    return this.textbooksService.createUnit(id, createUnitDto);
   }
 
   /**
@@ -92,7 +92,7 @@ export class TextbookController {
     @Param('unitId', ParseIntPipe) unitId: number,
     @Body() updateUnitDto: UpdateUnitDto,
   ) {
-    return this.textbookService.updateUnit(unitId, updateUnitDto);
+    return this.textbooksService.updateUnit(unitId, updateUnitDto);
   }
 
   /**
@@ -100,6 +100,6 @@ export class TextbookController {
    */
   @Delete('units/:unitId')
   async removeUnit(@Param('unitId', ParseIntPipe) unitId: number) {
-    return this.textbookService.removeUnit(unitId);
+    return this.textbooksService.removeUnit(unitId);
   }
 }

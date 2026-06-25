@@ -11,11 +11,12 @@ import { QueueModule } from './queue.module';
 
 // Sprint 1 新增模块
 import { FamilyModule } from './modules/family/family.module';
-import { TextbookModule } from './modules/textbooks/textbook.module';
+import { TextbooksModule } from './modules/textbooks/textbooks.module';
 import { PracticeModule } from './modules/practice/practice.module';
 import { LearningModule } from './modules/learning/learning.module';
 import { PointsModule } from './modules/points/points.module';
 import { FilesModule } from './modules/files/files.module';
+import { AiGradingModule } from './modules/ai-grading/ai-grading.module';
 
 @Module({
   imports: [
@@ -37,11 +38,14 @@ import { FilesModule } from './modules/files/files.module';
     
     // Sprint 1 新增模块
     FamilyModule,
-    TextbookModule,
+    TextbooksModule,
     PracticeModule,
     LearningModule,
     PointsModule,
     FilesModule,
+    
+    // AI 批改模块
+    AiGradingModule,
   ],
   controllers: [AppController],
   providers: [AppService],
